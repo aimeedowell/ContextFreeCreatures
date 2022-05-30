@@ -9,6 +9,7 @@ public class DragAndDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler
     private Vector2 startPosition;
     private CanvasGroup canvasGroup;
     public bool hasDropped = false;
+    public GameObject duplicate;
 
     private void Awake() 
     {
@@ -24,10 +25,8 @@ public class DragAndDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler
 
     public void OnBeginDrag(PointerEventData data)
     {
-        Debug.Log("Begin Drag");
         canvasGroup.alpha = 0.6f;
         canvasGroup.blocksRaycasts = false;
-        
     }
 
     public void OnDrag(PointerEventData data)
@@ -39,9 +38,13 @@ public class DragAndDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler
     public void OnEndDrag(PointerEventData data)
     {
         Debug.Log("End Drag");
-        canvasGroup.alpha = 1.0f;
+        canvasGroup.alpha = 0f;
         canvasGroup.blocksRaycasts = true;
         if (!hasDropped) 
+            canvasGroup.alpha = 1.0f;
             rectTransform.anchoredPosition = startPosition;
+            
     }
+
+
 }

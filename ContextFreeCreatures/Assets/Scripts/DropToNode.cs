@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.EventSystems;
 
 public class DropToNode : MonoBehaviour, IDropHandler
@@ -12,8 +13,9 @@ public class DropToNode : MonoBehaviour, IDropHandler
         {
             data.pointerDrag.GetComponent<RectTransform>().anchoredPosition = GetComponent<RectTransform>().anchoredPosition;
             data.pointerDrag.GetComponent<DragAndDrop>().hasDropped = true;
+            this.gameObject.SetActive(false);
             data.pointerDrag.GetComponent<GetRuleContents>().GetContents();
-
+            
         }
     }
 }

@@ -1,52 +1,78 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GetRuleContents : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public List<GameObject> ruleImages;
+
+    private GameObject treeArea;
+    private RectTransform rectTransform;
+
+    float treeSpaceWidth;
+    float treeSpaceHeight;
+
+    private void Start() 
     {
-        
+        treeArea = GameObject.Find("TreeSpace");
+        rectTransform = (RectTransform)treeArea.transform;
+        treeSpaceWidth = rectTransform.rect.width;
+        treeSpaceHeight = rectTransform.rect.height;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 
     public void GetContents()
     {
-        for (int i = 0; i < this.gameObject.transform.childCount; i++)
+        float splitWidth = treeSpaceWidth/ruleImages.Count;
+        float splitHeight = treeSpaceWidth/2;
+
+
+
+        float width = splitWidth/2;
+
+        for (int i = 0; i < ruleImages.Count; i++)
         {
-            GameObject child = this.gameObject.transform.GetChild(i).gameObject;
-            switch (child.name)
-            {
-                case "Green":
-                    Debug.Log("Contains Green");
-                    break;
-                case "Blue":
-                    Debug.Log("Contains Blue");
-                    break;
-                case "Purple":
-                    Debug.Log("Contains Purple");
-                    break;
-                case "Red":
-                    Debug.Log("Contains Red");
-                    break;
-                case "Yellow":
-                    Debug.Log("Contains Yellow");
-                    break;
-                case "Pink":
-                    Debug.Log("Contains Pink");
-                    break;   
-                case "Node":
-                    Debug.Log("Contains Node");
-                    break;    
-                default:
-                    break;                                                      
-            }
+            
+            GameObject gemClone = Instantiate(ruleImages[i], new Vector3(ruleImages[i].transform.position.x, ruleImages[i].transform.position.y, 0), ruleImages[i].transform.rotation);
+
+            gemClone.GetComponent<RectTransform>().anchoredPosition = new Vector2(width/2, splitHeight/2);
+
+            width += splitHeight;
+            // height += 20;
+            
+            gemClone.SetActive(true);
         }
+
+        // for (int i = 0; i < this.gameObject.transform.childCount; i++)
+        // {
+        //     GameObject child = this.gameObject.transform.GetChild(i).gameObject;
+        //     switch (child.name)
+        //     {
+        //         case "Green":
+        //             Debug.Log("Contains Green");
+        //             break;
+        //         case "Blue":
+        //             Debug.Log("Contains Blue");
+        //             break;
+        //         case "Purple":
+        //             Debug.Log("Contains Purple");
+        //             break;
+        //         case "Red":
+        //             Debug.Log("Contains Red");
+        //             break;
+        //         case "Yellow":
+        //             Debug.Log("Contains Yellow");
+        //             break;
+        //         case "Pink":
+        //             Debug.Log("Contains Pink");
+        //             break;   
+        //         case "Node":
+        //             Debug.Log("Contains Node");
+        //             break;    
+        //         default:
+        //             break;                                                      
+        //     }
+        // }
     }
 }
