@@ -12,6 +12,8 @@ public class DropToNode : MonoBehaviour, IDropHandler
         {
             data.pointerDrag.GetComponent<RectTransform>().anchoredPosition = GetComponent<RectTransform>().anchoredPosition;
             data.pointerDrag.GetComponent<DragAndDrop>().hasDropped = true;
+            data.pointerDrag.GetComponent<GetRuleContents>().GetContents();
+
         }
     }
 }

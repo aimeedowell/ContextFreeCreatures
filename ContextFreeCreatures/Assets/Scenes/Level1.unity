@@ -135,7 +135,7 @@ GameObject:
   - component: {fileID: 13254181}
   - component: {fileID: 13254180}
   m_Layer: 5
-  m_Name: Image
+  m_Name: Green
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -210,7 +210,7 @@ GameObject:
   - component: {fileID: 166770634}
   - component: {fileID: 166770633}
   m_Layer: 5
-  m_Name: Image
+  m_Name: Arrow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -464,7 +464,7 @@ GameObject:
   - component: {fileID: 260455634}
   - component: {fileID: 260455633}
   m_Layer: 5
-  m_Name: Image
+  m_Name: Arrow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -539,7 +539,7 @@ GameObject:
   - component: {fileID: 311801129}
   - component: {fileID: 311801128}
   m_Layer: 5
-  m_Name: Image
+  m_Name: Snail
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -696,6 +696,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45fb13bbe438f4c9aa71caec4434ac16, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hasDropped: 0
 --- !u!61 &330120807
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -821,7 +822,7 @@ GameObject:
   - component: {fileID: 386932210}
   - component: {fileID: 386932209}
   m_Layer: 5
-  m_Name: Image
+  m_Name: Green
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -896,7 +897,7 @@ GameObject:
   - component: {fileID: 425551927}
   - component: {fileID: 425551926}
   m_Layer: 5
-  m_Name: Image (2)
+  m_Name: Node
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -914,7 +915,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 504108878}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -971,7 +972,7 @@ GameObject:
   - component: {fileID: 469702939}
   - component: {fileID: 469702938}
   m_Layer: 5
-  m_Name: Image
+  m_Name: Arrow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1046,7 +1047,7 @@ GameObject:
   - component: {fileID: 472432739}
   - component: {fileID: 472432738}
   m_Layer: 5
-  m_Name: Image
+  m_Name: Arrow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1121,6 +1122,8 @@ GameObject:
   - component: {fileID: 504108880}
   - component: {fileID: 504108879}
   - component: {fileID: 504108881}
+  - component: {fileID: 504108882}
+  - component: {fileID: 504108883}
   m_Layer: 5
   m_Name: Rule (5)
   m_TagString: Untagged
@@ -1142,8 +1145,8 @@ RectTransform:
   - {fileID: 525854708}
   - {fileID: 469702937}
   - {fileID: 386932208}
-  - {fileID: 1689313245}
   - {fileID: 425551925}
+  - {fileID: 1689313245}
   m_Father: {fileID: 1086816384}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1216,6 +1219,31 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &504108882
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 504108877}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 45fb13bbe438f4c9aa71caec4434ac16, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hasDropped: 0
+--- !u!225 &504108883
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 504108877}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &523918840
 GameObject:
   m_ObjectHideFlags: 0
@@ -1228,7 +1256,7 @@ GameObject:
   - component: {fileID: 523918843}
   - component: {fileID: 523918842}
   m_Layer: 5
-  m_Name: Image
+  m_Name: Centipede
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1303,7 +1331,7 @@ GameObject:
   - component: {fileID: 525854710}
   - component: {fileID: 525854709}
   m_Layer: 5
-  m_Name: Image
+  m_Name: Ant
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1537,7 +1565,7 @@ GameObject:
   - component: {fileID: 682899700}
   - component: {fileID: 682899699}
   m_Layer: 5
-  m_Name: Image (1)
+  m_Name: Blue
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1555,7 +1583,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1074799010}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -1687,7 +1715,7 @@ GameObject:
   - component: {fileID: 734342556}
   - component: {fileID: 734342555}
   m_Layer: 5
-  m_Name: Image (1)
+  m_Name: Purple
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1705,7 +1733,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1254074378}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -1762,7 +1790,7 @@ GameObject:
   - component: {fileID: 790624042}
   - component: {fileID: 790624041}
   m_Layer: 5
-  m_Name: Image
+  m_Name: Spider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1837,7 +1865,7 @@ GameObject:
   - component: {fileID: 826981629}
   - component: {fileID: 826981628}
   m_Layer: 5
-  m_Name: Image (2)
+  m_Name: Node
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1855,7 +1883,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1254074378}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -1912,7 +1940,7 @@ GameObject:
   - component: {fileID: 852059643}
   - component: {fileID: 852059642}
   m_Layer: 5
-  m_Name: Image (2)
+  m_Name: Node
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1930,7 +1958,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1074799010}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -2137,7 +2165,7 @@ GameObject:
   - component: {fileID: 947447677}
   - component: {fileID: 947447676}
   m_Layer: 5
-  m_Name: Image
+  m_Name: Arrow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2292,6 +2320,7 @@ GameObject:
   - component: {fileID: 1074799012}
   - component: {fileID: 1074799011}
   - component: {fileID: 1074799013}
+  - component: {fileID: 1074799015}
   - component: {fileID: 1074799014}
   m_Layer: 5
   m_Name: Rule (2)
@@ -2314,8 +2343,8 @@ RectTransform:
   - {fileID: 523918841}
   - {fileID: 472432737}
   - {fileID: 1830815823}
-  - {fileID: 682899698}
   - {fileID: 852059641}
+  - {fileID: 682899698}
   m_Father: {fileID: 1086816384}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2388,7 +2417,19 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &1074799014
+--- !u!225 &1074799014
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1074799009}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
+--- !u!114 &1074799015
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2400,6 +2441,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45fb13bbe438f4c9aa71caec4434ac16, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hasDropped: 0
 --- !u!1 &1086816383
 GameObject:
   m_ObjectHideFlags: 0
@@ -2492,6 +2534,8 @@ GameObject:
   - component: {fileID: 1254074380}
   - component: {fileID: 1254074379}
   - component: {fileID: 1254074381}
+  - component: {fileID: 1254074382}
+  - component: {fileID: 1254074383}
   m_Layer: 5
   m_Name: Rule (3)
   m_TagString: Untagged
@@ -2513,8 +2557,8 @@ RectTransform:
   - {fileID: 311801127}
   - {fileID: 947447675}
   - {fileID: 1714265634}
-  - {fileID: 734342554}
   - {fileID: 826981627}
+  - {fileID: 734342554}
   m_Father: {fileID: 1086816384}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2587,6 +2631,31 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &1254074382
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1254074377}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 45fb13bbe438f4c9aa71caec4434ac16, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hasDropped: 0
+--- !u!225 &1254074383
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1254074377}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &1307299526
 GameObject:
   m_ObjectHideFlags: 0
@@ -2599,7 +2668,7 @@ GameObject:
   - component: {fileID: 1307299529}
   - component: {fileID: 1307299528}
   m_Layer: 5
-  m_Name: Image (1)
+  m_Name: Purple
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2864,6 +2933,8 @@ GameObject:
   - component: {fileID: 1372026227}
   - component: {fileID: 1372026226}
   - component: {fileID: 1372026228}
+  - component: {fileID: 1372026229}
+  - component: {fileID: 1372026230}
   m_Layer: 5
   m_Name: Rule (4)
   m_TagString: Untagged
@@ -2957,6 +3028,31 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &1372026229
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1372026224}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 45fb13bbe438f4c9aa71caec4434ac16, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hasDropped: 0
+--- !u!225 &1372026230
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1372026224}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &1428783809
 GameObject:
   m_ObjectHideFlags: 0
@@ -2969,7 +3065,7 @@ GameObject:
   - component: {fileID: 1428783812}
   - component: {fileID: 1428783811}
   m_Layer: 5
-  m_Name: Image (1)
+  m_Name: Purple
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3044,7 +3140,7 @@ GameObject:
   - component: {fileID: 1689313247}
   - component: {fileID: 1689313246}
   m_Layer: 5
-  m_Name: Image (1)
+  m_Name: Green
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3062,7 +3158,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 504108878}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -3119,7 +3215,7 @@ GameObject:
   - component: {fileID: 1714265636}
   - component: {fileID: 1714265635}
   m_Layer: 5
-  m_Name: Image
+  m_Name: Blue
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3194,7 +3290,7 @@ GameObject:
   - component: {fileID: 1762261582}
   - component: {fileID: 1762261581}
   m_Layer: 5
-  m_Name: Image
+  m_Name: Beetle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3269,7 +3365,7 @@ GameObject:
   - component: {fileID: 1830815825}
   - component: {fileID: 1830815824}
   m_Layer: 5
-  m_Name: Image
+  m_Name: Blue
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

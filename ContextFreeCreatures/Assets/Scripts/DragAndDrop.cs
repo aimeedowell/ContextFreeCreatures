@@ -44,8 +44,4 @@ public class DragAndDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler
         if (!hasDropped) 
             rectTransform.anchoredPosition = startPosition;
     }
-
-
-
-
 }
