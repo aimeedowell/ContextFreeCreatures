@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class GetRuleContents : MonoBehaviour
 {
     public List<GameObject> ruleImages;
+    public Canvas canvas;
 
     private GameObject treeArea;
     private RectTransform rectTransform;
@@ -29,16 +30,16 @@ public class GetRuleContents : MonoBehaviour
 
 
 
-        float width = splitWidth/2;
+        float width = -splitWidth/2;
 
         for (int i = 0; i < ruleImages.Count; i++)
         {
             
-            GameObject gemClone = Instantiate(ruleImages[i], new Vector3(ruleImages[i].transform.position.x, ruleImages[i].transform.position.y, 0), ruleImages[i].transform.rotation);
+            GameObject gemClone = Instantiate(ruleImages[i], canvas.transform);
 
-            gemClone.GetComponent<RectTransform>().anchoredPosition = new Vector2(width/2, splitHeight/2);
+            gemClone.GetComponent<RectTransform>().anchoredPosition = new Vector2(width/2, 0);
 
-            width += splitHeight;
+            width = splitHeight/2;
             // height += 20;
             
             gemClone.SetActive(true);
