@@ -14,6 +14,7 @@ public class DropToNode : MonoBehaviour, IDropHandler
             data.pointerDrag.GetComponent<RectTransform>().anchoredPosition = GetComponent<RectTransform>().anchoredPosition;
             data.pointerDrag.GetComponent<DragAndDrop>().hasDropped = true;
             this.gameObject.SetActive(false);
+            data.pointerDrag.GetComponent<GetRuleContents>().ReplaceNode(GetComponent<RectTransform>().anchoredPosition);
             data.pointerDrag.GetComponent<GetRuleContents>().GetContents();
             
         }

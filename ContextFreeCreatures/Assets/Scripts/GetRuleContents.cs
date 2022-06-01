@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class GetRuleContents : MonoBehaviour
 {
     public List<GameObject> ruleImages;
+    public GameObject creatureImage;
     public Canvas canvas;
 
     private GameObject treeArea;
@@ -22,12 +23,17 @@ public class GetRuleContents : MonoBehaviour
         treeSpaceHeight = rectTransform.rect.height;
     }
 
+    public void ReplaceNode(Vector2 node )
+    {
+        GameObject creature = Instantiate(creatureImage, canvas.transform);
+        creature.GetComponent<RectTransform>().anchoredPosition = node;
+        creature.SetActive(true);
+    }
 
     public void GetContents()
     {
         float splitWidth = treeSpaceWidth/ruleImages.Count;
         float splitHeight = treeSpaceWidth/2;
-
 
 
         float width = -splitWidth/2;
