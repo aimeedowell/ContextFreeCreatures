@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using System;
 
 public class GetRuleContents : MonoBehaviour
 {
@@ -23,7 +24,7 @@ public class GetRuleContents : MonoBehaviour
         treeSpaceHeight = rectTransform.rect.height;
     }
 
-    public void ReplaceNode(Vector2 node )
+    public void ReplaceNode(Vector2 node)
     {
         GameObject creature = Instantiate(creatureImage, canvas.transform);
         creature.GetComponent<RectTransform>().anchoredPosition = node;
@@ -52,17 +53,34 @@ public class GetRuleContents : MonoBehaviour
                 {
                     startingWidthPos = 0;
                 }
-
                 startingWidthPos += splitHalfWidth;
             
                 GameObject gemClone = Instantiate(ruleImages[i], canvas.transform);
+                gemClone.GetComponent<RectTransform>().anchoredPosition = new Vector2(startingWidthPos, 0);
+                gemClone.SetActive(true);
+            }
+            else
+            {
+                float splitHalfWidth = halfWidth/(imageCount-1);
+                float halfImages = imageCount/2;
 
-                gemClone.GetComponent<RectTransform>().anchoredPosition = new Vector2(startingWidthPos, splitHeight);
-
-
-                    // height += 20;
-    
+                if (i > halfImages)
+                {
+                    startingWidthPos = 0;
+                }
                 
+                if (i == Math.Round(halfImages))
+                {
+                    startingWidthPos = 0;
+                }
+                else
+                {
+                    startingWidthPos += splitHalfWidth;
+                }
+                
+            
+                GameObject gemClone = Instantiate(ruleImages[i], canvas.transform);
+                gemClone.GetComponent<RectTransform>().anchoredPosition = new Vector2(startingWidthPos, 0);
                 gemClone.SetActive(true);
             }
         }
