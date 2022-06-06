@@ -55,26 +55,21 @@ public class TreeStructure : MonoBehaviour
     public void AddElementToList(int index, GameObject element)
     {
         allRows[index].Add(element);
-        UpdateEndWord(element);
     }
 
-    void UpdateEndWord(GameObject element)
+    public void UpdateEndWord(List<GameObject> elements)
     {
-        for (int i = 0; i < endWord.Count; i++)
+        int index = -1;
+        for (int i = 0; i < endWord.Count; i ++)
         {
             if (endWord[i].gameObject.name.Contains("Node"))
             {
-                endWord[i] = element;
-                headOfEndWord = i;
-            }
-            else
-            {
-                endWord.Insert(headOfEndWord, element);
-                headOfEndWord += 1;
+                index = i;
+                endWord.RemoveAt(i);
             }
         }
-        
-        
+        endWord.InsertRange(index, elements);
+        Debug.Log(endWord);
     }
 
     public bool IsTreeDead(int index)

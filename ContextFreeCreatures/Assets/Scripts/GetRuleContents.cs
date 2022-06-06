@@ -90,8 +90,12 @@ public class GetRuleContents : MonoBehaviour
   
         float height = heights[heightIdx];
 
+        List<GameObject> ruleObjects = new List<GameObject>();
+
         for (int i = 0; i < ruleImages.Count; i++)
         {
+            ruleObjects.Add(ruleImages[i]);
+
             if (imageCount % 2 == 0)
             {
                 float splitHalfWidth = halfWidth/imageCount;
@@ -128,6 +132,8 @@ public class GetRuleContents : MonoBehaviour
                 CloneRuleContent(ruleImages[i], startingWidthPos, height, heightIdx);
             }
         }
+
+        cam.GetComponent<TreeStructure>().UpdateEndWord(ruleObjects);
 
         bool isLevelOver = cam.GetComponent<TreeStructure>().IsTreeDead(heightIdx);
         Debug.Log(isLevelOver);
