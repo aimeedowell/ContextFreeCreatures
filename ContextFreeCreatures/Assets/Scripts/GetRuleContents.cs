@@ -44,7 +44,7 @@ public class GetRuleContents : MonoBehaviour
         float halfHeight = treeSpaceHeight/2;
         float splitHalfHeight = halfHeight/(maxRows-1);
         float startingHeightPos = startNode.transform.localPosition.y;
-        Debug.Log(startingHeightPos);
+        // Debug.Log(startingHeightPos);
 
         for (int i = 0; i < maxRows; i++)
         {
@@ -84,7 +84,7 @@ public class GetRuleContents : MonoBehaviour
         float centrePos = 0f;
         int imageCount = ruleImages.Count;
 
-        Debug.Log(nodePos);
+        // Debug.Log(nodePos);
         float startingWidthPos = -halfWidth;
         int heightIdx = cam.GetComponent<TreeStructure>().GetNextEmptyRow();
   
@@ -133,10 +133,14 @@ public class GetRuleContents : MonoBehaviour
             }
         }
 
-        cam.GetComponent<TreeStructure>().UpdateEndWord(ruleObjects);
+        List<GameObject> endWord = cam.GetComponent<TreeStructure>().UpdateEndWord(ruleObjects);
 
-        bool isLevelOver = cam.GetComponent<TreeStructure>().IsTreeDead(heightIdx);
-        Debug.Log(isLevelOver);
+        bool isCorrect = false;
+        if (cam.GetComponent<TreeStructure>().IsTreeDead(heightIdx))
+        {
+            isCorrect = cam.GetComponent<LevelSolutions>().IsAnswerCorrect(endWord);
+        }
+        Debug.Log(isCorrect);
     }
 
     void CloneRuleContent(GameObject image, float width, float height, int listIndex)

@@ -5,7 +5,6 @@ using UnityEngine.UI;
 
 public class TreeStructure : MonoBehaviour
 {
-    private float maxRows = 5;
     private List<GameObject> row1 = new List<GameObject>();
     private List<GameObject> row2 = new List<GameObject>();
     private List<GameObject> row3 = new List<GameObject>();
@@ -14,7 +13,6 @@ public class TreeStructure : MonoBehaviour
 
 
     private List<GameObject> endWord = new List<GameObject>();
-    private int headOfEndWord = 0;
 
     private List<List<GameObject>> allRows = new List<List<GameObject>>();
 
@@ -57,7 +55,7 @@ public class TreeStructure : MonoBehaviour
         allRows[index].Add(element);
     }
 
-    public void UpdateEndWord(List<GameObject> elements)
+    public List<GameObject> UpdateEndWord(List<GameObject> elements)
     {
         int index = -1;
         for (int i = 0; i < endWord.Count; i ++)
@@ -69,7 +67,7 @@ public class TreeStructure : MonoBehaviour
             }
         }
         endWord.InsertRange(index, elements);
-        Debug.Log(endWord);
+        return endWord;
     }
 
     public bool IsTreeDead(int index)
@@ -83,5 +81,6 @@ public class TreeStructure : MonoBehaviour
         }
 
         return true;
-    }
+    }    
+    
 }
