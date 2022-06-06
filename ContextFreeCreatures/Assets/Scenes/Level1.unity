@@ -839,6 +839,7 @@ MonoBehaviour:
   - {fileID: 1078397124}
   - {fileID: 2023028735}
   creatureImage: {fileID: 2133588589}
+  startNode: {fileID: 1350965108}
   canvas: {fileID: 172117104}
 --- !u!1 &336491322
 GameObject:
@@ -1443,6 +1444,7 @@ MonoBehaviour:
   - {fileID: 1229114788}
   - {fileID: 1078397124}
   creatureImage: {fileID: 1180966753}
+  startNode: {fileID: 1350965108}
   canvas: {fileID: 172117104}
 --- !u!1 &523918840
 GameObject:
@@ -1605,6 +1607,7 @@ GameObject:
   - component: {fileID: 560030403}
   - component: {fileID: 560030402}
   - component: {fileID: 560030401}
+  - component: {fileID: 560030404}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -1678,6 +1681,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &560030404
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 560030400}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8162c7efa278545adaadfdf669cbea19, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &612148235
 GameObject:
   m_ObjectHideFlags: 0
@@ -2736,6 +2751,7 @@ MonoBehaviour:
   - {fileID: 1229114788}
   - {fileID: 171447833}
   creatureImage: {fileID: 477464199}
+  startNode: {fileID: 1350965108}
   canvas: {fileID: 172117104}
 --- !u!1 &1078397124
 GameObject:
@@ -2771,7 +2787,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -693, y: 328}
+  m_AnchoredPosition: {x: -749, y: -296}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1078397126
@@ -3130,6 +3146,7 @@ MonoBehaviour:
   - {fileID: 1229114788}
   - {fileID: 2023028735}
   creatureImage: {fileID: 612148235}
+  startNode: {fileID: 1350965108}
   canvas: {fileID: 172117104}
 --- !u!1 &1307299526
 GameObject:
@@ -3206,6 +3223,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1307299526}
   m_CullTransparentMesh: 1
+--- !u!1 &1350965108 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7931909828122177575, guid: 5312bdb6b99d34785aa828e3c59ed7f8, type: 3}
+  m_PrefabInstance: {fileID: 7931909829455570771}
+  m_PrefabAsset: {fileID: 0}
 --- !u!224 &1350965109 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 7931909828122177574, guid: 5312bdb6b99d34785aa828e3c59ed7f8, type: 3}
@@ -3435,6 +3457,7 @@ MonoBehaviour:
   ruleImages:
   - {fileID: 2023028735}
   creatureImage: {fileID: 1929246301}
+  startNode: {fileID: 1350965108}
   canvas: {fileID: 172117104}
 --- !u!1 &1428783809
 GameObject:

@@ -20,7 +20,7 @@ public class DragAndDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler
 
     public void OnPointerDown(PointerEventData data)
     {
-        Debug.Log("Mouse Down");
+        // Debug.Log("Mouse Down");
     }
 
     public void OnBeginDrag(PointerEventData data)
@@ -31,13 +31,13 @@ public class DragAndDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler
 
     public void OnDrag(PointerEventData data)
     {
-        Debug.Log("Dragging");
+        // Debug.Log("Dragging");
         rectTransform.anchoredPosition += data.delta;
     }
 
     public void OnEndDrag(PointerEventData data)
     {
-        Debug.Log("End Drag");
+        // Debug.Log("End Drag");
         canvasGroup.alpha = 0f;
         canvasGroup.blocksRaycasts = true;
         if (!hasDropped) 
