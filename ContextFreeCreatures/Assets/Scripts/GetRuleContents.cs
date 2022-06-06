@@ -32,54 +32,39 @@ public class GetRuleContents : MonoBehaviour
 
     public void GetContents()
     {
-        float splitWidth = treeSpaceWidth/ruleImages.Count;
-        float splitHeight = treeSpaceWidth/2;
+        float halfWidth = treeSpaceWidth/2;
+        float splitHeight = treeSpaceHeight/2;
+
+        float centrePos = 0f;
+        int imageCount = ruleImages.Count;
 
 
-        float width = -splitWidth/2;
+        float startingWidthPos = -halfWidth;
 
         for (int i = 0; i < ruleImages.Count; i++)
         {
-            
-            GameObject gemClone = Instantiate(ruleImages[i], canvas.transform);
+            if (imageCount % 2 == 0)
+            {
+                float splitHalfWidth = halfWidth/imageCount;
+                float halfImages = imageCount/2;
 
-            gemClone.GetComponent<RectTransform>().anchoredPosition = new Vector2(width/2, 0);
+                if (i == halfImages)
+                {
+                    startingWidthPos = 0;
+                }
 
-            width = splitHeight/2;
-            // height += 20;
+                startingWidthPos += splitHalfWidth;
             
-            gemClone.SetActive(true);
+                GameObject gemClone = Instantiate(ruleImages[i], canvas.transform);
+
+                gemClone.GetComponent<RectTransform>().anchoredPosition = new Vector2(startingWidthPos, splitHeight);
+
+
+                    // height += 20;
+    
+                
+                gemClone.SetActive(true);
+            }
         }
-
-        // for (int i = 0; i < this.gameObject.transform.childCount; i++)
-        // {
-        //     GameObject child = this.gameObject.transform.GetChild(i).gameObject;
-        //     switch (child.name)
-        //     {
-        //         case "Green":
-        //             Debug.Log("Contains Green");
-        //             break;
-        //         case "Blue":
-        //             Debug.Log("Contains Blue");
-        //             break;
-        //         case "Purple":
-        //             Debug.Log("Contains Purple");
-        //             break;
-        //         case "Red":
-        //             Debug.Log("Contains Red");
-        //             break;
-        //         case "Yellow":
-        //             Debug.Log("Contains Yellow");
-        //             break;
-        //         case "Pink":
-        //             Debug.Log("Contains Pink");
-        //             break;   
-        //         case "Node":
-        //             Debug.Log("Contains Node");
-        //             break;    
-        //         default:
-        //             break;                                                      
-        //     }
-        // }
     }
 }
