@@ -8,10 +8,13 @@ public class LevelMenuPanel : MonoBehaviour
     public GameObject popUp;
     public GameObject exitMenu;
 
+    GameObject cam;
+
     public GameObject startAnime;
     // Start is called before the first frame update
     void Start()
     {
+        cam = GameObject.Find("Main Camera");
         startAnime.SetActive(true);
     }
 

@@ -22,6 +22,12 @@ public class SceneLoad : MonoBehaviour
         StaticVariables.Level = 1;
     }
 
+    public void ToLevel2()
+    {
+        // SceneManager.LoadScene("Level2");
+        StaticVariables.Level = 2;
+    }
+
     // Update is called once per frame
     void Update()
     {
