@@ -140,6 +140,10 @@ public class GetRuleContents : MonoBehaviour
         {
             isCorrect = cam.GetComponent<LevelSolutions>().IsAnswerCorrect(endWord);
         }
+        if (isCorrect)
+        {
+            cam.GetComponent<LevelEnd>().LevelSuccess(3);
+        }
         Debug.Log(isCorrect);
     }
 

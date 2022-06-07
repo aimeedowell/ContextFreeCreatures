@@ -12,6 +12,7 @@ public class LevelMenuPanel : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        startAnime.SetActive(true);
     }
 
     // Update is called once per frame
@@ -43,6 +44,5 @@ public class LevelMenuPanel : MonoBehaviour
     {
         startAnime.SetActive(false);
     }
-
 
 }
