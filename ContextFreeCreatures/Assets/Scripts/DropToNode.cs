@@ -19,7 +19,7 @@ public class DropToNode : MonoBehaviour, IDropHandler
             var rectTransform = GetComponent<RectTransform>();
             float height = GetComponent<RectTransform>().transform.localPosition.y;
             float width = GetComponent<RectTransform>().transform.localPosition.x;
-            data.pointerDrag.GetComponent<LevelController>().GetContents(height);
+            data.pointerDrag.GetComponent<LevelController>().GetContents(this.gameObject, height);
             
         }
     }

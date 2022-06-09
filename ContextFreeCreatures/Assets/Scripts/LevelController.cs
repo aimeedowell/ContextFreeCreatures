@@ -43,7 +43,7 @@ public class LevelController : MonoBehaviour
         creature.SetActive(true);
     }
 
-    public void GetContents(float prevNodeY)
+    public void GetContents(GameObject prevNode, float prevNodeY)
     {
         int imageCount = ruleImages.Count;
 
@@ -59,6 +59,8 @@ public class LevelController : MonoBehaviour
 
         List<GameObject> ruleObjects = new List<GameObject>();
 
+        
+
         for (int i = 0; i < ruleImages.Count; i++)
         {
             ruleObjects.Add(ruleImages[i]);
@@ -71,12 +73,7 @@ public class LevelController : MonoBehaviour
 
             float y = RemapRange(height, 0, treeSpaceHeight, -treeSpaceHeight/2, treeSpaceHeight/2);
 
-            // if (y > 0)
-            //     y = -y;
-            // else
-            //     y = Math.Abs(y);
-
-            CloneRuleContent(ruleImages[i], x, y);
+            CloneRuleContent(prevNode, ruleImages[i], x, y);
 
             startWidth += splitWidth;
             
@@ -96,12 +93,14 @@ public class LevelController : MonoBehaviour
         Debug.Log(isCorrect);
     }
 
-    void CloneRuleContent(GameObject image, float width, float height)
+    void CloneRuleContent(GameObject prevNode, GameObject image, float width, float height)
     {
         GameObject gemClone = Instantiate(image, canvas.transform);
         gemClone.GetComponent<RectTransform>().anchoredPosition = new Vector2(width, height);
         gemClone.transform.SetParent(treeArea.transform);
         gemClone.SetActive(true);
+
+        cam.GetComponent<AnimateDigging>().DrawLine(prevNode, gemClone);
     }
 
 
