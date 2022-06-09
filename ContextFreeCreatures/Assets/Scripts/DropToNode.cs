@@ -14,12 +14,12 @@ public class DropToNode : MonoBehaviour, IDropHandler
             data.pointerDrag.GetComponent<RectTransform>().transform.position = GetComponent<RectTransform>().transform.position;
             data.pointerDrag.GetComponent<DragAndDrop>().hasDropped = true;
             this.gameObject.SetActive(false);
-            data.pointerDrag.GetComponent<GetRuleContents>().ReplaceNode(GetComponent<RectTransform>().anchoredPosition);
+            data.pointerDrag.GetComponent<LevelController>().ReplaceNode(GetComponent<RectTransform>().anchoredPosition);
 
             var rectTransform = GetComponent<RectTransform>();
-            float height = this.gameObject.transform.localPosition.y;
-            float width = this.gameObject.transform.localPosition.x;
-            data.pointerDrag.GetComponent<GetRuleContents>().GetContents(this.gameObject, height);
+            float height = GetComponent<RectTransform>().transform.localPosition.y;
+            float width = GetComponent<RectTransform>().transform.localPosition.x;
+            data.pointerDrag.GetComponent<LevelController>().GetContents(height);
             
         }
     }
