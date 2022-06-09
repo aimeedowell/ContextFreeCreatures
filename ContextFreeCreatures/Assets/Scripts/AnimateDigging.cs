@@ -8,8 +8,10 @@ public class AnimateDigging : MonoBehaviour
     public GameObject lineImage;
 
     public GameObject lineImageContainer;
+    public GameObject lineContainerContainer;
     public GameObject start;
     public GameObject end;
+    public Canvas canvas;
 
 
     // Start is called before the first frame update
@@ -21,15 +23,19 @@ public class AnimateDigging : MonoBehaviour
     {
         start = startObj;
         end = endObj;
-        lineImageContainer.SetActive(true);
-        GetAngle();
-        lineImage.GetComponent<RectTransform>().sizeDelta = new Vector2(10, GetHeightDistance());
-        lineImage.GetComponent<RectTransform>().localPosition = new Vector3(0, -GetHeightDistance()/2, 0);;
-        lineImageContainer.GetComponent<RectTransform>().transform.position = start.GetComponent<RectTransform>().transform.position; 
+
+        GameObject lineContain = Instantiate(lineImageContainer, canvas.transform);
+        lineContain.transform.SetParent(lineContainerContainer.transform);
+        lineContain.SetActive(true);
+
+        GetAngle(lineContain);
+        lineContain.transform.GetChild(0).GetComponent<RectTransform>().sizeDelta = new Vector2(10, GetHeightDistance());
+        lineContain.transform.GetChild(0).GetComponent<RectTransform>().localPosition = new Vector3(0, -GetHeightDistance()/2, 0);;
+        lineContain.GetComponent<RectTransform>().transform.position = start.GetComponent<RectTransform>().transform.position; 
     }
-    void GetAngle()
+    void GetAngle(GameObject contain)
     {
-        lineImageContainer.transform.rotation = Quaternion.FromToRotation(Vector3.up, start.transform.position - end.transform.position);
+        contain.transform.rotation = Quaternion.FromToRotation(Vector3.up, start.transform.position - end.transform.position);
     }
 
     float GetHeightDistance()
