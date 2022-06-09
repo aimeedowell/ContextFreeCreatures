@@ -7,6 +7,7 @@ using System;
 public class LevelController : MonoBehaviour
 {
     GameObject cam;
+    public GameObject spriteBackground;
     public List<GameObject> ruleImages;
     public GameObject creatureImage;
     public GameObject startNode;
@@ -36,6 +37,12 @@ public class LevelController : MonoBehaviour
 
     public void ReplaceNode(Vector2 node)
     {
+        GameObject bkg = Instantiate(spriteBackground, canvas.transform);
+        bkg.GetComponent<RectTransform>().anchoredPosition = node;
+        nodeAnchPos = node;
+        bkg.transform.SetParent(treeArea.transform);
+        bkg.SetActive(true);
+
         GameObject creature = Instantiate(creatureImage, canvas.transform);
         creature.GetComponent<RectTransform>().anchoredPosition = node;
         nodeAnchPos = node;
@@ -86,11 +93,20 @@ public class LevelController : MonoBehaviour
         {
             isCorrect = cam.GetComponent<LevelSolutions>().IsAnswerCorrect(endWord);
         }
-        if (isCorrect)
-        {
-            cam.GetComponent<LevelEnd>().LevelSuccess(3);
-        }
+  
+        StartCoroutine(LevelCompletePopUp(isCorrect));
+        
         Debug.Log(isCorrect);
+    }
+
+
+    private IEnumerator LevelCompletePopUp(bool success)
+    {
+        yield return new WaitForSeconds(2f);
+
+        if (success)
+            cam.GetComponent<LevelEnd>().LevelSuccess(3);
+
     }
 
     void CloneRuleContent(GameObject prevNode, GameObject image, float width, float height)

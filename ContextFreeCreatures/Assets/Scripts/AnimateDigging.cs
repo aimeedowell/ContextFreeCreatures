@@ -29,7 +29,7 @@ public class AnimateDigging : MonoBehaviour
         lineContain.SetActive(true);
 
         GetAngle(lineContain);
-        lineContain.transform.GetChild(0).GetComponent<RectTransform>().sizeDelta = new Vector2(10, GetHeightDistance());
+        lineContain.transform.GetChild(0).GetComponent<RectTransform>().sizeDelta = new Vector2(lineContain.transform.GetChild(0).GetComponent<RectTransform>().sizeDelta.x, GetHeightDistance());
         lineContain.transform.GetChild(0).GetComponent<RectTransform>().localPosition = new Vector3(0, -GetHeightDistance()/2, 0);;
         lineContain.GetComponent<RectTransform>().transform.position = start.GetComponent<RectTransform>().transform.position; 
     }
