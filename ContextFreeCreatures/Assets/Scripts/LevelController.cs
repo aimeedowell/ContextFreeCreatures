@@ -107,7 +107,7 @@ public class LevelController : MonoBehaviour
     private IEnumerator LevelCompletePopUp(bool success)
     {
         float secs = cam.GetComponent<EndWord>().GetEndWordLength() * 0.5f;
-        yield return new WaitForSeconds(secs);
+        yield return new WaitForSeconds(secs+ 1f);
 
         if (success)
         {
