@@ -88,15 +88,12 @@ public class LevelController : MonoBehaviour
 
         List<GameObject> endWord = cam.GetComponent<EndWord>().UpdateEndWord(ruleObjects);
 
-        bool isCorrect = false;
         if (cam.GetComponent<EndWord>().IsTreeDead())
         {
-            isCorrect = cam.GetComponent<LevelSolutions>().IsAnswerCorrect(endWord);
-        }
-  
-        StartCoroutine(LevelCompletePopUp(isCorrect));
-        
-        Debug.Log(isCorrect);
+            bool isCorrect = cam.GetComponent<LevelSolutions>().IsAnswerCorrect(endWord);
+            StartCoroutine(LevelCompletePopUp(isCorrect));
+            Debug.Log(isCorrect);
+        } 
     }
 
 
@@ -106,7 +103,8 @@ public class LevelController : MonoBehaviour
 
         if (success)
             cam.GetComponent<LevelEnd>().LevelSuccess(3);
-
+        else
+            cam.GetComponent<LevelEnd>().LevelFailed();
     }
 
     void CloneRuleContent(GameObject prevNode, GameObject image, float width, float height)

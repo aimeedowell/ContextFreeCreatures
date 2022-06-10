@@ -9,8 +9,8 @@ public class AnimateDigging : MonoBehaviour
 
     public GameObject lineImageContainer;
     public GameObject lineContainerContainer;
-    public GameObject start;
-    public GameObject end;
+    GameObject start;
+    GameObject end;
     public Canvas canvas;
 
 
