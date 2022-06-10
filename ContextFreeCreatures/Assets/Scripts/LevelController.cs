@@ -13,8 +13,6 @@ public class LevelController : MonoBehaviour
     public GameObject startNode;
     public Canvas canvas;
 
-    private List<float> heights = new List<float>();
-
     private List<float> posWidths = new List<float>();
 
     private GameObject treeArea;
@@ -70,11 +68,9 @@ public class LevelController : MonoBehaviour
 
         for (int i = 0; i < ruleImages.Count; i++)
         {
-            
-
             float width = (startWidth + splitWidth);
 
-            Debug.Log("Height img" + i + " is " + height  + "Width img" + i + " is  " + width);
+            // Debug.Log("Height img" + i + " is " + height  + "Width img" + i + " is  " + width);
 
             float x = RemapRange(width, 0, treeSpaceWidth, -treeSpaceWidth/2, treeSpaceWidth/2);
 

@@ -6,7 +6,14 @@ using UnityEngine.UI;
 public class EndWord : MonoBehaviour
 {
 
+    public Canvas canvas;
     GameObject startNode;
+
+    public Text coinScore;
+
+    public GameObject coinAnimation;
+
+    GameObject coinContainer;
 
     private List<GameObject> endWord = new List<GameObject>();
 
@@ -15,7 +22,9 @@ public class EndWord : MonoBehaviour
     private void Start() 
     {
         startNode = GameObject.Find("StartNode");
+        coinContainer = GameObject.Find("CoinContainer");
         endWord.Add(startNode);
+        coinScore.GetComponent<Text>().text = StaticVariables.CoinCount.ToString();
     }
 
 
@@ -59,6 +68,8 @@ public class EndWord : MonoBehaviour
                     targetWord[i].GetComponent<Animator>().enabled = true;
                     endWord[i].GetComponent<Animator>().Play("GreenGemPop");
                     targetWord[i].GetComponent<Animator>().Play("TGreenPop");
+                    CollectDiamondPrize();
+                    DuplicateCoin(endWord[i].GetComponent<RectTransform>().anchoredPosition);
                 }
                 else if (endWord[i].gameObject.name.Contains("Blue") && targetWord[i].gameObject.name.Contains("Blue"))
                 {
@@ -66,6 +77,9 @@ public class EndWord : MonoBehaviour
                     targetWord[i].GetComponent<Animator>().enabled = true;
                     endWord[i].GetComponent<Animator>().Play("BlueGemPop");
                     targetWord[i].GetComponent<Animator>().Play("TBluePop");
+                    CollectDiamondPrize();
+                    DuplicateCoin(endWord[i].GetComponent<RectTransform>().anchoredPosition);
+                    
                 }
                 else if (endWord[i].gameObject.name.Contains("Purple") && targetWord[i].gameObject.name.Contains("Purple"))
                 {
@@ -73,6 +87,8 @@ public class EndWord : MonoBehaviour
                     targetWord[i].GetComponent<Animator>().enabled = true;
                     endWord[i].GetComponent<Animator>().Play("PurpleGemPop");
                     targetWord[i].GetComponent<Animator>().Play("TPurplePop");
+                    CollectDiamondPrize();
+                    DuplicateCoin(endWord[i].GetComponent<RectTransform>().anchoredPosition);
                 }
                 else
                     yield break;
@@ -86,6 +102,24 @@ public class EndWord : MonoBehaviour
     public int GetEndWordLength()
     {
         return endWord.Count;
+    }
+
+    void CollectDiamondPrize()
+    {
+        StaticVariables.CoinCount += StaticVariables.DiamondPrize;
+        coinScore.GetComponent<Text>().text = StaticVariables.CoinCount.ToString();
+
+    }
+
+    void DuplicateCoin(Vector2 gemPos)
+    {
+        GameObject coinClone = Instantiate(coinAnimation, canvas.transform);
+        coinClone.GetComponent<RectTransform>().anchoredPosition = gemPos;
+        coinClone.transform.SetParent(coinContainer.transform);
+        coinClone.SetActive(true); 
+        
+        coinClone.GetComponent<Animator>().enabled = true;
+        coinClone.GetComponent<Animator>().Play("CoinSpin");
     }
     
 }
