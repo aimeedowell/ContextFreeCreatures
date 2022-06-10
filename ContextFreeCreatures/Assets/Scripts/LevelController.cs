@@ -70,7 +70,7 @@ public class LevelController : MonoBehaviour
 
         for (int i = 0; i < ruleImages.Count; i++)
         {
-            ruleObjects.Add(ruleImages[i]);
+            
 
             float width = (startWidth + splitWidth);
 
@@ -79,8 +79,17 @@ public class LevelController : MonoBehaviour
             float x = RemapRange(width, 0, treeSpaceWidth, -treeSpaceWidth/2, treeSpaceWidth/2);
 
             float y = RemapRange(height, 0, treeSpaceHeight, -treeSpaceHeight/2, treeSpaceHeight/2);
+            
+            GameObject gemClone = Instantiate(ruleImages[i], canvas.transform);
+            gemClone.GetComponent<RectTransform>().anchoredPosition = new Vector2(x, y);
+            gemClone.transform.SetParent(treeArea.transform);
+            gemClone.SetActive(true);
 
-            CloneRuleContent(prevNode, ruleImages[i], x, y);
+            ruleObjects.Add(gemClone);
+
+            cam.GetComponent<AnimateDigging>().DrawLine(prevNode, gemClone);
+
+            // CloneRuleContent(prevNode, ruleImages[i], x, y);
 
             startWidth += splitWidth;
             
@@ -91,6 +100,8 @@ public class LevelController : MonoBehaviour
         if (cam.GetComponent<EndWord>().IsTreeDead())
         {
             bool isCorrect = cam.GetComponent<LevelSolutions>().IsAnswerCorrect(endWord);
+            cam.GetComponent<EndWord>().AnimateEndWord();
+
             StartCoroutine(LevelCompletePopUp(isCorrect));
             Debug.Log(isCorrect);
         } 
@@ -102,7 +113,9 @@ public class LevelController : MonoBehaviour
         yield return new WaitForSeconds(2f);
 
         if (success)
+        {
             cam.GetComponent<LevelEnd>().LevelSuccess(3);
+        }
         else
             cam.GetComponent<LevelEnd>().LevelFailed();
     }
