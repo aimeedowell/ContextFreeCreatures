@@ -100,7 +100,7 @@ public class LevelController : MonoBehaviour
         if (cam.GetComponent<EndWord>().IsTreeDead())
         {
             bool isCorrect = cam.GetComponent<LevelSolutions>().IsAnswerCorrect(endWord);
-            cam.GetComponent<EndWord>().AnimateEndWord();
+            StartCoroutine(cam.GetComponent<EndWord>().AnimateEndWord());
 
             StartCoroutine(LevelCompletePopUp(isCorrect));
             Debug.Log(isCorrect);
@@ -110,7 +110,8 @@ public class LevelController : MonoBehaviour
 
     private IEnumerator LevelCompletePopUp(bool success)
     {
-        yield return new WaitForSeconds(2f);
+        float secs = cam.GetComponent<EndWord>().GetEndWordLength() * 0.5f;
+        yield return new WaitForSeconds(secs);
 
         if (success)
         {
