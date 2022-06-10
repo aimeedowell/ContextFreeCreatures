@@ -116,6 +116,7 @@ public class LevelController : MonoBehaviour
         if (success)
         {
             cam.GetComponent<LevelEnd>().LevelSuccess(3);
+            StaticVariables.Level1Stars = 3;
         }
         else
             cam.GetComponent<LevelEnd>().LevelFailed();
