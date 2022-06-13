@@ -8,7 +8,7 @@ public class AnimateDigging : MonoBehaviour
     public GameObject lineImage;
 
     public GameObject lineImageContainer;
-    public GameObject lineContainerContainer;
+    public GameObject mask;
     GameObject start;
     GameObject end;
     public Canvas canvas;
@@ -25,13 +25,19 @@ public class AnimateDigging : MonoBehaviour
         end = endObj;
 
         GameObject lineContain = Instantiate(lineImageContainer, canvas.transform);
-        lineContain.transform.SetParent(lineContainerContainer.transform);
+        lineContain.transform.SetParent(mask.transform);
         lineContain.SetActive(true);
+        
 
         GetAngle(lineContain);
         lineContain.transform.GetChild(0).GetComponent<RectTransform>().sizeDelta = new Vector2(lineContain.transform.GetChild(0).GetComponent<RectTransform>().sizeDelta.x, GetHeightDistance());
         lineContain.transform.GetChild(0).GetComponent<RectTransform>().localPosition = new Vector3(0, -GetHeightDistance()/2, 0);;
         lineContain.GetComponent<RectTransform>().transform.position = start.GetComponent<RectTransform>().transform.position; 
+
+        mask.SetActive(true);
+        mask.GetComponent<Animator>().Play("MaskingLine");
+
+
     }
     void GetAngle(GameObject contain)
     {
