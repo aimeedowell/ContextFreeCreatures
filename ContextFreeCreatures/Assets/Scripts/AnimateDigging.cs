@@ -8,6 +8,8 @@ public class AnimateDigging : MonoBehaviour
     public GameObject lineImage;
 
     public GameObject lineImageContainer;
+
+    public GameObject maskContainer;
     public GameObject mask;
     GameObject start;
     GameObject end;
@@ -25,7 +27,9 @@ public class AnimateDigging : MonoBehaviour
         end = endObj;
 
         GameObject lineContain = Instantiate(lineImageContainer, canvas.transform);
-        lineContain.transform.SetParent(mask.transform);
+        GameObject maskContain = Instantiate(mask, canvas.transform);
+        lineContain.transform.SetParent(maskContain.transform);
+        maskContain.transform.SetParent(maskContainer.transform);
         lineContain.SetActive(true);
         
 
@@ -34,8 +38,8 @@ public class AnimateDigging : MonoBehaviour
         lineContain.transform.GetChild(0).GetComponent<RectTransform>().localPosition = new Vector3(0, -GetHeightDistance()/2, 0);;
         lineContain.GetComponent<RectTransform>().transform.position = start.GetComponent<RectTransform>().transform.position; 
 
-        mask.SetActive(true);
-        mask.GetComponent<Animator>().Play("MaskingLine");
+        maskContain.SetActive(true);
+        maskContain.GetComponent<Animator>().Play("MaskingLine");
 
 
     }
