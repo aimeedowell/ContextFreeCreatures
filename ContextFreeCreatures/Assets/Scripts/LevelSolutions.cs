@@ -4,19 +4,21 @@ using UnityEngine;
 
 public class LevelSolutions : MonoBehaviour
 {
+    private List<string> tutorialSol = new List<string> {"DarkBlue", "Red"};
+
+
     private List<string> level1Sol = new List<string> {"Blue", "Green", "Purple", "Green", "Blue"};
     private int bestNumOfNodesLev1 = 3;
     private float averageTimeLev1 = 30f;
 
-    private List<List<string>> allSolutions = new List<List<string>>();
-   
-    
 
     public bool IsAnswerCorrect(List<GameObject> elements)
     {
         // Test from Level selection page 
         switch(StaticVariables.Level) 
         {
+            case 0:
+                return CheckListMatchesAnswer(elements, tutorialSol);
             case 1:
                 return CheckListMatchesAnswer(elements, level1Sol);
             case 2:
@@ -30,6 +32,8 @@ public class LevelSolutions : MonoBehaviour
     {
         switch(StaticVariables.Level) 
         {
+            case 0:
+                return 3;
             case 1:
                 return CalculateStars(timeElapsed, averageTimeLev1, numberOfNodesUsed, bestNumOfNodesLev1);
             case 2:
