@@ -67,6 +67,7 @@ public class EndWord : MonoBehaviour
                     endWord[i].GetComponent<Animator>().enabled = true;
                     targetWord[i].GetComponent<Animator>().enabled = true;
                     endWord[i].GetComponent<Animator>().Play("GreenGemPop");
+                    endWord[i].GetComponent<AudioSource>().Play(0);
                     targetWord[i].GetComponent<Animator>().Play("TGreenPop");
                     CollectDiamondPrize();
                     DuplicateCoin(endWord[i].GetComponent<RectTransform>().anchoredPosition);
@@ -76,6 +77,7 @@ public class EndWord : MonoBehaviour
                     endWord[i].GetComponent<Animator>().enabled = true;
                     targetWord[i].GetComponent<Animator>().enabled = true;
                     endWord[i].GetComponent<Animator>().Play("BlueGemPop");
+                    endWord[i].GetComponent<AudioSource>().Play(0);
                     targetWord[i].GetComponent<Animator>().Play("TBluePop");
                     CollectDiamondPrize();
                     DuplicateCoin(endWord[i].GetComponent<RectTransform>().anchoredPosition);
@@ -86,6 +88,7 @@ public class EndWord : MonoBehaviour
                     endWord[i].GetComponent<Animator>().enabled = true;
                     targetWord[i].GetComponent<Animator>().enabled = true;
                     endWord[i].GetComponent<Animator>().Play("PurpleGemPop");
+                    endWord[i].GetComponent<AudioSource>().Play(0);
                     targetWord[i].GetComponent<Animator>().Play("TPurplePop");
                     CollectDiamondPrize();
                     DuplicateCoin(endWord[i].GetComponent<RectTransform>().anchoredPosition);

@@ -11,6 +11,9 @@ public class DragAndDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler
     public bool hasDropped = false;
     public GameObject duplicate;
 
+    public AudioSource onCLick;
+    public AudioSource offClick;
+
     private void Awake() 
     {
         rectTransform = GetComponent<RectTransform>();
