@@ -29,6 +29,7 @@ public class DropToNode : MonoBehaviour, IDropHandler
             float width = GetComponent<RectTransform>().transform.localPosition.x;
 
             cam.GetComponent<LevelController>().GetContents(data.pointerDrag.GetComponent<RuleContents>().GetRuleImages(), this.gameObject, height);
+            data.pointerDrag.SetActive(false);
             // data.pointerDrag.GetComponent<LevelController>().GetContents( this.gameObject, height);
             
         }
