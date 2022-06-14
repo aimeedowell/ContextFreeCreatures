@@ -120,6 +120,7 @@ public class EndWord : MonoBehaviour
         
         coinClone.GetComponent<Animator>().enabled = true;
         coinClone.GetComponent<Animator>().Play("CoinSpin");
+        coinClone.GetComponent<AudioSource>().Play(0);
     }
     
 }

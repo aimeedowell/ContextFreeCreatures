@@ -33,6 +33,7 @@ public class LevelEnd : MonoBehaviour
         sucessPopUp.SetActive(true);
         starL.SetActive(true);
         starL.GetComponent<Animator>().Play("StarLeft");
+        starL.GetComponent<AudioSource>().Play(0);
         if (noOfStars > 1)
         {
             
@@ -54,6 +55,7 @@ public class LevelEnd : MonoBehaviour
 
         starM.SetActive(true);
         starM.GetComponent<Animator>().Play("StarMid");
+        starM.GetComponent<AudioSource>().Play(0);
         
         if (noOfStars == 3)
         {            
@@ -66,6 +68,7 @@ public class LevelEnd : MonoBehaviour
         yield return new WaitForSeconds(0.5f);
         starR.SetActive(true);
         starR.GetComponent<Animator>().Play("StarRight");
+        starR.GetComponent<AudioSource>().Play(0);
     }
 
 }
