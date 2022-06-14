@@ -1586,6 +1586,7 @@ MonoBehaviour:
   creatureImage: {fileID: 2133588589}
   startNode: {fileID: 1350965108}
   canvas: {fileID: 172117104}
+  startAnime: {fileID: 1739725779}
 --- !u!1 &335656723
 GameObject:
   m_ObjectHideFlags: 0
@@ -2672,6 +2673,7 @@ MonoBehaviour:
   creatureImage: {fileID: 1180966753}
   startNode: {fileID: 1350965108}
   canvas: {fileID: 172117104}
+  startAnime: {fileID: 1739725779}
 --- !u!1 &523918840
 GameObject:
   m_ObjectHideFlags: 0
@@ -3137,6 +3139,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lineImage: {fileID: 157154876}
   lineImageContainer: {fileID: 1067923475}
+  maskContainer: {fileID: 315802678}
   mask: {fileID: 906801603}
   canvas: {fileID: 172117104}
 --- !u!1 &606291626
@@ -5515,6 +5518,7 @@ MonoBehaviour:
   creatureImage: {fileID: 477464199}
   startNode: {fileID: 1350965108}
   canvas: {fileID: 172117104}
+  startAnime: {fileID: 1739725779}
 --- !u!1 &1078397124
 GameObject:
   m_ObjectHideFlags: 0
@@ -6309,6 +6313,7 @@ MonoBehaviour:
   creatureImage: {fileID: 612148235}
   startNode: {fileID: 1350965108}
   canvas: {fileID: 172117104}
+  startAnime: {fileID: 1739725779}
 --- !u!1 &1262083043
 GameObject:
   m_ObjectHideFlags: 0
@@ -6840,6 +6845,7 @@ MonoBehaviour:
   creatureImage: {fileID: 1929246301}
   startNode: {fileID: 1350965108}
   canvas: {fileID: 172117104}
+  startAnime: {fileID: 1739725779}
 --- !u!1 &1390068754
 GameObject:
   m_ObjectHideFlags: 0
