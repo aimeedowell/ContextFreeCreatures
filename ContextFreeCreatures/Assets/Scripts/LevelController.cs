@@ -8,8 +8,7 @@ public class LevelController : MonoBehaviour
 {
     GameObject cam;
     public GameObject spriteBackground;
-    public List<GameObject> ruleImages;
-    public GameObject creatureImage;
+
     public GameObject startNode;
     public Canvas canvas;
 
@@ -49,7 +48,7 @@ public class LevelController : MonoBehaviour
         }
     }
 
-    public void ReplaceNode(Vector2 node)
+    public void ReplaceNode(GameObject creatureImage, Vector2 node)
     {
         GameObject bkg = Instantiate(spriteBackground, canvas.transform);
         bkg.GetComponent<RectTransform>().anchoredPosition = node;
@@ -66,7 +65,7 @@ public class LevelController : MonoBehaviour
         numberOfNodesUsed += 1;
     }
 
-    public void GetContents(GameObject prevNode, float prevNodeY)
+    public void GetContents(List<GameObject> ruleImages, GameObject prevNode, float prevNodeY)
     {
         int imageCount = ruleImages.Count;
 
