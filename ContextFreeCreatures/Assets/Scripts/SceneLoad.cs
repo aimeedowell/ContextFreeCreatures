@@ -11,6 +11,12 @@ public class SceneLoad : MonoBehaviour
         
     }
 
+    public void ToTutorialLevel()
+    {
+        SceneManager.LoadScene("Tutorial");
+    }
+
+
     public void ToLevelSelector()
     {
         SceneManager.LoadScene("LevelSelection");
