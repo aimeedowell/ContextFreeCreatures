@@ -35,7 +35,8 @@ public class LevelController : MonoBehaviour
         treeSpaceWidth = rectTransform.rect.width;
         treeSpaceHeight = rectTransform.rect.height;
         timeElapsed = Time.time;
-        
+        if (StaticVariables.Level > 0)
+            cam.GetComponent<MusicControl>().SetSliderValue(StaticVariables.VolumeLevel);
     }
 
     private void Update() 
