@@ -132,7 +132,10 @@ public class LevelController : MonoBehaviour
             cam.GetComponent<LevelEnd>().LevelSuccess(noOfStars);
         }
         else
+        {
+            cam.GetComponent<EndWord>().LevelFailRemoveCoins();
             cam.GetComponent<LevelEnd>().LevelFailed();
+        }
     }
 
     void CloneRuleContent(GameObject prevNode, GameObject image, float width, float height)

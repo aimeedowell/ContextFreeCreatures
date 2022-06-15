@@ -19,12 +19,15 @@ public class EndWord : MonoBehaviour
 
     public List<GameObject> targetWord;
 
+    int startCoinScore;
+
     private void Start() 
     {
         startNode = GameObject.Find("StartNode");
         coinContainer = GameObject.Find("CoinContainer");
         endWord.Add(startNode);
         coinScore.GetComponent<Text>().text = StaticVariables.CoinCount.ToString();
+        startCoinScore = StaticVariables.CoinCount;
     }
 
 
@@ -146,6 +149,13 @@ public class EndWord : MonoBehaviour
         coinClone.GetComponent<Animator>().enabled = true;
         coinClone.GetComponent<Animator>().Play("CoinSpin");
         coinClone.GetComponent<AudioSource>().Play(0);
+    }
+
+    public void LevelFailRemoveCoins()
+    {
+        int loss = StaticVariables.CoinCount - startCoinScore;
+        int newScore = StaticVariables.CoinCount - loss;
+        coinScore.GetComponent<Text>().text = newScore.ToString();
     }
     
 }
