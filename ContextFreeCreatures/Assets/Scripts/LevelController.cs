@@ -23,10 +23,9 @@ public class LevelController : MonoBehaviour
 
     private Vector2 nodeAnchPos;
 
-    private bool hasTimeStarted = false;
     private float timeElapsed = 0f;
     private int numberOfNodesUsed = 0;
-    public GameObject startAnime;
+
 
     private void Start() 
     {
@@ -35,17 +34,13 @@ public class LevelController : MonoBehaviour
         rectTransform = (RectTransform)treeArea.transform;
         treeSpaceWidth = rectTransform.rect.width;
         treeSpaceHeight = rectTransform.rect.height;
+        timeElapsed = Time.time;
         
     }
 
     private void Update() 
     {
-        if (startAnime.activeSelf && hasTimeStarted == false)
-        {
-            timeElapsed = Time.time;
-            hasTimeStarted = true;
-            Debug.Log("Timer started");
-        }
+
     }
 
     public void ReplaceNode(GameObject creatureImage, Vector2 node)
@@ -126,14 +121,15 @@ public class LevelController : MonoBehaviour
         timeElapsed = Time.time - timeElapsed;
         Debug.Log("Time taken = " + timeElapsed);
         float secs = cam.GetComponent<EndWord>().GetEndWordLength() * 0.5f;
+
         yield return new WaitForSeconds(secs+ 1f);
+        
 
         if (success)
         {
             int noOfStars = cam.GetComponent<LevelSolutions>().GetNumberOfStars(timeElapsed, numberOfNodesUsed);
 
             cam.GetComponent<LevelEnd>().LevelSuccess(noOfStars);
-            StaticVariables.Level1Stars = noOfStars;
         }
         else
             cam.GetComponent<LevelEnd>().LevelFailed();

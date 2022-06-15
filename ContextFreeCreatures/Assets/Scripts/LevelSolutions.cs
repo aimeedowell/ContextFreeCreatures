@@ -35,7 +35,9 @@ public class LevelSolutions : MonoBehaviour
             case 0:
                 return 3;
             case 1:
-                return CalculateStars(timeElapsed, averageTimeLev1, numberOfNodesUsed, bestNumOfNodesLev1);
+                int stars = CalculateStars(timeElapsed, averageTimeLev1, numberOfNodesUsed, bestNumOfNodesLev1);
+                StaticVariables.Level1Stars = stars;
+                return stars;
             case 2:
                 return 3;
             default:
