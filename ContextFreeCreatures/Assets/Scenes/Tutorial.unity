@@ -2495,6 +2495,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45fb13bbe438f4c9aa71caec4434ac16, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  canvas: {fileID: 172117104}
   hasDropped: 0
   duplicate: {fileID: 330120802}
   onCLick: {fileID: 0}
@@ -3906,6 +3907,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45fb13bbe438f4c9aa71caec4434ac16, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  canvas: {fileID: 172117104}
   hasDropped: 0
   duplicate: {fileID: 504108877}
   onCLick: {fileID: 0}
@@ -7299,6 +7301,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45fb13bbe438f4c9aa71caec4434ac16, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  canvas: {fileID: 172117104}
   hasDropped: 0
   duplicate: {fileID: 1074799009}
   onCLick: {fileID: 0}
@@ -8465,6 +8468,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45fb13bbe438f4c9aa71caec4434ac16, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  canvas: {fileID: 172117104}
   hasDropped: 0
   duplicate: {fileID: 1254074377}
   onCLick: {fileID: 0}
@@ -9156,6 +9160,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45fb13bbe438f4c9aa71caec4434ac16, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  canvas: {fileID: 172117104}
   hasDropped: 0
   duplicate: {fileID: 1372026224}
   onCLick: {fileID: 0}
