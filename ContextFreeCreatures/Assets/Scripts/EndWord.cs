@@ -26,8 +26,8 @@ public class EndWord : MonoBehaviour
         startNode = GameObject.Find("StartNode");
         coinContainer = GameObject.Find("CoinContainer");
         endWord.Add(startNode);
-        coinScore.GetComponent<Text>().text = StaticVariables.CoinCount.ToString();
-        startCoinScore = StaticVariables.CoinCount;
+        coinScore.GetComponent<Text>().text = PlayerPrefs.GetInt("Coins").ToString();
+        startCoinScore = PlayerPrefs.GetInt("Coins");
     }
 
 

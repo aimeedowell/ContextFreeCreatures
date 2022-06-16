@@ -129,7 +129,6 @@ public class LevelController : MonoBehaviour
         if (success)
         {
             int noOfStars = cam.GetComponent<LevelSolutions>().GetNumberOfStars(timeElapsed, numberOfNodesUsed);
-
             cam.GetComponent<LevelEnd>().LevelSuccess(noOfStars);
         }
         else
@@ -137,6 +136,8 @@ public class LevelController : MonoBehaviour
             cam.GetComponent<EndWord>().LevelFailRemoveCoins();
             cam.GetComponent<LevelEnd>().LevelFailed();
         }
+
+        SaveProgress();
     }
 
     void CloneRuleContent(GameObject prevNode, GameObject image, float width, float height)
@@ -154,7 +155,24 @@ public class LevelController : MonoBehaviour
     {
         return (((x - oldMin) * (newMax - newMin)) / (oldMax - oldMin)) + newMin;
     }
+
+    void SaveProgress()
+    {
+        PlayerPrefs.SetInt("Coins", StaticVariables.CoinCount);
+        switch(StaticVariables.Level) 
+        {
+            case 1:
+                PlayerPrefs.SetInt("Level1Stars", StaticVariables.Level1Stars);
+                break;
+            case 2:
+                break;
+        }
+        
+        PlayerPrefs.Save();
+        Debug.Log("Game data saved!");
+    }
     
 }
+
 
 

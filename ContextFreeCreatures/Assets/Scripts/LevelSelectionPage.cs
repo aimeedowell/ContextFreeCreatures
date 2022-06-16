@@ -30,7 +30,7 @@ public class LevelSelectionPage : MonoBehaviour
 
     void SetStars()
     {
-        for (int i = 0; i < StaticVariables.Level1Stars; i++)
+        for (int i = 0; i < PlayerPrefs.GetInt("Level1Stars"); i++)
         {
             Transform stars = level1.transform.Find("Stars");
             if (i == 0)
@@ -40,6 +40,8 @@ public class LevelSelectionPage : MonoBehaviour
             else if (i == 2)
                 stars.transform.Find("Star3").gameObject.SetActive(true);
         }   
+
+        // Add the same for each level
     }
             
 }

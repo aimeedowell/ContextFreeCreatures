@@ -77,5 +77,6 @@ public class Tutorial : MonoBehaviour
         DragOne.SetActive(false);
         DragTwo.SetActive(false);
         DragIntro.SetActive(false);
+        PlayerPrefs.SetInt("TutorialComplete", 1);
     }
 }

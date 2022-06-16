@@ -13,13 +13,15 @@ public class SceneLoad : MonoBehaviour
 
     public void ToTutorialLevel()
     {
-        SceneManager.LoadScene("Tutorial");
+        if (PlayerPrefs.GetInt("TutorialComplete") == 0)
+            SceneManager.LoadScene("Tutorial");
     }
 
 
     public void ToLevelSelector()
     {
-        SceneManager.LoadScene("LevelSelection");
+        if (PlayerPrefs.GetInt("TutorialComplete") == 1)
+            SceneManager.LoadScene("LevelSelection");
     }
 
     public void ToLevel1()
