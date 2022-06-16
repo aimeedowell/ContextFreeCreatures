@@ -76,15 +76,15 @@ public class AnimateDigging : MonoBehaviour
 
     void GetAngle(GameObject contain)
     {
-        contain.transform.rotation = Quaternion.FromToRotation(Vector3.up, start.transform.position - end.transform.position);
+        contain.transform.rotation = Quaternion.FromToRotation(Vector3.up, start.transform.localPosition - end.transform.localPosition);
     }
 
     float GetHeightDistance()
     {
-        double y1 = start.transform.position.y;
-        double y2 = end.transform.position.y;
-        double x1 = start.transform.position.x;
-        double x2 = end.transform.position.x;
+        double y1 = start.transform.localPosition.y;
+        double y2 = end.transform.localPosition.y;
+        double x1 = start.transform.localPosition.x;
+        double x2 = end.transform.localPosition.x;
         double power = 2;
 
         double arg1 = Math.Pow((x2-x1), power);
