@@ -61,6 +61,8 @@ public class EndWord : MonoBehaviour
 
     public IEnumerator AnimateEndWord()
     {
+        yield return new WaitForSeconds(2f);
+
         for (int i = 0; i < endWord.Count; i++)
         {
             if (i < targetWord.Count)

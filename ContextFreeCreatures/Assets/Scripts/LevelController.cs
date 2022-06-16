@@ -93,7 +93,7 @@ public class LevelController : MonoBehaviour
             gemClone.GetComponent<RectTransform>().anchoredPosition = new Vector2(x, y);
             gemClone.transform.SetParent(treeArea.transform);
             gemClone.SetActive(true);
-
+            StartCoroutine(FadeAlpha(gemClone, 1.5f));
             ruleObjects.Add(gemClone);
 
             cam.GetComponent<AnimateDigging>().DrawLine(prevNode, gemClone);
@@ -115,15 +115,32 @@ public class LevelController : MonoBehaviour
             Debug.Log(isCorrect);
         } 
     }
+    IEnumerator FadeAlpha(GameObject gem, float duration) 
+    {
+        var image = gem.GetComponent<Image>();
+        var tempColor = image.color;
+        tempColor.a = 0f;
+        var start = tempColor;
+        tempColor.a = 1f;
+        var end = tempColor;
 
+        for (float t = 0f; t<duration; t+=Time.deltaTime) 
+        {
+            float normalizedTime = t/duration;
+            //right here, you can now use normalizedTime as the third parameter in any Lerp from start to end
+            gem.GetComponent<Image>().color = Color.Lerp(start, end, normalizedTime);
+            yield return null;
+        }
+        gem.GetComponent<Image>().color = end; //without this, the value will end at something like 0.9992367
+    }
 
     private IEnumerator LevelCompletePopUp(bool success)
     {
         timeElapsed = Time.time - timeElapsed;
         Debug.Log("Time taken = " + timeElapsed);
-        float secs = cam.GetComponent<EndWord>().GetEndWordLength() * 0.5f;
+        float secs = (cam.GetComponent<EndWord>().GetEndWordLength() * 0.5f) + 2.5f;
 
-        yield return new WaitForSeconds(secs+ 1f);
+        yield return new WaitForSeconds(secs);
         
 
         if (success)

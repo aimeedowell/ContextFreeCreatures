@@ -5955,8 +5955,6 @@ GameObject:
   - component: {fileID: 906801608}
   - component: {fileID: 906801607}
   - component: {fileID: 906801606}
-  - component: {fileID: 906801605}
-  - component: {fileID: 906801609}
   m_Layer: 5
   m_Name: Mask
   m_TagString: Untagged
@@ -5983,25 +5981,6 @@ RectTransform:
   m_AnchoredPosition: {x: 2.7669, y: 313}
   m_SizeDelta: {x: 2128.7761, y: 1}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!95 &906801605
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 906801603}
-  m_Enabled: 0
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: d1dd550b7b9e140ee8c9f42307cc5fa4, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!114 &906801606
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6050,21 +6029,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 906801603}
   m_CullTransparentMesh: 0
---- !u!111 &906801609
-Animation:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 906801603}
-  m_Enabled: 0
-  serializedVersion: 3
-  m_Animation: {fileID: 0}
-  m_Animations: []
-  m_WrapMode: 0
-  m_PlayAutomatically: 0
-  m_AnimatePhysics: 0
-  m_CullingType: 0
 --- !u!1 &915072114
 GameObject:
   m_ObjectHideFlags: 0
