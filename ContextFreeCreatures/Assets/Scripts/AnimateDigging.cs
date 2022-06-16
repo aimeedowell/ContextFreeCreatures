@@ -21,6 +21,11 @@ public class AnimateDigging : MonoBehaviour
     {  
     }
 
+    void Update()
+    {
+
+    }
+
     public void DrawLine(GameObject startObj, GameObject endObj)
     {
         start = startObj;
@@ -31,6 +36,7 @@ public class AnimateDigging : MonoBehaviour
         lineContain.transform.SetParent(maskContain.transform);
         maskContain.transform.SetParent(maskContainer.transform);
         lineContain.SetActive(true);
+        lineContain.GetComponent<RectTransform>().anchoredPosition = new Vector2(0, 0);
         
 
         GetAngle(lineContain);
@@ -38,11 +44,36 @@ public class AnimateDigging : MonoBehaviour
         lineContain.transform.GetChild(0).GetComponent<RectTransform>().localPosition = new Vector3(0, -GetHeightDistance()/2, 0);;
         lineContain.GetComponent<RectTransform>().transform.position = start.GetComponent<RectTransform>().transform.position; 
 
+        float lengthOfMask = 300f;
+
+        Vector2 endSize = new Vector2(maskContain.GetComponent<RectTransform>().sizeDelta.x, lengthOfMask);
+
+        float startY = start.transform.localPosition.y;
+        Vector2 startAnch = new Vector2(0f, startY);
+        Vector2 endAnch = new Vector2(0f, startY - (lengthOfMask/2));
+        // Vector3 endSize = 650;
+        maskContain.GetComponent<RectTransform>().anchoredPosition = startAnch;
         maskContain.SetActive(true);
-        maskContain.GetComponent<Animator>().Play("MaskingLine");
+        // maskContain.GetComponent<Animator>().Play("MaskingLine");
 
-
+        StartCoroutine(MoveMask(lineContain, maskContain, endSize, endAnch, 3f));
     }
+
+    IEnumerator MoveMask(GameObject line, GameObject mask, Vector2 endSize, Vector2 endAnch, float timeToMove)
+    {
+        var currentSize = mask.GetComponent<RectTransform>().sizeDelta;
+        var currentPos = mask.GetComponent<RectTransform>().anchoredPosition;
+        var t = 0f;
+        while(t < 1)
+        {
+            line.GetComponent<RectTransform>().anchoredPosition = new Vector2(0, 0);
+            t += Time.deltaTime / timeToMove;
+            mask.GetComponent<RectTransform>().sizeDelta = Vector2.Lerp(currentSize, endSize, t);
+            mask.GetComponent<RectTransform>().anchoredPosition = Vector2.Lerp(currentPos, endAnch, t);
+            yield return null;
+        }
+    }
+
     void GetAngle(GameObject contain)
     {
         contain.transform.rotation = Quaternion.FromToRotation(Vector3.up, start.transform.position - end.transform.position);
