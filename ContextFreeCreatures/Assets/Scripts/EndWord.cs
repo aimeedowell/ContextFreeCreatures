@@ -28,6 +28,7 @@ public class EndWord : MonoBehaviour
         endWord.Add(startNode);
         coinScore.GetComponent<Text>().text = PlayerPrefs.GetInt("Coins").ToString();
         startCoinScore = PlayerPrefs.GetInt("Coins");
+        StaticVariables.CoinCount = PlayerPrefs.GetInt("Coins");
     }
 
 

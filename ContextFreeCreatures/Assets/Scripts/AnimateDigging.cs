@@ -49,8 +49,9 @@ public class AnimateDigging : MonoBehaviour
         Vector2 endSize = new Vector2(maskContain.GetComponent<RectTransform>().sizeDelta.x, lengthOfMask);
 
         float startY = start.transform.localPosition.y;
-        Vector2 startAnch = new Vector2(0f, startY);
-        Vector2 endAnch = new Vector2(0f, startY - (lengthOfMask/2));
+        float startX = start.transform.localPosition.x;
+        Vector2 startAnch = new Vector2(startX, startY);
+        Vector2 endAnch = new Vector2(startX, startY - (lengthOfMask/2));
         // Vector3 endSize = 650;
         maskContain.GetComponent<RectTransform>().anchoredPosition = startAnch;
         maskContain.SetActive(true);

@@ -19,6 +19,8 @@ public class LevelSelectionPage : MonoBehaviour
         level4 = GameObject.Find("Level 4 Panel");
         level5 = GameObject.Find("Level 5 Panel");
 
+        StaticVariables.Level1Stars = PlayerPrefs.GetInt("Level1Stars");
+        
         SetStars();
     }
 
@@ -32,6 +34,7 @@ public class LevelSelectionPage : MonoBehaviour
     {
         for (int i = 0; i < PlayerPrefs.GetInt("Level1Stars"); i++)
         {
+            
             Transform stars = level1.transform.Find("Stars");
             if (i == 0)
                 stars.transform.Find("Star1").gameObject.SetActive(true);
