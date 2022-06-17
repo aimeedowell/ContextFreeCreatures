@@ -21,6 +21,7 @@ public class LevelController : MonoBehaviour
     float treeSpaceHeight;
     private float maxRows = 6;
 
+    private List<List<GameObject>> tree = new List<List<GameObject>>();
     private Vector2 nodeAnchPos;
 
     private float timeElapsed = 0f;
@@ -68,24 +69,70 @@ public class LevelController : MonoBehaviour
         float splitHeight = treeSpaceHeight/maxRows;
         float startHeight = prevNodeY;
         startHeight = RemapRange(startHeight, -treeSpaceHeight/2, treeSpaceHeight/2,  0, treeSpaceHeight);
-        Debug.Log(startHeight);
-  
-        float splitWidth = treeSpaceWidth/(imageCount + 1); //want to measure no of spaces
+        float height = startHeight - splitHeight;
+
+        float splitWidth = 0;
         float startWidth = 0f;
         
-        float height = startHeight - splitHeight;
+
+        if (prevNodeY == Math.Round(treeSpaceHeight/2))
+        {
+            if (ruleImages.Count > 2)
+                splitWidth = ((treeSpaceWidth-150f)/(imageCount-1)); //want to measure no of spaces
+            else
+                splitWidth = (treeSpaceWidth-150f);
+            startWidth = 150f/2;
+        }
+        else
+        {
+            if (ruleImages.Count == 1)
+                startWidth = RemapRange(prevNode.transform.localPosition.x, -treeSpaceWidth/2, treeSpaceWidth/2, 0, treeSpaceWidth);
+            else
+            {
+                float nodeNeighX = treeSpaceWidth/2;
+
+                for (int i = 0; i < tree.Count; i++)
+                {
+                    for (int j = 0; j < tree[i].Count; j++)
+                    {
+                        if (tree[i][j] == prevNode)
+                            {
+                                if (j == 0)
+                                {
+                                    nodeNeighX = RemapRange(tree[i][j+1].transform.localPosition.x, -treeSpaceWidth/2, treeSpaceWidth/2, 0, treeSpaceWidth);
+                                    break;
+                                }
+                                else 
+                                {
+                                    nodeNeighX = RemapRange(tree[i][j-1].transform.localPosition.x, -treeSpaceWidth/2, treeSpaceWidth/2, 0, treeSpaceWidth);        
+                                    break;
+                                }                    
+                            }
+                    }
+                }
+                float nodeX = RemapRange(prevNode.transform.localPosition.x, -treeSpaceWidth/2, treeSpaceWidth/2, 0, treeSpaceWidth);
+                float newWidth = Mathf.Abs(nodeNeighX - nodeX);
+
+                if (ruleImages.Count > 2)
+                    splitWidth = (newWidth/(imageCount-1));
+                else
+                    splitWidth = newWidth;
+                startWidth = Mathf.Abs(nodeX - (newWidth/2));
+
+            }
+        }
+
 
         List<GameObject> ruleObjects = new List<GameObject>();
 
-        
+
 
         for (int i = 0; i < ruleImages.Count; i++)
         {
-            float width = (startWidth + splitWidth);
 
             // Debug.Log("Height img" + i + " is " + height  + "Width img" + i + " is  " + width);
 
-            float x = RemapRange(width, 0, treeSpaceWidth, -treeSpaceWidth/2, treeSpaceWidth/2);
+            float x = RemapRange(startWidth, 0, treeSpaceWidth, -treeSpaceWidth/2, treeSpaceWidth/2);
 
             float y = RemapRange(height, 0, treeSpaceHeight, -treeSpaceHeight/2, treeSpaceHeight/2);
             
@@ -105,6 +152,7 @@ public class LevelController : MonoBehaviour
         }
 
         List<GameObject> endWord = cam.GetComponent<EndWord>().UpdateEndWord(ruleObjects);
+        tree.Add(ruleObjects);
 
         if (cam.GetComponent<EndWord>().IsTreeDead())
         {
