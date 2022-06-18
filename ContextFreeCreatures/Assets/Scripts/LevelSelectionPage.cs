@@ -52,7 +52,7 @@ public class LevelSelectionPage : MonoBehaviour
         for (int i = 0; i < PlayerPrefs.GetInt("Level2Stars"); i++)
         {
             
-            Transform stars = level1.transform.Find("Stars");
+            Transform stars = level2.transform.Find("Stars");
             if (i == 0)
                 stars.transform.Find("Star1").gameObject.SetActive(true);
             else if (i == 1)
@@ -64,7 +64,7 @@ public class LevelSelectionPage : MonoBehaviour
         for (int i = 0; i < PlayerPrefs.GetInt("Level3Stars"); i++)
         {
             
-            Transform stars = level1.transform.Find("Stars");
+            Transform stars = level3.transform.Find("Stars");
             if (i == 0)
                 stars.transform.Find("Star1").gameObject.SetActive(true);
             else if (i == 1)
@@ -76,7 +76,7 @@ public class LevelSelectionPage : MonoBehaviour
         for (int i = 0; i < PlayerPrefs.GetInt("Level4Stars"); i++)
         {
             
-            Transform stars = level1.transform.Find("Stars");
+            Transform stars = level4.transform.Find("Stars");
             if (i == 0)
                 stars.transform.Find("Star1").gameObject.SetActive(true);
             else if (i == 1)
@@ -88,7 +88,7 @@ public class LevelSelectionPage : MonoBehaviour
         for (int i = 0; i < PlayerPrefs.GetInt("Level5Stars"); i++)
         {
             
-            Transform stars = level1.transform.Find("Stars");
+            Transform stars = level5.transform.Find("Stars");
             if (i == 0)
                 stars.transform.Find("Star1").gameObject.SetActive(true);
             else if (i == 1)

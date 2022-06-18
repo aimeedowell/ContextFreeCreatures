@@ -38,7 +38,7 @@ public class SceneLoad : MonoBehaviour
 
     public void ToLevel3()
     {
-        // SceneManager.LoadScene("Level3");
+        SceneManager.LoadScene("Level3");
         StaticVariables.Level = 3;
     }
 
