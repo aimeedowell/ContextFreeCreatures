@@ -9,5 +9,13 @@ public static class StaticVariables
 
     public static int Level1Stars { get; set; }
 
+    public static int Level2Stars { get; set; }
+
+    public static int Level3Stars { get; set; }
+
+    public static int Level4Stars { get; set; }
+
+    public static int Level5Stars { get; set; }
+
     public static float VolumeLevel { get; set; }
 }

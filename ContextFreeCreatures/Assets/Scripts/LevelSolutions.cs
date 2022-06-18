@@ -4,12 +4,19 @@ using UnityEngine;
 
 public class LevelSolutions : MonoBehaviour
 {
+    // Tutorial
     private List<string> tutorialSol = new List<string> {"DarkBlue", "Red"};
 
-
+    // Level 1
     private List<string> level1Sol = new List<string> {"Blue", "Green", "Purple", "Green", "Blue"};
     private int bestNumOfNodesLev1 = 3;
     private float averageTimeLev1 = 30f;
+
+    // Level 2
+    private List<string> level2Sol = new List<string> {"Green", "Green", "Dirt", "Yellow", "Yellow"};
+    private int bestNumOfNodesLev2 = 3;
+    private float averageTimeLev2 = 20f;
+
 
 
     public bool IsAnswerCorrect(List<GameObject> elements)
@@ -22,7 +29,7 @@ public class LevelSolutions : MonoBehaviour
             case 1:
                 return CheckListMatchesAnswer(elements, level1Sol);
             case 2:
-                return false;
+                return CheckListMatchesAnswer(elements, level2Sol);
             default:
                 return false;
         }
@@ -30,16 +37,19 @@ public class LevelSolutions : MonoBehaviour
 
     public int GetNumberOfStars(float timeElapsed, int numberOfNodesUsed)
     {
+        int stars = 0;
         switch(StaticVariables.Level) 
         {
             case 0:
                 return 3;
             case 1:
-                int stars = CalculateStars(timeElapsed, averageTimeLev1, numberOfNodesUsed, bestNumOfNodesLev1);
+                stars = CalculateStars(timeElapsed, averageTimeLev1, numberOfNodesUsed, bestNumOfNodesLev1);
                 StaticVariables.Level1Stars = stars;
                 return stars;
             case 2:
-                return 3;
+                stars = CalculateStars(timeElapsed, averageTimeLev2, numberOfNodesUsed, bestNumOfNodesLev2);
+                StaticVariables.Level2Stars = stars;
+                return stars;
             default:
                 return 3;
         }

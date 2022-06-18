@@ -20,6 +20,10 @@ public class LevelSelectionPage : MonoBehaviour
         level5 = GameObject.Find("Level 5 Panel");
 
         StaticVariables.Level1Stars = PlayerPrefs.GetInt("Level1Stars");
+        StaticVariables.Level2Stars = PlayerPrefs.GetInt("Level2Stars");
+        StaticVariables.Level3Stars = PlayerPrefs.GetInt("Level3Stars");
+        StaticVariables.Level4Stars = PlayerPrefs.GetInt("Level4Stars");
+        StaticVariables.Level5Stars = PlayerPrefs.GetInt("Level5Stars");
         
         SetStars();
     }
@@ -32,6 +36,7 @@ public class LevelSelectionPage : MonoBehaviour
 
     void SetStars()
     {
+        // Level 1
         for (int i = 0; i < PlayerPrefs.GetInt("Level1Stars"); i++)
         {
             
@@ -43,6 +48,54 @@ public class LevelSelectionPage : MonoBehaviour
             else if (i == 2)
                 stars.transform.Find("Star3").gameObject.SetActive(true);
         }   
+        // Level 2
+        for (int i = 0; i < PlayerPrefs.GetInt("Level2Stars"); i++)
+        {
+            
+            Transform stars = level1.transform.Find("Stars");
+            if (i == 0)
+                stars.transform.Find("Star1").gameObject.SetActive(true);
+            else if (i == 1)
+                stars.transform.Find("Star2").gameObject.SetActive(true);
+            else if (i == 2)
+                stars.transform.Find("Star3").gameObject.SetActive(true);
+        }  
+        // Level 3
+        for (int i = 0; i < PlayerPrefs.GetInt("Level3Stars"); i++)
+        {
+            
+            Transform stars = level1.transform.Find("Stars");
+            if (i == 0)
+                stars.transform.Find("Star1").gameObject.SetActive(true);
+            else if (i == 1)
+                stars.transform.Find("Star2").gameObject.SetActive(true);
+            else if (i == 2)
+                stars.transform.Find("Star3").gameObject.SetActive(true);
+        }  
+        // Level 4
+        for (int i = 0; i < PlayerPrefs.GetInt("Level4Stars"); i++)
+        {
+            
+            Transform stars = level1.transform.Find("Stars");
+            if (i == 0)
+                stars.transform.Find("Star1").gameObject.SetActive(true);
+            else if (i == 1)
+                stars.transform.Find("Star2").gameObject.SetActive(true);
+            else if (i == 2)
+                stars.transform.Find("Star3").gameObject.SetActive(true);
+        }  
+        // Level 5
+        for (int i = 0; i < PlayerPrefs.GetInt("Level5Stars"); i++)
+        {
+            
+            Transform stars = level1.transform.Find("Stars");
+            if (i == 0)
+                stars.transform.Find("Star1").gameObject.SetActive(true);
+            else if (i == 1)
+                stars.transform.Find("Star2").gameObject.SetActive(true);
+            else if (i == 2)
+                stars.transform.Find("Star3").gameObject.SetActive(true);
+        }  
 
         // Add the same for each level
     }

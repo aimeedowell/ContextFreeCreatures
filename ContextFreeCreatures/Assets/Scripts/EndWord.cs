@@ -89,6 +89,17 @@ public class EndWord : MonoBehaviour
                     DuplicateCoin(endWord[i].GetComponent<RectTransform>().anchoredPosition);
                     
                 }
+                else if (endWord[i].gameObject.name.Contains("Yellow") && targetWord[i].gameObject.name.Contains("Yellow"))
+                {
+                    endWord[i].GetComponent<Animator>().enabled = true;
+                    targetWord[i].GetComponent<Animator>().enabled = true;
+                    endWord[i].GetComponent<Animator>().Play("BlueGemPop");
+                    endWord[i].GetComponent<AudioSource>().Play(0);
+                    targetWord[i].GetComponent<Animator>().Play("TBluePop");
+                    CollectDiamondPrize();
+                    DuplicateCoin(endWord[i].GetComponent<RectTransform>().anchoredPosition);
+                    
+                }
                 else if (endWord[i].gameObject.name.Contains("Red") && targetWord[i].gameObject.name.Contains("Red"))
                 {
                     endWord[i].GetComponent<Animator>().enabled = true;
@@ -112,6 +123,16 @@ public class EndWord : MonoBehaviour
                     
                 }
                 else if (endWord[i].gameObject.name.Contains("Purple") && targetWord[i].gameObject.name.Contains("Purple"))
+                {
+                    endWord[i].GetComponent<Animator>().enabled = true;
+                    targetWord[i].GetComponent<Animator>().enabled = true;
+                    endWord[i].GetComponent<Animator>().Play("PurpleGemPop");
+                    endWord[i].GetComponent<AudioSource>().Play(0);
+                    targetWord[i].GetComponent<Animator>().Play("TPurplePop");
+                    CollectDiamondPrize();
+                    DuplicateCoin(endWord[i].GetComponent<RectTransform>().anchoredPosition);
+                }
+                else if (endWord[i].gameObject.name.Contains("Dirt") && targetWord[i].gameObject.name.Contains("Dirt"))
                 {
                     endWord[i].GetComponent<Animator>().enabled = true;
                     targetWord[i].GetComponent<Animator>().enabled = true;
