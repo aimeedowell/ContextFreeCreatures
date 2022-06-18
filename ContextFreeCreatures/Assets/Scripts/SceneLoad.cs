@@ -44,7 +44,7 @@ public class SceneLoad : MonoBehaviour
 
     public void ToLevel4()
     {
-        // SceneManager.LoadScene("Level4");
+        SceneManager.LoadScene("Level4");
         StaticVariables.Level = 4;
     }
 
