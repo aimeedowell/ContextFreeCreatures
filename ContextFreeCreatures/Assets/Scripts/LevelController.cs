@@ -116,8 +116,10 @@ public class LevelController : MonoBehaviour
                             }
                     }
                 }
+
+
                 float nodeX = RemapRange(prevNode.transform.localPosition.x, -treeSpaceWidth/2, treeSpaceWidth/2, 0, treeSpaceWidth);
-                float newWidth = Mathf.Abs(nodeNeighX - nodeX);
+                float newWidth = Mathf.Abs(nodeNeighX - nodeX) - 100f;
 
                 if (ruleImages.Count > 2)
                     splitWidth = (newWidth/(imageCount-1));
