@@ -65,23 +65,28 @@ public class LevelSolutions : MonoBehaviour
                 return 3;
             case 1:
                 stars = CalculateStars(timeElapsed, averageTimeLev1, numberOfNodesUsed, bestNumOfNodesLev1);
-                StaticVariables.Level1Stars = stars;
+                if (StaticVariables.Level1Stars != 3)
+                    StaticVariables.Level1Stars = stars;
                 return stars;
             case 2:
                 stars = CalculateStars(timeElapsed, averageTimeLev2, numberOfNodesUsed, bestNumOfNodesLev2);
-                StaticVariables.Level2Stars = stars;
+                if (StaticVariables.Level2Stars != 3)
+                    StaticVariables.Level2Stars = stars;
                 return stars;
             case 3:
                 stars = CalculateStars(timeElapsed, averageTimeLev3, numberOfNodesUsed, bestNumOfNodesLev3);
-                StaticVariables.Level3Stars = stars;
+                if (StaticVariables.Level3Stars != 3)
+                    StaticVariables.Level3Stars = stars;
                 return stars;
             case 4:
                 stars = CalculateStars(timeElapsed, averageTimeLev4, numberOfNodesUsed, bestNumOfNodesLev4);
-                StaticVariables.Level4Stars = stars;
+                if (StaticVariables.Level4Stars != 3)
+                    StaticVariables.Level4Stars = stars;
                 return stars;
             case 5:
                 stars = CalculateStars(timeElapsed, averageTimeLev5, numberOfNodesUsed, bestNumOfNodesLev5);
-                StaticVariables.Level5Stars = stars;
+                if (StaticVariables.Level5Stars != 3)
+                    StaticVariables.Level5Stars = stars;
                 return stars;
             default:
                 return 3;
