@@ -132,7 +132,7 @@ public class EndWord : MonoBehaviour
                     CollectDiamondPrize();
                     DuplicateCoin(endWord[i].GetComponent<RectTransform>().anchoredPosition);
                 }
-                else if (endWord[i].gameObject.name.Contains("Dirt") && targetWord[i].gameObject.name.Contains("Dirt"))
+                else if (endWord[i].gameObject.name.Contains("Pink") && targetWord[i].gameObject.name.Contains("Pink"))
                 {
                     endWord[i].GetComponent<Animator>().enabled = true;
                     targetWord[i].GetComponent<Animator>().enabled = true;

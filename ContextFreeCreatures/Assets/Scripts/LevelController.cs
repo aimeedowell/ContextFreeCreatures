@@ -141,14 +141,13 @@ public class LevelController : MonoBehaviour
             gemClone.transform.SetParent(treeArea.transform);
             gemClone.SetActive(true);
             StartCoroutine(FadeAlpha(gemClone, 1.5f));
-            ruleObjects.Add(gemClone);
+
+            if (!ruleImages[i].gameObject.name.Contains("Dirt"))
+                ruleObjects.Add(gemClone);
 
             cam.GetComponent<AnimateDigging>().DrawLine(prevNode, gemClone);
 
-            // CloneRuleContent(prevNode, ruleImages[i], x, y);
-
             startWidth += splitWidth;
-            
         }
 
         List<GameObject> endWord = cam.GetComponent<EndWord>().UpdateEndWord(ruleObjects);

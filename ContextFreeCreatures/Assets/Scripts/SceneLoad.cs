@@ -50,7 +50,7 @@ public class SceneLoad : MonoBehaviour
 
     public void ToLevel5()
     {
-        // SceneManager.LoadScene("Level5");
+        SceneManager.LoadScene("Level5");
         StaticVariables.Level = 5;
     }
 
