@@ -79,8 +79,8 @@ public class LevelController : MonoBehaviour
 
         if (prevNode == startNode)
         {
-            startWidth = -treeSpaceWidth/4;
-            splitWidth = (treeSpaceWidth + (treeSpaceWidth/2))/(imageCount + 1);
+            startWidth = -treeSpaceWidth/(imageCount*2);
+            splitWidth = (treeSpaceWidth + (treeSpaceWidth/imageCount))/(imageCount + 1);
             startWidth += splitWidth;
 
             // if (ruleImages.Count > 2)
