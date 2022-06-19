@@ -79,15 +79,15 @@ public class LevelController : MonoBehaviour
 
         if (prevNode == startNode)
         {
-            splitWidth = (treeSpaceWidth)/(imageCount + 1);
+            startWidth = -treeSpaceWidth/4;
+            splitWidth = (treeSpaceWidth + (treeSpaceWidth/2))/(imageCount + 1);
             startWidth += splitWidth;
-            // Debug.LogError("WIDTH = " + treeSpaceWidth);
-            // Debug.Log("WIDTH = " + treeSpaceWidth);
+
             // if (ruleImages.Count > 2)
-            //     splitWidth = ((treeSpaceWidth-150f)/(imageCount-1)); //want to measure no of spaces
+            //     splitWidth = ((treeSpaceWidth-600f)/(imageCount-1)); //want to measure no of spaces
             // else
-            //     splitWidth = (treeSpaceWidth-150f);
-            // startWidth = 150f/2;
+            //     splitWidth = (treeSpaceWidth-600f);
+            // startWidth = 600f/2;
         }
         else
         {
