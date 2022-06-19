@@ -65,6 +65,7 @@ public class LevelController : MonoBehaviour
     public void GetContents(List<GameObject> ruleImages, GameObject prevNode, float prevNodeY)
     {
         int imageCount = ruleImages.Count;
+        List<GameObject> ruleObjects = new List<GameObject>();
 
         float splitHeight = treeSpaceHeight/maxRows;
         float startHeight = prevNodeY;
@@ -73,15 +74,18 @@ public class LevelController : MonoBehaviour
 
         float splitWidth = 0;
         float startWidth = 0f;
-        
 
-        if (prevNodeY == Math.Round(treeSpaceHeight/2))
+        if (prevNode == startNode)
         {
-            if (ruleImages.Count > 2)
-                splitWidth = ((treeSpaceWidth-150f)/(imageCount-1)); //want to measure no of spaces
-            else
-                splitWidth = (treeSpaceWidth-150f);
-            startWidth = 150f/2;
+            splitWidth = (treeSpaceWidth)/(imageCount + 1);
+            startWidth += splitWidth;
+            // Debug.LogError("WIDTH = " + treeSpaceWidth);
+            // Debug.Log("WIDTH = " + treeSpaceWidth);
+            // if (ruleImages.Count > 2)
+            //     splitWidth = ((treeSpaceWidth-150f)/(imageCount-1)); //want to measure no of spaces
+            // else
+            //     splitWidth = (treeSpaceWidth-150f);
+            // startWidth = 150f/2;
         }
         else
         {
@@ -122,16 +126,8 @@ public class LevelController : MonoBehaviour
             }
         }
 
-
-        List<GameObject> ruleObjects = new List<GameObject>();
-
-
-
         for (int i = 0; i < ruleImages.Count; i++)
         {
-
-            // Debug.Log("Height img" + i + " is " + height  + "Width img" + i + " is  " + width);
-
             float x = RemapRange(startWidth, 0, treeSpaceWidth, -treeSpaceWidth/2, treeSpaceWidth/2);
 
             float y = RemapRange(height, 0, treeSpaceHeight, -treeSpaceHeight/2, treeSpaceHeight/2);
@@ -142,15 +138,16 @@ public class LevelController : MonoBehaviour
             gemClone.SetActive(true);
             StartCoroutine(FadeAlpha(gemClone, 1.5f));
 
-            if (!ruleImages[i].gameObject.name.Contains("Dirt"))
-                ruleObjects.Add(gemClone);
+            // if (!ruleImages[i].gameObject.name.Contains("Dirt"))
+            ruleObjects.Add(gemClone);
 
             cam.GetComponent<AnimateDigging>().DrawLine(prevNode, gemClone);
 
             startWidth += splitWidth;
         }
 
-        List<GameObject> endWord = cam.GetComponent<EndWord>().UpdateEndWord(ruleObjects);
+         
+        List<GameObject> endWord = cam.GetComponent<EndWord>().UpdateEndWord(ruleObjects, prevNode);
         tree.Add(ruleObjects);
 
         if (cam.GetComponent<EndWord>().IsTreeDead())

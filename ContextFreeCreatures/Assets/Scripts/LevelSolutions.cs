@@ -29,7 +29,7 @@ public class LevelSolutions : MonoBehaviour
 
     // Level 5
     private List<string> level5Sol = new List<string> {"Pink","Purple", "Pink", "Pink", "Purple", "Purple"};
-    private int bestNumOfNodesLev5 = 5;
+    private int bestNumOfNodesLev5 = 6;
     private float averageTimeLev5 = 20f;
 
 

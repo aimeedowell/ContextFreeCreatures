@@ -32,18 +32,19 @@ public class EndWord : MonoBehaviour
     }
 
 
-    public List<GameObject> UpdateEndWord(List<GameObject> elements)
+    public List<GameObject> UpdateEndWord(List<GameObject> elements, GameObject prevNode)
     {
         int index = -1;
         for (int i = 0; i < endWord.Count; i ++)
         {
-            if (endWord[i].gameObject.name.Contains("Node"))
+            if (endWord[i] == prevNode)
             {
                 index = i;
                 endWord.RemoveAt(i);
             }
         }
-        endWord.InsertRange(index, elements);
+        if (!elements[0].gameObject.name.Contains("Dirt"))
+            endWord.InsertRange(index, elements);
         return endWord;
     }
 
