@@ -28,7 +28,7 @@ public class Flood : MonoBehaviour
 
     void Update()
     {
-        if (timerStarted)
+        if (timerStarted && !cam.GetComponent<LevelController>().isLevelSucess)
         {
             if (timeRemaining > 0)
             {
@@ -80,7 +80,7 @@ public class Flood : MonoBehaviour
         var currentSize = mask.GetComponent<RectTransform>().sizeDelta;
         var currentPos = mask.GetComponent<RectTransform>().anchoredPosition;
         var t = 0f;
-        while(t < 1)
+        while(t < 1 && !cam.GetComponent<LevelController>().isLevelSucess)
         {
             t += Time.deltaTime / timeToMove;
             mask.GetComponent<RectTransform>().sizeDelta = Vector2.Lerp(currentSize, endSize, t);

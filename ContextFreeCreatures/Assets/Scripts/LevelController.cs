@@ -27,6 +27,8 @@ public class LevelController : MonoBehaviour
     private float timeElapsed = 0f;
     private int numberOfNodesUsed = 0;
 
+    public bool isLevelSucess = false;
+
 
     private void Start() 
     {
@@ -191,6 +193,7 @@ public class LevelController : MonoBehaviour
         {
             int noOfStars = cam.GetComponent<LevelSolutions>().GetNumberOfStars(timeElapsed, numberOfNodesUsed);
             cam.GetComponent<LevelEnd>().LevelSuccess(noOfStars);
+            isLevelSucess = true;
         }
         else
         {
