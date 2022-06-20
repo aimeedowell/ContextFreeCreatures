@@ -9,6 +9,8 @@ public class LevelMenuPanel : MonoBehaviour
     public GameObject exitMenu;
     public GameObject settingsMenu;
 
+    public GameObject infoButton;
+    public GameObject infoPopUp;
     public GameObject startAnime;
 
     // Start is called before the first frame update
@@ -18,6 +20,7 @@ public class LevelMenuPanel : MonoBehaviour
         settingsMenu.SetActive(false);
         exitMenu.SetActive(false);
         popUp.SetActive(false);
+        infoPopUp.SetActive(false);
     }
 
     // Update is called once per frame
@@ -58,5 +61,12 @@ public class LevelMenuPanel : MonoBehaviour
     {
         startAnime.SetActive(false);
     }
-
+    
+    public void OnInfoButtonClick()
+    {
+        if (infoPopUp.activeSelf == false)
+            infoPopUp.SetActive(true);
+        else
+            infoPopUp.SetActive(false);
+    }
 }
