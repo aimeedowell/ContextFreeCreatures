@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class SceneLoad : MonoBehaviour
 {
+    public bool isBadge = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -20,48 +21,140 @@ public class SceneLoad : MonoBehaviour
 
     public void ToLevelSelector()
     {
-        if (PlayerPrefs.GetInt("TutorialComplete") == 1)
-            SceneManager.LoadScene("LevelSelection");
+        if (isBadge)
+        {
+            StartCoroutine(LevelSelect());
+            isBadge = false;
+        }
+        else
+        {
+            if (PlayerPrefs.GetInt("TutorialComplete") == 1)
+                SceneManager.LoadScene("LevelSelection");
+        }
     }
 
     public void ToLevel1()
     {
-        SceneManager.LoadScene("Level1");
-        StaticVariables.Level = 1;
+        if (isBadge)
+        {
+            StartCoroutine(Level1());
+            isBadge = false;
+        }
+        else
+        {
+            SceneManager.LoadScene("Level1");
+            StaticVariables.Level = 1;
+        }
     }
 
     public void ToLevel2()
     {
-        SceneManager.LoadScene("Level2");
-        StaticVariables.Level = 2;
+        if (isBadge)
+        {
+            StartCoroutine(Level2());
+            isBadge = false;
+        }
+        else
+        {
+            SceneManager.LoadScene("Level2");
+            StaticVariables.Level = 2;
+        }
     }
 
     public void ToLevel3()
     {
-        SceneManager.LoadScene("Level3");
-        StaticVariables.Level = 3;
+        if (isBadge)
+        {
+            StartCoroutine(Level3());
+            isBadge = false;
+        }
+        else
+        {
+            SceneManager.LoadScene("Level3");
+            StaticVariables.Level = 3;
+        }
     }
 
     public void ToLevel4()
     {
-        SceneManager.LoadScene("Level4");
-        StaticVariables.Level = 4;
+        if (isBadge)
+        {
+            StartCoroutine(Level4());
+            isBadge = false;
+        }
+        else
+        {
+            SceneManager.LoadScene("Level4");
+            StaticVariables.Level = 4;
+        }
     }
 
     public void ToLevel5()
     {
-        SceneManager.LoadScene("Level5");
-        StaticVariables.Level = 5;
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
+        if (isBadge)
+        {
+            StartCoroutine(Level5());
+            isBadge = false;
+        }
+        else
+        {
+            SceneManager.LoadScene("Level5");
+            StaticVariables.Level = 5;
+        }
     }
 
     public void QuitGame()
     {
         Application.Quit();
     }
-}
+
+    public void ShowBadge()
+    {
+        if (isBadge)
+        {
+            this.gameObject.GetComponent<BadgeUnlock>().ShowBadge();
+        }
+    }
+    
+
+    IEnumerator Level1()
+    {
+        yield return new WaitForSeconds(2f);
+        SceneManager.LoadScene("Level1");
+        StaticVariables.Level = 1;
+    }
+    IEnumerator Level2()
+    {
+        yield return new WaitForSeconds(2f);
+        SceneManager.LoadScene("Level2");
+        StaticVariables.Level = 2;
+    }
+
+    IEnumerator Level3()
+    {
+        yield return new WaitForSeconds(2f);
+        SceneManager.LoadScene("Level3");
+        StaticVariables.Level = 3;
+    }
+
+    IEnumerator Level4()
+    {
+        yield return new WaitForSeconds(2f);
+        SceneManager.LoadScene("Level4");
+        StaticVariables.Level = 4;
+    }
+
+    IEnumerator Level5()
+    {
+        yield return new WaitForSeconds(2f);
+        SceneManager.LoadScene("Level5");
+        StaticVariables.Level = 5;
+    }
+
+    IEnumerator LevelSelect()
+    {
+        yield return new WaitForSeconds(2f);
+        if (PlayerPrefs.GetInt("TutorialComplete") == 1)
+            SceneManager.LoadScene("LevelSelection");
+    }
+} 

@@ -193,6 +193,7 @@ public class LevelController : MonoBehaviour
 
         if (success)
         {
+            cam.GetComponent<SceneLoad>().isBadge = true;
             int noOfStars = cam.GetComponent<LevelSolutions>().GetNumberOfStars(timeElapsed, numberOfNodesUsed);
             cam.GetComponent<LevelEnd>().LevelSuccess(noOfStars);
             isLevelSucess = true;
