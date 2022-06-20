@@ -23,6 +23,8 @@ public static class StaticVariables
     public static int BadgeSymmetry { get; set; }
     public static int BadgeEmptyWord { get; set; }
 
+    public static int BadgeTimer { get; set; }
+
     
 
 }
