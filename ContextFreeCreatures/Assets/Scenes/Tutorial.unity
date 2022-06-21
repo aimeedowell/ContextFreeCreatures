@@ -4719,6 +4719,8 @@ MonoBehaviour:
   popUp: {fileID: 1262083043}
   exitMenu: {fileID: 1195453954}
   settingsMenu: {fileID: 379191911}
+  infoButton: {fileID: 379191911}
+  infoPopUp: {fileID: 379191911}
   startAnime: {fileID: 737564581}
 --- !u!114 &560030407
 MonoBehaviour:
@@ -4732,6 +4734,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8fbb77485614b410181814ef07994c29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isBadge: 0
 --- !u!114 &560030408
 MonoBehaviour:
   m_ObjectHideFlags: 0

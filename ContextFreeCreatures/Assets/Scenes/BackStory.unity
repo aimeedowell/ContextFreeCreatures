@@ -482,7 +482,6 @@ GameObject:
   - component: {fileID: 196991063}
   - component: {fileID: 196991066}
   - component: {fileID: 196991065}
-  - component: {fileID: 196991064}
   m_Layer: 5
   m_Name: Speech (1)
   m_TagString: Untagged
@@ -511,25 +510,6 @@ RectTransform:
   m_AnchoredPosition: {x: -255, y: -240}
   m_SizeDelta: {x: 641.5804, y: 374.717}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!95 &196991064
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 196991062}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: ffddf987756c84741a2bcba44103099d, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!114 &196991065
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -755,6 +735,7 @@ GameObject:
   - component: {fileID: 560030403}
   - component: {fileID: 560030402}
   - component: {fileID: 560030401}
+  - component: {fileID: 560030404}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -828,6 +809,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &560030404
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 560030400}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c4a59dd1ec2d74e93b22db7d1b238bda, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &572872579
 GameObject:
   m_ObjectHideFlags: 0
@@ -1001,7 +994,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &863415636
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1314,7 +1307,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &985053191
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1932,7 +1925,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1904841188
 RectTransform:
   m_ObjectHideFlags: 0
