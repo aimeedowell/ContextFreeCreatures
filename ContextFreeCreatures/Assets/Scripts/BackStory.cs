@@ -22,7 +22,7 @@ public class BackStory : MonoBehaviour
 
     IEnumerator MoveScenes() 
     {
-        yield return new WaitForSeconds(32f);
+        yield return new WaitForSeconds(44f);
         SceneManager.LoadScene("StartPage");
     }
 
