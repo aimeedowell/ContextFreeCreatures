@@ -8,9 +8,6 @@ public class SetStartVolume : MonoBehaviour
     void Start()
     {
         StaticVariables.VolumeLevel = 0.5f;
-         #if DEVELOPMENT_BUILD
-            PlayerPrefs.DeleteAll(); // DELETE BEFORE BUILDING FOR REAL 
-         #endif
     }
 
     // Update is called once per frame
