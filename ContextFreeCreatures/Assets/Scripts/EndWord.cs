@@ -143,6 +143,16 @@ public class EndWord : MonoBehaviour
                     CollectDiamondPrize();
                     DuplicateCoin(endWord[i].GetComponent<RectTransform>().anchoredPosition);
                 }
+                else if (endWord[i].gameObject.name.Contains("Orange") && targetWord[i].gameObject.name.Contains("Orange"))
+                {
+                    endWord[i].GetComponent<Animator>().enabled = true;
+                    targetWord[i].GetComponent<Animator>().enabled = true;
+                    endWord[i].GetComponent<Animator>().Play("PurpleGemPop");
+                    endWord[i].GetComponent<AudioSource>().Play(0);
+                    targetWord[i].GetComponent<Animator>().Play("TPurplePop");
+                    CollectDiamondPrize();
+                    DuplicateCoin(endWord[i].GetComponent<RectTransform>().anchoredPosition);
+                }
                 else
                     yield break;
                 yield return new WaitForSeconds(0.5f);
