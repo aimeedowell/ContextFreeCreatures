@@ -243,6 +243,21 @@ public class LevelController : MonoBehaviour
             case 5:
                 PlayerPrefs.SetInt("Level5Stars", StaticVariables.Level5Stars);
                 break;
+            case 6:
+                PlayerPrefs.SetInt("Level6Stars", StaticVariables.Level6Stars);
+                break;
+            case 7:
+                PlayerPrefs.SetInt("Level7Stars", StaticVariables.Level7Stars);
+                break;
+            case 8:
+                PlayerPrefs.SetInt("Level8Stars", StaticVariables.Level8Stars);
+                break;
+            case 9:
+                PlayerPrefs.SetInt("Level9Stars", StaticVariables.Level9Stars);
+                break;
+            case 10:
+                PlayerPrefs.SetInt("Level10Stars", StaticVariables.Level10Stars);
+                break;
         }
         
         PlayerPrefs.Save();
