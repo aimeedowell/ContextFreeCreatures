@@ -18,6 +18,16 @@ public class DropToNode : MonoBehaviour, IDropHandler
         // Debug.Log("On Drop");
         if (data.pointerDrag != null)
         {
+            if (StaticVariables.Level == 10)
+            {
+                var childElement = data.pointerDrag.gameObject.transform.GetChild(0);
+                if (!childElement.name.Contains("Red") && this.gameObject.name.Contains("Start"))
+                    return;
+                else if (!childElement.name.Contains("Blue") && this.gameObject.name.Contains("Blue"))
+                    return;
+                else if (!childElement.name.Contains("Yellow") && this.gameObject.name.Contains("Yellow"))
+                    return;
+            }
             data.pointerDrag.GetComponent<RectTransform>().transform.position = GetComponent<RectTransform>().transform.position;
             data.pointerDrag.GetComponent<DragAndDrop>().hasDropped = true;
             this.gameObject.SetActive(false);

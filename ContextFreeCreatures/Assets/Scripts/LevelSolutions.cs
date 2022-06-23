@@ -40,6 +40,13 @@ public class LevelSolutions : MonoBehaviour
     private List<string> level7Sol = new List<string> {"Yellow", "Yellow", "Red", "Red", "Orange", "Orange", "Orange", "Orange"};
     private int bestNumOfNodesLev7 = 4;
     private float averageTimeLev7 = 20f;
+
+
+
+
+    private List<string> level10Sol = new List<string> {"Blue", "Green", "Blue", "DarkBlue", "Blue"};
+    private int bestNumOfNodesLev10 = 4;
+    private float averageTimeLev10 = 20f;
         
 
 
@@ -111,6 +118,11 @@ public class LevelSolutions : MonoBehaviour
                 stars = CalculateStars(timeElapsed, averageTimeLev7, numberOfNodesUsed, bestNumOfNodesLev7);
                 if (StaticVariables.Level7Stars != 3)
                     StaticVariables.Level7Stars = stars;
+                return stars;
+            case 10:
+                stars = CalculateStars(timeElapsed, averageTimeLev10, numberOfNodesUsed, bestNumOfNodesLev10);
+                if (StaticVariables.Level10Stars != 3)
+                    StaticVariables.Level10Stars = stars;
                 return stars;
             default:
                 return 3;
