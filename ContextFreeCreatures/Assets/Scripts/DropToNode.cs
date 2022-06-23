@@ -18,7 +18,7 @@ public class DropToNode : MonoBehaviour, IDropHandler
         // Debug.Log("On Drop");
         if (data.pointerDrag != null)
         {
-            if (StaticVariables.Level == 10)
+            if (StaticVariables.Level == 10 || StaticVariables.Level == 9)
             {
                 var childElement = data.pointerDrag.gameObject.transform.GetChild(0);
                 if (!childElement.name.Contains("Red") && this.gameObject.name.Contains("Start"))
@@ -26,6 +26,8 @@ public class DropToNode : MonoBehaviour, IDropHandler
                 else if (!childElement.name.Contains("Blue") && this.gameObject.name.Contains("Blue"))
                     return;
                 else if (!childElement.name.Contains("Yellow") && this.gameObject.name.Contains("Yellow"))
+                    return;
+                else if (!childElement.name.Contains("Pink") && this.gameObject.name.Contains("Pink"))
                     return;
             }
             data.pointerDrag.GetComponent<RectTransform>().transform.position = GetComponent<RectTransform>().transform.position;
