@@ -37,15 +37,23 @@ public class LevelSolutions : MonoBehaviour
     private int bestNumOfNodesLev6 = 4;
     private float averageTimeLev6 = 20f;
 
+   // Level 7
     private List<string> level7Sol = new List<string> {"Yellow", "Yellow", "Red", "Red", "Orange", "Orange", "Orange", "Orange"};
     private int bestNumOfNodesLev7 = 4;
     private float averageTimeLev7 = 20f;
 
+    // Level 8
+    private List<string> level8Sol = new List<string> {"Blue", "Blue", "Blue", "Orange", "Blue", "Orange", "Blue"};
+    private int bestNumOfNodesLev8 = 4;
+    private float averageTimeLev8 = 20f;
 
+
+    // Level 9
     private List<string> level9Sol = new List<string> {"Green", "Green", "Yellow", "Yellow"};
     private int bestNumOfNodesLev9 = 4;
     private float averageTimeLev9 = 20f;
 
+   // Level 10
     private List<string> level10Sol = new List<string> {"Blue", "Green", "Blue", "DarkBlue", "Blue"};
     private int bestNumOfNodesLev10 = 4;
     private float averageTimeLev10 = 20f;
@@ -74,6 +82,8 @@ public class LevelSolutions : MonoBehaviour
                 return CheckListMatchesAnswer(elements, level6Sol);
             case 7:
                 return CheckListMatchesAnswer(elements, level7Sol);
+            case 8:
+                return CheckListMatchesAnswer(elements, level8Sol);
             case 9:
                 return CheckListMatchesAnswer(elements, level9Sol);
             case 10:
@@ -124,6 +134,11 @@ public class LevelSolutions : MonoBehaviour
                 stars = CalculateStars(timeElapsed, averageTimeLev7, numberOfNodesUsed, bestNumOfNodesLev7);
                 if (StaticVariables.Level7Stars != 3)
                     StaticVariables.Level7Stars = stars;
+                return stars;
+            case 8:
+                stars = CalculateStars(timeElapsed, averageTimeLev8, numberOfNodesUsed, bestNumOfNodesLev8);
+                if (StaticVariables.Level8Stars != 3)
+                    StaticVariables.Level8Stars = stars;
                 return stars;
             case 9:
                 stars = CalculateStars(timeElapsed, averageTimeLev9, numberOfNodesUsed, bestNumOfNodesLev9);

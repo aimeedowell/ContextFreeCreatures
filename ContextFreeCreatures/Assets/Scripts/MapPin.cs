@@ -115,7 +115,7 @@ public class MapPin : MonoBehaviour,  IPointerDownHandler, IPointerEnterHandler,
                 cam.GetComponent<SceneLoad>().ToLevel9();
                 break;   
             case 10:
-                cam.GetComponent<SceneLoad>().ToLevel9();
+                cam.GetComponent<SceneLoad>().ToLevel10();
                 break;                 
         }
         // Debug.Log("Mouse Down");
