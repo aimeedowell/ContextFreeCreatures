@@ -32,6 +32,13 @@ public class LevelSolutions : MonoBehaviour
     private int bestNumOfNodesLev5 = 6;
     private float averageTimeLev5 = 20f;
 
+    // Level 6
+    private List<string> level6Sol = new List<string> {"Red","Red", "Red", "Purple", "Red", "Purple", "Purple"};
+    private int bestNumOfNodesLev6 = 4;
+    private float averageTimeLev6 = 20f;
+
+        
+
 
 
     public bool IsAnswerCorrect(List<GameObject> elements)
@@ -51,6 +58,8 @@ public class LevelSolutions : MonoBehaviour
                 return CheckListMatchesAnswer(elements, level4Sol);
             case 5:
                 return CheckListMatchesAnswer(elements, level5Sol);
+            case 6:
+                return CheckListMatchesAnswer(elements, level6Sol);
             default:
                 return false;
         }
@@ -87,6 +96,11 @@ public class LevelSolutions : MonoBehaviour
                 stars = CalculateStars(timeElapsed, averageTimeLev5, numberOfNodesUsed, bestNumOfNodesLev5);
                 if (StaticVariables.Level5Stars != 3)
                     StaticVariables.Level5Stars = stars;
+                return stars;
+            case 6:
+                stars = CalculateStars(timeElapsed, averageTimeLev6, numberOfNodesUsed, bestNumOfNodesLev6);
+                if (StaticVariables.Level6Stars != 3)
+                    StaticVariables.Level6Stars = stars;
                 return stars;
             default:
                 return 3;

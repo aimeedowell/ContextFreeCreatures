@@ -103,6 +103,75 @@ public class SceneLoad : MonoBehaviour
         }
     }
 
+    public void ToLevel6()
+    {
+        if (isBadge)
+        {
+            StartCoroutine(Level6());
+            isBadge = false;
+        }
+        else
+        {
+            SceneManager.LoadScene("Level6");
+            StaticVariables.Level = 6;
+        }
+    }
+
+    public void ToLevel7()
+    {
+        if (isBadge)
+        {
+            StartCoroutine(Level7());
+            isBadge = false;
+        }
+        else
+        {
+            SceneManager.LoadScene("Level7");
+            StaticVariables.Level = 7;
+        }
+    }
+
+    public void ToLevel8()
+    {
+        if (isBadge)
+        {
+            StartCoroutine(Level8());
+            isBadge = false;
+        }
+        else
+        {
+            SceneManager.LoadScene("Level8");
+            StaticVariables.Level = 8;
+        }
+    }
+
+    public void ToLevel9()
+    {
+        if (isBadge)
+        {
+            StartCoroutine(Level9());
+            isBadge = false;
+        }
+        else
+        {
+            SceneManager.LoadScene("Level9");
+            StaticVariables.Level = 9;
+        }
+    }
+
+    public void ToLevel10()
+    {
+        if (isBadge)
+        {
+            StartCoroutine(Level10());
+            isBadge = false;
+        }
+        else
+        {
+            SceneManager.LoadScene("Level10");
+            StaticVariables.Level = 10;
+        }
+    }
     public void QuitGame()
     {
         Application.Quit();
@@ -149,6 +218,40 @@ public class SceneLoad : MonoBehaviour
         yield return new WaitForSeconds(2f);
         SceneManager.LoadScene("Level5");
         StaticVariables.Level = 5;
+    }
+
+        IEnumerator Level6()
+    {
+        yield return new WaitForSeconds(2f);
+        SceneManager.LoadScene("Level6");
+        StaticVariables.Level = 6;
+    }
+
+        IEnumerator Level7()
+    {
+        yield return new WaitForSeconds(2f);
+        SceneManager.LoadScene("Level7");
+        StaticVariables.Level = 7;
+    }
+
+        IEnumerator Level8()
+    {
+        yield return new WaitForSeconds(2f);
+        SceneManager.LoadScene("Level8");
+        StaticVariables.Level = 8;
+    }
+
+        IEnumerator Level9()
+    {
+        yield return new WaitForSeconds(9f);
+        SceneManager.LoadScene("Level9");
+        StaticVariables.Level = 9;
+    }
+        IEnumerator Level10()
+    {
+        yield return new WaitForSeconds(2f);
+        SceneManager.LoadScene("Level10");
+        StaticVariables.Level = 10;
     }
 
     IEnumerator LevelSelect()
