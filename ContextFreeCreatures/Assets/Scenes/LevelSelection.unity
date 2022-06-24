@@ -1156,9 +1156,9 @@ RectTransform:
   m_Father: {fileID: 1491809825}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 1186, y: 506}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 226, y: 37}
   m_SizeDelta: {x: 284, y: 184}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &244509528
@@ -1361,7 +1361,7 @@ GameObject:
   - component: {fileID: 313008464}
   - component: {fileID: 313008463}
   m_Layer: 5
-  m_Name: Level 5 Panel
+  m_Name: Level 7 Panel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1382,11 +1382,11 @@ RectTransform:
   - {fileID: 595980696}
   - {fileID: 491682325}
   m_Father: {fileID: 1491809825}
-  m_RootOrder: 4
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 1, y: 0}
-  m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -1601, y: 510.31}
+  m_AnchorMin: {x: 0, y: 0.5}
+  m_AnchorMax: {x: 0, y: 0.5}
+  m_AnchoredPosition: {x: 319, y: 41.309998}
   m_SizeDelta: {x: 284, y: 184}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &313008463
@@ -1896,9 +1896,9 @@ RectTransform:
   m_Father: {fileID: 1491809825}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 1}
-  m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: -390, y: -261.87}
+  m_AnchorMin: {x: 0, y: 0.5}
+  m_AnchorMax: {x: 0, y: 0.5}
+  m_AnchoredPosition: {x: 570, y: 207.13}
   m_SizeDelta: {x: 284, y: 184}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &401789657
@@ -2515,9 +2515,9 @@ RectTransform:
   m_Father: {fileID: 1491809825}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 1, y: 1}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -1219, y: -445.87}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -259, y: 23.130005}
   m_SizeDelta: {x: 284, y: 184}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &474319618
@@ -2743,7 +2743,7 @@ GameObject:
   - component: {fileID: 503510526}
   - component: {fileID: 503510525}
   m_Layer: 5
-  m_Name: Level 6 Panel
+  m_Name: Level 10 Panel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2764,11 +2764,11 @@ RectTransform:
   - {fileID: 354379768}
   - {fileID: 358466642}
   m_Father: {fileID: 1491809825}
-  m_RootOrder: 5
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 1}
-  m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 510, y: -315.84}
+  m_AnchorMin: {x: 1, y: 0.5}
+  m_AnchorMax: {x: 1, y: 0.5}
+  m_AnchoredPosition: {x: -450, y: 153.16}
   m_SizeDelta: {x: 284, y: 184}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &503510525
@@ -4176,9 +4176,9 @@ RectTransform:
   m_Father: {fileID: 1491809825}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 804, y: 196.81}
+  m_AnchorMin: {x: 0.5, y: 0}
+  m_AnchorMax: {x: 0.5, y: 0}
+  m_AnchoredPosition: {x: -156, y: 196.81}
   m_SizeDelta: {x: 284, y: 184}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &835151479
@@ -4912,7 +4912,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelUI: {fileID: 313008461}
   greenPin: {fileID: 21300000, guid: 838c6cfd2adfd4276b3bddd392992f4a, type: 3}
-  levelNumber: 5
+  levelNumber: 7
 --- !u!1 &979791009
 GameObject:
   m_ObjectHideFlags: 0
@@ -5078,7 +5078,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelUI: {fileID: 2088774571}
   greenPin: {fileID: 21300000, guid: 838c6cfd2adfd4276b3bddd392992f4a, type: 3}
-  levelNumber: 7
+  levelNumber: 6
 --- !u!1 &1013356001
 GameObject:
   m_ObjectHideFlags: 0
@@ -5394,7 +5394,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelUI: {fileID: 503510523}
   greenPin: {fileID: 21300000, guid: 838c6cfd2adfd4276b3bddd392992f4a, type: 3}
-  levelNumber: 6
+  levelNumber: 10
 --- !u!1 &1100247477
 GameObject:
   m_ObjectHideFlags: 0
@@ -6065,7 +6065,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelUI: {fileID: 1868925597}
   greenPin: {fileID: 21300000, guid: 838c6cfd2adfd4276b3bddd392992f4a, type: 3}
-  levelNumber: 10
+  levelNumber: 5
 --- !u!1 &1188407055
 GameObject:
   m_ObjectHideFlags: 0
@@ -6296,9 +6296,9 @@ RectTransform:
   m_Father: {fileID: 1491809825}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 1, y: 1}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -884, y: -248.65001}
+  m_AnchorMin: {x: 0.5, y: 1}
+  m_AnchorMax: {x: 0.5, y: 1}
+  m_AnchoredPosition: {x: 76, y: -248.65001}
   m_SizeDelta: {x: 284, y: 184}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1201112148
@@ -7834,12 +7834,12 @@ RectTransform:
   - {fileID: 401789656}
   - {fileID: 1201112147}
   - {fileID: 244509527}
-  - {fileID: 313008462}
-  - {fileID: 503510524}
+  - {fileID: 1868925598}
   - {fileID: 2088774572}
+  - {fileID: 313008462}
   - {fileID: 474319617}
   - {fileID: 835151478}
-  - {fileID: 1868925598}
+  - {fileID: 503510524}
   - {fileID: 403032566}
   - {fileID: 1402541194}
   - {fileID: 815958939}
@@ -9230,7 +9230,7 @@ GameObject:
   - component: {fileID: 1868925600}
   - component: {fileID: 1868925599}
   m_Layer: 5
-  m_Name: Level 10 Panel
+  m_Name: Level 5 Panel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9251,11 +9251,11 @@ RectTransform:
   - {fileID: 1169345798}
   - {fileID: 122287502}
   m_Father: {fileID: 1491809825}
-  m_RootOrder: 9
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 1, y: 0}
-  m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -1778, y: 874}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 142, y: -65}
   m_SizeDelta: {x: 284, y: 184}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1868925599
@@ -9982,7 +9982,7 @@ GameObject:
   - component: {fileID: 2088774574}
   - component: {fileID: 2088774573}
   m_Layer: 5
-  m_Name: Level 7 Panel
+  m_Name: Level 6 Panel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10003,11 +10003,11 @@ RectTransform:
   - {fileID: 453860877}
   - {fileID: 1532513058}
   m_Father: {fileID: 1491809825}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 1630, y: -629.87}
+  m_AnchorMin: {x: 1, y: 0}
+  m_AnchorMax: {x: 1, y: 0}
+  m_AnchoredPosition: {x: -290, y: 309.13}
   m_SizeDelta: {x: 284, y: 184}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2088774573

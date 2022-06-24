@@ -37,7 +37,7 @@ public class BadgeUnlock : MonoBehaviour
                 PlayerPrefs.SetInt("BadgeEmptyWord", StaticVariables.BadgeEmptyWord);
             }
         }
-        else if (StaticVariables.Level == 5)
+        else if (StaticVariables.Level == 7)
         {
             if (PlayerPrefs.GetInt("BadgeTimer") == 0)
             {
