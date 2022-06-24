@@ -70,89 +70,21 @@ public class EndWord : MonoBehaviour
             if (i < targetWord.Count)
             {
                 if (endWord[i].gameObject.name.Contains("Green") && targetWord[i].gameObject.name.Contains("Green"))
-                {
-                    endWord[i].GetComponent<Animator>().enabled = true;
-                    targetWord[i].GetComponent<Animator>().enabled = true;
-                    endWord[i].GetComponent<Animator>().Play("GreenGemPop");
-                    endWord[i].GetComponent<AudioSource>().Play(0);
-                    targetWord[i].GetComponent<Animator>().Play("TGreenPop");
-                    CollectDiamondPrize();
-                    DuplicateCoin(endWord[i].GetComponent<RectTransform>().anchoredPosition);
-                }
+                    DiamondPop(endWord[i], targetWord[i], "TGreenPop", "GreenGemPop");
                 else if (endWord[i].gameObject.name.Contains("DarkBlue") && targetWord[i].gameObject.name.Contains("DarkBlue"))
-                {
-                    endWord[i].GetComponent<Animator>().enabled = true;
-                    targetWord[i].GetComponent<Animator>().enabled = true;
-                    endWord[i].GetComponent<Animator>().Play("BlueGemPop");
-                    endWord[i].GetComponent<AudioSource>().Play(0);
-                    targetWord[i].GetComponent<Animator>().Play("TBluePop");
-                    CollectDiamondPrize();
-                    DuplicateCoin(endWord[i].GetComponent<RectTransform>().anchoredPosition);
-                    
-                }
+                    DiamondPop(endWord[i], targetWord[i], "TBluePop", "BlueGemPop");                   
                 else if (endWord[i].gameObject.name.Contains("Yellow") && targetWord[i].gameObject.name.Contains("Yellow"))
-                {
-                    endWord[i].GetComponent<Animator>().enabled = true;
-                    targetWord[i].GetComponent<Animator>().enabled = true;
-                    endWord[i].GetComponent<Animator>().Play("BlueGemPop");
-                    endWord[i].GetComponent<AudioSource>().Play(0);
-                    targetWord[i].GetComponent<Animator>().Play("TBluePop");
-                    CollectDiamondPrize();
-                    DuplicateCoin(endWord[i].GetComponent<RectTransform>().anchoredPosition);
-                    
-                }
+                    DiamondPop(endWord[i], targetWord[i], "TBluePop", "BlueGemPop");  
                 else if (endWord[i].gameObject.name.Contains("Red") && targetWord[i].gameObject.name.Contains("Red"))
-                {
-                    endWord[i].GetComponent<Animator>().enabled = true;
-                    targetWord[i].GetComponent<Animator>().enabled = true;
-                    endWord[i].GetComponent<Animator>().Play("BlueGemPop");
-                    endWord[i].GetComponent<AudioSource>().Play(0);
-                    targetWord[i].GetComponent<Animator>().Play("TBluePop");
-                    CollectDiamondPrize();
-                    DuplicateCoin(endWord[i].GetComponent<RectTransform>().anchoredPosition);
-                    
-                }
+                    DiamondPop(endWord[i], targetWord[i], "TBluePop", "BlueGemPop");
                 else if (endWord[i].gameObject.name.Contains("Blue") && targetWord[i].gameObject.name.Contains("Blue"))
-                {
-                    endWord[i].GetComponent<Animator>().enabled = true;
-                    targetWord[i].GetComponent<Animator>().enabled = true;
-                    endWord[i].GetComponent<Animator>().Play("BlueGemPop");
-                    endWord[i].GetComponent<AudioSource>().Play(0);
-                    targetWord[i].GetComponent<Animator>().Play("TBluePop");
-                    CollectDiamondPrize();
-                    DuplicateCoin(endWord[i].GetComponent<RectTransform>().anchoredPosition);
-                    
-                }
+                    DiamondPop(endWord[i], targetWord[i], "TBluePop", "BlueGemPop");
                 else if (endWord[i].gameObject.name.Contains("Purple") && targetWord[i].gameObject.name.Contains("Purple"))
-                {
-                    endWord[i].GetComponent<Animator>().enabled = true;
-                    targetWord[i].GetComponent<Animator>().enabled = true;
-                    endWord[i].GetComponent<Animator>().Play("PurpleGemPop");
-                    endWord[i].GetComponent<AudioSource>().Play(0);
-                    targetWord[i].GetComponent<Animator>().Play("TPurplePop");
-                    CollectDiamondPrize();
-                    DuplicateCoin(endWord[i].GetComponent<RectTransform>().anchoredPosition);
-                }
+                    DiamondPop(endWord[i], targetWord[i], "TPurplePop", "PurpleGemPop");
                 else if (endWord[i].gameObject.name.Contains("Pink") && targetWord[i].gameObject.name.Contains("Pink"))
-                {
-                    endWord[i].GetComponent<Animator>().enabled = true;
-                    targetWord[i].GetComponent<Animator>().enabled = true;
-                    endWord[i].GetComponent<Animator>().Play("PurpleGemPop");
-                    endWord[i].GetComponent<AudioSource>().Play(0);
-                    targetWord[i].GetComponent<Animator>().Play("TPurplePop");
-                    CollectDiamondPrize();
-                    DuplicateCoin(endWord[i].GetComponent<RectTransform>().anchoredPosition);
-                }
+                    DiamondPop(endWord[i], targetWord[i], "TPurplePop", "PurpleGemPop");
                 else if (endWord[i].gameObject.name.Contains("Orange") && targetWord[i].gameObject.name.Contains("Orange"))
-                {
-                    endWord[i].GetComponent<Animator>().enabled = true;
-                    targetWord[i].GetComponent<Animator>().enabled = true;
-                    endWord[i].GetComponent<Animator>().Play("PurpleGemPop");
-                    endWord[i].GetComponent<AudioSource>().Play(0);
-                    targetWord[i].GetComponent<Animator>().Play("TPurplePop");
-                    CollectDiamondPrize();
-                    DuplicateCoin(endWord[i].GetComponent<RectTransform>().anchoredPosition);
-                }
+                    DiamondPop(endWord[i], targetWord[i], "TPurplePop", "PurpleGemPop");
                 else
                     yield break;
                 yield return new WaitForSeconds(0.5f);
@@ -161,6 +93,26 @@ public class EndWord : MonoBehaviour
                 yield break;
         }
     }    
+
+    void DiamondPop(GameObject endWord, GameObject targetWord, string targetAnime, string gemAnime)
+    {
+        targetWord.GetComponent<Animator>().enabled = true;
+        targetWord.GetComponent<Animator>().Play(targetAnime);
+
+        if (StaticVariables.Level == 5 && this.gameObject.GetComponent<Frozen>().IsGemFrozen(endWord))
+        {
+            Debug.Log("Gem is Frozen");
+            this.gameObject.GetComponent<Frozen>().PlayFreezeAnimation(endWord);
+        }
+        else
+        {
+            endWord.GetComponent<Animator>().enabled = true;
+            endWord.GetComponent<Animator>().Play(gemAnime);
+            endWord.GetComponent<AudioSource>().Play(0);
+            CollectDiamondPrize();
+            DuplicateCoin(endWord.GetComponent<RectTransform>().anchoredPosition);
+        }
+    }
 
     public int GetEndWordLength()
     {
@@ -171,7 +123,6 @@ public class EndWord : MonoBehaviour
     {
         StaticVariables.CoinCount += StaticVariables.DiamondPrize;
         coinScore.GetComponent<Text>().text = StaticVariables.CoinCount.ToString();
-
     }
 
     void DuplicateCoin(Vector2 gemPos)

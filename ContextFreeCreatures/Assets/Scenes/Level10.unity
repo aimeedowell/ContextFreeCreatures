@@ -7388,8 +7388,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: This level relates to the language of words {a, b} where there contains
-    an even number of a's.
+  m_Text: This level relates to the language of words {id, *, +} which forms non
+    ambiguous expressions e.g. id * id + id.
 --- !u!222 &746240700
 CanvasRenderer:
   m_ObjectHideFlags: 0

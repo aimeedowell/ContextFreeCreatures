@@ -27,7 +27,7 @@ public class LevelController : MonoBehaviour
     private float timeElapsed = 0f;
     private int numberOfNodesUsed = 0;
 
-    public bool isLevelSucess = false;
+    public bool isLevelEnd = false;
 
 
     private void Start() 
@@ -140,6 +140,10 @@ public class LevelController : MonoBehaviour
             gemClone.GetComponent<RectTransform>().anchoredPosition = new Vector2(x, y);
             gemClone.transform.SetParent(treeArea.transform);
             gemClone.SetActive(true);
+
+            if (StaticVariables.Level == 5)
+                cam.GetComponent<Frozen>().AddFrozenGem(gemClone, treeArea, canvas, new Vector2(x, y));
+
             StartCoroutine(FadeAlpha(gemClone, 1.5f));
 
             // if (!ruleImages[i].gameObject.name.Contains("Dirt"))
@@ -156,6 +160,7 @@ public class LevelController : MonoBehaviour
 
         if (cam.GetComponent<EndWord>().IsTreeDead())
         {
+            isLevelEnd = true;
             bool isCorrect = cam.GetComponent<LevelSolutions>().IsAnswerCorrect(endWord);
             StartCoroutine(cam.GetComponent<EndWord>().AnimateEndWord());
 
@@ -196,7 +201,6 @@ public class LevelController : MonoBehaviour
             cam.GetComponent<SceneLoad>().isBadge = true;
             int noOfStars = cam.GetComponent<LevelSolutions>().GetNumberOfStars(timeElapsed, numberOfNodesUsed);
             cam.GetComponent<LevelEnd>().LevelSuccess(noOfStars);
-            isLevelSucess = true;
         }
         else
         {
