@@ -92,6 +92,6 @@ public class Frozen : MonoBehaviour
         int index = frozenItems.IndexOf(gemToFind);
         frozenImages[index].GetComponent<Animator>().enabled = true;
         frozenImages[index].GetComponent<Animator>().Play("FrozenExplosion");
-        // frozenImages[index].GetComponent<AudioSource>().Play(0);
+        frozenImages[index].GetComponent<AudioSource>().Play(0);
     }
 }
