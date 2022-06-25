@@ -34,6 +34,7 @@ public class LevelController : MonoBehaviour
 
     private void Start() 
     {
+        DataToCSV.AddNewLevelLine(DateTime.Now.TimeOfDay.ToString(), "Start of Level: ", StaticVariables.Level.ToString());
         treeArea = GameObject.Find("TreeSpace");
         cam = GameObject.Find("Main Camera");
         rectTransform = (RectTransform)treeArea.transform;
