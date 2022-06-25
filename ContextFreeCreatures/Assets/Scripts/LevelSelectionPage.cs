@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class LevelSelectionPage : MonoBehaviour
 {
+    public Text noOfLives;
     public GameObject level1;
     public GameObject level2;
     public GameObject level3;
@@ -29,6 +30,9 @@ public class LevelSelectionPage : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        noOfLives.GetComponent<Text>().text = PlayerPrefs.GetInt("Lives").ToString();
+        StaticVariables.NoOfLives = PlayerPrefs.GetInt("Lives");
+        
         StaticVariables.Level1Stars = PlayerPrefs.GetInt("Level1Stars");
         StaticVariables.Level2Stars = PlayerPrefs.GetInt("Level2Stars");
         StaticVariables.Level3Stars = PlayerPrefs.GetInt("Level3Stars");

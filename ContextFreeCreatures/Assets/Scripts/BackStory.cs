@@ -15,7 +15,10 @@ public class BackStory : MonoBehaviour
         if (PlayerPrefs.GetInt("TutorialComplete") == 1)
             SceneManager.LoadScene("LevelSelection");
         else
+        {
+            StaticVariables.NoOfLives = 5;
             StartCoroutine(MoveScenes());
+        }
 
         
     }

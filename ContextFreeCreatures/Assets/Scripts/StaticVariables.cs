@@ -1,6 +1,7 @@
 
 public static class StaticVariables 
 {
+    public static int NoOfLives {get; set;}
     public static int DiamondPrize = 50;
 
     public static int Level { get; set; }
@@ -24,7 +25,7 @@ public static class StaticVariables
     public static int Level8Stars { get; set; }
 
     public static int Level9Stars { get; set; }
-    
+
     public static int Level10Stars { get; set; }
 
     public static float VolumeLevel { get; set; }

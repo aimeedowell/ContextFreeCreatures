@@ -29,6 +29,8 @@ public class LevelController : MonoBehaviour
 
     public bool isLevelEnd = false;
 
+    public Text noOfLives;
+
 
     private void Start() 
     {
@@ -38,6 +40,8 @@ public class LevelController : MonoBehaviour
         treeSpaceWidth = rectTransform.rect.width;
         treeSpaceHeight = rectTransform.rect.height;
         timeElapsed = Time.time;
+        noOfLives.GetComponent<Text>().text = PlayerPrefs.GetInt("Lives").ToString();
+        StaticVariables.NoOfLives = PlayerPrefs.GetInt("Lives");
         if (StaticVariables.Level > 0)
             cam.GetComponent<MusicControl>().SetSliderValue(StaticVariables.VolumeLevel);
     }
@@ -205,6 +209,7 @@ public class LevelController : MonoBehaviour
         }
         else
         {
+            LoseLive();
             cam.GetComponent<EndWord>().LevelFailRemoveCoins();
             cam.GetComponent<LevelEnd>().LevelFailed();
         }
@@ -228,9 +233,16 @@ public class LevelController : MonoBehaviour
         return (((x - oldMin) * (newMax - newMin)) / (oldMax - oldMin)) + newMin;
     }
 
+    void LoseLive()
+    {
+        StaticVariables.NoOfLives -= 1;
+        noOfLives.GetComponent<Text>().text = StaticVariables.NoOfLives.ToString();
+    }
+
     void SaveProgress()
     {
         PlayerPrefs.SetInt("Coins", StaticVariables.CoinCount);
+        PlayerPrefs.SetInt("Lives", StaticVariables.NoOfLives);
         switch(StaticVariables.Level) 
         {
             case 1:
