@@ -1651,7 +1651,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 174079389}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 560030406}
+        m_TargetAssemblyTypeName: LevelMenuPanel, Assembly-CSharp
+        m_MethodName: OnShopExitClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &174079389
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5191,7 +5203,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 544024966}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 560030413}
+        m_TargetAssemblyTypeName: Shop, Assembly-CSharp
+        m_MethodName: StartNodeToffee
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &544024966
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5427,6 +5451,7 @@ GameObject:
   - component: {fileID: 560030405}
   - component: {fileID: 560030406}
   - component: {fileID: 560030407}
+  - component: {fileID: 560030413}
   - component: {fileID: 560030408}
   - component: {fileID: 560030409}
   - component: {fileID: 560030410}
@@ -5553,6 +5578,7 @@ MonoBehaviour:
   popUp: {fileID: 1262083043}
   exitMenu: {fileID: 1195453954}
   settingsMenu: {fileID: 1391819602}
+  shopMenu: {fileID: 621399218}
   infoButton: {fileID: 2106385653}
   infoPopUp: {fileID: 480658577}
   startAnime: {fileID: 1739725779}
@@ -5651,6 +5677,22 @@ MonoBehaviour:
   title: {fileID: 1085126008}
   image: {fileID: 370183587}
   content: {fileID: 521663926}
+--- !u!114 &560030413
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 560030400}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e84cf834b52c4418aa7f8ff476eb931, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  coinScore: {fileID: 1001349847}
+  shopMenu: {fileID: 621399218}
+  firstRule: {fileID: 1074799009}
+  startNode: {fileID: 1350965108}
 --- !u!1 &586340000
 GameObject:
   m_ObjectHideFlags: 0
@@ -6181,7 +6223,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &621399219
 RectTransform:
   m_ObjectHideFlags: 0
@@ -12571,7 +12613,31 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1309667390}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 560030413}
+        m_TargetAssemblyTypeName: Shop, Assembly-CSharp
+        m_MethodName: RestartBonBon
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 560030407}
+        m_TargetAssemblyTypeName: SceneLoad, Assembly-CSharp
+        m_MethodName: ToLevel1
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1309667390
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13502,7 +13568,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -92.673, y: 3.1101}
+  m_AnchoredPosition: {x: -92.673, y: 3.1100998}
   m_SizeDelta: {x: 91.976, y: 81.6812}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1390068756
@@ -15313,10 +15379,10 @@ RectTransform:
   m_Father: {fileID: 404227489}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 804, y: -8.0435}
-  m_SizeDelta: {x: 48.3981, y: 44.3596}
+  m_AnchorMin: {x: 0, y: 0.5}
+  m_AnchorMax: {x: 0, y: 0.5}
+  m_AnchoredPosition: {x: 154, y: -8.043499}
+  m_SizeDelta: {x: 68.0116, y: 60.447}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1616833178
 MonoBehaviour:
@@ -15376,7 +15442,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 560030406}
         m_TargetAssemblyTypeName: LevelMenuPanel, Assembly-CSharp
-        m_MethodName: OnSettingsButtonClick
+        m_MethodName: OnShopButtonClick
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -16470,10 +16536,10 @@ RectTransform:
   m_Father: {fileID: 404227489}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -697, y: -13}
-  m_SizeDelta: {x: -1642.679, y: 15.0142}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 327, y: -43}
+  m_SizeDelta: {x: 277.32104, y: 75.0142}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1717220319
 MonoBehaviour:
