@@ -161,6 +161,7 @@ public class LevelController : MonoBehaviour
         if (cam.GetComponent<EndWord>().IsTreeDead())
         {
             isLevelEnd = true;
+            this.gameObject.GetComponent<LevelMenuPanel>().DisableAllPopUps();
             bool isCorrect = cam.GetComponent<LevelSolutions>().IsAnswerCorrect(endWord);
             StartCoroutine(cam.GetComponent<EndWord>().AnimateEndWord());
 

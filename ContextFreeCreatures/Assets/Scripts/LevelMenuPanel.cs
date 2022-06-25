@@ -8,6 +8,7 @@ public class LevelMenuPanel : MonoBehaviour
     public GameObject popUp;
     public GameObject exitMenu;
     public GameObject settingsMenu;
+    public GameObject shopMenu;
 
     public GameObject infoButton;
     public GameObject infoPopUp;
@@ -21,6 +22,7 @@ public class LevelMenuPanel : MonoBehaviour
         exitMenu.SetActive(false);
         popUp.SetActive(false);
         infoPopUp.SetActive(false);
+        shopMenu.SetActive(false);
     }
 
     // Update is called once per frame
@@ -31,15 +33,20 @@ public class LevelMenuPanel : MonoBehaviour
 
     public void OnExitButtonClick()
     {
-        popUp.SetActive(true);
-        exitMenu.SetActive(true);
-
+        if (!this.gameObject.GetComponent<LevelController>().isLevelEnd)
+        {
+            popUp.SetActive(true);
+            exitMenu.SetActive(true);
+        }
     }
 
     public void OnSettingsButtonClick()
     {
-        popUp.SetActive(true);
-        settingsMenu.SetActive(true);
+        if (!this.gameObject.GetComponent<LevelController>().isLevelEnd)
+        {
+            popUp.SetActive(true);
+            settingsMenu.SetActive(true);
+        }
 
     }
 
@@ -48,7 +55,6 @@ public class LevelMenuPanel : MonoBehaviour
         popUp.SetActive(false);
         exitMenu.SetActive(false);
         settingsMenu.SetActive(false);
-
     }
 
     public void OnQuitButtonClick()
@@ -60,13 +66,43 @@ public class LevelMenuPanel : MonoBehaviour
     public void OnLetsGoClick()
     {
         startAnime.SetActive(false);
+        // mandy&speech.GetComponent<Animator>().enabled = false;
     }
     
     public void OnInfoButtonClick()
     {
-        if (infoPopUp.activeSelf == false)
-            infoPopUp.SetActive(true);
-        else
-            infoPopUp.SetActive(false);
+        if (!this.gameObject.GetComponent<LevelController>().isLevelEnd)
+        {
+            if (infoPopUp.activeSelf == false)
+                infoPopUp.SetActive(true);
+            else
+                infoPopUp.SetActive(false);
+        }
     }
+
+    public void OnShopButtonClick()
+    {
+        if (!this.gameObject.GetComponent<LevelController>().isLevelEnd)
+        {
+            shopMenu.SetActive(true);
+        }
+    }
+
+
+    public void OnShopExitClick()
+    {
+        shopMenu.SetActive(false);
+    }
+
+    public void DisableAllPopUps()
+    {
+        startAnime.SetActive(false);
+        settingsMenu.SetActive(false);
+        exitMenu.SetActive(false);
+        popUp.SetActive(false);
+        infoPopUp.SetActive(false);
+        shopMenu.SetActive(false);
+    }
+
+
 }
