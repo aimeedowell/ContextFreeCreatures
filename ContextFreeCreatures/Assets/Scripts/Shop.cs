@@ -12,13 +12,16 @@ public class Shop : MonoBehaviour
 
     public void RestartBonBon()
     {
-        UpdateCoins(100);
-        shopMenu.SetActive(false);
+        if (StaticVariables.CoinCount >= 100)
+        {
+            UpdateCoins(100);
+            shopMenu.SetActive(false);
+        }
     }
 
     public void StartNodeToffee()
     {
-        if (startNode.activeSelf == true)
+        if (startNode.activeSelf == true && StaticVariables.CoinCount >= 150)
         {
             UpdateCoins(150);
             shopMenu.SetActive(false);
@@ -26,6 +29,16 @@ public class Shop : MonoBehaviour
             this.gameObject.GetComponent<LevelController>().ReplaceNode(firstRule.GetComponent<RuleContents>().GetCreatureImage(), startNode.GetComponent<RectTransform>().anchoredPosition);
             this.gameObject.GetComponent<LevelController>().GetContents(firstRule.GetComponent<RuleContents>().GetRuleImages(), startNode.gameObject, startNode.GetComponent<RectTransform>().transform.localPosition.y);
             startNode.SetActive(false);
+        }
+    }
+
+    public void DelayBusterTruffle()
+    {
+        if (StaticVariables.CoinCount >= 200)
+        {
+            UpdateCoins(200);
+            shopMenu.SetActive(false);
+            this.gameObject.GetComponent<LevelController>().AddLife();
         }
     }
 

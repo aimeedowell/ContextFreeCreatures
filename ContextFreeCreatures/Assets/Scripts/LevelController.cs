@@ -209,7 +209,7 @@ public class LevelController : MonoBehaviour
         }
         else
         {
-            LoseLive();
+            LoseLife();
             cam.GetComponent<EndWord>().LevelFailRemoveCoins();
             cam.GetComponent<LevelEnd>().LevelFailed();
         }
@@ -233,9 +233,15 @@ public class LevelController : MonoBehaviour
         return (((x - oldMin) * (newMax - newMin)) / (oldMax - oldMin)) + newMin;
     }
 
-    void LoseLive()
+    void LoseLife()
     {
         StaticVariables.NoOfLives -= 1;
+        noOfLives.GetComponent<Text>().text = StaticVariables.NoOfLives.ToString();
+    }
+
+    public void AddLife()
+    {
+        StaticVariables.NoOfLives += 1;
         noOfLives.GetComponent<Text>().text = StaticVariables.NoOfLives.ToString();
     }
 
