@@ -89,33 +89,53 @@ public class MapPin : MonoBehaviour,  IPointerDownHandler, IPointerEnterHandler,
         {
             case 1:
                 cam.GetComponent<SceneLoad>().ToLevel1();
+                if (StaticVariables.Level1Stars == 0 && StaticVariables.CoinCount >= 100)
+                    PlayerPrefs.SetInt("Coins", StaticVariables.CoinCount -= 100);
                 break;
             case 2:
                 cam.GetComponent<SceneLoad>().ToLevel2();
+                if (StaticVariables.Level2Stars == 0 && StaticVariables.CoinCount >= 100)
+                    PlayerPrefs.SetInt("Coins", StaticVariables.CoinCount -= 100);
                 break;
             case 3:
                 cam.GetComponent<SceneLoad>().ToLevel3();
+                if (StaticVariables.Level3Stars == 0 && StaticVariables.CoinCount >= 150)
+                    PlayerPrefs.SetInt("Coins", StaticVariables.CoinCount -= 150);
                 break;
             case 4:
                 cam.GetComponent<SceneLoad>().ToLevel4();
+                if (StaticVariables.Level4Stars == 0 && StaticVariables.CoinCount >= 150)
+                    PlayerPrefs.SetInt("Coins", StaticVariables.CoinCount -= 150);
                 break;
             case 5:
                 cam.GetComponent<SceneLoad>().ToLevel5();
+                if (StaticVariables.Level5Stars == 0 && StaticVariables.CoinCount >= 150)
+                    PlayerPrefs.SetInt("Coins", StaticVariables.CoinCount -= 150);
                 break;
             case 6:
                 cam.GetComponent<SceneLoad>().ToLevel6();
+                if (StaticVariables.Level6Stars == 0 && StaticVariables.CoinCount >= 150)
+                    PlayerPrefs.SetInt("Coins", StaticVariables.CoinCount -= 150);
                 break;
             case 7:
                 cam.GetComponent<SceneLoad>().ToLevel7();
+                if (StaticVariables.Level7Stars == 0 && StaticVariables.CoinCount >= 150)
+                    PlayerPrefs.SetInt("Coins", StaticVariables.CoinCount -= 150);
                 break;
             case 8:
                 cam.GetComponent<SceneLoad>().ToLevel8();
+                if (StaticVariables.Level8Stars == 0 && StaticVariables.CoinCount >= 150)
+                    PlayerPrefs.SetInt("Coins", StaticVariables.CoinCount -= 150);
                 break;
             case 9:
                 cam.GetComponent<SceneLoad>().ToLevel9();
+                if (StaticVariables.Level9Stars == 0 && StaticVariables.CoinCount >= 200)
+                    PlayerPrefs.SetInt("Coins", StaticVariables.CoinCount -= 200);
                 break;   
             case 10:
                 cam.GetComponent<SceneLoad>().ToLevel10();
+                if (StaticVariables.Level10Stars == 0 && StaticVariables.CoinCount >= 200)
+                    PlayerPrefs.SetInt("Coins", StaticVariables.CoinCount -= 200);
                 break;                 
         }
         // Debug.Log("Mouse Down");

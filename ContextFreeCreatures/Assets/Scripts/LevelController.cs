@@ -235,8 +235,16 @@ public class LevelController : MonoBehaviour
 
     void LoseLife()
     {
-        StaticVariables.NoOfLives -= 1;
-        noOfLives.GetComponent<Text>().text = StaticVariables.NoOfLives.ToString();
+        if (StaticVariables.NoOfLives > 0)
+        {
+            StaticVariables.NoOfLives -= 1;
+            noOfLives.GetComponent<Text>().text = StaticVariables.NoOfLives.ToString();
+        }
+        else
+        {
+            Debug.Log("No more lives");
+        }
+
     }
 
     public void AddLife()

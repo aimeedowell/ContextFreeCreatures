@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class LevelSelectionPage : MonoBehaviour
 {
     public Text noOfLives;
+    public Text coinScore;
     public GameObject level1;
     public GameObject level2;
     public GameObject level3;
@@ -32,7 +33,9 @@ public class LevelSelectionPage : MonoBehaviour
     {
         noOfLives.GetComponent<Text>().text = PlayerPrefs.GetInt("Lives").ToString();
         StaticVariables.NoOfLives = PlayerPrefs.GetInt("Lives");
-        
+        coinScore.GetComponent<Text>().text = PlayerPrefs.GetInt("Coins").ToString();
+        StaticVariables.CoinCount = PlayerPrefs.GetInt("Coins");
+
         StaticVariables.Level1Stars = PlayerPrefs.GetInt("Level1Stars");
         StaticVariables.Level2Stars = PlayerPrefs.GetInt("Level2Stars");
         StaticVariables.Level3Stars = PlayerPrefs.GetInt("Level3Stars");
