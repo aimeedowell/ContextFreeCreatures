@@ -16,7 +16,6 @@ public class BackStory : MonoBehaviour
             SceneManager.LoadScene("LevelSelection");
         else
         {
-            StaticVariables.NoOfLives = 5;
             StartCoroutine(MoveScenes());
         }
 

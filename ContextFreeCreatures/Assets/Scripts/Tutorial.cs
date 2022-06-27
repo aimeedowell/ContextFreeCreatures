@@ -25,6 +25,7 @@ public class Tutorial : MonoBehaviour
         CreatureIntro.SetActive(false);
         DragIntro.SetActive(false);
         TargetWordIntro.SetActive(true);
+        StaticVariables.NoOfLives = 5;
     }
 
     // Update is called once per frame
@@ -42,10 +43,6 @@ public class Tutorial : MonoBehaviour
         }
     }
 
-    public void OnNextClick()
-    {
-
-    }
     public void OnTargetWordClick1()
     {
         TargetBubble1.SetActive(false);

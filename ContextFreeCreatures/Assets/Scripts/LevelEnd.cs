@@ -19,13 +19,6 @@ public class LevelEnd : MonoBehaviour
         sucessPopUp.SetActive(false);
         failPopUp.SetActive(false);
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     public void LevelSuccess(int noOfStars)
     {
         
@@ -36,7 +29,6 @@ public class LevelEnd : MonoBehaviour
         starL.GetComponent<AudioSource>().Play(0);
         if (noOfStars > 1)
         {
-            
             StartCoroutine(PlaySuccessorStar(noOfStars));
         }
 
@@ -44,7 +36,6 @@ public class LevelEnd : MonoBehaviour
 
     public void LevelFailed()
     {
-        
         popUp.SetActive(true);
         failPopUp.SetActive(true);
     }

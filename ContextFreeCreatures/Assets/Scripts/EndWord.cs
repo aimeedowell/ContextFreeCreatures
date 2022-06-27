@@ -48,6 +48,16 @@ public class EndWord : MonoBehaviour
         return endWord;
     }
 
+    public List<string> GetCurrentEndWordNames()
+    {
+        List<string> newList = new List<string>();
+        for (int i = 0; i < endWord.Count; i ++)
+        {
+            newList.Add(endWord[i].gameObject.name);
+        }
+        return newList;
+    }
+
     public bool IsTreeDead()
     {        
         for (int i = 0; i < endWord.Count; i ++)

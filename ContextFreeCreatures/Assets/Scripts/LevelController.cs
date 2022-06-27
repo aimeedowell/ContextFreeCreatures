@@ -34,7 +34,7 @@ public class LevelController : MonoBehaviour
 
     private void Start() 
     {
-        DataToCSV.AddNewLevelLine(DateTime.Now.TimeOfDay.ToString(), "Start of Level: ", StaticVariables.Level.ToString());
+        DataToCSV.AddNewLevelLine(StaticVariables.Level.ToString());
         treeArea = GameObject.Find("TreeSpace");
         cam = GameObject.Find("Main Camera");
         rectTransform = (RectTransform)treeArea.transform;
@@ -45,11 +45,6 @@ public class LevelController : MonoBehaviour
         StaticVariables.NoOfLives = PlayerPrefs.GetInt("Lives");
         if (StaticVariables.Level > 0)
             cam.GetComponent<MusicControl>().SetSliderValue(StaticVariables.VolumeLevel);
-    }
-
-    private void Update() 
-    {
-
     }
 
     public void ReplaceNode(GameObject creatureImage, Vector2 node)
@@ -162,6 +157,7 @@ public class LevelController : MonoBehaviour
          
         List<GameObject> endWord = cam.GetComponent<EndWord>().UpdateEndWord(ruleObjects, prevNode);
         tree.Add(ruleObjects);
+        DataToCSV.EndWordUpdateLine(StaticVariables.Level.ToString(), cam.GetComponent<EndWord>().GetCurrentEndWordNames());
 
         if (cam.GetComponent<EndWord>().IsTreeDead())
         {
@@ -201,18 +197,19 @@ public class LevelController : MonoBehaviour
 
         yield return new WaitForSeconds(secs);
         
-
         if (success)
         {
             cam.GetComponent<SceneLoad>().isBadge = true;
             int noOfStars = cam.GetComponent<LevelSolutions>().GetNumberOfStars(timeElapsed, numberOfNodesUsed);
             cam.GetComponent<LevelEnd>().LevelSuccess(noOfStars);
+            DataToCSV.EndOfLevelLine(StaticVariables.Level.ToString(), "Success", numberOfNodesUsed.ToString(), timeElapsed.ToString());
         }
         else
         {
             LoseLife();
             cam.GetComponent<EndWord>().LevelFailRemoveCoins();
             cam.GetComponent<LevelEnd>().LevelFailed();
+            DataToCSV.EndOfLevelLine(StaticVariables.Level.ToString(), "Failed", numberOfNodesUsed.ToString(), timeElapsed.ToString());
         }
 
         SaveProgress();
