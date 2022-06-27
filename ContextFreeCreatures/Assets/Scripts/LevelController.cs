@@ -82,12 +82,6 @@ public class LevelController : MonoBehaviour
             startWidth = -treeSpaceWidth/(imageCount*2);
             splitWidth = (treeSpaceWidth + (treeSpaceWidth/imageCount))/(imageCount + 1);
             startWidth += splitWidth;
-
-            // if (ruleImages.Count > 2)
-            //     splitWidth = ((treeSpaceWidth-600f)/(imageCount-1)); //want to measure no of spaces
-            // else
-            //     splitWidth = (treeSpaceWidth-600f);
-            // startWidth = 600f/2;
         }
         else
         {
@@ -146,7 +140,6 @@ public class LevelController : MonoBehaviour
 
             StartCoroutine(FadeAlpha(gemClone, 1.5f));
 
-            // if (!ruleImages[i].gameObject.name.Contains("Dirt"))
             ruleObjects.Add(gemClone);
 
             cam.GetComponent<AnimateDigging>().DrawLine(prevNode, gemClone);

@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
 
-public class MapPin : MonoBehaviour,  IPointerDownHandler, IPointerEnterHandler, IPointerExitHandler
+public class MapPin : MonoBehaviour,  IPointerDownHandler, IPointerEnterHandler, IPointerExitHandler, IPointerUpHandler
 {
     GameObject cam;
     public GameObject levelUI;
@@ -67,24 +67,29 @@ public class MapPin : MonoBehaviour,  IPointerDownHandler, IPointerEnterHandler,
                 if (StaticVariables.Level10Stars > 0)
                     this.GetComponent<Image>().sprite = greenPin;
                 break;
-
         }
     }
     public void OnPointerEnter(PointerEventData data)
     {
         levelUI.SetActive(true);
         cam.GetComponent<LevelSelectionPage>().SetStars();
-        // Debug.Log("Mouse Over");
+        MouseClickSoundManager.PlayHoverClick();
+    }
+
+    public void OnPointerUp(PointerEventData data)
+    {
+        MouseClickSoundManager.PlayClickUp();
     }
 
     public void OnPointerExit(PointerEventData data)
     {
         levelUI.SetActive(false);
-        // Debug.Log("Mouse Off");
     }
 
     public void OnPointerDown(PointerEventData data)
     {
+        MouseClickSoundManager.PlayOnClick();
+
         switch (levelNumber) 
         {
             case 1:
@@ -138,6 +143,5 @@ public class MapPin : MonoBehaviour,  IPointerDownHandler, IPointerEnterHandler,
                     PlayerPrefs.SetInt("Coins", StaticVariables.CoinCount -= 200);
                 break;                 
         }
-        // Debug.Log("Mouse Down");
     }
 }

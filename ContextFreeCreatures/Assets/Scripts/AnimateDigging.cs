@@ -15,17 +15,6 @@ public class AnimateDigging : MonoBehaviour
     GameObject end;
     public Canvas canvas;
 
-
-    // Start is called before the first frame update
-    void Start()
-    {  
-    }
-
-    void Update()
-    {
-
-    }
-
     public void DrawLine(GameObject startObj, GameObject endObj)
     {
         start = startObj;

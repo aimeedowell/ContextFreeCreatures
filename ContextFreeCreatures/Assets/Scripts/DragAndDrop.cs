@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class DragAndDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, IDragHandler, IEndDragHandler
+public class DragAndDrop : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler
 {
     [SerializeField] private Canvas canvas;
     private RectTransform rectTransform;
@@ -22,11 +22,6 @@ public class DragAndDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler
         canvasGroup = GetComponent<CanvasGroup>();
     }
 
-    public void OnPointerDown(PointerEventData data)
-    {
-        // Debug.Log("Mouse Down");
-    }
-
     public void OnBeginDrag(PointerEventData data)
     {
         canvasGroup.alpha = 0.6f;
@@ -35,13 +30,11 @@ public class DragAndDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler
 
     public void OnDrag(PointerEventData data)
     {
-        // Debug.Log("Dragging");
         rectTransform.anchoredPosition += data.delta / canvas.scaleFactor;
     }
 
     public void OnEndDrag(PointerEventData data)
     {
-        // Debug.Log("End Drag");
         canvasGroup.alpha = 0f;
         canvasGroup.blocksRaycasts = true;
         if (!hasDropped) 

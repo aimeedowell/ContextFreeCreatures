@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class LevelMenuPanel : MonoBehaviour
 {
-
     public GameObject popUp;
     public GameObject exitMenu;
     public GameObject settingsMenu;
@@ -25,12 +24,6 @@ public class LevelMenuPanel : MonoBehaviour
         shopMenu.SetActive(false);
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     public void OnExitButtonClick()
     {
         if (!this.gameObject.GetComponent<LevelController>().isLevelEnd)
@@ -47,7 +40,6 @@ public class LevelMenuPanel : MonoBehaviour
             popUp.SetActive(true);
             settingsMenu.SetActive(true);
         }
-
     }
 
     public void OnResumeButtonClick()
