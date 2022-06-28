@@ -13,6 +13,9 @@ public class LevelMenuPanel : MonoBehaviour
     public GameObject infoPopUp;
     public GameObject startAnime;
 
+    public GameObject hintButton;
+    public GameObject hintPopUp;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -21,6 +24,7 @@ public class LevelMenuPanel : MonoBehaviour
         exitMenu.SetActive(false);
         popUp.SetActive(false);
         infoPopUp.SetActive(false);
+        hintPopUp.SetActive(false);
         shopMenu.SetActive(false);
     }
 
@@ -69,6 +73,17 @@ public class LevelMenuPanel : MonoBehaviour
                 infoPopUp.SetActive(true);
             else
                 infoPopUp.SetActive(false);
+        }
+    }
+
+    public void OnHintButtonClick()
+    {
+        if (!this.gameObject.GetComponent<LevelController>().isLevelEnd)
+        {
+            if (hintPopUp.activeSelf == false)
+                hintPopUp.SetActive(true);
+            else
+                hintPopUp.SetActive(false);
         }
     }
 

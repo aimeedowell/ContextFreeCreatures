@@ -28,6 +28,18 @@ public static class StaticVariables
 
     public static int Level10Stars { get; set; }
 
+    public static int Level1Fails { get; set; }
+    public static int Level2Fails { get; set; }
+    public static int Level3Fails { get; set; }
+    public static int Level4Fails { get; set; }
+    public static int Level5Fails { get; set; }
+    public static int Level6Fails { get; set; }
+    public static int Level7Fails { get; set; }
+    public static int Level8Fails { get; set; }
+    public static int Level9Fails { get; set; }
+    public static int Level10Fails { get; set; }
+    
+
     public static float VolumeLevel { get; set; }
 
     // Badges
