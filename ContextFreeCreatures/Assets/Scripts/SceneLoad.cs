@@ -6,11 +6,20 @@ using UnityEngine.SceneManagement;
 public class SceneLoad : MonoBehaviour
 {
     public bool isBadge = false;
+    public GameObject buffer;
+
+    private void Start() 
+    {
+        buffer.SetActive(false);
+    }
 
     public void ToTutorialLevel()
     {
         if (PlayerPrefs.GetInt("TutorialComplete") == 0)
+        {
+            buffer.SetActive(true);
             SceneManager.LoadScene("Tutorial");
+        }
     }
 
 
@@ -25,6 +34,7 @@ public class SceneLoad : MonoBehaviour
         {
             if (PlayerPrefs.GetInt("TutorialComplete") == 1)
             {
+                buffer.SetActive(true);
                 SceneManager.LoadScene("LevelSelection");
             }
         }
@@ -39,6 +49,7 @@ public class SceneLoad : MonoBehaviour
         }
         else
         {
+            buffer.SetActive(true);
             SceneManager.LoadScene("Level1");
             StaticVariables.Level = 1;
             if (StaticVariables.Level1Stars == 0 && StaticVariables.CoinCount >= 100)
@@ -55,6 +66,7 @@ public class SceneLoad : MonoBehaviour
         }
         else
         {
+            buffer.SetActive(true);
             SceneManager.LoadScene("Level2");
             StaticVariables.Level = 2;
             if (StaticVariables.Level2Stars == 0 && StaticVariables.CoinCount >= 100)
@@ -71,6 +83,7 @@ public class SceneLoad : MonoBehaviour
         }
         else
         {
+            buffer.SetActive(true);
             SceneManager.LoadScene("Level3");
             StaticVariables.Level = 3;
             if (StaticVariables.Level3Stars == 0 && StaticVariables.CoinCount >= 150)
@@ -87,6 +100,7 @@ public class SceneLoad : MonoBehaviour
         }
         else
         {
+            buffer.SetActive(true);
             SceneManager.LoadScene("Level4");
             StaticVariables.Level = 4;
             if (StaticVariables.Level4Stars == 0 && StaticVariables.CoinCount >= 150)
@@ -103,6 +117,7 @@ public class SceneLoad : MonoBehaviour
         }
         else
         {
+            buffer.SetActive(true);
             SceneManager.LoadScene("Level5");
             StaticVariables.Level = 5;
             if (StaticVariables.Level5Stars == 0 && StaticVariables.CoinCount >= 150)
@@ -119,6 +134,7 @@ public class SceneLoad : MonoBehaviour
         }
         else
         {
+            buffer.SetActive(true);
             SceneManager.LoadScene("Level6");
             StaticVariables.Level = 6;
             if (StaticVariables.Level6Stars == 0 && StaticVariables.CoinCount >= 150)
@@ -135,6 +151,7 @@ public class SceneLoad : MonoBehaviour
         }
         else
         {
+            buffer.SetActive(true);
             SceneManager.LoadScene("Level7");
             StaticVariables.Level = 7;
             if (StaticVariables.Level7Stars == 0 && StaticVariables.CoinCount >= 150)
@@ -151,6 +168,7 @@ public class SceneLoad : MonoBehaviour
         }
         else
         {
+            buffer.SetActive(true);
             SceneManager.LoadScene("Level8");
             StaticVariables.Level = 8;
             if (StaticVariables.Level8Stars == 0 && StaticVariables.CoinCount >= 150)
@@ -167,6 +185,7 @@ public class SceneLoad : MonoBehaviour
         }
         else
         {
+            buffer.SetActive(true);
             SceneManager.LoadScene("Level9");
             StaticVariables.Level = 9;
             if (StaticVariables.Level9Stars == 0 && StaticVariables.CoinCount >= 200)
@@ -183,6 +202,7 @@ public class SceneLoad : MonoBehaviour
         }
         else
         {
+            buffer.SetActive(true);
             SceneManager.LoadScene("Level10");
             StaticVariables.Level = 10;
             if (StaticVariables.Level10Stars == 0 && StaticVariables.CoinCount >= 200)

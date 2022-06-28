@@ -202,7 +202,9 @@ public class LevelController : MonoBehaviour
         
         if (success)
         {
-            cam.GetComponent<SceneLoad>().isBadge = true;
+            BadgeUnlock badgeComponent = this.GetComponent<BadgeUnlock>();
+            if (badgeComponent)
+                cam.GetComponent<SceneLoad>().isBadge = cam.GetComponent<BadgeUnlock>().BadgeToBeShown();
             int noOfStars = cam.GetComponent<LevelSolutions>().GetNumberOfStars(timeElapsed, numberOfNodesUsed);
             cam.GetComponent<LevelEnd>().LevelSuccess(noOfStars);
             DataToCSV.EndOfLevelLine(StaticVariables.Level.ToString(), "Success", numberOfNodesUsed.ToString(), timeElapsed.ToString());

@@ -65,6 +65,36 @@ public class BadgeUnlock : MonoBehaviour
             }
         }
     }
+    public bool BadgeToBeShown()
+    {
+        if (StaticVariables.Level == 1)
+        {
+            if (PlayerPrefs.GetInt("BadgeSymmetry") == 0)
+                return true;
+        }
+        else if (StaticVariables.Level == 2)
+        {
+            if (PlayerPrefs.GetInt("BadgeEmptyWord") == 0)
+                return true;
+        }
+        else if (StaticVariables.Level == 6)
+        {
+            if (PlayerPrefs.GetInt("BadgeSplit") == 0)
+                return true;
+        }
+        else if (StaticVariables.Level == 7)
+        {
+            if (PlayerPrefs.GetInt("BadgeTimer") == 0)
+                return true;
+        }
+        else if (StaticVariables.Level == 9)
+        {
+            if (PlayerPrefs.GetInt("BadgeColourNodes") == 0)
+                return true;
+        }
+        return false;
+    }
+
     void SetBadgeUI()
     {
         badge.SetActive(true);
@@ -118,6 +148,5 @@ public class BadgeUnlock : MonoBehaviour
         }
         obj.GetComponent<Image>().color = end; //without this, the value will end at something like 0.9992367
     }
-
 
 }
