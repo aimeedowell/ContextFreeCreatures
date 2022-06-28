@@ -247,7 +247,7 @@ public class SceneLoad : MonoBehaviour
             PlayerPrefs.SetInt("Coins", StaticVariables.CoinCount -= 150);
     }
 
-        IEnumerator Level6()
+    IEnumerator Level6()
     {
         yield return new WaitForSeconds(2f);
         SceneManager.LoadScene("Level6");
@@ -256,7 +256,7 @@ public class SceneLoad : MonoBehaviour
             PlayerPrefs.SetInt("Coins", StaticVariables.CoinCount -= 150);
     }
 
-        IEnumerator Level7()
+    IEnumerator Level7()
     {
         yield return new WaitForSeconds(2f);
         SceneManager.LoadScene("Level7");
@@ -265,7 +265,7 @@ public class SceneLoad : MonoBehaviour
             PlayerPrefs.SetInt("Coins", StaticVariables.CoinCount -= 150);
     }
 
-        IEnumerator Level8()
+    IEnumerator Level8()
     {
         yield return new WaitForSeconds(2f);
         SceneManager.LoadScene("Level8");
@@ -274,7 +274,7 @@ public class SceneLoad : MonoBehaviour
             PlayerPrefs.SetInt("Coins", StaticVariables.CoinCount -= 150);
     }
 
-        IEnumerator Level9()
+    IEnumerator Level9()
     {
         yield return new WaitForSeconds(9f);
         SceneManager.LoadScene("Level9");
@@ -282,7 +282,7 @@ public class SceneLoad : MonoBehaviour
         if (StaticVariables.Level9Stars == 0 && StaticVariables.CoinCount >= 200)
             PlayerPrefs.SetInt("Coins", StaticVariables.CoinCount -= 200);
     }
-        IEnumerator Level10()
+    IEnumerator Level10()
     {
         yield return new WaitForSeconds(2f);
         SceneManager.LoadScene("Level10");

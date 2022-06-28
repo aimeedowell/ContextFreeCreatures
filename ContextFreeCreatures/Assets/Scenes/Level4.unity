@@ -18032,7 +18032,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 560030406}
         m_TargetAssemblyTypeName: LevelMenuPanel, Assembly-CSharp
         m_MethodName: OnHintButtonClick
         m_Mode: 1

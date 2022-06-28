@@ -43,10 +43,11 @@ public static class StaticVariables
     public static float VolumeLevel { get; set; }
 
     // Badges
-    public static int BadgeSymmetry { get; set; }
-    public static int BadgeEmptyWord { get; set; }
-
-    public static int BadgeTimer { get; set; }
+    public static int BadgeSymmetry { get; set; }     // Level 1
+    public static int BadgeEmptyWord { get; set; }     // Level 2
+    public static int BadgeSplit { get; set; }     // Level 6
+    public static int BadgeTimer { get; set; }     // Level 7
+    public static int BadgeColourNodes { get; set; }     // Level 9
 
     
 
