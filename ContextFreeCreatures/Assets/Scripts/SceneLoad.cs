@@ -27,16 +27,13 @@ public class SceneLoad : MonoBehaviour
     {
         if (isBadge)
         {
-            StartCoroutine(LevelSelect());
+            StartCoroutine(LevelSelect(2f));
             isBadge = false;
         }
         else
         {
-            if (PlayerPrefs.GetInt("TutorialComplete") == 1)
-            {
-                buffer.SetActive(true);
-                SceneManager.LoadScene("LevelSelection");
-            }
+            buffer.SetActive(true);
+            StartCoroutine(LevelSelect(0.5f));
         }
     }
 
@@ -311,9 +308,9 @@ public class SceneLoad : MonoBehaviour
             PlayerPrefs.SetInt("Coins", StaticVariables.CoinCount -= 200);
     }
 
-    IEnumerator LevelSelect()
+    IEnumerator LevelSelect(float secs)
     {
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(secs);
         if (PlayerPrefs.GetInt("TutorialComplete") == 1)
             SceneManager.LoadScene("LevelSelection");
     }
