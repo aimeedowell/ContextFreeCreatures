@@ -28,6 +28,8 @@ public class LevelSelectionPage : MonoBehaviour
     public GameObject level9Pin;
     public GameObject level10Pin;
 
+    public int maxLevel = 0;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -46,6 +48,23 @@ public class LevelSelectionPage : MonoBehaviour
         StaticVariables.Level8Stars = PlayerPrefs.GetInt("Level8Stars");
         StaticVariables.Level9Stars = PlayerPrefs.GetInt("Level9Stars");
         StaticVariables.Level10Stars = PlayerPrefs.GetInt("Level10Stars");
+
+        StaticVariables.BadgeColourNodes = PlayerPrefs.GetInt("BadgeColourNodes");
+        StaticVariables.BadgeEmptyWord = PlayerPrefs.GetInt("BadgeEmptyWord");
+        StaticVariables.BadgeSplit = PlayerPrefs.GetInt("BadgeSplit");
+        StaticVariables.BadgeSymmetry = PlayerPrefs.GetInt("BadgeSymmetry");
+        StaticVariables.BadgeTimer = PlayerPrefs.GetInt("BadgeTimer");
+
+        StaticVariables.Level1Fails = PlayerPrefs.GetInt("Level1Fails");
+        StaticVariables.Level2Fails = PlayerPrefs.GetInt("Level2Fails");
+        StaticVariables.Level3Fails = PlayerPrefs.GetInt("Level3Fails");
+        StaticVariables.Level4Fails = PlayerPrefs.GetInt("Level4Fails");
+        StaticVariables.Level5Fails = PlayerPrefs.GetInt("Level5Fails");
+        StaticVariables.Level6Fails = PlayerPrefs.GetInt("Level6Fails");
+        StaticVariables.Level7Fails = PlayerPrefs.GetInt("Level7Fails");
+        StaticVariables.Level8Fails = PlayerPrefs.GetInt("Level8Fails");
+        StaticVariables.Level9Fails = PlayerPrefs.GetInt("Level9Fails");
+        StaticVariables.Level10Fails = PlayerPrefs.GetInt("Level10Fails");
 
         level1.SetActive(false);
         level2.SetActive(false);
@@ -67,6 +86,7 @@ public class LevelSelectionPage : MonoBehaviour
         {
             level1.transform.Find("DoneTag").gameObject.SetActive(true);
             level2Pin.SetActive(true);
+            maxLevel = 1;
         }
         else
             level2Pin.SetActive(false);
@@ -75,6 +95,7 @@ public class LevelSelectionPage : MonoBehaviour
         {
             level2.transform.Find("DoneTag").gameObject.SetActive(true);
             level3Pin.SetActive(true);
+            maxLevel = 2;
         }
         else
             level3Pin.SetActive(false);
@@ -83,6 +104,7 @@ public class LevelSelectionPage : MonoBehaviour
         {
             level3.transform.Find("DoneTag").gameObject.SetActive(true);
             level4Pin.SetActive(true);
+            maxLevel = 3;
         }
         else
             level4Pin.SetActive(false);
@@ -91,6 +113,7 @@ public class LevelSelectionPage : MonoBehaviour
         {
             level4.transform.Find("DoneTag").gameObject.SetActive(true);
             level5Pin.SetActive(true);
+            maxLevel = 4;
         }
         else
             level5Pin.SetActive(false);
@@ -99,6 +122,7 @@ public class LevelSelectionPage : MonoBehaviour
         {
             level5.transform.Find("DoneTag").gameObject.SetActive(true);
             level6Pin.SetActive(true);
+            maxLevel = 5;
         }
         else
             level6Pin.SetActive(false);
@@ -107,6 +131,7 @@ public class LevelSelectionPage : MonoBehaviour
         {
             level6.transform.Find("DoneTag").gameObject.SetActive(true);
             level7Pin.SetActive(true);
+            maxLevel = 6;
         }
         else
             level7Pin.SetActive(false);
@@ -115,6 +140,7 @@ public class LevelSelectionPage : MonoBehaviour
         {
             level7.transform.Find("DoneTag").gameObject.SetActive(true);
             level8Pin.SetActive(true);
+            maxLevel = 7;
         }
         else
             level8Pin.SetActive(false);
@@ -123,6 +149,7 @@ public class LevelSelectionPage : MonoBehaviour
         {
             level8.transform.Find("DoneTag").gameObject.SetActive(true);
             level9Pin.SetActive(true);
+            maxLevel = 8;
         }
         else
             level9Pin.SetActive(false);
@@ -131,6 +158,7 @@ public class LevelSelectionPage : MonoBehaviour
         {
             level9.transform.Find("DoneTag").gameObject.SetActive(true);
             level10Pin.SetActive(true);
+            maxLevel = 9;
         }
         else
             level10Pin.SetActive(false);
@@ -138,6 +166,7 @@ public class LevelSelectionPage : MonoBehaviour
         if (StaticVariables.Level10Stars != 0)
         {
             level10.transform.Find("DoneTag").gameObject.SetActive(true);
+            maxLevel = 10;
         }
     }
 
