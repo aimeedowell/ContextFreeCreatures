@@ -19,29 +19,37 @@ public class CustomToggle : MonoBehaviour, IPointerDownHandler
         unmutedImg.SetActive(true);
         toggleOff.SetActive(false);
         mutedImg.SetActive(false);
+
+        if (StaticVariables.IsMuted == 1)
+            MuteOffImage();
     }
 
     public void OnPointerDown(PointerEventData data)
     {
         if (isOn)
-        {
-            isOn = false;
-            cam.GetComponent<MusicControl>().SetMuted(true);
-            toggleOn.SetActive(false);
-            unmutedImg.SetActive(false);
-            toggleOff.SetActive(true);
-            mutedImg.SetActive(true);
-            
-        }
+            MuteOffImage();
         else
-        {
-            isOn = true;
-            cam.GetComponent<MusicControl>().SetMuted(false);
-            cam.GetComponent<MusicControl>().SetSliderValue(StaticVariables.VolumeLevel);
-            toggleOn.SetActive(true);
-            unmutedImg.SetActive(true);
-            toggleOff.SetActive(false);
-            mutedImg.SetActive(false);
-        }
+            MuteOnImage();
+    }
+
+    void MuteOnImage()
+    {
+        isOn = true;
+        cam.GetComponent<MusicControl>().SetMuted(false);
+        cam.GetComponent<MusicControl>().SetSliderValue(StaticVariables.VolumeLevel);
+        toggleOn.SetActive(true);
+        unmutedImg.SetActive(true);
+        toggleOff.SetActive(false);
+        mutedImg.SetActive(false);
+    }
+
+    void MuteOffImage()
+    {
+        isOn = false;
+        cam.GetComponent<MusicControl>().SetMuted(true);
+        toggleOn.SetActive(false);
+        unmutedImg.SetActive(false);
+        toggleOff.SetActive(true);
+        mutedImg.SetActive(true);
     }
 }

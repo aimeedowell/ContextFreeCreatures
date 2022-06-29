@@ -41,6 +41,7 @@ public static class StaticVariables
     
 
     public static float VolumeLevel { get; set; }
+    public static int IsMuted { get; set; }
 
     // Badges
     public static int BadgeSymmetry { get; set; }     // Level 1

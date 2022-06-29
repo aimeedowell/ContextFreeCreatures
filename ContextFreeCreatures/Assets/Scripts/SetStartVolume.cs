@@ -7,7 +7,7 @@ public class SetStartVolume : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        StaticVariables.VolumeLevel = 0.5f;
+        StaticVariables.VolumeLevel = 1.0f;
     }
 
     // Update is called once per frame
