@@ -264,34 +264,44 @@ public class LevelController : MonoBehaviour
         switch(StaticVariables.Level) 
         {
             case 1:
-                PlayerPrefs.SetInt("Level1Stars", StaticVariables.Level1Stars);
+                if (PlayerPrefs.GetInt("Level1Stars") < StaticVariables.Level1Stars)
+                    PlayerPrefs.SetInt("Level1Stars", StaticVariables.Level1Stars);
                 break;
             case 2:
-                PlayerPrefs.SetInt("Level2Stars", StaticVariables.Level2Stars);
+                if (PlayerPrefs.GetInt("Level2Stars") < StaticVariables.Level2Stars)
+                    PlayerPrefs.SetInt("Level2Stars", StaticVariables.Level2Stars);
                 break;
             case 3:
-                PlayerPrefs.SetInt("Level3Stars", StaticVariables.Level3Stars);
+                if (PlayerPrefs.GetInt("Level3Stars") < StaticVariables.Level3Stars)
+                    PlayerPrefs.SetInt("Level3Stars", StaticVariables.Level3Stars);
                 break;
             case 4:
-                PlayerPrefs.SetInt("Level4Stars", StaticVariables.Level4Stars);
+                if (PlayerPrefs.GetInt("Level4Stars") < StaticVariables.Level4Stars)
+                    PlayerPrefs.SetInt("Level4Stars", StaticVariables.Level4Stars);
                 break;
             case 5:
-                PlayerPrefs.SetInt("Level5Stars", StaticVariables.Level5Stars);
+                if (PlayerPrefs.GetInt("Level5Stars") < StaticVariables.Level5Stars)
+                    PlayerPrefs.SetInt("Level5Stars", StaticVariables.Level5Stars);
                 break;
             case 6:
-                PlayerPrefs.SetInt("Level6Stars", StaticVariables.Level6Stars);
+                if (PlayerPrefs.GetInt("Level6Stars") < StaticVariables.Level6Stars)
+                    PlayerPrefs.SetInt("Level6Stars", StaticVariables.Level6Stars);
                 break;
             case 7:
-                PlayerPrefs.SetInt("Level7Stars", StaticVariables.Level7Stars);
+                if (PlayerPrefs.GetInt("Level7Stars") < StaticVariables.Level7Stars)
+                    PlayerPrefs.SetInt("Level7Stars", StaticVariables.Level7Stars);
                 break;
             case 8:
-                PlayerPrefs.SetInt("Level8Stars", StaticVariables.Level8Stars);
+                if (PlayerPrefs.GetInt("Level8Stars") < StaticVariables.Level8Stars)
+                    PlayerPrefs.SetInt("Level8Stars", StaticVariables.Level8Stars);
                 break;
             case 9:
-                PlayerPrefs.SetInt("Level9Stars", StaticVariables.Level9Stars);
+                if (PlayerPrefs.GetInt("Level9Stars") < StaticVariables.Level9Stars)
+                    PlayerPrefs.SetInt("Level9Stars", StaticVariables.Level9Stars);
                 break;
             case 10:
-                PlayerPrefs.SetInt("Level10Stars", StaticVariables.Level10Stars);
+                if (PlayerPrefs.GetInt("Level10Stars") < StaticVariables.Level10Stars)
+                    PlayerPrefs.SetInt("Level10Stars", StaticVariables.Level10Stars);
                 break;
         }
         
