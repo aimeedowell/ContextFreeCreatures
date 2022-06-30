@@ -341,4 +341,20 @@ public class SceneLoad : MonoBehaviour
         if (PlayerPrefs.GetInt("TutorialComplete") == 1)
             SceneManager.LoadScene("LevelSelection");
     }
+
+    public void AreYouSurePlayerPrefs()
+    {
+        this.gameObject.GetComponent<LevelSelectionPage>().areYouSure.SetActive(true);
+    }
+
+    public void ExitAreYouSurePlayerPrefs()
+    {
+        this.gameObject.GetComponent<LevelSelectionPage>().areYouSure.SetActive(false);
+    }
+
+    public void ClearPlayerPrefs()
+    {
+        PlayerPrefs.DeleteAll();
+        SceneManager.LoadScene("StartPage");
+    }
 } 

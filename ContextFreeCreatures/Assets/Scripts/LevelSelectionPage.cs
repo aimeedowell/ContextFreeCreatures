@@ -28,6 +28,8 @@ public class LevelSelectionPage : MonoBehaviour
     public GameObject level9Pin;
     public GameObject level10Pin;
 
+    public GameObject areYouSure;
+
     public int maxLevel = 0;
 
     // Start is called before the first frame update
@@ -76,6 +78,8 @@ public class LevelSelectionPage : MonoBehaviour
         level8.SetActive(false);
         level9.SetActive(false);
         level10.SetActive(false);
+
+        areYouSure.SetActive(false);
         
         SetPinStates();
         this.gameObject.GetComponent<PlayerProfile>().SetStarValue();
