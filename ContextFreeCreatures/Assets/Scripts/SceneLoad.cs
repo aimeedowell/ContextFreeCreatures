@@ -39,6 +39,8 @@ public class SceneLoad : MonoBehaviour
 
     public void ToLevel1()
     {
+        PlayStartAnime("Level1");
+
         if (isBadge)
         {
             StartCoroutine(Level1());
@@ -56,6 +58,7 @@ public class SceneLoad : MonoBehaviour
 
     public void ToLevel2()
     {
+        PlayStartAnime("Level2");
         if (isBadge)
         {
             StartCoroutine(Level2());
@@ -73,6 +76,7 @@ public class SceneLoad : MonoBehaviour
 
     public void ToLevel3()
     {
+        PlayStartAnime("Level3");
         if (isBadge)
         {
             StartCoroutine(Level3());
@@ -90,6 +94,7 @@ public class SceneLoad : MonoBehaviour
 
     public void ToLevel4()
     {
+        PlayStartAnime("Level4");
         if (isBadge)
         {
             StartCoroutine(Level4());
@@ -107,6 +112,7 @@ public class SceneLoad : MonoBehaviour
 
     public void ToLevel5()
     {
+        PlayStartAnime("Level5");
         if (isBadge)
         {
             StartCoroutine(Level5());
@@ -124,6 +130,7 @@ public class SceneLoad : MonoBehaviour
 
     public void ToLevel6()
     {
+        PlayStartAnime("Level6");
         if (isBadge)
         {
             StartCoroutine(Level6());
@@ -141,6 +148,7 @@ public class SceneLoad : MonoBehaviour
 
     public void ToLevel7()
     {
+        PlayStartAnime("Level7");
         if (isBadge)
         {
             StartCoroutine(Level7());
@@ -158,6 +166,7 @@ public class SceneLoad : MonoBehaviour
 
     public void ToLevel8()
     {
+        PlayStartAnime("Level8");
         if (isBadge)
         {
             StartCoroutine(Level8());
@@ -166,7 +175,7 @@ public class SceneLoad : MonoBehaviour
         else
         {
             buffer.SetActive(true);
-            SceneManager.LoadScene("Level8");
+            SceneManager.LoadScene("Level8"); 
             StaticVariables.Level = 8;
             if (StaticVariables.Level8Stars == 0 && StaticVariables.CoinCount >= 150)
                 PlayerPrefs.SetInt("Coins", StaticVariables.CoinCount -= 150);
@@ -175,6 +184,7 @@ public class SceneLoad : MonoBehaviour
 
     public void ToLevel9()
     {
+        PlayStartAnime("Level9");
         if (isBadge)
         {
             StartCoroutine(Level9());
@@ -192,6 +202,7 @@ public class SceneLoad : MonoBehaviour
 
     public void ToLevel10()
     {
+        PlayStartAnime("Level10");
         if (isBadge)
         {
             StartCoroutine(Level10());
@@ -217,6 +228,13 @@ public class SceneLoad : MonoBehaviour
         {
             this.gameObject.GetComponent<BadgeUnlock>().ShowBadge();
         }
+    }
+
+    void PlayStartAnime(string levelName)
+    {
+        Scene scene = SceneManager.GetActiveScene();
+        if (scene.name != levelName)
+            StaticVariables.ShouldPlayStartAnime = 1;
     }
     
 

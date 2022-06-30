@@ -19,7 +19,8 @@ public class LevelMenuPanel : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        startAnime.SetActive(true);
+        if (StaticVariables.ShouldPlayStartAnime == 1)
+            PlayStartAnimation();
         settingsMenu.SetActive(false);
         exitMenu.SetActive(false);
         popUp.SetActive(false);
@@ -63,6 +64,26 @@ public class LevelMenuPanel : MonoBehaviour
     {
         startAnime.SetActive(false);
         // mandy&speech.GetComponent<Animator>().enabled = false;
+    }
+
+    void PlayStartAnimation()
+    {
+        startAnime.SetActive(true);
+        var transform = startAnime.transform;
+        foreach (Transform child in transform)
+        {
+            if (child.name == "Mandy")
+            {
+                child.GetComponent<Animator>().enabled = true;
+                child.GetComponent<Animator>().Play("Mandy");
+            }
+            else if (child.name == "Speech")
+            {
+                child.GetComponent<Animator>().enabled = true;
+                child.GetComponent<Animator>().Play("Speech");
+            }
+        }
+        StaticVariables.ShouldPlayStartAnime = 0;
     }
     
     public void OnInfoButtonClick()
