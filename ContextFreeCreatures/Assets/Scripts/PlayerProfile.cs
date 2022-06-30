@@ -6,8 +6,9 @@ using UnityEngine.UI;
 public class PlayerProfile : MonoBehaviour
 {
     public GameObject playerProfile;
+    public GameObject profilePicPopUp;
     public GameObject cup;
-
+    public GameObject profilePic;
     public Slider slider;
     public Text noOfStars;
     public Text noOfBadges;
@@ -16,6 +17,8 @@ public class PlayerProfile : MonoBehaviour
     public Sprite silverCup;
     public Sprite goldCup;
 
+    public List<Sprite> profilePics = new List<Sprite>();
+
     int maxLevel = 0;
     int maxStars = 0;
 
@@ -23,6 +26,8 @@ public class PlayerProfile : MonoBehaviour
     void Start()
     {
         playerProfile.SetActive(false);
+        profilePicPopUp.SetActive(false);
+        profilePic.GetComponent<Image>().sprite = profilePics[StaticVariables.ProfilePicIndex];
     }
 
     public void OnProfileButtonClick()
@@ -89,5 +94,52 @@ public class PlayerProfile : MonoBehaviour
         StaticVariables.PlayerSkillLevel = skill;
 
     }
+
+    public void OnPictureClick()
+    {
+        profilePicPopUp.SetActive(true);
+    }
+
+    public void OnNonePic()
+    {
+        profilePicPopUp.SetActive(false);
+        profilePic.GetComponent<Image>().sprite = profilePics[0];
+        StaticVariables.ProfilePicIndex = 0;
+    }
+
+    public void OnSnailPic()
+    {
+        profilePicPopUp.SetActive(false);
+        profilePic.GetComponent<Image>().sprite = profilePics[1];
+        StaticVariables.ProfilePicIndex = 1;
+    }
+
+    public void OnAntPic()
+    {
+        profilePicPopUp.SetActive(false);
+        profilePic.GetComponent<Image>().sprite = profilePics[2];
+        StaticVariables.ProfilePicIndex = 2;
+    }
+
+    public void OnSpiderPic()
+    {
+        profilePicPopUp.SetActive(false);
+        profilePic.GetComponent<Image>().sprite = profilePics[3];
+        StaticVariables.ProfilePicIndex = 3;
+    }
+
+    public void OnBeetlePic()
+    {
+        profilePicPopUp.SetActive(false);
+        profilePic.GetComponent<Image>().sprite = profilePics[4];
+        StaticVariables.ProfilePicIndex = 4;
+    }
+
+    public void OnCentipedePic()
+    {
+        profilePicPopUp.SetActive(false);
+        profilePic.GetComponent<Image>().sprite = profilePics[5];
+        StaticVariables.ProfilePicIndex = 5;
+    }  
 
 }
