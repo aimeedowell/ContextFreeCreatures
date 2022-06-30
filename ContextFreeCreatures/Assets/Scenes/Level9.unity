@@ -330,7 +330,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 65e53bdd2522d4af98684871a8e275a8, type: 3}
+  m_Sprite: {fileID: 21300000, guid: c6e30b81f6fc14425949f24499afd073, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -1796,7 +1796,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 200 coins
+  m_Text: 500 coins
 --- !u!222 &116507409
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2911,6 +2911,7 @@ RectTransform:
   - {fileID: 1739725780}
   - {fileID: 121650663}
   - {fileID: 1748697076}
+  - {fileID: 1098123846}
   - {fileID: 1896344764}
   - {fileID: 1614850956}
   m_Father: {fileID: 560030403}
@@ -6923,6 +6924,7 @@ GameObject:
   - component: {fileID: 560030410}
   - component: {fileID: 560030411}
   - component: {fileID: 560030413}
+  - component: {fileID: 560030414}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -7146,6 +7148,7 @@ MonoBehaviour:
   shopMenu: {fileID: 1748697075}
   firstRule: {fileID: 330120802}
   startNode: {fileID: 1350965108}
+  listOfUnNeededRules: []
 --- !u!114 &560030413
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7163,6 +7166,21 @@ MonoBehaviour:
   title: {fileID: 1267442195}
   image: {fileID: 212435856}
   content: {fileID: 1484122471}
+--- !u!114 &560030414
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 560030400}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a3d508cddc2c74bfc9d2e7ae9416faed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  item: {fileID: 1098123845}
+  background: {fileID: 0}
+  text: {fileID: 1761253310}
 --- !u!1 &563725622
 GameObject:
   m_ObjectHideFlags: 0
@@ -7979,6 +7997,82 @@ RectTransform:
   m_AnchoredPosition: {x: -446, y: 145}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &665921379
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 665921380}
+  - component: {fileID: 665921382}
+  - component: {fileID: 665921381}
+  m_Layer: 5
+  m_Name: Panel
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &665921380
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 665921379}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1761253313}
+  m_Father: {fileID: 1098123846}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 45.271}
+  m_SizeDelta: {x: 115.0956, y: 90.5418}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &665921381
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 665921379}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.9811321, g: 0.80989677, b: 0.80989677, a: 0}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 0}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &665921382
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 665921379}
+  m_CullTransparentMesh: 1
 --- !u!1 &671035005
 GameObject:
   m_ObjectHideFlags: 0
@@ -11450,7 +11544,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Delay Buster Truffle
+  m_Text: Removal Rhubarb
 --- !u!222 &952658242
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -12671,6 +12765,42 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1097564425}
   m_CullTransparentMesh: 1
+--- !u!1 &1098123845
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1098123846}
+  m_Layer: 5
+  m_Name: AllRulesNeeded
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!224 &1098123846
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1098123845}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 665921380}
+  m_Father: {fileID: 172117101}
+  m_RootOrder: 25
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 445.8357, y: 274.5042}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1100486779
 GameObject:
   m_ObjectHideFlags: 0
@@ -14829,7 +14959,7 @@ GameObject:
   - component: {fileID: 1411557761}
   - component: {fileID: 1411557760}
   m_Layer: 5
-  m_Name: 200CoinButton
+  m_Name: 500CoinButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -14902,7 +15032,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 560030412}
         m_TargetAssemblyTypeName: Shop, Assembly-CSharp
-        m_MethodName: DelayBusterTruffle
+        m_MethodName: RemovalRhubarb
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -16463,7 +16593,7 @@ RectTransform:
   - {fileID: 603589679}
   - {fileID: 1230897312}
   m_Father: {fileID: 172117101}
-  m_RootOrder: 26
+  m_RootOrder: 27
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -18477,6 +18607,85 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1753505094}
   m_CullTransparentMesh: 1
+--- !u!1 &1761253310
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1761253313}
+  - component: {fileID: 1761253312}
+  - component: {fileID: 1761253311}
+  m_Layer: 5
+  m_Name: Title
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1761253311
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1761253310}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 12800000, guid: 58b647c5b2ec4184e9a07a561cdf0644, type: 3}
+    m_FontSize: 70
+    m_FontStyle: 1
+    m_BestFit: 0
+    m_MinSize: 5
+    m_MaxSize: 70
+    m_Alignment: 4
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: "All creatures \nare\n needed!"
+--- !u!222 &1761253312
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1761253310}
+  m_CullTransparentMesh: 1
+--- !u!224 &1761253313
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1761253310}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 665921380}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 1}
+  m_AnchorMax: {x: 0.5, y: 1}
+  m_AnchoredPosition: {x: -3.8207, y: -182.52}
+  m_SizeDelta: {x: 553.29, y: 189.9856}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1761344573
 GameObject:
   m_ObjectHideFlags: 0
@@ -19598,7 +19807,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 323, y: -192}
-  m_SizeDelta: {x: 318.8484, y: 117.792}
+  m_SizeDelta: {x: 318.8484, y: 138.2131}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1808167997
 MonoBehaviour:
@@ -19633,7 +19842,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Running low on lives? Use this sweet to prevent delays to Mandys travels!
+  m_Text: Struggling to complete a level? Use this tangy treat to remove any unneeded
+    rules!
 --- !u!222 &1808167998
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -20104,7 +20314,7 @@ RectTransform:
   m_Children:
   - {fileID: 176805812}
   m_Father: {fileID: 172117101}
-  m_RootOrder: 25
+  m_RootOrder: 26
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}

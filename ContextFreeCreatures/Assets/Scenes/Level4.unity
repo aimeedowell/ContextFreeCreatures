@@ -357,7 +357,7 @@ GameObject:
   - component: {fileID: 86317649}
   - component: {fileID: 86317648}
   m_Layer: 5
-  m_Name: 200CoinButton
+  m_Name: 500CoinButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -430,7 +430,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 560030412}
         m_TargetAssemblyTypeName: Shop, Assembly-CSharp
-        m_MethodName: DelayBusterTruffle
+        m_MethodName: RemovalRhubarb
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -6122,6 +6122,16 @@ MonoBehaviour:
   shopMenu: {fileID: 1780105022}
   firstRule: {fileID: 1372026224}
   startNode: {fileID: 1350965108}
+  listOfUnNeededRules:
+  - {fileID: 330120802}
+  - {fileID: 803061937}
+  - {fileID: 1032700131}
+  - {fileID: 1074799009}
+  - {fileID: 1915768230}
+  - {fileID: 654221445}
+  - {fileID: 1873593007}
+  - {fileID: 1873593007}
+  - {fileID: 1254074377}
 --- !u!1 &571619798
 GameObject:
   m_ObjectHideFlags: 0
@@ -10029,9 +10039,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Delay Buster Truffle
-
-'
+  m_Text: Removal Rhubarb
 --- !u!222 &886710889
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -14995,7 +15003,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 65e53bdd2522d4af98684871a8e275a8, type: 3}
+  m_Sprite: {fileID: 21300000, guid: c6e30b81f6fc14425949f24499afd073, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -17995,8 +18003,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 323, y: -192}
-  m_SizeDelta: {x: 318.8484, y: 117.792}
+  m_AnchoredPosition: {x: 323, y: -196.94}
+  m_SizeDelta: {x: 318.8484, y: 141.1304}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1796341595
 MonoBehaviour:
@@ -18031,7 +18039,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Running low on lives? Use this sweet to prevent delays to Mandys travels!
+  m_Text: Struggling to complete a level? Use this tangy treat to remove any unneeded
+    rules!
 --- !u!222 &1796341596
 CanvasRenderer:
   m_ObjectHideFlags: 0

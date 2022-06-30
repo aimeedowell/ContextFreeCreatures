@@ -841,7 +841,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 172117101}
-  m_RootOrder: 20
+  m_RootOrder: 21
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -1831,13 +1831,13 @@ RectTransform:
   - {fileID: 1229114789}
   - {fileID: 477464200}
   - {fileID: 404227489}
+  - {fileID: 1341819340}
   - {fileID: 1523369734}
   - {fileID: 1262083044}
   - {fileID: 1739725780}
   - {fileID: 121650663}
   - {fileID: 991955955}
   - {fileID: 912933951}
-  - {fileID: 1341819340}
   - {fileID: 1392410424}
   m_Father: {fileID: 560030403}
   m_RootOrder: 0
@@ -2152,7 +2152,7 @@ GameObject:
   - component: {fileID: 206486719}
   - component: {fileID: 206486718}
   m_Layer: 5
-  m_Name: 200CoinButton
+  m_Name: 500CoinButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2225,7 +2225,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 560030413}
         m_TargetAssemblyTypeName: Shop, Assembly-CSharp
-        m_MethodName: DelayBusterTruffle
+        m_MethodName: RemovalRhubarb
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -5849,6 +5849,16 @@ MonoBehaviour:
   shopMenu: {fileID: 912933950}
   firstRule: {fileID: 1254074377}
   startNode: {fileID: 1350965108}
+  listOfUnNeededRules:
+  - {fileID: 330120802}
+  - {fileID: 1759568886}
+  - {fileID: 1323174238}
+  - {fileID: 1372026224}
+  - {fileID: 604187772}
+  - {fileID: 1003603754}
+  - {fileID: 504108877}
+  - {fileID: 1430876817}
+  - {fileID: 154209127}
 --- !u!1 &602404184
 GameObject:
   m_ObjectHideFlags: 0
@@ -6494,7 +6504,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 323, y: -192}
-  m_SizeDelta: {x: 318.8484, y: 117.792}
+  m_SizeDelta: {x: 318.8484, y: 141.1304}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &621441946
 MonoBehaviour:
@@ -6529,7 +6539,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Running low on lives? Use this sweet to prevent delays to Mandys travels!
+  m_Text: Struggling to complete a level? Use this tangy treat to remove any unneeded
+    rules!
 --- !u!222 &621441947
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -9402,7 +9413,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &912933951
 RectTransform:
   m_ObjectHideFlags: 0
@@ -9417,7 +9428,7 @@ RectTransform:
   - {fileID: 1263116699}
   - {fileID: 1618131690}
   m_Father: {fileID: 172117101}
-  m_RootOrder: 22
+  m_RootOrder: 23
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -10226,7 +10237,7 @@ RectTransform:
   m_Children:
   - {fileID: 602404185}
   m_Father: {fileID: 172117101}
-  m_RootOrder: 21
+  m_RootOrder: 22
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -11052,7 +11063,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Delay Buster Truffle
+  m_Text: Removal Rhubarb
 --- !u!222 &1030200505
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -12116,7 +12127,7 @@ GameObject:
   - component: {fileID: 1138135486}
   - component: {fileID: 1138135485}
   m_Layer: 5
-  m_Name: NextNodeHelper
+  m_Name: RemovalHelper
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -12161,7 +12172,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 65e53bdd2522d4af98684871a8e275a8, type: 3}
+  m_Sprite: {fileID: 21300000, guid: c6e30b81f6fc14425949f24499afd073, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -13584,7 +13595,7 @@ RectTransform:
   - {fileID: 822831496}
   - {fileID: 319699105}
   m_Father: {fileID: 172117101}
-  m_RootOrder: 18
+  m_RootOrder: 19
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -14327,7 +14338,7 @@ RectTransform:
   - {fileID: 1821387062}
   - {fileID: 707534350}
   m_Father: {fileID: 172117101}
-  m_RootOrder: 23
+  m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -16139,7 +16150,7 @@ RectTransform:
   - {fileID: 965019093}
   - {fileID: 619995215}
   m_Father: {fileID: 172117101}
-  m_RootOrder: 17
+  m_RootOrder: 18
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -16420,7 +16431,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 200 coins
+  m_Text: 500 coins
 --- !u!222 &1563044946
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -17709,7 +17720,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 172117101}
-  m_RootOrder: 19
+  m_RootOrder: 20
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}

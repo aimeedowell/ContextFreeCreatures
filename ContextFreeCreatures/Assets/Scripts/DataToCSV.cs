@@ -76,6 +76,14 @@ static public class DataToCSV
         }
     }
 
+    public static void RemovalRhubarb(string level)
+    {
+        using (System.IO.StreamWriter file = new System.IO.StreamWriter(filePath, true))
+        {
+            file.WriteLine(DateTime.Now.TimeOfDay.ToString() + "," + "Level:" + "," + level + "," + "Rule Removal Applied");
+        }
+    }
+
     public static void GameQuit()
     {
         int noOfStars = StaticVariables.Level1Stars + StaticVariables.Level2Stars + StaticVariables.Level3Stars +

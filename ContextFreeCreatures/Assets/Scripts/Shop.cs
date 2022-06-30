@@ -10,6 +10,8 @@ public class Shop : MonoBehaviour
     public GameObject firstRule;
     public GameObject startNode;
 
+    public List<GameObject> listOfUnNeededRules = new List<GameObject>();
+
     public void RestartBonBon()
     {
         if (StaticVariables.CoinCount >= 100)
@@ -42,6 +44,22 @@ public class Shop : MonoBehaviour
             shopMenu.SetActive(false);
             this.gameObject.GetComponent<LevelController>().AddLife();
             DataToCSV.DelayTruffleLine(StaticVariables.Level.ToString());
+        }
+    }
+
+    public void RemovalRhubarb()
+    {
+        if (StaticVariables.CoinCount >= 500)
+        {
+            UpdateCoins(500);
+            shopMenu.SetActive(false);
+            for (int i = 0; i < listOfUnNeededRules.Count; i++)
+            {
+                listOfUnNeededRules[i].SetActive(false);
+            }
+            if (listOfUnNeededRules.Count == 0)
+                this.gameObject.GetComponent<AllRulesNeeded>().OnAllRulesNeeded();
+            DataToCSV.RemovalRhubarb(StaticVariables.Level.ToString());
         }
     }
 
