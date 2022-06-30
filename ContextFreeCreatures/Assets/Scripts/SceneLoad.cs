@@ -149,6 +149,11 @@ public class SceneLoad : MonoBehaviour
     public void ToLevel7()
     {
         PlayStartAnime("Level7");
+        Scene scene = SceneManager.GetActiveScene();
+        bool calledFromItself = false;
+        if (scene.name == "Level7")
+            calledFromItself = true;
+
         if (isBadge)
         {
             StartCoroutine(Level7());
@@ -161,6 +166,9 @@ public class SceneLoad : MonoBehaviour
             StaticVariables.Level = 7;
             if (StaticVariables.Level7Stars == 0 && StaticVariables.CoinCount >= 150)
                 PlayerPrefs.SetInt("Coins", StaticVariables.CoinCount -= 150);
+
+            if (calledFromItself)
+                StaticVariables.StartFlood = 1;
         }
     }
 

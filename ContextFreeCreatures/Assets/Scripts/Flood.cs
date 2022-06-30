@@ -10,20 +10,27 @@ public class Flood : MonoBehaviour
     public GameObject maskContainer;
     public GameObject mask;
     public Text timerText;
+    public GameObject hintText;
     GameObject cam;
     GameObject treeArea;
 
     bool timerStarted = false;
 
-    float amountOfTime = 35f;
+    float amountOfTime = 50f;
 
-    float timeRemaining = 35f;
+    float timeRemaining = 50f;
 
     // Start is called before the first frame update
     void Start()
     {
         treeArea = GameObject.Find("TreeSpace");
         cam = GameObject.Find("Main Camera");
+
+        if (StaticVariables.StartFlood == 1)
+        {
+            OnStartClicked();
+            StaticVariables.StartFlood = 0;
+        }
     }
 
     void Update()
@@ -46,7 +53,6 @@ public class Flood : MonoBehaviour
 
     }
 
-    // Update is called once per frame
     public void OnStartClicked()
     {
         timerStarted = true;

@@ -45,6 +45,8 @@ public static class StaticVariables
 
     public static int ShouldPlayStartAnime { get; set; }
 
+    public static int StartFlood { get; set; }
+
     // Badges
     public static int BadgeSymmetry { get; set; }     // Level 1
     public static int BadgeEmptyWord { get; set; }     // Level 2
