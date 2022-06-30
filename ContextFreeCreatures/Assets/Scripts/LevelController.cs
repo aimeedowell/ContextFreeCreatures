@@ -207,7 +207,7 @@ public class LevelController : MonoBehaviour
                 cam.GetComponent<SceneLoad>().isBadge = cam.GetComponent<BadgeUnlock>().BadgeToBeShown();
             int noOfStars = cam.GetComponent<LevelSolutions>().GetNumberOfStars(timeElapsed, numberOfNodesUsed);
             cam.GetComponent<LevelEnd>().LevelSuccess(noOfStars);
-            DataToCSV.EndOfLevelLine(StaticVariables.Level.ToString(), "Success", numberOfNodesUsed.ToString(), timeElapsed.ToString());
+            DataToCSV.EndOfLevelLine(StaticVariables.Level.ToString(), "Success", numberOfNodesUsed.ToString(), timeElapsed.ToString(), noOfStars.ToString());
         }
         else
         {
@@ -215,7 +215,7 @@ public class LevelController : MonoBehaviour
             SetLevelFails(noOfFails += 1);
             cam.GetComponent<EndWord>().LevelFailRemoveCoins();
             cam.GetComponent<LevelEnd>().LevelFailed();
-            DataToCSV.EndOfLevelLine(StaticVariables.Level.ToString(), "Failed", numberOfNodesUsed.ToString(), timeElapsed.ToString());
+            DataToCSV.EndOfLevelLine(StaticVariables.Level.ToString(), "Failed", numberOfNodesUsed.ToString(), timeElapsed.ToString(), 0.ToString());
         }
 
         SaveProgress();

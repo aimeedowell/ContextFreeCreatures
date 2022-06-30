@@ -54,6 +54,8 @@ public static class StaticVariables
     public static int BadgeTimer { get; set; }     // Level 7
     public static int BadgeColourNodes { get; set; }     // Level 9
 
+    public static string PlayerSkillLevel { get; set; }
+
     
 
 }

@@ -9,10 +9,4 @@ public class SetStartVolume : MonoBehaviour
     {
         StaticVariables.VolumeLevel = 1.0f;
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }

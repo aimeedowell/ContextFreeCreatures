@@ -227,6 +227,7 @@ public class SceneLoad : MonoBehaviour
     }
     public void QuitGame()
     {
+        DataToCSV.GameQuit();
         Application.Quit();
     }
 

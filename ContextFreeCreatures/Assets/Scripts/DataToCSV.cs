@@ -14,12 +14,12 @@ static public class DataToCSV
         }
     }
 
-    public static void EndOfLevelLine(string level, string status, string numberOfNodesUsed, string timeTaken)
+    public static void EndOfLevelLine(string level, string status, string numberOfNodesUsed, string timeTaken, string stars)
     {
         // status = Failed or Completed Successfully
         using (System.IO.StreamWriter file = new System.IO.StreamWriter(filePath, true))
         {
-            file.WriteLine(DateTime.Now.TimeOfDay.ToString() + "," + "Level ended" + "," + level + "," + status + "," + timeTaken + "," + numberOfNodesUsed);
+            file.WriteLine(DateTime.Now.TimeOfDay.ToString() + "," + "Level ended" + "," + level + "," + status + "," + timeTaken + "," + numberOfNodesUsed + "," + "Stars: " + "," + stars );
         }
         CoinUpdateLine(level);
     }
@@ -73,6 +73,20 @@ static public class DataToCSV
         using (System.IO.StreamWriter file = new System.IO.StreamWriter(filePath, true))
         {
             file.WriteLine(DateTime.Now.TimeOfDay.ToString() + "," + "Level:" + "," + level + "," + "Delay Truffle Applied");
+        }
+    }
+
+    public static void GameQuit()
+    {
+        int noOfStars = StaticVariables.Level1Stars + StaticVariables.Level2Stars + StaticVariables.Level3Stars +
+                StaticVariables.Level4Stars + StaticVariables.Level5Stars + StaticVariables.Level6Stars + 
+                StaticVariables.Level7Stars + StaticVariables.Level8Stars + StaticVariables.Level9Stars +
+                StaticVariables.Level10Stars;
+        string playerLevel = StaticVariables.PlayerSkillLevel.ToString();
+
+        using (System.IO.StreamWriter file = new System.IO.StreamWriter(filePath, true))
+        {
+            file.WriteLine(DateTime.Now.TimeOfDay.ToString() + "," + "Game Closed " + "," + "Player Skill Level" + "," + playerLevel + "," + "Total No of Stars" + "," + noOfStars.ToString());
         }
     }
 }

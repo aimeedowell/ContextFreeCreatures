@@ -78,6 +78,9 @@ public class LevelSelectionPage : MonoBehaviour
         level10.SetActive(false);
         
         SetPinStates();
+        this.gameObject.GetComponent<PlayerProfile>().SetStarValue();
+        this.gameObject.GetComponent<PlayerProfile>().SetPlayerSkillLevel(maxLevel);
+        
     }
 
     void SetPinStates()

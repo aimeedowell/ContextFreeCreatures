@@ -31,7 +31,7 @@ public class PlayerProfile : MonoBehaviour
         SetLevelSliderValue();
         SetStarValue();
         SetBadgeValue();
-        SetPlayerSkillLevel();
+        SetPlayerSkillLevel(maxLevel);
     }
 
     public void OnProfileExitClick()
@@ -47,7 +47,7 @@ public class PlayerProfile : MonoBehaviour
         maxLevel = val;
     }
 
-    void SetStarValue()
+    public void SetStarValue()
     {
         int count = StaticVariables.Level1Stars + StaticVariables.Level2Stars + StaticVariables.Level3Stars +
                     StaticVariables.Level4Stars + StaticVariables.Level5Stars + StaticVariables.Level6Stars + 
@@ -63,7 +63,7 @@ public class PlayerProfile : MonoBehaviour
         noOfBadges.GetComponent<Text>().text = count.ToString();
     }
 
-    void SetPlayerSkillLevel()
+    public void SetPlayerSkillLevel(int maxLevel)
     {
         string skill = "Newbie";
         if ((maxLevel >= 0 && maxLevel < 3) && (maxStars >= 0 && maxStars < 6))
@@ -86,6 +86,7 @@ public class PlayerProfile : MonoBehaviour
             GetComponent<Image>().sprite = goldCup;
         }
         skillLevel.GetComponent<Text>().text = skill; 
+        StaticVariables.PlayerSkillLevel = skill;
 
     }
 

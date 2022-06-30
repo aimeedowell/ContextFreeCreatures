@@ -63,7 +63,6 @@ public class LevelMenuPanel : MonoBehaviour
     public void OnLetsGoClick()
     {
         startAnime.SetActive(false);
-        // mandy&speech.GetComponent<Animator>().enabled = false;
     }
 
     void PlayStartAnimation()
