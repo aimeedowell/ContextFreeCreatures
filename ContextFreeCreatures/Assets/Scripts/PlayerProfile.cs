@@ -27,7 +27,7 @@ public class PlayerProfile : MonoBehaviour
     {
         playerProfile.SetActive(false);
         profilePicPopUp.SetActive(false);
-        profilePic.GetComponent<Image>().sprite = profilePics[StaticVariables.ProfilePicIndex];
+        profilePic.GetComponent<Image>().sprite = profilePics[PlayerPrefs.GetInt("ProfilePicIndex")];
     }
 
     public void OnProfileButtonClick()
@@ -105,6 +105,7 @@ public class PlayerProfile : MonoBehaviour
         profilePicPopUp.SetActive(false);
         profilePic.GetComponent<Image>().sprite = profilePics[0];
         StaticVariables.ProfilePicIndex = 0;
+        PlayerPrefs.SetInt("ProfilePicIndex", StaticVariables.ProfilePicIndex);
     }
 
     public void OnSnailPic()
@@ -112,6 +113,7 @@ public class PlayerProfile : MonoBehaviour
         profilePicPopUp.SetActive(false);
         profilePic.GetComponent<Image>().sprite = profilePics[1];
         StaticVariables.ProfilePicIndex = 1;
+        PlayerPrefs.SetInt("ProfilePicIndex", StaticVariables.ProfilePicIndex);
     }
 
     public void OnAntPic()
@@ -119,6 +121,7 @@ public class PlayerProfile : MonoBehaviour
         profilePicPopUp.SetActive(false);
         profilePic.GetComponent<Image>().sprite = profilePics[2];
         StaticVariables.ProfilePicIndex = 2;
+        PlayerPrefs.SetInt("ProfilePicIndex", StaticVariables.ProfilePicIndex);
     }
 
     public void OnSpiderPic()
@@ -126,6 +129,7 @@ public class PlayerProfile : MonoBehaviour
         profilePicPopUp.SetActive(false);
         profilePic.GetComponent<Image>().sprite = profilePics[3];
         StaticVariables.ProfilePicIndex = 3;
+        PlayerPrefs.SetInt("ProfilePicIndex", StaticVariables.ProfilePicIndex);
     }
 
     public void OnBeetlePic()
@@ -133,6 +137,7 @@ public class PlayerProfile : MonoBehaviour
         profilePicPopUp.SetActive(false);
         profilePic.GetComponent<Image>().sprite = profilePics[4];
         StaticVariables.ProfilePicIndex = 4;
+        PlayerPrefs.SetInt("ProfilePicIndex", StaticVariables.ProfilePicIndex);
     }
 
     public void OnCentipedePic()
@@ -140,6 +145,7 @@ public class PlayerProfile : MonoBehaviour
         profilePicPopUp.SetActive(false);
         profilePic.GetComponent<Image>().sprite = profilePics[5];
         StaticVariables.ProfilePicIndex = 5;
+        PlayerPrefs.SetInt("ProfilePicIndex", StaticVariables.ProfilePicIndex);
     }  
 
 }
