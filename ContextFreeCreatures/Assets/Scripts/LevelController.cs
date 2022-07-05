@@ -123,13 +123,13 @@ public class LevelController : MonoBehaviour
 
 
                 float nodeX = RemapRange(prevNode.transform.localPosition.x, -treeSpaceWidth/2, treeSpaceWidth/2, 0, treeSpaceWidth);
-                float newWidth = Mathf.Abs(nodeNeighX - nodeX) - 100f;
+                float newWidth = Mathf.Abs(nodeNeighX - nodeX) - 150;
 
                 if (ruleImages.Count > 2)
                     splitWidth = (newWidth/(imageCount-1));
                 else
                     splitWidth = newWidth;
-                startWidth = Mathf.Abs(nodeX - (newWidth/2));
+                startWidth = nodeX - (newWidth/2);
 
             }
         }
