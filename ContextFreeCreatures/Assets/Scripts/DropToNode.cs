@@ -33,9 +33,9 @@ public class DropToNode : MonoBehaviour, IDropHandler
             data.pointerDrag.GetComponent<RectTransform>().transform.position = GetComponent<RectTransform>().transform.position;
             data.pointerDrag.GetComponent<DragAndDrop>().hasDropped = true;
             this.gameObject.SetActive(false);
-            cam.GetComponent<LevelController>().ReplaceNode(data.pointerDrag.GetComponent<RuleContents>().GetCreatureImage(), GetComponent<RectTransform>().anchoredPosition);
+            cam.GetComponent<LevelController>().ReplaceNode(data.pointerDrag.GetComponent<RuleContents>().GetCreatureImage(), GetComponent<RectTransform>().transform.position);
 
-            var rectTransform = GetComponent<RectTransform>();
+
             float height = GetComponent<RectTransform>().transform.localPosition.y;
             float width = GetComponent<RectTransform>().transform.localPosition.x;
 

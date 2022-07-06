@@ -24,7 +24,6 @@ public class LevelController : MonoBehaviour
     private float maxRows = 6;
 
     private List<List<GameObject>> tree = new List<List<GameObject>>();
-    private Vector2 nodeAnchPos;
 
     private float timeElapsed = 0f;
     private int numberOfNodesUsed = 0;
@@ -35,6 +34,7 @@ public class LevelController : MonoBehaviour
 
     int noOfFails;
 
+    float maxWidth;
 
     private void Start() 
     {
@@ -55,27 +55,32 @@ public class LevelController : MonoBehaviour
         StaticVariables.NoOfLives = PlayerPrefs.GetInt("Lives");
         if (StaticVariables.Level > 0)
             cam.GetComponent<MusicControl>().SetSliderValue(StaticVariables.VolumeLevel);
+
+        maxWidth = treeSpaceWidth;
     }
 
-    public void ReplaceNode(GameObject creatureImage, Vector2 node)
+    public void ReplaceNode(GameObject creatureImage, Vector3 node)
     {
+        this.GetComponent<ScaleViewport>().contentScaler.transform.DetachChildren();
         GameObject bkg = Instantiate(spriteBackground, canvas.transform);
-        bkg.GetComponent<RectTransform>().anchoredPosition = node;
-        nodeAnchPos = node;
+        bkg.GetComponent<RectTransform>().transform.position = node;
         bkg.transform.SetParent(treeArea.transform);
         bkg.SetActive(true);
 
         GameObject creature = Instantiate(creatureImage, canvas.transform);
-        creature.GetComponent<RectTransform>().anchoredPosition = node;
-        nodeAnchPos = node;
+        creature.GetComponent<RectTransform>().transform.position = node;
         creature.transform.SetParent(treeArea.transform);
         creature.SetActive(true);
 
         numberOfNodesUsed += 1;
+        treeArea.transform.SetParent(this.GetComponent<ScaleViewport>().contentScaler.transform);
+
     }
 
     public void GetContents(List<GameObject> ruleImages, GameObject prevNode, float prevNodeY)
     {
+        this.GetComponent<ScaleViewport>().contentScaler.transform.DetachChildren();
+
         int imageCount = ruleImages.Count;
         List<GameObject> ruleObjects = new List<GameObject>();
 
@@ -87,16 +92,19 @@ public class LevelController : MonoBehaviour
         float splitWidth = 0;
         float startWidth = 0f;
 
+        float prevNodeX = prevNode.GetComponent<RectTransform>().transform.localPosition.x;
+
         if (prevNode == startNode)
         {
+            float nodeX = RemapRange(prevNodeX, -treeSpaceWidth/2, treeSpaceWidth/2, 0, treeSpaceWidth);
             startWidth = -treeSpaceWidth/(imageCount*2);
             splitWidth = (treeSpaceWidth + (treeSpaceWidth/imageCount))/(imageCount + 1);
-            startWidth += splitWidth;
+            startWidth = nodeX - (splitWidth/imageCount);
         }
         else
         {
             if (ruleImages.Count == 1)
-                startWidth = RemapRange(prevNode.transform.localPosition.x, -treeSpaceWidth/2, treeSpaceWidth/2, 0, treeSpaceWidth);
+                startWidth = RemapRange(prevNodeX, -treeSpaceWidth/2, treeSpaceWidth/2, 0, treeSpaceWidth);
             else
             {
                 float nodeNeighX = treeSpaceWidth/2;
@@ -122,7 +130,7 @@ public class LevelController : MonoBehaviour
                 }
 
 
-                float nodeX = RemapRange(prevNode.transform.localPosition.x, -treeSpaceWidth/2, treeSpaceWidth/2, 0, treeSpaceWidth);
+                float nodeX = RemapRange(prevNodeX, -treeSpaceWidth/2, treeSpaceWidth/2, 0, treeSpaceWidth);
                 float newWidth = Mathf.Abs(nodeNeighX - nodeX) - 150;
 
                 if (ruleImages.Count > 2)
@@ -130,6 +138,12 @@ public class LevelController : MonoBehaviour
                 else
                     splitWidth = newWidth;
                 startWidth = nodeX - (newWidth/2);
+
+                if (startWidth < 0)
+                {
+                    this.GetComponent<ScaleViewport>().ScaleTreeSize(maxWidth + (Mathf.Abs(startWidth)*2) + 100f, treeSpaceHeight, 0);
+                    maxWidth = maxWidth + (Mathf.Abs(startWidth)*2) + 100f;
+                }
 
             }
         }
@@ -141,8 +155,10 @@ public class LevelController : MonoBehaviour
             float y = RemapRange(height, 0, treeSpaceHeight, -treeSpaceHeight/2, treeSpaceHeight/2);
             
             GameObject gemClone = Instantiate(ruleImages[i], canvas.transform);
-            gemClone.GetComponent<RectTransform>().anchoredPosition = new Vector2(x, y);
             gemClone.transform.SetParent(treeArea.transform);
+            Vector3 localPos = new Vector3(x, y, 0);
+            Vector3 worldPos = transform.TransformPoint(localPos);
+            gemClone.GetComponent<RectTransform>().localPosition = localPos;
             gemClone.SetActive(true);
 
             if (StaticVariables.Level == 5)
@@ -156,6 +172,8 @@ public class LevelController : MonoBehaviour
 
             startWidth += splitWidth;
         }
+
+        treeArea.transform.SetParent(this.GetComponent<ScaleViewport>().contentScaler.transform);
 
          
         List<GameObject> endWord = cam.GetComponent<EndWord>().UpdateEndWord(ruleObjects, prevNode);

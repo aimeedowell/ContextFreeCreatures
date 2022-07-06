@@ -29,7 +29,7 @@ public class Shop : MonoBehaviour
             UpdateCoins(150);
             shopMenu.SetActive(false);
 
-            this.gameObject.GetComponent<LevelController>().ReplaceNode(firstRule.GetComponent<RuleContents>().GetCreatureImage(), startNode.GetComponent<RectTransform>().anchoredPosition);
+            this.gameObject.GetComponent<LevelController>().ReplaceNode(firstRule.GetComponent<RuleContents>().GetCreatureImage(), startNode.GetComponent<RectTransform>().transform.position);
             this.gameObject.GetComponent<LevelController>().GetContents(firstRule.GetComponent<RuleContents>().GetRuleImages(), startNode.gameObject, startNode.GetComponent<RectTransform>().transform.localPosition.y);
             startNode.SetActive(false);
             DataToCSV.StartNodeToffeeLine(StaticVariables.Level.ToString(), this.gameObject.GetComponent<EndWord>().GetCurrentEndWordNames());
