@@ -97,9 +97,8 @@ public class LevelController : MonoBehaviour
         if (prevNode == startNode)
         {
             float nodeX = RemapRange(prevNodeX, -treeSpaceWidth/2, treeSpaceWidth/2, 0, treeSpaceWidth);
-            startWidth = -treeSpaceWidth/(imageCount*2);
             splitWidth = (treeSpaceWidth + (treeSpaceWidth/imageCount))/(imageCount + 1);
-            startWidth = nodeX - (splitWidth/imageCount);
+            startWidth = nodeX - splitWidth;
         }
         else
         {
