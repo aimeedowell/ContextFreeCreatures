@@ -6996,6 +6996,9 @@ MonoBehaviour:
   shopMenu: {fileID: 1748697075}
   firstRule: {fileID: 330120802}
   startNode: {fileID: 1520907244}
+  coin100Button: {fileID: 1097564425}
+  coin150Button: {fileID: 1745286724}
+  coin500Button: {fileID: 1411557758}
   listOfUnNeededRules: []
 --- !u!114 &560030413
 MonoBehaviour:
@@ -9674,7 +9677,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.8509804}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1

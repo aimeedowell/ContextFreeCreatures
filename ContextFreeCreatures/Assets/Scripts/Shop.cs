@@ -10,7 +10,48 @@ public class Shop : MonoBehaviour
     public GameObject firstRule;
     public GameObject startNode;
 
+    public GameObject coin100Button;
+    public GameObject coin150Button;
+    public GameObject coin500Button;
+
     public List<GameObject> listOfUnNeededRules = new List<GameObject>();
+
+    void Update() 
+    {
+        if (shopMenu.activeSelf == true)
+        {
+            if (StaticVariables.CoinCount < 100)
+            {
+                coin100Button.GetComponent<Button>().interactable = false;
+                coin150Button.GetComponent<Button>().interactable = false;
+                coin500Button.GetComponent<Button>().interactable = false;
+            }
+            else if (StaticVariables.CoinCount >= 100 && StaticVariables.CoinCount < 150)
+            {
+                coin100Button.GetComponent<Button>().interactable = true;
+                coin150Button.GetComponent<Button>().interactable = false;
+                coin500Button.GetComponent<Button>().interactable = false;
+            }
+            else if (StaticVariables.CoinCount >= 150 && StaticVariables.CoinCount < 500)
+            {
+                coin100Button.GetComponent<Button>().interactable = true;
+                coin150Button.GetComponent<Button>().interactable = true;
+                coin500Button.GetComponent<Button>().interactable = false;
+            }
+            else if (StaticVariables.CoinCount >= 500)
+            {
+                coin100Button.GetComponent<Button>().interactable = true;
+                coin150Button.GetComponent<Button>().interactable = true;
+                coin500Button.GetComponent<Button>().interactable = true;
+            }
+
+            if (startNode.activeSelf == false)
+            {
+                coin150Button.GetComponent<Button>().interactable = false;
+            }
+        }
+        
+    }
 
     public void RestartBonBon()
     {

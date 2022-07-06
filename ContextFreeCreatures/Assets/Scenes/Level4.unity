@@ -6105,6 +6105,9 @@ MonoBehaviour:
   shopMenu: {fileID: 1780105022}
   firstRule: {fileID: 1372026224}
   startNode: {fileID: 1979309083}
+  coin100Button: {fileID: 2100366357}
+  coin150Button: {fileID: 353931844}
+  coin500Button: {fileID: 86317646}
   listOfUnNeededRules:
   - {fileID: 330120802}
   - {fileID: 803061937}
