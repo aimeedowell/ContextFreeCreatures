@@ -35,6 +35,7 @@ public class LevelController : MonoBehaviour
     int noOfFails;
 
     float maxWidth;
+    float maxHeight;
 
     private void Start() 
     {
@@ -57,6 +58,7 @@ public class LevelController : MonoBehaviour
             cam.GetComponent<MusicControl>().SetSliderValue(StaticVariables.VolumeLevel);
 
         maxWidth = treeSpaceWidth;
+        maxHeight = treeSpaceHeight;
     }
 
     public void ReplaceNode(GameObject creatureImage, Vector3 node)
@@ -96,9 +98,9 @@ public class LevelController : MonoBehaviour
 
         if (prevNode == startNode)
         {
-            float nodeX = RemapRange(prevNodeX, -treeSpaceWidth/2, treeSpaceWidth/2, 0, treeSpaceWidth);
+            startWidth = -treeSpaceWidth/(imageCount*2);
             splitWidth = (treeSpaceWidth + (treeSpaceWidth/imageCount))/(imageCount + 1);
-            startWidth = nodeX - splitWidth;
+            startWidth += splitWidth;
         }
         else
         {
@@ -138,12 +140,19 @@ public class LevelController : MonoBehaviour
                     splitWidth = newWidth;
                 startWidth = nodeX - (newWidth/2);
 
-                if (startWidth < 0)
+                if (startWidth < 0 || startWidth >= maxWidth)
                 {
-                    this.GetComponent<ScaleViewport>().ScaleTreeSize(maxWidth + (Mathf.Abs(startWidth)*2) + 100f, treeSpaceHeight, 0);
+                    this.GetComponent<ScaleViewport>().ScaleTreeSizeWidth(maxWidth + (Mathf.Abs(startWidth)*2) + 100f, treeSpaceHeight, 0);
                     maxWidth = maxWidth + (Mathf.Abs(startWidth)*2) + 100f;
                 }
 
+            }
+
+            if (height <= 5 )
+            {             
+                this.GetComponent<ScaleViewport>().ScaleTreeSizeHeight(treeSpaceHeight, treeSpaceHeight + 300f);
+                Debug.Log("Overflow");
+                maxHeight = treeSpaceHeight + 300f;
             }
         }
 
