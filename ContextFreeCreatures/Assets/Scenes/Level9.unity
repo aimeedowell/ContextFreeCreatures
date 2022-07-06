@@ -2398,7 +2398,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.854902, g: 0.1254902, b: 0.7607844, a: 1}
+  m_Color: {r: 0.85882354, g: 0.7529412, b: 0.003921569, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -3038,7 +3038,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.854902, g: 0.1254902, b: 0.7607844, a: 1}
+  m_Color: {r: 0.85882354, g: 0.7529412, b: 0.003921569, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -3552,7 +3552,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 0.74655265, b: 0, a: 1}
+  m_Color: {r: 0.2784314, g: 0.76862746, b: 0.003921569, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -3932,7 +3932,7 @@ GameObject:
   - component: {fileID: 323658413}
   - component: {fileID: 323658412}
   m_Layer: 5
-  m_Name: PinkNode
+  m_Name: YellNode
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3977,7 +3977,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 291579eecc0eb4d73a8e0d07250efc93, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 60cd2ccc027054ad899d47ccc0f40541, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -4250,7 +4250,7 @@ GameObject:
   - component: {fileID: 338407096}
   - component: {fileID: 338407095}
   m_Layer: 5
-  m_Name: PinkNode
+  m_Name: YellNode
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4295,7 +4295,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 291579eecc0eb4d73a8e0d07250efc93, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 60cd2ccc027054ad899d47ccc0f40541, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -4854,7 +4854,7 @@ GameObject:
   - component: {fileID: 386932210}
   - component: {fileID: 386932209}
   m_Layer: 5
-  m_Name: YellowNode
+  m_Name: GreenNode
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4892,7 +4892,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.29803923, g: 1, b: 0, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -4929,7 +4929,7 @@ GameObject:
   - component: {fileID: 399640784}
   - component: {fileID: 399640783}
   m_Layer: 5
-  m_Name: YellowNode
+  m_Name: GreenNode
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4967,7 +4967,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.29803923, g: 1, b: 0, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -5391,7 +5391,7 @@ GameObject:
   - component: {fileID: 425551927}
   - component: {fileID: 425551926}
   m_Layer: 5
-  m_Name: PinkNode
+  m_Name: YellNode
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5436,7 +5436,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 291579eecc0eb4d73a8e0d07250efc93, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 60cd2ccc027054ad899d47ccc0f40541, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -7795,7 +7795,7 @@ GameObject:
   - component: {fileID: 649933278}
   - component: {fileID: 649933277}
   m_Layer: 5
-  m_Name: PinkNode
+  m_Name: YellNode
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8909,7 +8909,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.854902, g: 0.1254902, b: 0.7607844, a: 1}
+  m_Color: {r: 0.8588236, g: 0.75294125, b: 0.003921569, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -9449,7 +9449,7 @@ GameObject:
   - component: {fileID: 829745655}
   - component: {fileID: 829745654}
   m_Layer: 5
-  m_Name: YellowNode
+  m_Name: GreenNode
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9487,7 +9487,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.29803923, g: 1, b: 0, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -9524,7 +9524,7 @@ GameObject:
   - component: {fileID: 838405330}
   - component: {fileID: 838405329}
   m_Layer: 5
-  m_Name: YellowNode
+  m_Name: GreenNode
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9562,7 +9562,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.29803923, g: 1, b: 0, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -13832,7 +13832,7 @@ GameObject:
   - component: {fileID: 1294356989}
   - component: {fileID: 1294356988}
   m_Layer: 5
-  m_Name: PinkNode
+  m_Name: YellNode
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -13877,7 +13877,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 291579eecc0eb4d73a8e0d07250efc93, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 60cd2ccc027054ad899d47ccc0f40541, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -13982,7 +13982,7 @@ GameObject:
   - component: {fileID: 1307299529}
   - component: {fileID: 1307299528}
   m_Layer: 5
-  m_Name: YellowNode
+  m_Name: GreenNode
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -14020,7 +14020,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.2970481, g: 1, b: 0, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -14364,7 +14364,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 0.74655265, b: 0, a: 1}
+  m_Color: {r: 0.2784314, g: 0.76862746, b: 0.003921569, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -15603,7 +15603,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 0.74655265, b: 0, a: 1}
+  m_Color: {r: 0.2784314, g: 0.7686275, b: 0.003921569, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -16837,6 +16837,14 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: 60cd2ccc027054ad899d47ccc0f40541, type: 3}
+    - target: {fileID: 7931909828122177573, guid: 5312bdb6b99d34785aa828e3c59ed7f8, type: 3}
+      propertyPath: m_Color.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7931909828122177573, guid: 5312bdb6b99d34785aa828e3c59ed7f8, type: 3}
+      propertyPath: m_Color.r
+      value: 0.29803923
+      objectReference: {fileID: 0}
     - target: {fileID: 7931909828122177574, guid: 5312bdb6b99d34785aa828e3c59ed7f8, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -16923,7 +16931,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7931909828122177575, guid: 5312bdb6b99d34785aa828e3c59ed7f8, type: 3}
       propertyPath: m_Name
-      value: YellowNode
+      value: GreenNode
       objectReference: {fileID: 0}
     - target: {fileID: 7931909828122177575, guid: 5312bdb6b99d34785aa828e3c59ed7f8, type: 3}
       propertyPath: m_IsActive
@@ -17372,7 +17380,7 @@ GameObject:
   - component: {fileID: 1698306105}
   - component: {fileID: 1698306104}
   m_Layer: 5
-  m_Name: YellowNode
+  m_Name: GreenNode
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -17410,7 +17418,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.29803923, g: 1, b: 0, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -19150,7 +19158,7 @@ PrefabInstance:
     - target: {fileID: 7931909828122177573, guid: 5312bdb6b99d34785aa828e3c59ed7f8, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 291579eecc0eb4d73a8e0d07250efc93, type: 3}
+      objectReference: {fileID: 21300000, guid: 60cd2ccc027054ad899d47ccc0f40541, type: 3}
     - target: {fileID: 7931909828122177574, guid: 5312bdb6b99d34785aa828e3c59ed7f8, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -20769,7 +20777,7 @@ GameObject:
   - component: {fileID: 1942580174}
   - component: {fileID: 1942580173}
   m_Layer: 5
-  m_Name: PinkNode
+  m_Name: YellNode
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -20814,7 +20822,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 291579eecc0eb4d73a8e0d07250efc93, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 60cd2ccc027054ad899d47ccc0f40541, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
