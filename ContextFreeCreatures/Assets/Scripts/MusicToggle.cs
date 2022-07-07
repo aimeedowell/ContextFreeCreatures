@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class CustomToggle : MonoBehaviour, IPointerDownHandler
+public class MusicToggle : MonoBehaviour, IPointerDownHandler
 {
     bool isOn = true;
     GameObject cam;
@@ -20,7 +20,7 @@ public class CustomToggle : MonoBehaviour, IPointerDownHandler
         toggleOff.SetActive(false);
         mutedImg.SetActive(false);
 
-        if (StaticVariables.IsMuted == 1)
+        if (StaticVariables.IsMusicMuted == 1)
             MuteOffImage();
     }
 
@@ -35,8 +35,8 @@ public class CustomToggle : MonoBehaviour, IPointerDownHandler
     void MuteOnImage()
     {
         isOn = true;
-        cam.GetComponent<MusicControl>().SetMuted(false);
-        cam.GetComponent<MusicControl>().SetSliderValue(StaticVariables.VolumeLevel);
+        cam.GetComponent<MusicControl>().SetMusicMuted(false);
+        cam.GetComponent<MusicControl>().SetMusicSliderValue(StaticVariables.MusicVolumeLevel);
         toggleOn.SetActive(true);
         unmutedImg.SetActive(true);
         toggleOff.SetActive(false);
@@ -46,7 +46,7 @@ public class CustomToggle : MonoBehaviour, IPointerDownHandler
     void MuteOffImage()
     {
         isOn = false;
-        cam.GetComponent<MusicControl>().SetMuted(true);
+        cam.GetComponent<MusicControl>().SetMusicMuted(true);
         toggleOn.SetActive(false);
         unmutedImg.SetActive(false);
         toggleOff.SetActive(true);

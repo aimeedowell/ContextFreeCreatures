@@ -6,46 +6,90 @@ using UnityEngine.Audio;
 
 public class MusicControl : MonoBehaviour
 {
-    public AudioMixer mixer;
-    public Slider slider;
+    public AudioMixer soundEffectMixer;
+    public Slider soundEffectSlider;
+
+    public AudioMixer musicMixer;
+    public Slider musicSlider;
 
     void Start() 
     {
-        slider.value = StaticVariables.VolumeLevel;
-        SetVolume(StaticVariables.VolumeLevel);
+        // SOUND EFFECTS
+        soundEffectSlider.value = StaticVariables.VolumeLevel;
+        SetSoundEffectVolume(StaticVariables.VolumeLevel);
 
         if (StaticVariables.IsMuted == 1)
             SetMuted(true);
+
+        // BACKGROUND MUSIC
+        musicSlider.value = StaticVariables.MusicVolumeLevel;
+        SetMusicVolume(StaticVariables.MusicVolumeLevel);
+
+        if (StaticVariables.IsMusicMuted == 1)
+            SetMusicMuted(true);
     }
 
+// SOUND EFFECTS
     public void SetMuted(bool isMute)
     {
         if (isMute)
         {
-            slider.interactable = false;
-            mixer.SetFloat("SliderLevel", (Mathf.Log10(0.0001f) * 20)); // So static variable does not change
+            soundEffectSlider.interactable = false;
+            soundEffectMixer.SetFloat("SliderLevel", (Mathf.Log10(0.0001f) * 20)); // So static variable does not change
             StaticVariables.IsMuted = 1;
         }
         else
         {
             SetSliderValue(StaticVariables.VolumeLevel);
-            slider.interactable = true; 
+            soundEffectSlider.interactable = true; 
             StaticVariables.IsMuted = 0;
         }        
     }
 
     public void SetSliderValue(float val)
     {
-        slider.value = val;
-        SetVolume(val);
+        soundEffectSlider.value = val;
+        SetSoundEffectVolume(val);
     }
 
-    public void SetVolume(float sliderVal)
+    public void SetSoundEffectVolume(float sliderVal)
     {
         StaticVariables.VolumeLevel = sliderVal;
         if (StaticVariables.IsMuted == 0)
         {
-            mixer.SetFloat("SliderLevel", (Mathf.Log10(sliderVal) * 20));
+            soundEffectMixer.SetFloat("SliderLevel", (Mathf.Log10(sliderVal) * 20));
+        }
+    }
+
+// BACKGROUND MUSIC
+    public void SetMusicMuted(bool isMute)
+    {
+        if (isMute)
+        {
+            musicSlider.interactable = false;
+            musicMixer.SetFloat("MusicVolume", (Mathf.Log10(0.0001f) * 20)); // So static variable does not change
+            StaticVariables.IsMusicMuted = 1;
+        }
+        else
+        {
+            SetMusicSliderValue(StaticVariables.MusicVolumeLevel);
+            musicSlider.interactable = true; 
+            StaticVariables.IsMusicMuted = 0;
+        }        
+    }
+
+    public void SetMusicSliderValue(float val)
+    {
+        musicSlider.value = val;
+        SetMusicVolume(val);
+    }
+
+    public void SetMusicVolume(float sliderVal)
+    {
+        StaticVariables.MusicVolumeLevel = sliderVal;
+        if (StaticVariables.IsMusicMuted == 0)
+        {
+            musicMixer.SetFloat("MusicVolume", (Mathf.Log10(sliderVal) * 20));
         }
     }
 }

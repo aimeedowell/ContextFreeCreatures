@@ -55,7 +55,10 @@ public class LevelController : MonoBehaviour
         noOfLives.GetComponent<Text>().text = PlayerPrefs.GetInt("Lives").ToString();
         StaticVariables.NoOfLives = PlayerPrefs.GetInt("Lives");
         if (StaticVariables.Level > 0)
+        {
             cam.GetComponent<MusicControl>().SetSliderValue(StaticVariables.VolumeLevel);
+            cam.GetComponent<MusicControl>().SetMusicSliderValue(StaticVariables.MusicVolumeLevel);
+        }
 
         maxWidth = treeSpaceWidth;
         maxHeight = treeSpaceHeight;

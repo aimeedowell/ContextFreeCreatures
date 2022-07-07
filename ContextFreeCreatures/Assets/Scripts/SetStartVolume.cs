@@ -8,5 +8,6 @@ public class SetStartVolume : MonoBehaviour
     void Start()
     {
         StaticVariables.VolumeLevel = 1.0f;
+        StaticVariables.MusicVolumeLevel = 1.0f;
     }
 }

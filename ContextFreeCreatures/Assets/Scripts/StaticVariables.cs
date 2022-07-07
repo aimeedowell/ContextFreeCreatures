@@ -33,6 +33,9 @@ public static class StaticVariables
     public static float VolumeLevel { get; set; }
     public static int IsMuted { get; set; }
 
+    public static float MusicVolumeLevel { get; set; }
+    public static int IsMusicMuted { get; set; }
+
     public static int ShouldPlayStartAnime { get; set; }
 
     public static int StartFlood { get; set; }
