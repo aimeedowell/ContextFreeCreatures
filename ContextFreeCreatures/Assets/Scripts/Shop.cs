@@ -12,6 +12,7 @@ public class Shop : MonoBehaviour
 
     public GameObject coin100Button;
     public GameObject coin150Button;
+    public GameObject coin200Button;
     public GameObject coin500Button;
 
     public List<GameObject> listOfUnNeededRules = new List<GameObject>();
@@ -24,24 +25,35 @@ public class Shop : MonoBehaviour
             {
                 coin100Button.GetComponent<Button>().interactable = false;
                 coin150Button.GetComponent<Button>().interactable = false;
+                coin200Button.GetComponent<Button>().interactable = false;
                 coin500Button.GetComponent<Button>().interactable = false;
             }
             else if (StaticVariables.CoinCount >= 100 && StaticVariables.CoinCount < 150)
             {
                 coin100Button.GetComponent<Button>().interactable = true;
                 coin150Button.GetComponent<Button>().interactable = false;
+                coin200Button.GetComponent<Button>().interactable = false;
                 coin500Button.GetComponent<Button>().interactable = false;
             }
-            else if (StaticVariables.CoinCount >= 150 && StaticVariables.CoinCount < 500)
+            else if (StaticVariables.CoinCount >= 150 && StaticVariables.CoinCount < 200)
             {
                 coin100Button.GetComponent<Button>().interactable = true;
                 coin150Button.GetComponent<Button>().interactable = true;
+                coin200Button.GetComponent<Button>().interactable = false;
+                coin500Button.GetComponent<Button>().interactable = false;
+            }
+            else if (StaticVariables.CoinCount >= 200 && StaticVariables.CoinCount < 500)
+            {
+                coin100Button.GetComponent<Button>().interactable = true;
+                coin150Button.GetComponent<Button>().interactable = true;
+                coin200Button.GetComponent<Button>().interactable = true;
                 coin500Button.GetComponent<Button>().interactable = false;
             }
             else if (StaticVariables.CoinCount >= 500)
             {
                 coin100Button.GetComponent<Button>().interactable = true;
                 coin150Button.GetComponent<Button>().interactable = true;
+                coin200Button.GetComponent<Button>().interactable = true;
                 coin500Button.GetComponent<Button>().interactable = true;
             }
 
@@ -109,5 +121,6 @@ public class Shop : MonoBehaviour
         int newScore = StaticVariables.CoinCount - price;
         StaticVariables.CoinCount = newScore;
         PlayerPrefs.SetInt("Coins", StaticVariables.CoinCount);
+        coinScore.GetComponent<Text>().text = StaticVariables.CoinCount.ToString();
     }
 }
