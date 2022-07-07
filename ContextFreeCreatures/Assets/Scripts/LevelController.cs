@@ -268,13 +268,16 @@ public class LevelController : MonoBehaviour
 
     void LoseLife()
     {
-        if (StaticVariables.NoOfLives > 0)
+        if (StaticVariables.NoOfLives > 1)
         {
             StaticVariables.NoOfLives -= 1;
             noOfLives.GetComponent<Text>().text = StaticVariables.NoOfLives.ToString();
         }
         else
         {
+            this.GetComponent<SceneLoad>().ToLevelSelector();
+            StaticVariables.NoOfLives = 0;
+            PlayerPrefs.SetInt("Lives", StaticVariables.NoOfLives);
             Debug.Log("No more lives");
         }
 

@@ -29,6 +29,7 @@ public class LevelSelectionPage : MonoBehaviour
     public GameObject level10Pin;
 
     public GameObject areYouSure;
+    public GameObject lostLivesPopUp;
 
     public int maxLevel = 0;
 
@@ -80,11 +81,18 @@ public class LevelSelectionPage : MonoBehaviour
         level10.SetActive(false);
 
         areYouSure.SetActive(false);
+
+        if (PlayerPrefs.GetInt("Lives") == 0)
+        {
+            AllLivesLost();
+            lostLivesPopUp.SetActive(true);
+        }
+        else
+            lostLivesPopUp.SetActive(false);
         
         SetPinStates();
         this.gameObject.GetComponent<PlayerProfile>().SetStarValue();
         this.gameObject.GetComponent<PlayerProfile>().SetPlayerSkillLevel(maxLevel);
-        
     }
 
     void SetPinStates()
@@ -304,6 +312,37 @@ public class LevelSelectionPage : MonoBehaviour
         }
 
         // Add the same for each level
+    }
+
+    void AllLivesLost()
+    {
+        if (StaticVariables.Level <= 3)
+        {
+            StaticVariables.Level1Stars = 0;
+            StaticVariables.Level2Stars = 0;
+            StaticVariables.Level3Stars = 0;
+
+        }
+        else if (StaticVariables.Level <= 6)
+        {
+            StaticVariables.Level4Stars = 0;
+            StaticVariables.Level5Stars = 0;
+            StaticVariables.Level6Stars = 0;
+        }
+        else if (StaticVariables.Level <= 10)
+        {
+            StaticVariables.Level7Stars = 0;
+            StaticVariables.Level8Stars = 0;
+            StaticVariables.Level9Stars = 0;
+            StaticVariables.Level10Stars = 0;
+        }
+        StaticVariables.NoOfLives = 5;
+        PlayerPrefs.SetInt("Lives", StaticVariables.NoOfLives);
+    }
+
+    public void CloseLostLivesPopUp()
+    {
+        lostLivesPopUp.SetActive(false);
     }
             
 }
