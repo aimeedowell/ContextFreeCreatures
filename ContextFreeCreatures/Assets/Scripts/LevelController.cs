@@ -173,7 +173,7 @@ public class LevelController : MonoBehaviour
             gemClone.SetActive(true);
 
             if (StaticVariables.Level == 5)
-                cam.GetComponent<Frozen>().AddFrozenGem(gemClone, treeArea, canvas, new Vector2(x, y));
+                cam.GetComponent<Frozen>().AddFrozenGem(gemClone, treeArea, canvas, gemClone.GetComponent<RectTransform>().transform.position);
 
             StartCoroutine(FadeAlpha(gemClone, 1.5f));
 

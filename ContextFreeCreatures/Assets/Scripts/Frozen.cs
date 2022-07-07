@@ -13,13 +13,13 @@ public class Frozen : MonoBehaviour
 
     float freezeTime = 6f;    
 
-    public void AddFrozenGem(GameObject orginalGem, GameObject treeArea, Canvas canvas, Vector2 anchPos)
+    public void AddFrozenGem(GameObject orginalGem, GameObject treeArea, Canvas canvas, Vector3 node)
     {
         if (!orginalGem.name.Contains("Node"))
         {
             GameObject frozen = Instantiate(frozenGem, canvas.transform);
-            frozen.GetComponent<RectTransform>().anchoredPosition = anchPos;
             frozen.transform.SetParent(treeArea.transform);
+            frozen.GetComponent<RectTransform>().transform.position = node;
             frozen.SetActive(true);
 
             StartCoroutine(FadeFrozenGemIn(frozen, freezeTime));
