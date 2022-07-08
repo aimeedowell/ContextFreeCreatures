@@ -10,22 +10,22 @@ public class LevelSolutions : MonoBehaviour
     // Level 1
     private List<string> level1Sol = new List<string> {"Blue", "Green", "Purple", "Green", "Blue"};
     private int bestNumOfNodesLev1 = 3;
-    private float averageTimeLev1 = 30f;
+    private float averageTimeLev1 = 50f;
 
     // Level 2
     private List<string> level2Sol = new List<string> {"Green", "Green", "Yellow", "Yellow"};
     private int bestNumOfNodesLev2 = 3;
-    private float averageTimeLev2 = 20f;
+    private float averageTimeLev2 = 40f;
 
     // Level 3
     private List<string> level3Sol = new List<string> {"Red", "Blue", "Red", "Blue", "Blue"};
     private int bestNumOfNodesLev3 = 4;
-    private float averageTimeLev3 = 20f;
+    private float averageTimeLev3 = 40f;
 
     // Level 4
     private List<string> level4Sol = new List<string> {"DarkBlue", "DarkBlue", "Yellow", "Yellow", "Yellow", "Yellow"};
     private int bestNumOfNodesLev4 = 2;
-    private float averageTimeLev4 = 20f;
+    private float averageTimeLev4 = 30f;
 
     // Level 5
     private List<string> level5Sol = new List<string> {"DarkBlue", "DarkBlue", "DarkBlue", "Blue", "DarkBlue", "Blue", "Blue"};
@@ -35,28 +35,28 @@ public class LevelSolutions : MonoBehaviour
     // Level 6
     private List<string> level6Sol = new List<string> {"Yellow", "Yellow", "Red", "Red", "Orange", "Orange", "Orange", "Orange"};
     private int bestNumOfNodesLev6 = 7;
-    private float averageTimeLev6 = 20f;
+    private float averageTimeLev6 = 40f;
 
    // Level 7
     private List<string> level7Sol = new List<string> {"Pink","Purple", "Pink", "Pink", "Purple", "Purple"};
     private int bestNumOfNodesLev7 = 6;
-    private float averageTimeLev7 = 20f;
+    private float averageTimeLev7 = 50f;
 
     // Level 8
     private List<string> level8Sol = new List<string> {"Blue", "Blue", "Blue", "Orange", "Blue", "Orange", "Blue"};
     private int bestNumOfNodesLev8 = 9;
-    private float averageTimeLev8 = 20f;
+    private float averageTimeLev8 = 40f;
 
 
     // Level 9
     private List<string> level9Sol = new List<string> {"Green", "Green", "Yellow", "Yellow"};
     private int bestNumOfNodesLev9 = 7;
-    private float averageTimeLev9 = 20f;
+    private float averageTimeLev9 = 40f;
 
    // Level 10
     private List<string> level10Sol = new List<string> {"Pink", "Red", "Pink", "Purple", "Pink"};
     private int bestNumOfNodesLev10 = 8;
-    private float averageTimeLev10 = 20f;
+    private float averageTimeLev10 = 40f;
         
 
 

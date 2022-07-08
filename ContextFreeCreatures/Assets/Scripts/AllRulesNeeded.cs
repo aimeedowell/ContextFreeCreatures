@@ -6,7 +6,6 @@ using UnityEngine.UI;
 public class AllRulesNeeded : MonoBehaviour
 {
     public GameObject item;
-    public GameObject background;
     public GameObject text;
 
     void Start() 

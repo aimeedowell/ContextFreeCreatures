@@ -10,7 +10,6 @@ public class Flood : MonoBehaviour
     public GameObject maskContainer;
     public GameObject mask;
     public Text timerText;
-    public GameObject hintText;
     GameObject cam;
     GameObject treeArea;
 

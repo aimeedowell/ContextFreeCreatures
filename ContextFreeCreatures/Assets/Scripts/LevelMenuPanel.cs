@@ -8,12 +8,8 @@ public class LevelMenuPanel : MonoBehaviour
     public GameObject exitMenu;
     public GameObject settingsMenu;
     public GameObject shopMenu;
-
-    public GameObject infoButton;
     public GameObject infoPopUp;
     public GameObject startAnime;
-
-    public GameObject hintButton;
     public GameObject hintPopUp;
 
     // Start is called before the first frame update

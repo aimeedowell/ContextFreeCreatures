@@ -5,10 +5,7 @@ using UnityEngine;
 
 public class AnimateDigging : MonoBehaviour
 {
-    public GameObject lineImage;
-
     public GameObject lineImageContainer;
-
     public GameObject maskContainer;
     public GameObject mask;
     GameObject start;

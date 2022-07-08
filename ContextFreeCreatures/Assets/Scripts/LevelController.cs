@@ -14,8 +14,6 @@ public class LevelController : MonoBehaviour
     public GameObject hint;
     public Canvas canvas;
 
-    private List<float> posWidths = new List<float>();
-
     private GameObject treeArea;
     private RectTransform rectTransform;
 

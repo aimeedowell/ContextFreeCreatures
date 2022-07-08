@@ -15,7 +15,6 @@ public class DropToNode : MonoBehaviour, IDropHandler
 
     public void OnDrop(PointerEventData data)
     {
-        // Debug.Log("On Drop");
         if (data.pointerDrag != null)
         {
             if (StaticVariables.Level == 10 || StaticVariables.Level == 9)
