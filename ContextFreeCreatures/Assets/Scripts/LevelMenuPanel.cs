@@ -78,6 +78,23 @@ public class LevelMenuPanel : MonoBehaviour
                 child.GetComponent<Animator>().enabled = true;
                 child.GetComponent<Animator>().Play("Speech");
             }
+            else if (child.name == "Intro")
+            {
+                var chiChil = child.transform;
+                foreach (Transform chi in chiChil)
+                {
+                    if (chi.name == "Image")
+                    {
+                        chi.GetComponent<Animator>().enabled = true;
+                        chi.GetComponent<Animator>().Play(0);
+                    }
+                    else
+                    {
+                        chi.GetComponent<Animator>().enabled = true;
+                        chi.GetComponent<Animator>().Play(0);
+                    }
+                }
+            }
         }
         StaticVariables.ShouldPlayStartAnime = 0;
     }
