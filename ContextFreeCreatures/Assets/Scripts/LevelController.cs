@@ -11,7 +11,6 @@ public class LevelController : MonoBehaviour
 
     public GameObject startNode;
 
-    public GameObject hint;
     public Canvas canvas;
 
     private GameObject treeArea;
@@ -37,12 +36,6 @@ public class LevelController : MonoBehaviour
 
     private void Start() 
     {
-        noOfFails = GetLevelFails();
-        if (noOfFails > 1)
-            hint.SetActive(true);
-        else
-            hint.SetActive(false);
-
         DataToCSV.AddNewLevelLine(StaticVariables.Level.ToString());
         treeArea = GameObject.Find("TreeSpace");
         cam = GameObject.Find("Main Camera");
