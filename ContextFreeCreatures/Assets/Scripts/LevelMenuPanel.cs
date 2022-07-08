@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class LevelMenuPanel : MonoBehaviour
 {
@@ -83,13 +84,18 @@ public class LevelMenuPanel : MonoBehaviour
     
     public void OnInfoButtonClick()
     {
-        if (!this.gameObject.GetComponent<LevelController>().isLevelEnd)
-        {
-            if (infoPopUp.activeSelf == false)
-                infoPopUp.SetActive(true);
-            else
-                infoPopUp.SetActive(false);
-        }
+        if (infoPopUp.activeSelf == false)
+            infoPopUp.SetActive(true);
+        else
+            infoPopUp.SetActive(false);  
+
+        int noOfStars = GetNumberOfStars();
+        string newText = "Try a more efficient route, in a quicker time!";
+        if (noOfStars == 2)
+            newText = "Try a more efficient route or be quicker!";
+        else if (noOfStars == 3)
+            infoPopUp.SetActive(false); 
+        infoPopUp.transform.Find("Text").GetComponent<Text>().text = newText.ToString();
     }
 
     public void OnHintButtonClick()
@@ -125,6 +131,34 @@ public class LevelMenuPanel : MonoBehaviour
         popUp.SetActive(false);
         infoPopUp.SetActive(false);
         shopMenu.SetActive(false);
+    }
+
+    int GetNumberOfStars()
+    {
+        switch(StaticVariables.Level) 
+        {
+            case 1:
+                return StaticVariables.Level1Stars;
+            case 2:
+                return StaticVariables.Level2Stars;
+            case 3:
+                return StaticVariables.Level3Stars;
+            case 4:
+                return StaticVariables.Level4Stars;
+            case 5:
+                return StaticVariables.Level5Stars;
+            case 6:
+                return StaticVariables.Level6Stars;
+            case 7:
+                return StaticVariables.Level7Stars;
+            case 8:
+                return StaticVariables.Level8Stars;
+            case 9:
+                return StaticVariables.Level9Stars;
+            case 10:
+                return StaticVariables.Level10Stars;
+        }
+        return 0;
     }
 
 
