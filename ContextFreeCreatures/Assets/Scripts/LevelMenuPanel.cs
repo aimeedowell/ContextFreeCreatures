@@ -111,7 +111,7 @@ public class LevelMenuPanel : MonoBehaviour
         if (noOfStars == 2)
             newText = "Try a more efficient route or be quicker!";
         else if (noOfStars == 3)
-            infoPopUp.SetActive(false); 
+            newText = "You found the most efficient route in a speedy time!";
         infoPopUp.transform.Find("Text").GetComponent<Text>().text = newText.ToString();
     }
 
