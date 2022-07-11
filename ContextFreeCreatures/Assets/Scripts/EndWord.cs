@@ -80,21 +80,21 @@ public class EndWord : MonoBehaviour
             if (i < targetWord.Count)
             {
                 if (endWord[i].gameObject.name.Contains("Green") && targetWord[i].gameObject.name.Contains("Green"))
-                    DiamondPop(endWord[i], targetWord[i], "TGreenPop", "GreenGemPop");
+                    DiamondPop(endWord[i], targetWord[i]);
                 else if (endWord[i].gameObject.name.Contains("DarkBlue") && targetWord[i].gameObject.name.Contains("DarkBlue"))
-                    DiamondPop(endWord[i], targetWord[i], "TBluePop", "BlueGemPop");                   
+                    DiamondPop(endWord[i], targetWord[i]);                   
                 else if (endWord[i].gameObject.name.Contains("Yellow") && targetWord[i].gameObject.name.Contains("Yellow"))
-                    DiamondPop(endWord[i], targetWord[i], "TBluePop", "BlueGemPop");  
+                    DiamondPop(endWord[i], targetWord[i]);  
                 else if (endWord[i].gameObject.name.Contains("Red") && targetWord[i].gameObject.name.Contains("Red"))
-                    DiamondPop(endWord[i], targetWord[i], "TBluePop", "BlueGemPop");
+                    DiamondPop(endWord[i], targetWord[i]);
                 else if (endWord[i].gameObject.name.Contains("Blue") && targetWord[i].gameObject.name.Contains("Blue"))
-                    DiamondPop(endWord[i], targetWord[i], "TBluePop", "BlueGemPop");
+                    DiamondPop(endWord[i], targetWord[i]);
                 else if (endWord[i].gameObject.name.Contains("Purple") && targetWord[i].gameObject.name.Contains("Purple"))
-                    DiamondPop(endWord[i], targetWord[i], "TPurplePop", "PurpleGemPop");
+                    DiamondPop(endWord[i], targetWord[i]);
                 else if (endWord[i].gameObject.name.Contains("Pink") && targetWord[i].gameObject.name.Contains("Pink"))
-                    DiamondPop(endWord[i], targetWord[i], "TPurplePop", "PurpleGemPop");
+                    DiamondPop(endWord[i], targetWord[i]);
                 else if (endWord[i].gameObject.name.Contains("Orange") && targetWord[i].gameObject.name.Contains("Orange"))
-                    DiamondPop(endWord[i], targetWord[i], "TPurplePop", "PurpleGemPop");
+                    DiamondPop(endWord[i], targetWord[i]);
                 else
                     yield break;
                 yield return new WaitForSeconds(0.5f);
@@ -104,10 +104,10 @@ public class EndWord : MonoBehaviour
         }
     }    
 
-    void DiamondPop(GameObject endWord, GameObject targetWord, string targetAnime, string gemAnime)
+    void DiamondPop(GameObject endWord, GameObject targetWord)
     {
         targetWord.GetComponent<Animator>().enabled = true;
-        targetWord.GetComponent<Animator>().Play(targetAnime);
+        targetWord.GetComponent<Animator>().Play(0);
 
         if (StaticVariables.Level == 5 && this.gameObject.GetComponent<Frozen>().IsGemFrozen(endWord))
         {
@@ -117,7 +117,7 @@ public class EndWord : MonoBehaviour
         else
         {
             endWord.GetComponent<Animator>().enabled = true;
-            endWord.GetComponent<Animator>().Play(gemAnime);
+            endWord.GetComponent<Animator>().Play(0);
             endWord.GetComponent<AudioSource>().Play(0);
             CollectDiamondPrize();
             DuplicateCoin(endWord.GetComponent<RectTransform>().anchoredPosition);

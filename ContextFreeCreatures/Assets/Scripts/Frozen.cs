@@ -91,7 +91,7 @@ public class Frozen : MonoBehaviour
         // We know item is in array as we check this in EndWord.cs
         int index = frozenItems.IndexOf(gemToFind);
         frozenImages[index].GetComponent<Animator>().enabled = true;
-        frozenImages[index].GetComponent<Animator>().Play("FrozenExplosion");
+        frozenImages[index].GetComponent<Animator>().Play(0);
         frozenImages[index].GetComponent<AudioSource>().Play(0);
     }
 }
