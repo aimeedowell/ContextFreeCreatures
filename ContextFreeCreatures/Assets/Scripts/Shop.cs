@@ -17,6 +17,8 @@ public class Shop : MonoBehaviour
 
     public List<GameObject> listOfUnNeededRules = new List<GameObject>();
 
+    bool removedRules = false;
+
     void Update() 
     {
         if (shopMenu.activeSelf == true)
@@ -58,9 +60,9 @@ public class Shop : MonoBehaviour
             }
 
             if (startNode.activeSelf == false)
-            {
                 coin150Button.GetComponent<Button>().interactable = false;
-            }
+            if (removedRules)
+                coin500Button.GetComponent<Button>().interactable = false;
         }
         
     }
@@ -113,6 +115,7 @@ public class Shop : MonoBehaviour
             if (listOfUnNeededRules.Count == 0)
                 this.gameObject.GetComponent<AllRulesNeeded>().OnAllRulesNeeded();
             DataToCSV.RemovalRhubarb(StaticVariables.Level.ToString());
+            removedRules = true;
         }
     }
 

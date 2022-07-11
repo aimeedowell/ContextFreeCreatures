@@ -126,7 +126,7 @@ public class LevelController : MonoBehaviour
 
 
                 float nodeX = RemapRange(prevNodeX, -treeSpaceWidth/2, treeSpaceWidth/2, 0, treeSpaceWidth);
-                float newWidth = Mathf.Abs(nodeNeighX - nodeX) - 150;
+                float newWidth = Mathf.Abs(nodeNeighX - nodeX) - 100;
 
                 if (ruleImages.Count > 2)
                     splitWidth = (newWidth/(imageCount-1));
