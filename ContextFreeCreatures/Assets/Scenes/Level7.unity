@@ -8003,8 +8003,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startNode: {fileID: 813576207}
-  maskContainer: {fileID: 1275814045}
-  mask: {fileID: 1844380720}
+  maskContainer: {fileID: 1698596725}
+  mask: {fileID: 1152543658}
   timerText: {fileID: 1376705591}
 --- !u!114 &560030413
 MonoBehaviour:
