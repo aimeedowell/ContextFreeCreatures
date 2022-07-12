@@ -586,7 +586,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 560030407}
         m_TargetAssemblyTypeName: SceneLoad, Assembly-CSharp
-        m_MethodName: ToLevelSelector
+        m_MethodName: ToLevel11
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

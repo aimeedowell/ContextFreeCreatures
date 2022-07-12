@@ -326,6 +326,26 @@ public class LevelController : MonoBehaviour
                 if (PlayerPrefs.GetInt("Level10Stars") < StaticVariables.Level10Stars)
                     PlayerPrefs.SetInt("Level10Stars", StaticVariables.Level10Stars);
                 break;
+            case 11:
+                if (PlayerPrefs.GetInt("Level11Stars") < StaticVariables.Level11Stars)
+                    PlayerPrefs.SetInt("Level11Stars", StaticVariables.Level11Stars);
+                break;
+            case 12:
+                if (PlayerPrefs.GetInt("Level12Stars") < StaticVariables.Level12Stars)
+                    PlayerPrefs.SetInt("Level12Stars", StaticVariables.Level12Stars);
+                break;
+            case 13:
+                if (PlayerPrefs.GetInt("Level13Stars") < StaticVariables.Level13Stars)
+                    PlayerPrefs.SetInt("Level13Stars", StaticVariables.Level13Stars);
+                break;
+            case 14:
+                if (PlayerPrefs.GetInt("Level14Stars") < StaticVariables.Level14Stars)
+                    PlayerPrefs.SetInt("Level14Stars", StaticVariables.Level14Stars);
+                break;
+            case 15:
+                if (PlayerPrefs.GetInt("Level15Stars") < StaticVariables.Level15Stars)
+                    PlayerPrefs.SetInt("Level15Stars", StaticVariables.Level15Stars);
+                break;
         }
         
         PlayerPrefs.Save();
@@ -356,6 +376,16 @@ public class LevelController : MonoBehaviour
                 return StaticVariables.Level9Fails;
             case 10:
                 return StaticVariables.Level10Fails;
+            case 11:
+                return StaticVariables.Level11Fails;
+            case 12:
+                return StaticVariables.Level12Fails;
+            case 13:
+                return StaticVariables.Level13Fails;
+            case 14:
+                return StaticVariables.Level14Fails;
+            case 15:
+                return StaticVariables.Level15Fails;
         }
         return 0;
     }
@@ -392,6 +422,21 @@ public class LevelController : MonoBehaviour
                 break;
             case 10:
                 StaticVariables.Level10Fails = noOfFails;
+                break;
+            case 11:
+                StaticVariables.Level11Fails = noOfFails;
+                break;
+            case 12:
+                StaticVariables.Level12Fails = noOfFails;
+                break;
+            case 13:
+                StaticVariables.Level13Fails = noOfFails;
+                break;
+            case 14:
+                StaticVariables.Level14Fails = noOfFails;
+                break;
+            case 15:
+                StaticVariables.Level15Fails = noOfFails;
                 break;
         }
     }

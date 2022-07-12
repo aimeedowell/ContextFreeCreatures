@@ -61,11 +61,11 @@ public class LevelSelectionPage : MonoBehaviour
         StaticVariables.Level8Stars = PlayerPrefs.GetInt("Level8Stars");
         StaticVariables.Level9Stars = PlayerPrefs.GetInt("Level9Stars");
         StaticVariables.Level10Stars = PlayerPrefs.GetInt("Level10Stars");
-        StaticVariables.Level10Stars = PlayerPrefs.GetInt("Level11Stars");
-        StaticVariables.Level10Stars = PlayerPrefs.GetInt("Level12Stars");
-        StaticVariables.Level10Stars = PlayerPrefs.GetInt("Level13Stars");
-        StaticVariables.Level10Stars = PlayerPrefs.GetInt("Level14Stars");
-        StaticVariables.Level10Stars = PlayerPrefs.GetInt("Level15Stars");
+        StaticVariables.Level11Stars = PlayerPrefs.GetInt("Level11Stars");
+        StaticVariables.Level12Stars = PlayerPrefs.GetInt("Level12Stars");
+        StaticVariables.Level13Stars = PlayerPrefs.GetInt("Level13Stars");
+        StaticVariables.Level14Stars = PlayerPrefs.GetInt("Level14Stars");
+        StaticVariables.Level15Stars = PlayerPrefs.GetInt("Level15Stars");
 
         StaticVariables.BadgeColourNodes = PlayerPrefs.GetInt("BadgeColourNodes");
         StaticVariables.BadgeEmptyWord = PlayerPrefs.GetInt("BadgeEmptyWord");
@@ -83,11 +83,11 @@ public class LevelSelectionPage : MonoBehaviour
         StaticVariables.Level8Fails = PlayerPrefs.GetInt("Level8Fails");
         StaticVariables.Level9Fails = PlayerPrefs.GetInt("Level9Fails");
         StaticVariables.Level10Fails = PlayerPrefs.GetInt("Level10Fails");
-        StaticVariables.Level10Fails = PlayerPrefs.GetInt("Level11Fails");
-        StaticVariables.Level10Fails = PlayerPrefs.GetInt("Level12Fails");
-        StaticVariables.Level10Fails = PlayerPrefs.GetInt("Level13Fails");
-        StaticVariables.Level10Fails = PlayerPrefs.GetInt("Level14Fails");
-        StaticVariables.Level10Fails = PlayerPrefs.GetInt("Level15Fails");
+        StaticVariables.Level11Fails = PlayerPrefs.GetInt("Level11Fails");
+        StaticVariables.Level12Fails = PlayerPrefs.GetInt("Level12Fails");
+        StaticVariables.Level13Fails = PlayerPrefs.GetInt("Level13Fails");
+        StaticVariables.Level14Fails = PlayerPrefs.GetInt("Level14Fails");
+        StaticVariables.Level15Fails = PlayerPrefs.GetInt("Level15Fails");
 
         level1.SetActive(false);
         level2.SetActive(false);
