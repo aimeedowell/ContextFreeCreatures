@@ -69,14 +69,14 @@ public class LevelSolutions : MonoBehaviour
     private float averageTimeLev12 = 50f;
 
    // Level 13
-    private List<string> level13Sol = new List<string> {"Red", "Blue", "Red", "Red", "Blue"};
-    private int bestNumOfNodesLev13 = 6;
-    private float averageTimeLev13 = 50f;
+    private List<string> level13Sol = new List<string> {"Blue", "Orange", "Green", "Orange", "Blue", "Blue", "Blue", "Orange"};
+    private int bestNumOfNodesLev13 = 8;
+    private float averageTimeLev13 = 70f;
 
    // Level 14
-    private List<string> level14Sol = new List<string> {"Red", "Blue", "Red", "Red", "Blue"};
-    private int bestNumOfNodesLev14 = 6;
-    private float averageTimeLev14 = 50f;
+    private List<string> level14Sol = new List<string> {"DarkBlue", "Green", "Green", "Red", "Red", "Red", "Purple", "Purple"};
+    private int bestNumOfNodesLev14 = 10;
+    private float averageTimeLev14 = 70f;
         
    // Level 15
     private List<string> level15Sol = new List<string> {"Red", "Blue", "Red", "Red", "Blue"};

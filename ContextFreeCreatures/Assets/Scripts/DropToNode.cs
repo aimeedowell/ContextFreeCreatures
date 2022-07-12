@@ -28,6 +28,8 @@ public class DropToNode : MonoBehaviour, IDropHandler
                     return;
                 else if (!childElement.name.Contains("Pink") && this.gameObject.name.Contains("Pink"))
                     return;
+                else if (!childElement.name.Contains("Green") && this.gameObject.name.Contains("Green"))
+                    return;
             }
             data.pointerDrag.GetComponent<RectTransform>().transform.position = GetComponent<RectTransform>().transform.position;
             data.pointerDrag.GetComponent<DragAndDrop>().hasDropped = true;
