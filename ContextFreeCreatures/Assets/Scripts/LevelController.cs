@@ -134,7 +134,7 @@ public class LevelController : MonoBehaviour
                     splitWidth = newWidth;
                 startWidth = nodeX - (newWidth/2);
 
-                if (startWidth < 0 || startWidth >= maxWidth)
+                if (startWidth < 0 || (startWidth + newWidth) >= maxWidth)
                 {
                     this.GetComponent<ScaleViewport>().ScaleTreeSizeWidth(maxWidth + (Mathf.Abs(startWidth)*2) + 100f, treeSpaceHeight, 0);
                     maxWidth = maxWidth + (Mathf.Abs(startWidth)*2) + 100f;

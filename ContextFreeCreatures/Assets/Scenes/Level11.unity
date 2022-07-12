@@ -1431,7 +1431,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ruleImages:
   - {fileID: 1078397124}
-  - {fileID: 1540016544}
+  - {fileID: 1246528243}
   creatureImage: {fileID: 1180966753}
 --- !u!225 &117622723
 CanvasGroup:
@@ -4397,7 +4397,7 @@ GameObject:
   - component: {fileID: 456973028}
   - component: {fileID: 456973027}
   m_Layer: 5
-  m_Name: BlueNode
+  m_Name: YellowNode
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4442,7 +4442,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 2a76adb5f7fd64dc085cde9741ea1573, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 60cd2ccc027054ad899d47ccc0f40541, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -12138,7 +12138,7 @@ GameObject:
   - component: {fileID: 1179223799}
   - component: {fileID: 1179223798}
   m_Layer: 5
-  m_Name: YellowNode
+  m_Name: RedNode
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -12183,7 +12183,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 60cd2ccc027054ad899d47ccc0f40541, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 52848d3a3d33848268883c473a9d4e6d, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -13917,7 +13917,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ruleImages:
   - {fileID: 1078397124}
-  - {fileID: 1246528243}
+  - {fileID: 1229114788}
   creatureImage: {fileID: 1929246301}
 --- !u!114 &1372026232
 MonoBehaviour:

@@ -17,7 +17,7 @@ public class DropToNode : MonoBehaviour, IDropHandler
     {
         if (data.pointerDrag != null)
         {
-            if (StaticVariables.Level == 10 || StaticVariables.Level == 9)
+            if (StaticVariables.Level >= 9)
             {
                 var childElement = data.pointerDrag.gameObject.transform.GetChild(0);
                 if (!childElement.name.Contains("Red") && this.gameObject.name.Contains("Start"))
