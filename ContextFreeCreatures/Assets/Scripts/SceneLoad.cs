@@ -225,6 +225,96 @@ public class SceneLoad : MonoBehaviour
                 PlayerPrefs.SetInt("Coins", StaticVariables.CoinCount -= 200);
         }
     }
+        public void ToLevel11()
+    {
+        PlayStartAnime("Level11");
+        if (isBadge)
+        {
+            StartCoroutine(Level11());
+            isBadge = false;
+        }
+        else
+        {
+            buffer.SetActive(true);
+            SceneManager.LoadScene("Level11");
+            StaticVariables.Level = 11;
+            if (StaticVariables.Level11Stars == 0 && StaticVariables.CoinCount >= 200)
+                PlayerPrefs.SetInt("Coins", StaticVariables.CoinCount -= 200);
+        }
+    }
+
+    public void ToLevel12()
+    {
+        PlayStartAnime("Level12");
+        if (isBadge)
+        {
+            StartCoroutine(Level12());
+            isBadge = false;
+        }
+        else
+        {
+            buffer.SetActive(true);
+            SceneManager.LoadScene("Level12");
+            StaticVariables.Level = 12;
+            if (StaticVariables.Level12Stars == 0 && StaticVariables.CoinCount >= 200)
+                PlayerPrefs.SetInt("Coins", StaticVariables.CoinCount -= 200);
+        }
+    }
+    
+    public void ToLevel13()
+    {
+        PlayStartAnime("Level13");
+        if (isBadge)
+        {
+            StartCoroutine(Level13());
+            isBadge = false;
+        }
+        else
+        {
+            buffer.SetActive(true);
+            SceneManager.LoadScene("Level13");
+            StaticVariables.Level = 13;
+            if (StaticVariables.Level13Stars == 0 && StaticVariables.CoinCount >= 200)
+                PlayerPrefs.SetInt("Coins", StaticVariables.CoinCount -= 200);
+        }
+    }
+    
+    public void ToLevel14()
+    {
+        PlayStartAnime("Level14");
+        if (isBadge)
+        {
+            StartCoroutine(Level14());
+            isBadge = false;
+        }
+        else
+        {
+            buffer.SetActive(true);
+            SceneManager.LoadScene("Level14");
+            StaticVariables.Level = 14;
+            if (StaticVariables.Level14Stars == 0 && StaticVariables.CoinCount >= 200)
+                PlayerPrefs.SetInt("Coins", StaticVariables.CoinCount -= 200);
+        }
+    }
+
+    public void ToLevel15()
+    {
+        PlayStartAnime("Level15");
+        if (isBadge)
+        {
+            StartCoroutine(Level15());
+            isBadge = false;
+        }
+        else
+        {
+            buffer.SetActive(true);
+            SceneManager.LoadScene("Level15");
+            StaticVariables.Level = 15;
+            if (StaticVariables.Level15Stars == 0 && StaticVariables.CoinCount >= 200)
+                PlayerPrefs.SetInt("Coins", StaticVariables.CoinCount -= 200);
+        }
+    }
+
     public void QuitGame()
     {
         DataToCSV.GameQuit();
@@ -332,6 +422,46 @@ public class SceneLoad : MonoBehaviour
         SceneManager.LoadScene("Level10");
         StaticVariables.Level = 10;
         if (StaticVariables.Level10Stars == 0 && StaticVariables.CoinCount >= 200)
+            PlayerPrefs.SetInt("Coins", StaticVariables.CoinCount -= 200);
+    }
+    IEnumerator Level11()
+    {
+        yield return new WaitForSeconds(2f);
+        SceneManager.LoadScene("Level11");
+        StaticVariables.Level = 11;
+        if (StaticVariables.Level11Stars == 0 && StaticVariables.CoinCount >= 200)
+            PlayerPrefs.SetInt("Coins", StaticVariables.CoinCount -= 200);
+    }
+    IEnumerator Level12()
+    {
+        yield return new WaitForSeconds(2f);
+        SceneManager.LoadScene("Level12");
+        StaticVariables.Level = 12;
+        if (StaticVariables.Level12Stars == 0 && StaticVariables.CoinCount >= 200)
+            PlayerPrefs.SetInt("Coins", StaticVariables.CoinCount -= 200);
+    }
+    IEnumerator Level13()
+    {
+        yield return new WaitForSeconds(2f);
+        SceneManager.LoadScene("Level12");
+        StaticVariables.Level = 13;
+        if (StaticVariables.Level13Stars == 0 && StaticVariables.CoinCount >= 200)
+            PlayerPrefs.SetInt("Coins", StaticVariables.CoinCount -= 200);
+    }
+    IEnumerator Level14()
+    {
+        yield return new WaitForSeconds(2f);
+        SceneManager.LoadScene("Level14");
+        StaticVariables.Level = 14;
+        if (StaticVariables.Level14Stars == 0 && StaticVariables.CoinCount >= 200)
+            PlayerPrefs.SetInt("Coins", StaticVariables.CoinCount -= 200);
+    }
+    IEnumerator Level15()
+    {
+        yield return new WaitForSeconds(2f);
+        SceneManager.LoadScene("Level15");
+        StaticVariables.Level = 15;
+        if (StaticVariables.Level15Stars == 0 && StaticVariables.CoinCount >= 200)
             PlayerPrefs.SetInt("Coins", StaticVariables.CoinCount -= 200);
     }
 

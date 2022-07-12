@@ -57,6 +57,31 @@ public class LevelSolutions : MonoBehaviour
     private List<string> level10Sol = new List<string> {"Pink", "Red", "Pink", "Purple", "Pink"};
     private int bestNumOfNodesLev10 = 8;
     private float averageTimeLev10 = 40f;
+
+   // Level 11
+    private List<string> level11Sol = new List<string> {"Red", "Blue", "Red", "Red", "Blue"};
+    private int bestNumOfNodesLev11 = 6;
+    private float averageTimeLev11 = 50f;
+
+   // Level 12
+    private List<string> level12Sol = new List<string> {"Red", "Blue", "Red", "Red", "Blue"};
+    private int bestNumOfNodesLev12 = 6;
+    private float averageTimeLev12 = 50f;
+
+   // Level 13
+    private List<string> level13Sol = new List<string> {"Red", "Blue", "Red", "Red", "Blue"};
+    private int bestNumOfNodesLev13 = 6;
+    private float averageTimeLev13 = 50f;
+
+   // Level 14
+    private List<string> level14Sol = new List<string> {"Red", "Blue", "Red", "Red", "Blue"};
+    private int bestNumOfNodesLev14 = 6;
+    private float averageTimeLev14 = 50f;
+        
+   // Level 15
+    private List<string> level15Sol = new List<string> {"Red", "Blue", "Red", "Red", "Blue"};
+    private int bestNumOfNodesLev15 = 6;
+    private float averageTimeLev15 = 50f;
         
 
 
@@ -88,6 +113,16 @@ public class LevelSolutions : MonoBehaviour
                 return CheckListMatchesAnswer(elements, level9Sol);
             case 10:
                 return CheckListMatchesAnswer(elements, level10Sol);
+            case 11:
+                return CheckListMatchesAnswer(elements, level11Sol);
+            case 12:
+                return CheckListMatchesAnswer(elements, level12Sol);
+            case 13:
+                return CheckListMatchesAnswer(elements, level13Sol);
+            case 14:
+                return CheckListMatchesAnswer(elements, level14Sol);
+            case 15:
+                return CheckListMatchesAnswer(elements, level15Sol);
             default:
                 return false;
         }
@@ -149,6 +184,31 @@ public class LevelSolutions : MonoBehaviour
                 stars = CalculateStars(timeElapsed, averageTimeLev10, numberOfNodesUsed, bestNumOfNodesLev10);
                 if (StaticVariables.Level10Stars != 3)
                     StaticVariables.Level10Stars = stars;
+                return stars;
+            case 11:
+                stars = CalculateStars(timeElapsed, averageTimeLev11, numberOfNodesUsed, bestNumOfNodesLev11);
+                if (StaticVariables.Level11Stars != 3)
+                    StaticVariables.Level11Stars = stars;
+                return stars;
+            case 12:
+                stars = CalculateStars(timeElapsed, averageTimeLev12, numberOfNodesUsed, bestNumOfNodesLev12);
+                if (StaticVariables.Level12Stars != 3)
+                    StaticVariables.Level12Stars = stars;
+                return stars;
+            case 13:
+                stars = CalculateStars(timeElapsed, averageTimeLev13, numberOfNodesUsed, bestNumOfNodesLev13);
+                if (StaticVariables.Level13Stars != 3)
+                    StaticVariables.Level13Stars = stars;
+                return stars;
+            case 14:
+                stars = CalculateStars(timeElapsed, averageTimeLev14, numberOfNodesUsed, bestNumOfNodesLev14);
+                if (StaticVariables.Level14Stars != 3)
+                    StaticVariables.Level14Stars = stars;
+                return stars;
+            case 15:
+                stars = CalculateStars(timeElapsed, averageTimeLev15, numberOfNodesUsed, bestNumOfNodesLev15);
+                if (StaticVariables.Level15Stars != 3)
+                    StaticVariables.Level15Stars = stars;
                 return stars;
             default:
                 return 3;

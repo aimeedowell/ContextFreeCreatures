@@ -17,6 +17,11 @@ public static class StaticVariables
     public static int Level8Stars { get; set; }
     public static int Level9Stars { get; set; }
     public static int Level10Stars { get; set; }
+    public static int Level11Stars { get; set; }
+    public static int Level12Stars { get; set; }
+    public static int Level13Stars { get; set; }
+    public static int Level14Stars { get; set; }
+    public static int Level15Stars { get; set; }
 
     public static int Level1Fails { get; set; }
     public static int Level2Fails { get; set; }
@@ -28,6 +33,12 @@ public static class StaticVariables
     public static int Level8Fails { get; set; }
     public static int Level9Fails { get; set; }
     public static int Level10Fails { get; set; }
+    public static int Level11Fails { get; set; }
+    public static int Level12Fails { get; set; }
+    public static int Level13Fails { get; set; }
+    public static int Level14Fails { get; set; }
+    public static int Level15Fails { get; set; }
+    
     
 
     public static float VolumeLevel { get; set; }

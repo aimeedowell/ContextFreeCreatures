@@ -17,6 +17,11 @@ public class LevelSelectionPage : MonoBehaviour
     public GameObject level8;
     public GameObject level9;
     public GameObject level10;
+    public GameObject level11;
+    public GameObject level12;
+    public GameObject level13;
+    public GameObject level14;
+    public GameObject level15;
     public GameObject level1Pin;
     public GameObject level2Pin;
     public GameObject level3Pin;
@@ -27,6 +32,11 @@ public class LevelSelectionPage : MonoBehaviour
     public GameObject level8Pin;
     public GameObject level9Pin;
     public GameObject level10Pin;
+    public GameObject level11Pin;
+    public GameObject level12Pin;
+    public GameObject level13Pin;
+    public GameObject level14Pin;
+    public GameObject level15Pin;
 
     public GameObject areYouSure;
     public GameObject lostLivesPopUp;
@@ -51,6 +61,11 @@ public class LevelSelectionPage : MonoBehaviour
         StaticVariables.Level8Stars = PlayerPrefs.GetInt("Level8Stars");
         StaticVariables.Level9Stars = PlayerPrefs.GetInt("Level9Stars");
         StaticVariables.Level10Stars = PlayerPrefs.GetInt("Level10Stars");
+        StaticVariables.Level10Stars = PlayerPrefs.GetInt("Level11Stars");
+        StaticVariables.Level10Stars = PlayerPrefs.GetInt("Level12Stars");
+        StaticVariables.Level10Stars = PlayerPrefs.GetInt("Level13Stars");
+        StaticVariables.Level10Stars = PlayerPrefs.GetInt("Level14Stars");
+        StaticVariables.Level10Stars = PlayerPrefs.GetInt("Level15Stars");
 
         StaticVariables.BadgeColourNodes = PlayerPrefs.GetInt("BadgeColourNodes");
         StaticVariables.BadgeEmptyWord = PlayerPrefs.GetInt("BadgeEmptyWord");
@@ -68,6 +83,11 @@ public class LevelSelectionPage : MonoBehaviour
         StaticVariables.Level8Fails = PlayerPrefs.GetInt("Level8Fails");
         StaticVariables.Level9Fails = PlayerPrefs.GetInt("Level9Fails");
         StaticVariables.Level10Fails = PlayerPrefs.GetInt("Level10Fails");
+        StaticVariables.Level10Fails = PlayerPrefs.GetInt("Level11Fails");
+        StaticVariables.Level10Fails = PlayerPrefs.GetInt("Level12Fails");
+        StaticVariables.Level10Fails = PlayerPrefs.GetInt("Level13Fails");
+        StaticVariables.Level10Fails = PlayerPrefs.GetInt("Level14Fails");
+        StaticVariables.Level10Fails = PlayerPrefs.GetInt("Level15Fails");
 
         level1.SetActive(false);
         level2.SetActive(false);
@@ -79,6 +99,11 @@ public class LevelSelectionPage : MonoBehaviour
         level8.SetActive(false);
         level9.SetActive(false);
         level10.SetActive(false);
+        level11.SetActive(false);
+        level12.SetActive(false);
+        level13.SetActive(false);
+        level14.SetActive(false);
+        level15.SetActive(false);
 
         areYouSure.SetActive(false);
 
@@ -181,7 +206,52 @@ public class LevelSelectionPage : MonoBehaviour
         if (StaticVariables.Level10Stars != 0)
         {
             level10.transform.Find("DoneTag").gameObject.SetActive(true);
+            level11Pin.SetActive(true);
             maxLevel = 10;
+        }
+        else
+            level11Pin.SetActive(false);
+
+        if (StaticVariables.Level11Stars != 0)
+        {
+            level11.transform.Find("DoneTag").gameObject.SetActive(true);
+            level12Pin.SetActive(true);
+            maxLevel = 11;
+        }
+        else
+            level12Pin.SetActive(false);
+            
+        if (StaticVariables.Level12Stars != 0)
+        {
+            level12.transform.Find("DoneTag").gameObject.SetActive(true);
+            level13Pin.SetActive(true);
+            maxLevel = 12;
+        }
+        else
+            level13Pin.SetActive(false);
+
+        if (StaticVariables.Level13Stars != 0)
+        {
+            level13.transform.Find("DoneTag").gameObject.SetActive(true);
+            level14Pin.SetActive(true);
+            maxLevel = 13;
+        }
+        else
+            level14Pin.SetActive(false);
+
+        if (StaticVariables.Level14Stars != 0)
+        {
+            level14.transform.Find("DoneTag").gameObject.SetActive(true);
+            level15Pin.SetActive(true);
+            maxLevel = 14;
+        }
+        else
+            level15Pin.SetActive(false);
+
+        if (StaticVariables.Level15Stars != 0)
+        {
+            level15.transform.Find("DoneTag").gameObject.SetActive(true);
+            maxLevel = 15;
         }
     }
 
@@ -310,7 +380,66 @@ public class LevelSelectionPage : MonoBehaviour
             else if (i == 2)
                 stars.transform.Find("Star3").gameObject.SetActive(true);
         }
-
+        // Level 11
+        for (int i = 0; i < PlayerPrefs.GetInt("Level11Stars"); i++)
+        {
+            
+            Transform stars = level11.transform.Find("Stars");
+            if (i == 0)
+                stars.transform.Find("Star1").gameObject.SetActive(true);
+            else if (i == 1)
+                stars.transform.Find("Star2").gameObject.SetActive(true);
+            else if (i == 2)
+                stars.transform.Find("Star3").gameObject.SetActive(true);
+        }
+        // Level 12
+        for (int i = 0; i < PlayerPrefs.GetInt("Level12Stars"); i++)
+        {
+            
+            Transform stars = level12.transform.Find("Stars");
+            if (i == 0)
+                stars.transform.Find("Star1").gameObject.SetActive(true);
+            else if (i == 1)
+                stars.transform.Find("Star2").gameObject.SetActive(true);
+            else if (i == 2)
+                stars.transform.Find("Star3").gameObject.SetActive(true);
+        }
+        // Level 13
+        for (int i = 0; i < PlayerPrefs.GetInt("Level13Stars"); i++)
+        {
+            
+            Transform stars = level13.transform.Find("Stars");
+            if (i == 0)
+                stars.transform.Find("Star1").gameObject.SetActive(true);
+            else if (i == 1)
+                stars.transform.Find("Star2").gameObject.SetActive(true);
+            else if (i == 2)
+                stars.transform.Find("Star3").gameObject.SetActive(true);
+        }
+        // Level 14
+        for (int i = 0; i < PlayerPrefs.GetInt("Level14Stars"); i++)
+        {
+            
+            Transform stars = level14.transform.Find("Stars");
+            if (i == 0)
+                stars.transform.Find("Star1").gameObject.SetActive(true);
+            else if (i == 1)
+                stars.transform.Find("Star2").gameObject.SetActive(true);
+            else if (i == 2)
+                stars.transform.Find("Star3").gameObject.SetActive(true);
+        }
+        // Level 15
+        for (int i = 0; i < PlayerPrefs.GetInt("Level15Stars"); i++)
+        {
+            
+            Transform stars = level15.transform.Find("Stars");
+            if (i == 0)
+                stars.transform.Find("Star1").gameObject.SetActive(true);
+            else if (i == 1)
+                stars.transform.Find("Star2").gameObject.SetActive(true);
+            else if (i == 2)
+                stars.transform.Find("Star3").gameObject.SetActive(true);
+        }
         // Add the same for each level
     }
 
@@ -335,6 +464,14 @@ public class LevelSelectionPage : MonoBehaviour
             StaticVariables.Level8Stars = 0;
             StaticVariables.Level9Stars = 0;
             StaticVariables.Level10Stars = 0;
+        }
+        else if (StaticVariables.Level <= 15)
+        {
+            StaticVariables.Level11Stars = 0;
+            StaticVariables.Level12Stars = 0;
+            StaticVariables.Level13Stars = 0;
+            StaticVariables.Level14Stars = 0;
+            StaticVariables.Level15Stars = 0;
         }
         StaticVariables.NoOfLives = 5;
         PlayerPrefs.SetInt("Lives", StaticVariables.NoOfLives);
