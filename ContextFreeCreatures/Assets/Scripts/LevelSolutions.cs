@@ -89,7 +89,7 @@ public class LevelSolutions : MonoBehaviour
     public bool IsAnswerCorrect(List<GameObject> elements)
     {
         // Test from Level selection page 
-        switch(StaticVariables.Level) 
+        switch(StaticVariables.CurrentLevel) 
         {
             case 0:
                 return CheckListMatchesAnswer(elements, tutorialSol);
@@ -131,7 +131,7 @@ public class LevelSolutions : MonoBehaviour
     public int GetNumberOfStars(float timeElapsed, int numberOfNodesUsed)
     {
         int stars = 0;
-        switch(StaticVariables.Level) 
+        switch(StaticVariables.CurrentLevel) 
         {
             case 0:
                 return 3;

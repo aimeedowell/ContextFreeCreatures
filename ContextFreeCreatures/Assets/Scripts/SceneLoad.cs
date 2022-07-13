@@ -50,7 +50,7 @@ public class SceneLoad : MonoBehaviour
         {
             buffer.SetActive(true);
             SceneManager.LoadScene("Level1");
-            StaticVariables.Level = 1;
+            StaticVariables.CurrentLevel = 1;
             if (StaticVariables.Level1Stars == 0 && StaticVariables.CoinCount >= 100)
                 PlayerPrefs.SetInt("Coins", StaticVariables.CoinCount -= 100);
         }
@@ -68,7 +68,7 @@ public class SceneLoad : MonoBehaviour
         {
             buffer.SetActive(true);
             SceneManager.LoadScene("Level2");
-            StaticVariables.Level = 2;
+            StaticVariables.CurrentLevel = 2;
             if (StaticVariables.Level2Stars == 0 && StaticVariables.CoinCount >= 100)
                 PlayerPrefs.SetInt("Coins", StaticVariables.CoinCount -= 100);
         }
@@ -86,7 +86,7 @@ public class SceneLoad : MonoBehaviour
         {
             buffer.SetActive(true);
             SceneManager.LoadScene("Level3");
-            StaticVariables.Level = 3;
+            StaticVariables.CurrentLevel = 3;
             if (StaticVariables.Level3Stars == 0 && StaticVariables.CoinCount >= 150)
                 PlayerPrefs.SetInt("Coins", StaticVariables.CoinCount -= 150);
         }
@@ -104,7 +104,7 @@ public class SceneLoad : MonoBehaviour
         {
             buffer.SetActive(true);
             SceneManager.LoadScene("Level4");
-            StaticVariables.Level = 4;
+            StaticVariables.CurrentLevel = 4;
             if (StaticVariables.Level4Stars == 0 && StaticVariables.CoinCount >= 150)
                 PlayerPrefs.SetInt("Coins", StaticVariables.CoinCount -= 150);
         }
@@ -122,7 +122,7 @@ public class SceneLoad : MonoBehaviour
         {
             buffer.SetActive(true);
             SceneManager.LoadScene("Level5");
-            StaticVariables.Level = 5;
+            StaticVariables.CurrentLevel = 5;
             if (StaticVariables.Level5Stars == 0 && StaticVariables.CoinCount >= 150)
                 PlayerPrefs.SetInt("Coins", StaticVariables.CoinCount -= 150);            
         }
@@ -140,7 +140,7 @@ public class SceneLoad : MonoBehaviour
         {
             buffer.SetActive(true);
             SceneManager.LoadScene("Level6");
-            StaticVariables.Level = 6;
+            StaticVariables.CurrentLevel = 6;
             if (StaticVariables.Level6Stars == 0 && StaticVariables.CoinCount >= 150)
                 PlayerPrefs.SetInt("Coins", StaticVariables.CoinCount -= 150);
         }
@@ -163,7 +163,7 @@ public class SceneLoad : MonoBehaviour
         {
             buffer.SetActive(true);
             SceneManager.LoadScene("Level7");
-            StaticVariables.Level = 7;
+            StaticVariables.CurrentLevel = 7;
             if (StaticVariables.Level7Stars == 0 && StaticVariables.CoinCount >= 150)
                 PlayerPrefs.SetInt("Coins", StaticVariables.CoinCount -= 150);
 
@@ -184,7 +184,7 @@ public class SceneLoad : MonoBehaviour
         {
             buffer.SetActive(true);
             SceneManager.LoadScene("Level8"); 
-            StaticVariables.Level = 8;
+            StaticVariables.CurrentLevel = 8;
             if (StaticVariables.Level8Stars == 0 && StaticVariables.CoinCount >= 150)
                 PlayerPrefs.SetInt("Coins", StaticVariables.CoinCount -= 150);
         }
@@ -202,7 +202,7 @@ public class SceneLoad : MonoBehaviour
         {
             buffer.SetActive(true);
             SceneManager.LoadScene("Level9");
-            StaticVariables.Level = 9;
+            StaticVariables.CurrentLevel = 9;
             if (StaticVariables.Level9Stars == 0 && StaticVariables.CoinCount >= 200)
                 PlayerPrefs.SetInt("Coins", StaticVariables.CoinCount -= 200);
         }
@@ -220,7 +220,7 @@ public class SceneLoad : MonoBehaviour
         {
             buffer.SetActive(true);
             SceneManager.LoadScene("Level10");
-            StaticVariables.Level = 10;
+            StaticVariables.CurrentLevel = 10;
             if (StaticVariables.Level10Stars == 0 && StaticVariables.CoinCount >= 200)
                 PlayerPrefs.SetInt("Coins", StaticVariables.CoinCount -= 200);
         }
@@ -237,7 +237,7 @@ public class SceneLoad : MonoBehaviour
         {
             buffer.SetActive(true);
             SceneManager.LoadScene("Level11");
-            StaticVariables.Level = 11;
+            StaticVariables.CurrentLevel = 11;
             if (StaticVariables.Level11Stars == 0 && StaticVariables.CoinCount >= 200)
                 PlayerPrefs.SetInt("Coins", StaticVariables.CoinCount -= 200);
         }
@@ -255,7 +255,7 @@ public class SceneLoad : MonoBehaviour
         {
             buffer.SetActive(true);
             SceneManager.LoadScene("Level12");
-            StaticVariables.Level = 12;
+            StaticVariables.CurrentLevel = 12;
             if (StaticVariables.Level12Stars == 0 && StaticVariables.CoinCount >= 200)
                 PlayerPrefs.SetInt("Coins", StaticVariables.CoinCount -= 200);
         }
@@ -273,7 +273,7 @@ public class SceneLoad : MonoBehaviour
         {
             buffer.SetActive(true);
             SceneManager.LoadScene("Level13");
-            StaticVariables.Level = 13;
+            StaticVariables.CurrentLevel = 13;
             if (StaticVariables.Level13Stars == 0 && StaticVariables.CoinCount >= 200)
                 PlayerPrefs.SetInt("Coins", StaticVariables.CoinCount -= 200);
         }
@@ -291,7 +291,7 @@ public class SceneLoad : MonoBehaviour
         {
             buffer.SetActive(true);
             SceneManager.LoadScene("Level14");
-            StaticVariables.Level = 14;
+            StaticVariables.CurrentLevel = 14;
             if (StaticVariables.Level14Stars == 0 && StaticVariables.CoinCount >= 200)
                 PlayerPrefs.SetInt("Coins", StaticVariables.CoinCount -= 200);
         }
@@ -309,7 +309,7 @@ public class SceneLoad : MonoBehaviour
         {
             buffer.SetActive(true);
             SceneManager.LoadScene("Level15");
-            StaticVariables.Level = 15;
+            StaticVariables.CurrentLevel = 15;
             if (StaticVariables.Level15Stars == 0 && StaticVariables.CoinCount >= 200)
                 PlayerPrefs.SetInt("Coins", StaticVariables.CoinCount -= 200);
         }
@@ -341,7 +341,7 @@ public class SceneLoad : MonoBehaviour
     {
         yield return new WaitForSeconds(2f);
         SceneManager.LoadScene("Level1");
-        StaticVariables.Level = 1;
+        StaticVariables.CurrentLevel = 1;
         if (StaticVariables.Level1Stars == 0 && StaticVariables.CoinCount >= 100)
             PlayerPrefs.SetInt("Coins", StaticVariables.CoinCount -= 100);
     }
@@ -349,7 +349,7 @@ public class SceneLoad : MonoBehaviour
     {
         yield return new WaitForSeconds(2f);
         SceneManager.LoadScene("Level2");
-        StaticVariables.Level = 2;
+        StaticVariables.CurrentLevel = 2;
         if (StaticVariables.Level2Stars == 0 && StaticVariables.CoinCount >= 100)
             PlayerPrefs.SetInt("Coins", StaticVariables.CoinCount -= 100);
     }
@@ -358,7 +358,7 @@ public class SceneLoad : MonoBehaviour
     {
         yield return new WaitForSeconds(2f);
         SceneManager.LoadScene("Level3");
-        StaticVariables.Level = 3;
+        StaticVariables.CurrentLevel = 3;
         if (StaticVariables.Level3Stars == 0 && StaticVariables.CoinCount >= 150)
             PlayerPrefs.SetInt("Coins", StaticVariables.CoinCount -= 150);
     }
@@ -367,7 +367,7 @@ public class SceneLoad : MonoBehaviour
     {
         yield return new WaitForSeconds(2f);
         SceneManager.LoadScene("Level4");
-        StaticVariables.Level = 4;
+        StaticVariables.CurrentLevel = 4;
         if (StaticVariables.Level4Stars == 0 && StaticVariables.CoinCount >= 150)
             PlayerPrefs.SetInt("Coins", StaticVariables.CoinCount -= 150);
     }
@@ -376,7 +376,7 @@ public class SceneLoad : MonoBehaviour
     {
         yield return new WaitForSeconds(2f);
         SceneManager.LoadScene("Level5");
-        StaticVariables.Level = 5;
+        StaticVariables.CurrentLevel = 5;
         if (StaticVariables.Level5Stars == 0 && StaticVariables.CoinCount >= 150)
             PlayerPrefs.SetInt("Coins", StaticVariables.CoinCount -= 150);
     }
@@ -385,7 +385,7 @@ public class SceneLoad : MonoBehaviour
     {
         yield return new WaitForSeconds(2f);
         SceneManager.LoadScene("Level6");
-        StaticVariables.Level = 6;
+        StaticVariables.CurrentLevel = 6;
         if (StaticVariables.Level6Stars == 0 && StaticVariables.CoinCount >= 150)
             PlayerPrefs.SetInt("Coins", StaticVariables.CoinCount -= 150);
     }
@@ -394,7 +394,7 @@ public class SceneLoad : MonoBehaviour
     {
         yield return new WaitForSeconds(2f);
         SceneManager.LoadScene("Level7");
-        StaticVariables.Level = 7;
+        StaticVariables.CurrentLevel = 7;
         if (StaticVariables.Level7Stars == 0 && StaticVariables.CoinCount >= 150)
             PlayerPrefs.SetInt("Coins", StaticVariables.CoinCount -= 150);
     }
@@ -403,7 +403,7 @@ public class SceneLoad : MonoBehaviour
     {
         yield return new WaitForSeconds(2f);
         SceneManager.LoadScene("Level8");
-        StaticVariables.Level = 8;
+        StaticVariables.CurrentLevel = 8;
         if (StaticVariables.Level8Stars == 0 && StaticVariables.CoinCount >= 150)
             PlayerPrefs.SetInt("Coins", StaticVariables.CoinCount -= 150);
     }
@@ -412,7 +412,7 @@ public class SceneLoad : MonoBehaviour
     {
         yield return new WaitForSeconds(9f);
         SceneManager.LoadScene("Level9");
-        StaticVariables.Level = 9;
+        StaticVariables.CurrentLevel = 9;
         if (StaticVariables.Level9Stars == 0 && StaticVariables.CoinCount >= 200)
             PlayerPrefs.SetInt("Coins", StaticVariables.CoinCount -= 200);
     }
@@ -420,7 +420,7 @@ public class SceneLoad : MonoBehaviour
     {
         yield return new WaitForSeconds(2f);
         SceneManager.LoadScene("Level10");
-        StaticVariables.Level = 10;
+        StaticVariables.CurrentLevel = 10;
         if (StaticVariables.Level10Stars == 0 && StaticVariables.CoinCount >= 200)
             PlayerPrefs.SetInt("Coins", StaticVariables.CoinCount -= 200);
     }
@@ -428,7 +428,7 @@ public class SceneLoad : MonoBehaviour
     {
         yield return new WaitForSeconds(2f);
         SceneManager.LoadScene("Level11");
-        StaticVariables.Level = 11;
+        StaticVariables.CurrentLevel = 11;
         if (StaticVariables.Level11Stars == 0 && StaticVariables.CoinCount >= 200)
             PlayerPrefs.SetInt("Coins", StaticVariables.CoinCount -= 200);
     }
@@ -436,7 +436,7 @@ public class SceneLoad : MonoBehaviour
     {
         yield return new WaitForSeconds(2f);
         SceneManager.LoadScene("Level12");
-        StaticVariables.Level = 12;
+        StaticVariables.CurrentLevel = 12;
         if (StaticVariables.Level12Stars == 0 && StaticVariables.CoinCount >= 200)
             PlayerPrefs.SetInt("Coins", StaticVariables.CoinCount -= 200);
     }
@@ -444,7 +444,7 @@ public class SceneLoad : MonoBehaviour
     {
         yield return new WaitForSeconds(2f);
         SceneManager.LoadScene("Level12");
-        StaticVariables.Level = 13;
+        StaticVariables.CurrentLevel = 13;
         if (StaticVariables.Level13Stars == 0 && StaticVariables.CoinCount >= 200)
             PlayerPrefs.SetInt("Coins", StaticVariables.CoinCount -= 200);
     }
@@ -452,7 +452,7 @@ public class SceneLoad : MonoBehaviour
     {
         yield return new WaitForSeconds(2f);
         SceneManager.LoadScene("Level14");
-        StaticVariables.Level = 14;
+        StaticVariables.CurrentLevel = 14;
         if (StaticVariables.Level14Stars == 0 && StaticVariables.CoinCount >= 200)
             PlayerPrefs.SetInt("Coins", StaticVariables.CoinCount -= 200);
     }
@@ -460,7 +460,7 @@ public class SceneLoad : MonoBehaviour
     {
         yield return new WaitForSeconds(2f);
         SceneManager.LoadScene("Level15");
-        StaticVariables.Level = 15;
+        StaticVariables.CurrentLevel = 15;
         if (StaticVariables.Level15Stars == 0 && StaticVariables.CoinCount >= 200)
             PlayerPrefs.SetInt("Coins", StaticVariables.CoinCount -= 200);
     }

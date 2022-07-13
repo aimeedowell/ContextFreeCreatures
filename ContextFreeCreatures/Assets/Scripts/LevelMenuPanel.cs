@@ -122,7 +122,7 @@ public class LevelMenuPanel : MonoBehaviour
             if (hintPopUp.activeSelf == false)
             {
                 hintPopUp.SetActive(true);
-                DataToCSV.HintClicked(StaticVariables.Level.ToString());
+                DataToCSV.HintClicked(StaticVariables.CurrentLevel.ToString());
             }
             else
                 hintPopUp.SetActive(false);
@@ -155,7 +155,7 @@ public class LevelMenuPanel : MonoBehaviour
 
     int GetNumberOfStars()
     {
-        switch(StaticVariables.Level) 
+        switch(StaticVariables.CurrentLevel) 
         {
             case 1:
                 return StaticVariables.Level1Stars;

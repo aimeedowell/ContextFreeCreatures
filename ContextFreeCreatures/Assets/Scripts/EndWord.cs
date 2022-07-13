@@ -109,7 +109,7 @@ public class EndWord : MonoBehaviour
         targetWord.GetComponent<Animator>().enabled = true;
         targetWord.GetComponent<Animator>().Play(0);
 
-        if (StaticVariables.Level == 5 && this.gameObject.GetComponent<Frozen>().IsGemFrozen(endWord))
+        if (StaticVariables.CurrentLevel == 5 && this.gameObject.GetComponent<Frozen>().IsGemFrozen(endWord))
         {
             Debug.Log("Gem is Frozen");
             this.gameObject.GetComponent<Frozen>().PlayFreezeAnimation(endWord);

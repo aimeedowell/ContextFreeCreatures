@@ -9,5 +9,6 @@ public class SetStartVolume : MonoBehaviour
     {
         StaticVariables.VolumeLevel = 1.0f;
         StaticVariables.MusicVolumeLevel = 1.0f;
+        StaticVariables.MaxReachedLevel = PlayerPrefs.GetInt("MaxReachedLevel");
     }
 }

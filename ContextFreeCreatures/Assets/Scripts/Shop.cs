@@ -73,7 +73,7 @@ public class Shop : MonoBehaviour
         {
             UpdateCoins(100);
             shopMenu.SetActive(false);
-            DataToCSV.RestartBonBonLine(StaticVariables.Level.ToString());
+            DataToCSV.RestartBonBonLine(StaticVariables.CurrentLevel.ToString());
         }
     }
 
@@ -87,7 +87,7 @@ public class Shop : MonoBehaviour
             this.gameObject.GetComponent<LevelController>().ReplaceNode(firstRule.GetComponent<RuleContents>().GetCreatureImage(), startNode.GetComponent<RectTransform>().transform.position);
             this.gameObject.GetComponent<LevelController>().GetContents(firstRule.GetComponent<RuleContents>().GetRuleImages(), startNode.gameObject, startNode.GetComponent<RectTransform>().transform.localPosition.y);
             startNode.SetActive(false);
-            DataToCSV.StartNodeToffeeLine(StaticVariables.Level.ToString(), this.gameObject.GetComponent<EndWord>().GetCurrentEndWordNames());
+            DataToCSV.StartNodeToffeeLine(StaticVariables.CurrentLevel.ToString(), this.gameObject.GetComponent<EndWord>().GetCurrentEndWordNames());
         }
     }
 
@@ -98,7 +98,7 @@ public class Shop : MonoBehaviour
             UpdateCoins(200);
             shopMenu.SetActive(false);
             this.gameObject.GetComponent<LevelController>().AddLife();
-            DataToCSV.DelayTruffleLine(StaticVariables.Level.ToString());
+            DataToCSV.DelayTruffleLine(StaticVariables.CurrentLevel.ToString());
         }
     }
 
@@ -114,7 +114,7 @@ public class Shop : MonoBehaviour
             }
             if (listOfUnNeededRules.Count == 0)
                 this.gameObject.GetComponent<AllRulesNeeded>().OnAllRulesNeeded();
-            DataToCSV.RemovalRhubarb(StaticVariables.Level.ToString());
+            DataToCSV.RemovalRhubarb(StaticVariables.CurrentLevel.ToString());
             removedRules = true;
         }
     }

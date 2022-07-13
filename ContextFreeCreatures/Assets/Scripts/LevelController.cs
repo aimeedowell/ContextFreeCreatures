@@ -37,7 +37,7 @@ public class LevelController : MonoBehaviour
 
     private void Start() 
     {
-        DataToCSV.AddNewLevelLine(StaticVariables.Level.ToString());
+        DataToCSV.AddNewLevelLine(StaticVariables.CurrentLevel.ToString());
         treeArea = GameObject.Find("TreeSpace");
         treeOutline = GameObject.Find("TreeOutline");
         cam = GameObject.Find("Main Camera");
@@ -50,7 +50,7 @@ public class LevelController : MonoBehaviour
         timeElapsed = Time.time;
         noOfLives.GetComponent<Text>().text = PlayerPrefs.GetInt("Lives").ToString();
         StaticVariables.NoOfLives = PlayerPrefs.GetInt("Lives");
-        if (StaticVariables.Level > 0)
+        if (StaticVariables.CurrentLevel > 0)
         {
             cam.GetComponent<MusicControl>().SetSliderValue(StaticVariables.VolumeLevel);
             cam.GetComponent<MusicControl>().SetMusicSliderValue(StaticVariables.MusicVolumeLevel);
@@ -189,7 +189,7 @@ public class LevelController : MonoBehaviour
             gemClone.GetComponent<RectTransform>().localPosition = localPos;
             gemClone.SetActive(true);
 
-            if (StaticVariables.Level == 5)
+            if (StaticVariables.CurrentLevel == 5)
                 cam.GetComponent<Frozen>().AddFrozenGem(gemClone, treeArea, canvas, gemClone.GetComponent<RectTransform>().transform.position);
 
             StartCoroutine(FadeAlpha(gemClone, 1.5f));
@@ -206,7 +206,7 @@ public class LevelController : MonoBehaviour
          
         List<GameObject> endWord = cam.GetComponent<EndWord>().UpdateEndWord(ruleObjects, prevNode);
         tree.Add(ruleObjects);
-        DataToCSV.EndWordUpdateLine(StaticVariables.Level.ToString(), cam.GetComponent<EndWord>().GetCurrentEndWordNames());
+        DataToCSV.EndWordUpdateLine(StaticVariables.CurrentLevel.ToString(), cam.GetComponent<EndWord>().GetCurrentEndWordNames());
 
         if (cam.GetComponent<EndWord>().IsTreeDead())
         {
@@ -253,14 +253,14 @@ public class LevelController : MonoBehaviour
                 cam.GetComponent<SceneLoad>().isBadge = cam.GetComponent<BadgeUnlock>().BadgeToBeShown();
             int noOfStars = cam.GetComponent<LevelSolutions>().GetNumberOfStars(timeElapsed, numberOfNodesUsed);
             cam.GetComponent<LevelEnd>().LevelSuccess(noOfStars);
-            DataToCSV.EndOfLevelLine(StaticVariables.Level.ToString(), "Success", numberOfNodesUsed.ToString(), timeElapsed.ToString(), noOfStars.ToString());
+            DataToCSV.EndOfLevelLine(StaticVariables.CurrentLevel.ToString(), "Success", numberOfNodesUsed.ToString(), timeElapsed.ToString(), noOfStars.ToString());
         }
         else
         {
             LoseLife();
             cam.GetComponent<EndWord>().LevelFailRemoveCoins();
             cam.GetComponent<LevelEnd>().LevelFailed();
-            DataToCSV.EndOfLevelLine(StaticVariables.Level.ToString(), "Failed", numberOfNodesUsed.ToString(), timeElapsed.ToString(), 0.ToString());
+            DataToCSV.EndOfLevelLine(StaticVariables.CurrentLevel.ToString(), "Failed", numberOfNodesUsed.ToString(), timeElapsed.ToString(), 0.ToString());
         }
 
         SaveProgress();
@@ -284,7 +284,7 @@ public class LevelController : MonoBehaviour
 
     void LoseLife()
     {
-        if (StaticVariables.NoOfLives > 1)
+        if (StaticVariables.NoOfLives > 1 && (StaticVariables.CurrentLevel > StaticVariables.MaxReachedLevel))
         {
             StaticVariables.NoOfLives -= 1;
             noOfLives.GetComponent<Text>().text = StaticVariables.NoOfLives.ToString();
@@ -309,7 +309,12 @@ public class LevelController : MonoBehaviour
     {
         PlayerPrefs.SetInt("Coins", StaticVariables.CoinCount);
         PlayerPrefs.SetInt("Lives", StaticVariables.NoOfLives);
-        switch(StaticVariables.Level) 
+        if (StaticVariables.CurrentLevel >= StaticVariables.MaxReachedLevel)
+        {
+            StaticVariables.MaxReachedLevel = StaticVariables.CurrentLevel;
+            PlayerPrefs.SetInt("MaxReachedLevel", StaticVariables.MaxReachedLevel);
+        }
+        switch (StaticVariables.CurrentLevel) 
         {
             case 1:
                 if (PlayerPrefs.GetInt("Level1Stars") < StaticVariables.Level1Stars)

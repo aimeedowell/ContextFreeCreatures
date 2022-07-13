@@ -430,36 +430,52 @@ public class LevelSelectionPage : MonoBehaviour
 
     void AllLivesLost()
     {
-        if (StaticVariables.Level <= 3)
+        if (StaticVariables.CurrentLevel <= 3)
         {
             StaticVariables.Level1Stars = 0;
+            PlayerPrefs.SetInt("Level1Stars", StaticVariables.Level1Stars);
             StaticVariables.Level2Stars = 0;
+            PlayerPrefs.SetInt("Level2Stars", StaticVariables.Level2Stars);
             StaticVariables.Level3Stars = 0;
+            PlayerPrefs.SetInt("Level3Stars", StaticVariables.Level3Stars);
 
         }
-        else if (StaticVariables.Level <= 6)
+        else if (StaticVariables.CurrentLevel <= 6)
         {
             StaticVariables.Level4Stars = 0;
+            PlayerPrefs.SetInt("Level4Stars", StaticVariables.Level4Stars);
             StaticVariables.Level5Stars = 0;
+            PlayerPrefs.SetInt("Level5Stars", StaticVariables.Level5Stars);
             StaticVariables.Level6Stars = 0;
+            PlayerPrefs.SetInt("Level6Stars", StaticVariables.Level6Stars);
         }
-        else if (StaticVariables.Level <= 10)
+        else if (StaticVariables.CurrentLevel <= 10)
         {
             StaticVariables.Level7Stars = 0;
+            PlayerPrefs.SetInt("Level7Stars", StaticVariables.Level7Stars);
             StaticVariables.Level8Stars = 0;
+            PlayerPrefs.SetInt("Level8Stars", StaticVariables.Level8Stars);
             StaticVariables.Level9Stars = 0;
+            PlayerPrefs.SetInt("Level9Stars", StaticVariables.Level9Stars);
             StaticVariables.Level10Stars = 0;
+            PlayerPrefs.SetInt("Level10Stars", StaticVariables.Level10Stars);
         }
-        else if (StaticVariables.Level <= 15)
+        else if (StaticVariables.CurrentLevel <= 15)
         {
             StaticVariables.Level11Stars = 0;
+            PlayerPrefs.SetInt("Level11Stars", StaticVariables.Level11Stars);
             StaticVariables.Level12Stars = 0;
+            PlayerPrefs.SetInt("Level12Stars", StaticVariables.Level12Stars);
             StaticVariables.Level13Stars = 0;
+            PlayerPrefs.SetInt("Level13Stars", StaticVariables.Level13Stars);
             StaticVariables.Level14Stars = 0;
+            PlayerPrefs.SetInt("Level14Stars", StaticVariables.Level14Stars);
             StaticVariables.Level15Stars = 0;
+            PlayerPrefs.SetInt("Level15Stars", StaticVariables.Level15Stars);
         }
         StaticVariables.NoOfLives = 5;
         PlayerPrefs.SetInt("Lives", StaticVariables.NoOfLives);
+        noOfLives.GetComponent<Text>().text = PlayerPrefs.GetInt("Lives").ToString();
     }
 
     public void CloseLostLivesPopUp()

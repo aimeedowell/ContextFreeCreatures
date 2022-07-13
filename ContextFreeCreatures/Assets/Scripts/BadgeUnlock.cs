@@ -19,7 +19,7 @@ public class BadgeUnlock : MonoBehaviour
 
     public void ShowBadge()
     {
-        if (StaticVariables.Level == 1)
+        if (StaticVariables.CurrentLevel == 1)
         {
             if (PlayerPrefs.GetInt("BadgeSymmetry") == 0)
             {   
@@ -28,7 +28,7 @@ public class BadgeUnlock : MonoBehaviour
                 PlayerPrefs.SetInt("BadgeSymmetry", StaticVariables.BadgeSymmetry);
             }
         }
-        else if (StaticVariables.Level == 2)
+        else if (StaticVariables.CurrentLevel == 2)
         {
             if (PlayerPrefs.GetInt("BadgeEmptyWord") == 0)
             {
@@ -37,7 +37,7 @@ public class BadgeUnlock : MonoBehaviour
                 PlayerPrefs.SetInt("BadgeEmptyWord", StaticVariables.BadgeEmptyWord);
             }
         }
-        else if (StaticVariables.Level == 6)
+        else if (StaticVariables.CurrentLevel == 6)
         {
             if (PlayerPrefs.GetInt("BadgeSplit") == 0)
             {
@@ -46,7 +46,7 @@ public class BadgeUnlock : MonoBehaviour
                 PlayerPrefs.SetInt("BadgeSplit", StaticVariables.BadgeSplit);
             }
         }
-        else if (StaticVariables.Level == 7)
+        else if (StaticVariables.CurrentLevel == 7)
         {
             if (PlayerPrefs.GetInt("BadgeTimer") == 0)
             {
@@ -55,7 +55,7 @@ public class BadgeUnlock : MonoBehaviour
                 PlayerPrefs.SetInt("BadgeTimer", StaticVariables.BadgeTimer);
             }
         }
-        else if (StaticVariables.Level == 9)
+        else if (StaticVariables.CurrentLevel == 9)
         {
             if (PlayerPrefs.GetInt("BadgeColourNodes") == 0)
             {
@@ -64,7 +64,7 @@ public class BadgeUnlock : MonoBehaviour
                 PlayerPrefs.SetInt("BadgeColourNodes", StaticVariables.BadgeColourNodes);
             }
         }
-        else if (StaticVariables.Level == 14)
+        else if (StaticVariables.CurrentLevel == 14)
         {
             if (PlayerPrefs.GetInt("BadgeColourNodes") == 0)
             {
@@ -76,32 +76,32 @@ public class BadgeUnlock : MonoBehaviour
     }
     public bool BadgeToBeShown()
     {
-        if (StaticVariables.Level == 1)
+        if (StaticVariables.CurrentLevel == 1)
         {
             if (PlayerPrefs.GetInt("BadgeSymmetry") == 0)
                 return true;
         }
-        else if (StaticVariables.Level == 2)
+        else if (StaticVariables.CurrentLevel == 2)
         {
             if (PlayerPrefs.GetInt("BadgeEmptyWord") == 0)
                 return true;
         }
-        else if (StaticVariables.Level == 6)
+        else if (StaticVariables.CurrentLevel == 6)
         {
             if (PlayerPrefs.GetInt("BadgeSplit") == 0)
                 return true;
         }
-        else if (StaticVariables.Level == 7)
+        else if (StaticVariables.CurrentLevel == 7)
         {
             if (PlayerPrefs.GetInt("BadgeTimer") == 0)
                 return true;
         }
-        else if (StaticVariables.Level == 9)
+        else if (StaticVariables.CurrentLevel == 9)
         {
             if (PlayerPrefs.GetInt("BadgeColourNodes") == 0)
                 return true;
         }
-        else if (StaticVariables.Level == 14)
+        else if (StaticVariables.CurrentLevel == 14)
         {
             if (PlayerPrefs.GetInt("BadgeMulticolour") == 0)
                 return true;
