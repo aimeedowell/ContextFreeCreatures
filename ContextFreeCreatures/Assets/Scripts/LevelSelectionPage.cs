@@ -72,22 +72,7 @@ public class LevelSelectionPage : MonoBehaviour
         StaticVariables.BadgeSplit = PlayerPrefs.GetInt("BadgeSplit");
         StaticVariables.BadgeSymmetry = PlayerPrefs.GetInt("BadgeSymmetry");
         StaticVariables.BadgeTimer = PlayerPrefs.GetInt("BadgeTimer");
-
-        StaticVariables.Level1Fails = PlayerPrefs.GetInt("Level1Fails");
-        StaticVariables.Level2Fails = PlayerPrefs.GetInt("Level2Fails");
-        StaticVariables.Level3Fails = PlayerPrefs.GetInt("Level3Fails");
-        StaticVariables.Level4Fails = PlayerPrefs.GetInt("Level4Fails");
-        StaticVariables.Level5Fails = PlayerPrefs.GetInt("Level5Fails");
-        StaticVariables.Level6Fails = PlayerPrefs.GetInt("Level6Fails");
-        StaticVariables.Level7Fails = PlayerPrefs.GetInt("Level7Fails");
-        StaticVariables.Level8Fails = PlayerPrefs.GetInt("Level8Fails");
-        StaticVariables.Level9Fails = PlayerPrefs.GetInt("Level9Fails");
-        StaticVariables.Level10Fails = PlayerPrefs.GetInt("Level10Fails");
-        StaticVariables.Level11Fails = PlayerPrefs.GetInt("Level11Fails");
-        StaticVariables.Level12Fails = PlayerPrefs.GetInt("Level12Fails");
-        StaticVariables.Level13Fails = PlayerPrefs.GetInt("Level13Fails");
-        StaticVariables.Level14Fails = PlayerPrefs.GetInt("Level14Fails");
-        StaticVariables.Level15Fails = PlayerPrefs.GetInt("Level15Fails");
+        StaticVariables.BadgeMulticolour = PlayerPrefs.GetInt("BadgeMulticolour");
 
         level1.SetActive(false);
         level2.SetActive(false);

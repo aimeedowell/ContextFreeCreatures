@@ -37,6 +37,7 @@ public class PlayerProfile : MonoBehaviour
         SetStarValue();
         SetBadgeValue();
         SetPlayerSkillLevel(maxLevel);
+        DataToCSV.PlayerProfileOpened();
     }
 
     public void OnProfileExitClick()
@@ -65,7 +66,7 @@ public class PlayerProfile : MonoBehaviour
     void SetBadgeValue()
     {
         int count = StaticVariables.BadgeSymmetry + StaticVariables.BadgeEmptyWord + StaticVariables.BadgeSplit +
-                    StaticVariables.BadgeTimer + StaticVariables.BadgeColourNodes;
+                    StaticVariables.BadgeTimer + StaticVariables.BadgeColourNodes + StaticVariables.BadgeMulticolour;
         noOfBadges.GetComponent<Text>().text = count.ToString();
     }
 
@@ -115,6 +116,7 @@ public class PlayerProfile : MonoBehaviour
         profilePic.GetComponent<Image>().sprite = profilePics[1];
         StaticVariables.ProfilePicIndex = 1;
         PlayerPrefs.SetInt("ProfilePicIndex", StaticVariables.ProfilePicIndex);
+        DataToCSV.ProfilePictureChanged();
     }
 
     public void OnAntPic()
@@ -123,6 +125,7 @@ public class PlayerProfile : MonoBehaviour
         profilePic.GetComponent<Image>().sprite = profilePics[2];
         StaticVariables.ProfilePicIndex = 2;
         PlayerPrefs.SetInt("ProfilePicIndex", StaticVariables.ProfilePicIndex);
+        DataToCSV.ProfilePictureChanged();
     }
 
     public void OnSpiderPic()
@@ -131,6 +134,7 @@ public class PlayerProfile : MonoBehaviour
         profilePic.GetComponent<Image>().sprite = profilePics[3];
         StaticVariables.ProfilePicIndex = 3;
         PlayerPrefs.SetInt("ProfilePicIndex", StaticVariables.ProfilePicIndex);
+        DataToCSV.ProfilePictureChanged();
     }
 
     public void OnBeetlePic()
@@ -139,6 +143,7 @@ public class PlayerProfile : MonoBehaviour
         profilePic.GetComponent<Image>().sprite = profilePics[4];
         StaticVariables.ProfilePicIndex = 4;
         PlayerPrefs.SetInt("ProfilePicIndex", StaticVariables.ProfilePicIndex);
+        DataToCSV.ProfilePictureChanged();
     }
 
     public void OnCentipedePic()
@@ -147,6 +152,7 @@ public class PlayerProfile : MonoBehaviour
         profilePic.GetComponent<Image>().sprite = profilePics[5];
         StaticVariables.ProfilePicIndex = 5;
         PlayerPrefs.SetInt("ProfilePicIndex", StaticVariables.ProfilePicIndex);
+        DataToCSV.ProfilePictureChanged();
     }  
 
 }

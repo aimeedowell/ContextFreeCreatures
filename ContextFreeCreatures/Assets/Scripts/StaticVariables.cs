@@ -23,23 +23,6 @@ public static class StaticVariables
     public static int Level14Stars { get; set; }
     public static int Level15Stars { get; set; }
 
-    public static int Level1Fails { get; set; }
-    public static int Level2Fails { get; set; }
-    public static int Level3Fails { get; set; }
-    public static int Level4Fails { get; set; }
-    public static int Level5Fails { get; set; }
-    public static int Level6Fails { get; set; }
-    public static int Level7Fails { get; set; }
-    public static int Level8Fails { get; set; }
-    public static int Level9Fails { get; set; }
-    public static int Level10Fails { get; set; }
-    public static int Level11Fails { get; set; }
-    public static int Level12Fails { get; set; }
-    public static int Level13Fails { get; set; }
-    public static int Level14Fails { get; set; }
-    public static int Level15Fails { get; set; }
-    
-    
 
     public static float VolumeLevel { get; set; }
     public static int IsMuted { get; set; }
@@ -57,6 +40,7 @@ public static class StaticVariables
     public static int BadgeSplit { get; set; }     // Level 6
     public static int BadgeTimer { get; set; }     // Level 7
     public static int BadgeColourNodes { get; set; }     // Level 9
+    public static int BadgeMulticolour { get; set; }     // Level 14
 
     public static string PlayerSkillLevel { get; set; }
     public static int ProfilePicIndex { get; set; }

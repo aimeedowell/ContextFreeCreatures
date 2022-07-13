@@ -98,4 +98,27 @@ static public class DataToCSV
             file.WriteLine(DateTime.Now.TimeOfDay.ToString() + "," + "Game Closed " + "," + "Player Skill Level" + "," + playerLevel + "," + "Total No of Stars" + "," + noOfStars.ToString());
         }
     }
+
+    public static void HintClicked(string level)
+    {
+        using (System.IO.StreamWriter file = new System.IO.StreamWriter(filePath, true))
+        {
+            file.WriteLine(DateTime.Now.TimeOfDay.ToString() + "," + "Hint Clicked" + "," + "Level:" + "," + level);
+        }
+    }
+    public static void PlayerProfileOpened()
+    {
+        using (System.IO.StreamWriter file = new System.IO.StreamWriter(filePath, true))
+        {
+            file.WriteLine(DateTime.Now.TimeOfDay.ToString() + "," + "Player Profile Opened");
+        }
+    }
+
+    public static void ProfilePictureChanged()
+    {
+        using (System.IO.StreamWriter file = new System.IO.StreamWriter(filePath, true))
+        {
+            file.WriteLine(DateTime.Now.TimeOfDay.ToString() + "," + "Profile Pictured Changed");
+        }
+    }
 }

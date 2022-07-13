@@ -21,15 +21,30 @@ public class DropToNode : MonoBehaviour, IDropHandler
             {
                 var childElement = data.pointerDrag.gameObject.transform.GetChild(0);
                 if (!childElement.name.Contains("Red") && this.gameObject.name.Contains("Start"))
+                {
+                    MouseClickSoundManager.PlayMouseError();
                     return;
+                }
                 else if (!childElement.name.Contains("Blue") && this.gameObject.name.Contains("Blue"))
+                {
+                    MouseClickSoundManager.PlayMouseError();
                     return;
+                }
                 else if (!childElement.name.Contains("Yellow") && this.gameObject.name.Contains("Yellow"))
+                {
+                    MouseClickSoundManager.PlayMouseError();
                     return;
+                }
                 else if (!childElement.name.Contains("Pink") && this.gameObject.name.Contains("Pink"))
+                {
+                    MouseClickSoundManager.PlayMouseError();
                     return;
+                }
                 else if (!childElement.name.Contains("Green") && this.gameObject.name.Contains("Green"))
+                {
+                    MouseClickSoundManager.PlayMouseError();
                     return;
+                }
             }
             data.pointerDrag.GetComponent<RectTransform>().transform.position = GetComponent<RectTransform>().transform.position;
             data.pointerDrag.GetComponent<DragAndDrop>().hasDropped = true;

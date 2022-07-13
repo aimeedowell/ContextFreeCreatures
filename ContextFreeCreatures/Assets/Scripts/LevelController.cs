@@ -252,7 +252,6 @@ public class LevelController : MonoBehaviour
         else
         {
             LoseLife();
-            SetLevelFails(noOfFails += 1);
             cam.GetComponent<EndWord>().LevelFailRemoveCoins();
             cam.GetComponent<LevelEnd>().LevelFailed();
             DataToCSV.EndOfLevelLine(StaticVariables.Level.ToString(), "Failed", numberOfNodesUsed.ToString(), timeElapsed.ToString(), 0.ToString());
@@ -370,95 +369,6 @@ public class LevelController : MonoBehaviour
         
         PlayerPrefs.Save();
         Debug.Log("Game data saved!");
-    }
-
-    int GetLevelFails()
-    {
-        switch(StaticVariables.Level) 
-        {
-            case 1:
-                return StaticVariables.Level1Fails;
-            case 2:
-                return StaticVariables.Level2Fails;
-            case 3:
-                return StaticVariables.Level3Fails;
-            case 4:
-                return StaticVariables.Level4Fails;
-            case 5:
-                return StaticVariables.Level5Fails;
-            case 6:
-                return StaticVariables.Level6Fails;
-            case 7:
-                return StaticVariables.Level7Fails;
-            case 8:
-                return StaticVariables.Level8Fails;
-            case 9:
-                return StaticVariables.Level9Fails;
-            case 10:
-                return StaticVariables.Level10Fails;
-            case 11:
-                return StaticVariables.Level11Fails;
-            case 12:
-                return StaticVariables.Level12Fails;
-            case 13:
-                return StaticVariables.Level13Fails;
-            case 14:
-                return StaticVariables.Level14Fails;
-            case 15:
-                return StaticVariables.Level15Fails;
-        }
-        return 0;
-    }
-    void SetLevelFails(int noOfFails)
-    {
-        switch(StaticVariables.Level) 
-        {
-            case 1:
-                StaticVariables.Level1Fails = noOfFails;
-                break;
-            case 2:
-                StaticVariables.Level2Fails = noOfFails;
-                break;
-            case 3:
-                StaticVariables.Level3Fails = noOfFails;
-                break;
-            case 4:
-                StaticVariables.Level4Fails = noOfFails;
-                break;
-            case 5:
-                StaticVariables.Level5Fails = noOfFails;
-                break;
-            case 6:
-                StaticVariables.Level6Fails = noOfFails;
-                break;
-            case 7:
-                StaticVariables.Level7Fails = noOfFails;
-                break;
-            case 8:
-                StaticVariables.Level8Fails = noOfFails;
-                break;
-            case 9:
-                StaticVariables.Level9Fails = noOfFails;
-                break;
-            case 10:
-                StaticVariables.Level10Fails = noOfFails;
-                break;
-            case 11:
-                StaticVariables.Level11Fails = noOfFails;
-                break;
-            case 12:
-                StaticVariables.Level12Fails = noOfFails;
-                break;
-            case 13:
-                StaticVariables.Level13Fails = noOfFails;
-                break;
-            case 14:
-                StaticVariables.Level14Fails = noOfFails;
-                break;
-            case 15:
-                StaticVariables.Level15Fails = noOfFails;
-                break;
-        }
     }
     
 }

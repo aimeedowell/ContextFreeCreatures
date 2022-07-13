@@ -64,6 +64,15 @@ public class BadgeUnlock : MonoBehaviour
                 PlayerPrefs.SetInt("BadgeColourNodes", StaticVariables.BadgeColourNodes);
             }
         }
+        else if (StaticVariables.Level == 14)
+        {
+            if (PlayerPrefs.GetInt("BadgeColourNodes") == 0)
+            {
+                SetBadgeUI();
+                StaticVariables.BadgeMulticolour = 1;
+                PlayerPrefs.SetInt("BadgeMulticolour", StaticVariables.BadgeMulticolour);
+            }
+        }
     }
     public bool BadgeToBeShown()
     {
@@ -90,6 +99,11 @@ public class BadgeUnlock : MonoBehaviour
         else if (StaticVariables.Level == 9)
         {
             if (PlayerPrefs.GetInt("BadgeColourNodes") == 0)
+                return true;
+        }
+        else if (StaticVariables.Level == 14)
+        {
+            if (PlayerPrefs.GetInt("BadgeMulticolour") == 0)
                 return true;
         }
         return false;

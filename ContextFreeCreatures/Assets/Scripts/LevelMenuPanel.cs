@@ -120,7 +120,10 @@ public class LevelMenuPanel : MonoBehaviour
         if (!this.gameObject.GetComponent<LevelController>().isLevelEnd)
         {
             if (hintPopUp.activeSelf == false)
+            {
                 hintPopUp.SetActive(true);
+                DataToCSV.HintClicked(StaticVariables.Level.ToString());
+            }
             else
                 hintPopUp.SetActive(false);
         }

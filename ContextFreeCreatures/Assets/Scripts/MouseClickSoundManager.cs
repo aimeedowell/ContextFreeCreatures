@@ -7,6 +7,8 @@ public class MouseClickSoundManager : MonoBehaviour
     public static AudioClip onCLick;
     public static AudioClip offCLick;
     public static AudioClip hoverClick;
+    public static AudioClip errorClick;
+
 
     static AudioSource audioSrc;
 
@@ -16,6 +18,7 @@ public class MouseClickSoundManager : MonoBehaviour
         onCLick = Resources.Load<AudioClip>("Audio/OnClick");
         offCLick = Resources.Load<AudioClip>("Audio/OffClick");
         hoverClick = Resources.Load<AudioClip>("Audio/HoverClick");
+        errorClick = Resources.Load<AudioClip>("Audio/MouseError");
         audioSrc = GetComponent<AudioSource>();
     }
 
@@ -32,5 +35,9 @@ public class MouseClickSoundManager : MonoBehaviour
     public static void PlayHoverClick()
     {
         audioSrc.PlayOneShot(hoverClick);
+    }
+    public static void PlayMouseError()
+    {
+        audioSrc.PlayOneShot(errorClick);
     }
 }
