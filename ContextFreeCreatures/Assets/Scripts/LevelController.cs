@@ -154,6 +154,12 @@ public class LevelController : MonoBehaviour
                     splitWidth = newWidth;
                 startWidth = nodeX - (newWidth/2);
 
+                if (newWidth < (imageCount*100))
+                {
+                    Debug.Log("Level should fail");
+                    StartCoroutine(LevelCompletePopUp(false));
+                }
+
                 if (startWidth < 0 || (startWidth + newWidth) >= maxWidth)
                 {
                     this.GetComponent<ScaleViewport>().ScaleTreeSizeWidth(maxWidth + (Mathf.Abs(startWidth)*2) + 100f, treeSpaceHeight, 0);
