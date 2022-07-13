@@ -14,6 +14,7 @@ public class LevelController : MonoBehaviour
     public Canvas canvas;
 
     private GameObject treeArea;
+    private GameObject treeOutline;
     private RectTransform rectTransform;
 
     float treeSpaceWidth;
@@ -38,10 +39,14 @@ public class LevelController : MonoBehaviour
     {
         DataToCSV.AddNewLevelLine(StaticVariables.Level.ToString());
         treeArea = GameObject.Find("TreeSpace");
+        treeOutline = GameObject.Find("TreeOutline");
         cam = GameObject.Find("Main Camera");
         rectTransform = (RectTransform)treeArea.transform;
         treeSpaceWidth = rectTransform.rect.width;
         treeSpaceHeight = rectTransform.rect.height;
+        RectTransform outlineTransform = (RectTransform)treeOutline.transform;
+        maxWidth = outlineTransform.rect.width;
+        maxHeight = outlineTransform.rect.height;
         timeElapsed = Time.time;
         noOfLives.GetComponent<Text>().text = PlayerPrefs.GetInt("Lives").ToString();
         StaticVariables.NoOfLives = PlayerPrefs.GetInt("Lives");
@@ -50,9 +55,6 @@ public class LevelController : MonoBehaviour
             cam.GetComponent<MusicControl>().SetSliderValue(StaticVariables.VolumeLevel);
             cam.GetComponent<MusicControl>().SetMusicSliderValue(StaticVariables.MusicVolumeLevel);
         }
-
-        maxWidth = treeSpaceWidth;
-        maxHeight = treeSpaceHeight;
     }
 
     public void ReplaceNode(GameObject creatureImage, Vector3 node)
@@ -90,7 +92,19 @@ public class LevelController : MonoBehaviour
 
         float prevNodeX = prevNode.GetComponent<RectTransform>().transform.localPosition.x;
 
-        if (prevNode == startNode)
+        bool prevNodeAlone = false;
+
+        for (int i = 0; i < tree.Count; i++)
+        {
+            for (int j = 0; j < tree[i].Count; j++)
+            {
+                if (tree[i][j] == prevNode)
+                    if (tree[i].Count == 1)
+                        prevNodeAlone = true;
+            }
+        }
+
+        if (prevNode == startNode || (tree.Count == 1 && prevNodeAlone))
         {
             startWidth = -treeSpaceWidth/(imageCount*2);
             splitWidth = (treeSpaceWidth + (treeSpaceWidth/imageCount))/(imageCount + 1);
@@ -109,20 +123,26 @@ public class LevelController : MonoBehaviour
                     for (int j = 0; j < tree[i].Count; j++)
                     {
                         if (tree[i][j] == prevNode)
+                        {
+                            if (tree[i].Count == 1)
                             {
-                                if (j == 0)
-                                {
-                                    nodeNeighX = RemapRange(tree[i][j+1].transform.localPosition.x, -treeSpaceWidth/2, treeSpaceWidth/2, 0, treeSpaceWidth);
-                                    break;
-                                }
-                                else 
-                                {
-                                    nodeNeighX = RemapRange(tree[i][j-1].transform.localPosition.x, -treeSpaceWidth/2, treeSpaceWidth/2, 0, treeSpaceWidth);        
-                                    break;
-                                }                    
+                                nodeNeighX = 300f;
+                                break;
                             }
+                            if (j == 0)
+                            {
+                                nodeNeighX = RemapRange(tree[i][j+1].transform.localPosition.x, -treeSpaceWidth/2, treeSpaceWidth/2, 0, treeSpaceWidth);
+                                break;
+                            }
+                            else 
+                            {
+                                nodeNeighX = RemapRange(tree[i][j-1].transform.localPosition.x, -treeSpaceWidth/2, treeSpaceWidth/2, 0, treeSpaceWidth);        
+                                break;
+                            }                    
+                        }
                     }
                 }
+                
 
 
                 float nodeX = RemapRange(prevNodeX, -treeSpaceWidth/2, treeSpaceWidth/2, 0, treeSpaceWidth);
@@ -144,9 +164,9 @@ public class LevelController : MonoBehaviour
 
             if (height <= 5 )
             {             
-                this.GetComponent<ScaleViewport>().ScaleTreeSizeHeight(treeSpaceHeight, treeSpaceHeight + 300f);
-                Debug.Log("Overflow");
-                maxHeight = treeSpaceHeight + 300f;
+                this.GetComponent<ScaleViewport>().ScaleTreeSizeHeight(maxHeight, maxHeight + 170f);
+                Debug.Log(height);
+                maxHeight = maxHeight + 170f;
             }
         }
 

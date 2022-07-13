@@ -17,10 +17,7 @@ public class ScaleViewport : MonoBehaviour
     public void ScaleTreeSizeHeight(float oldHeight, float newHeight)
     {
         contentScaler.transform.DetachChildren();
-        float startY = contentScaler.transform.localPosition.y;
-        float startX = contentScaler.transform.localPosition.x;
-
         contentScaler.GetComponent<RectTransform>().sizeDelta = new Vector2(contentScaler.GetComponent<RectTransform>().sizeDelta.x, newHeight);
-        Vector2 endAnch = new Vector2(startX, startY - (newHeight/2));
+        contentScaler.GetComponent<RectTransform>().localPosition += new Vector3(0, -(newHeight-oldHeight)/2, 0);
     }
 }

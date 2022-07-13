@@ -3445,6 +3445,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ruleImages:
   - {fileID: 1246528243}
+  - {fileID: 1078397124}
   creatureImage: {fileID: 401210085}
 --- !u!225 &203266922
 CanvasGroup:
@@ -9219,6 +9220,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ruleImages:
   - {fileID: 1246528243}
+  - {fileID: 1078397124}
   creatureImage: {fileID: 401210085}
 --- !u!225 &598973533
 CanvasGroup:
@@ -15325,6 +15327,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ruleImages:
   - {fileID: 1246528243}
+  - {fileID: 1078397124}
   creatureImage: {fileID: 401210085}
 --- !u!225 &938397239
 CanvasGroup:

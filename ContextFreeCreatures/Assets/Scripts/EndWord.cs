@@ -120,7 +120,7 @@ public class EndWord : MonoBehaviour
             endWord.GetComponent<Animator>().Play(0);
             endWord.GetComponent<AudioSource>().Play(0);
             CollectDiamondPrize();
-            DuplicateCoin(endWord.GetComponent<RectTransform>().anchoredPosition);
+            DuplicateCoin(endWord.GetComponent<RectTransform>().transform.position);
         }
     }
 
@@ -138,8 +138,8 @@ public class EndWord : MonoBehaviour
     void DuplicateCoin(Vector2 gemPos)
     {
         GameObject coinClone = Instantiate(coinAnimation, canvas.transform);
-        coinClone.GetComponent<RectTransform>().anchoredPosition = gemPos;
         coinClone.transform.SetParent(coinContainer.transform);
+        coinClone.GetComponent<RectTransform>().transform.position = gemPos;
         coinClone.SetActive(true); 
         
         coinClone.GetComponent<Animator>().enabled = true;
