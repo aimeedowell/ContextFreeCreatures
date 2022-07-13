@@ -57,7 +57,8 @@ public class PlayerProfile : MonoBehaviour
         int count = StaticVariables.Level1Stars + StaticVariables.Level2Stars + StaticVariables.Level3Stars +
                     StaticVariables.Level4Stars + StaticVariables.Level5Stars + StaticVariables.Level6Stars + 
                     StaticVariables.Level7Stars + StaticVariables.Level8Stars + StaticVariables.Level9Stars +
-                    StaticVariables.Level10Stars;
+                    StaticVariables.Level10Stars + StaticVariables.Level11Stars + StaticVariables.Level12Stars + 
+                    StaticVariables.Level13Stars + StaticVariables.Level14Stars + StaticVariables.Level15Stars;
         noOfStars.GetComponent<Text>().text = count.ToString();
         maxStars = count;
     }
@@ -83,12 +84,12 @@ public class PlayerProfile : MonoBehaviour
         else if (maxLevel == 10 && (maxStars <= 25))
         {
             skill = "Expert";
-            GetComponent<Image>().sprite = goldCup;
+            cup.GetComponent<Image>().sprite = goldCup;
         }
-        else if (maxLevel == 10 && (maxStars >= 25 && maxStars <= 30))
+        else if (maxLevel == 15 && (maxStars >= 25 && maxStars <= 45))
         {
             skill = "Master";
-            GetComponent<Image>().sprite = goldCup;
+            cup.GetComponent<Image>().sprite = goldCup;
         }
         skillLevel.GetComponent<Text>().text = skill; 
         StaticVariables.PlayerSkillLevel = skill;

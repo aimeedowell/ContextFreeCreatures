@@ -5,7 +5,7 @@ using System.IO;
 
 static public class DataToCSV
 {
-    static string filePath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Desktop), "AimeeLog.csv");
+    static string filePath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Desktop), "GameData.csv");
     public static void AddNewLevelLine(string level)
     {
         using (System.IO.StreamWriter file = new System.IO.StreamWriter(filePath, true))
@@ -89,7 +89,8 @@ static public class DataToCSV
         int noOfStars = StaticVariables.Level1Stars + StaticVariables.Level2Stars + StaticVariables.Level3Stars +
                 StaticVariables.Level4Stars + StaticVariables.Level5Stars + StaticVariables.Level6Stars + 
                 StaticVariables.Level7Stars + StaticVariables.Level8Stars + StaticVariables.Level9Stars +
-                StaticVariables.Level10Stars;
+                StaticVariables.Level10Stars + StaticVariables.Level11Stars + StaticVariables.Level12Stars + 
+                StaticVariables.Level13Stars + StaticVariables.Level14Stars + StaticVariables.Level15Stars;
         string playerLevel = StaticVariables.PlayerSkillLevel.ToString();
 
         using (System.IO.StreamWriter file = new System.IO.StreamWriter(filePath, true))
