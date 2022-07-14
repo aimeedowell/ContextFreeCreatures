@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class SceneLoad : MonoBehaviour
 {
     public bool isBadge = false;
+    public bool isFloodRetry = false; 
     public GameObject buffer;
 
     private void Start() 
@@ -154,7 +155,7 @@ public class SceneLoad : MonoBehaviour
         if (scene.name == "Level7")
             calledFromItself = true;
 
-        if (isBadge)
+        if (isBadge && !isFloodRetry)
         {
             StartCoroutine(Level7());
             isBadge = false;
@@ -162,14 +163,22 @@ public class SceneLoad : MonoBehaviour
         else
         {
             buffer.SetActive(true);
+
+            if (calledFromItself)
+                StaticVariables.StartFlood = 1;
+
             SceneManager.LoadScene("Level7");
             StaticVariables.CurrentLevel = 7;
             if (StaticVariables.Level7Stars == 0 && StaticVariables.CoinCount >= 150)
                 PlayerPrefs.SetInt("Coins", StaticVariables.CoinCount -= 150);
+            isFloodRetry = false;
 
-            if (calledFromItself)
-                StaticVariables.StartFlood = 1;
         }
+    }
+
+    public void FloodRetry()
+    {
+        isFloodRetry = true;
     }
 
     public void ToLevel8()

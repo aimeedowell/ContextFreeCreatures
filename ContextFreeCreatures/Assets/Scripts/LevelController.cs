@@ -55,23 +55,25 @@ public class LevelController : MonoBehaviour
             cam.GetComponent<MusicControl>().SetSliderValue(StaticVariables.VolumeLevel);
             cam.GetComponent<MusicControl>().SetMusicSliderValue(StaticVariables.MusicVolumeLevel);
         }
+
+        treeArea.GetComponent<RectTransform>().anchoredPosition = new Vector2(0,-29.0f);
     }
 
     public void ReplaceNode(GameObject creatureImage, Vector3 node)
     {
-        this.GetComponent<ScaleViewport>().contentScaler.transform.DetachChildren();
+        // this.GetComponent<ScaleViewport>().contentScaler.transform.DetachChildren();
         GameObject bkg = Instantiate(spriteBackground, canvas.transform);
-        bkg.GetComponent<RectTransform>().transform.position = node;
         bkg.transform.SetParent(treeArea.transform);
+        bkg.GetComponent<RectTransform>().transform.position = node;
         bkg.SetActive(true);
 
         GameObject creature = Instantiate(creatureImage, canvas.transform);
-        creature.GetComponent<RectTransform>().transform.position = node;
         creature.transform.SetParent(treeArea.transform);
+        creature.GetComponent<RectTransform>().transform.position = node;
         creature.SetActive(true);
 
         numberOfNodesUsed += 1;
-        treeArea.transform.SetParent(this.GetComponent<ScaleViewport>().contentScaler.transform);
+        // treeArea.transform.SetParent(this.GetComponent<ScaleViewport>().contentScaler.transform);
 
     }
 
@@ -154,9 +156,10 @@ public class LevelController : MonoBehaviour
                     splitWidth = newWidth;
                 startWidth = nodeX - (newWidth/2);
 
-                if (newWidth < (imageCount*100))
+                if (newWidth <= imageCount*40f)
                 {
                     Debug.Log("Level should fail");
+                    isLevelEnd = true;
                     StartCoroutine(LevelCompletePopUp(false));
                 }
 
@@ -202,7 +205,7 @@ public class LevelController : MonoBehaviour
         }
 
         treeArea.transform.SetParent(this.GetComponent<ScaleViewport>().contentScaler.transform);
-
+        treeArea.GetComponent<RectTransform>().anchoredPosition = new Vector2(0,0);
          
         List<GameObject> endWord = cam.GetComponent<EndWord>().UpdateEndWord(ruleObjects, prevNode);
         tree.Add(ruleObjects);
@@ -284,10 +287,13 @@ public class LevelController : MonoBehaviour
 
     void LoseLife()
     {
-        if (StaticVariables.NoOfLives > 1 && (StaticVariables.CurrentLevel > StaticVariables.MaxReachedLevel))
+        if (StaticVariables.NoOfLives > 1)
         {
-            StaticVariables.NoOfLives -= 1;
-            noOfLives.GetComponent<Text>().text = StaticVariables.NoOfLives.ToString();
+            if (StaticVariables.CurrentLevel > StaticVariables.MaxReachedLevel)
+            {
+                StaticVariables.NoOfLives -= 1;
+                noOfLives.GetComponent<Text>().text = StaticVariables.NoOfLives.ToString();
+            }
         }
         else
         {

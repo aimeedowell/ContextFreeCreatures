@@ -15,7 +15,7 @@ public class DropToNode : MonoBehaviour, IDropHandler
 
     public void OnDrop(PointerEventData data)
     {
-        if (data.pointerDrag != null)
+        if (data.pointerDrag != null && data.pointerDrag.gameObject.name != "View")
         {
             if (StaticVariables.CurrentLevel >= 9)
             {

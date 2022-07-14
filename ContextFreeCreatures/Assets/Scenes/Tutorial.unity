@@ -3640,7 +3640,7 @@ Animator:
   m_GameObject: {fileID: 468998042}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: ffddf987756c84741a2bcba44103099d, type: 2}
+  m_Controller: {fileID: 9100000, guid: b66e695b64a2b42e2be8a75265d815f8, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -4448,10 +4448,8 @@ MonoBehaviour:
   exitMenu: {fileID: 1195453954}
   settingsMenu: {fileID: 379191911}
   shopMenu: {fileID: 1711297157}
-  infoButton: {fileID: 379191911}
   infoPopUp: {fileID: 379191911}
   startAnime: {fileID: 737564581}
-  hintButton: {fileID: 1032060579}
   hintPopUp: {fileID: 1032060579}
 --- !u!114 &560030407
 MonoBehaviour:
@@ -4466,6 +4464,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isBadge: 0
+  isFloodRetry: 0
   buffer: {fileID: 1434266097}
 --- !u!114 &560030408
 MonoBehaviour:
@@ -4497,7 +4496,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d50d1fce719e4e048638c224945b485, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lineImage: {fileID: 693166466}
   lineImageContainer: {fileID: 1303845250}
   maskContainer: {fileID: 1924621216}
   mask: {fileID: 997435437}
@@ -4516,7 +4514,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spriteBackground: {fileID: 1673999587}
   startNode: {fileID: 826589909}
-  hint: {fileID: 1032060579}
   canvas: {fileID: 172117104}
   isLevelEnd: 0
   noOfLives: {fileID: 1032060580}
@@ -5558,7 +5555,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 1242, y: 401}
+  m_AnchoredPosition: {x: 607.07, y: 401}
   m_SizeDelta: {x: 705.8518, y: 451.8835}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!95 &694237992
@@ -5569,7 +5566,7 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 694237990}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 43fdd1fe3acf44cddb23be38c4bd1aea, type: 2}
   m_CullingMode: 0
@@ -11593,7 +11590,7 @@ Animator:
   m_GameObject: {fileID: 1638385145}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: ffddf987756c84741a2bcba44103099d, type: 2}
+  m_Controller: {fileID: 9100000, guid: b66e695b64a2b42e2be8a75265d815f8, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -12331,7 +12328,7 @@ Animator:
   m_GameObject: {fileID: 1708422770}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: ffddf987756c84741a2bcba44103099d, type: 2}
+  m_Controller: {fileID: 9100000, guid: b66e695b64a2b42e2be8a75265d815f8, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -12850,7 +12847,7 @@ Animator:
   m_GameObject: {fileID: 1751482519}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: ffddf987756c84741a2bcba44103099d, type: 2}
+  m_Controller: {fileID: 9100000, guid: b66e695b64a2b42e2be8a75265d815f8, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -14065,10 +14062,10 @@ RectTransform:
   m_Father: {fileID: 1210058709}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -0.010864258, y: -29.02002}
-  m_SizeDelta: {x: -1.0998535, y: -75.034485}
+  m_SizeDelta: {x: 1920.9001, y: 616.9655}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1935553028
 MonoBehaviour:
@@ -14243,7 +14240,7 @@ Animator:
   m_GameObject: {fileID: 2007772669}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: ffddf987756c84741a2bcba44103099d, type: 2}
+  m_Controller: {fileID: 9100000, guid: b66e695b64a2b42e2be8a75265d815f8, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
