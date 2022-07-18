@@ -105,17 +105,20 @@ namespace Krivodeling.UI.Effects
 
         private void UpdateColor()
         {
-            _material.SetColor(_colorId, Color);
+            if (_material != null)
+                _material.SetColor(_colorId, Color);
         }
 
         private void UpdateIntensity()
         {
-            _material.SetFloat(_intensityId, Intensity);
+            if (_material != null)
+                _material.SetFloat(_intensityId, Intensity);
         }
 
         private void UpdateMultiplier()
         {
-            _material.SetFloat(_multiplierId, Multiplier);
+            if (_material != null)
+                _material.SetFloat(_multiplierId, Multiplier);
         }
 
         private void UpdateFlipMode()
