@@ -84,6 +84,8 @@ public class LevelController : MonoBehaviour
 
     public void GetContents(List<GameObject> ruleImages, GameObject prevNode, float prevNodeY)
     {
+        Vector2 treePos = treeArea.GetComponent<RectTransform>().anchoredPosition;
+        Vector2 viewPortPos = this.GetComponent<ScaleViewport>().contentScaler.GetComponent<RectTransform>().anchoredPosition;
         this.GetComponent<ScaleViewport>().contentScaler.transform.DetachChildren();
 
         int imageCount = ruleImages.Count;
@@ -211,7 +213,8 @@ public class LevelController : MonoBehaviour
         }
 
         treeArea.transform.SetParent(this.GetComponent<ScaleViewport>().contentScaler.transform);
-        treeArea.GetComponent<RectTransform>().anchoredPosition = new Vector2(0,0);
+        this.GetComponent<ScaleViewport>().contentScaler.GetComponent<RectTransform>().anchoredPosition = viewPortPos;
+        treeArea.GetComponent<RectTransform>().anchoredPosition = treePos;
          
         List<GameObject> endWord = cam.GetComponent<EndWord>().UpdateEndWord(ruleObjects, prevNode);
         tree.Add(ruleObjects);
