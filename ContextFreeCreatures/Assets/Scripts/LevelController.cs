@@ -55,6 +55,7 @@ public class LevelController : MonoBehaviour
             cam.GetComponent<MusicControl>().SetSliderValue(StaticVariables.VolumeLevel);
             cam.GetComponent<MusicControl>().SetMusicSliderValue(StaticVariables.MusicVolumeLevel);
         }
+        
 
         treeArea.GetComponent<RectTransform>().anchoredPosition = new Vector2(0,-29.0f);
     }

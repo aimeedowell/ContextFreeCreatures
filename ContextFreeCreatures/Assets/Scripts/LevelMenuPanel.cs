@@ -65,6 +65,10 @@ public class LevelMenuPanel : MonoBehaviour
 
     void PlayStartAnimation()
     {
+        // GameObject blurPanel = GameObject.FindGameObjectWithTag("Blur");
+        // blurPanel.GetComponent<Krivodeling.UI.Effects.UIBlur>().BeginBlur(2);
+
+
         startAnime.SetActive(true);
         var transform = startAnime.transform;
         foreach (Transform child in transform)
