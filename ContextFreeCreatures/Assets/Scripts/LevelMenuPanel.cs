@@ -60,6 +60,7 @@ public class LevelMenuPanel : MonoBehaviour
     public void OnLetsGoClick()
     {
         startAnime.SetActive(false);
+        this.gameObject.GetComponent<LevelController>().SetCurrentTime(Time.time);
     }
 
     void PlayStartAnimation()

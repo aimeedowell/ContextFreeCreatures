@@ -58,6 +58,10 @@ public class LevelController : MonoBehaviour
 
         treeArea.GetComponent<RectTransform>().anchoredPosition = new Vector2(0,-29.0f);
     }
+    public void SetCurrentTime(float time)
+    {
+        timeElapsed = time;
+    }
 
     public void ReplaceNode(GameObject creatureImage, Vector3 node)
     {
@@ -156,6 +160,7 @@ public class LevelController : MonoBehaviour
                     splitWidth = newWidth;
                 startWidth = nodeX - (newWidth/2);
 
+                Debug.Log (newWidth);
                 if (newWidth <= imageCount*40f)
                 {
                     Debug.Log("Level should fail");
