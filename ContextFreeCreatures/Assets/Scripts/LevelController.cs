@@ -161,7 +161,7 @@ public class LevelController : MonoBehaviour
                 startWidth = nodeX - (newWidth/2);
 
                 Debug.Log (newWidth);
-                if (newWidth <= imageCount*40f)
+                if (newWidth <= imageCount*20f)
                 {
                     Debug.Log("Level should fail");
                     isLevelEnd = true;
