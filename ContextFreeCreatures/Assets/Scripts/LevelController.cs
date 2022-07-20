@@ -33,7 +33,7 @@ public class LevelController : MonoBehaviour
     int noOfFails;
 
     float maxWidth;
-    float maxHeight;
+    float minHeight;
 
     private void Start() 
     {
@@ -46,7 +46,7 @@ public class LevelController : MonoBehaviour
         treeSpaceHeight = rectTransform.rect.height;
         RectTransform outlineTransform = (RectTransform)treeOutline.transform;
         maxWidth = outlineTransform.rect.width;
-        maxHeight = outlineTransform.rect.height;
+        minHeight = 5;
         timeElapsed = Time.time;
         noOfLives.GetComponent<Text>().text = PlayerPrefs.GetInt("Lives").ToString();
         StaticVariables.NoOfLives = PlayerPrefs.GetInt("Lives");
@@ -66,7 +66,6 @@ public class LevelController : MonoBehaviour
 
     public void ReplaceNode(GameObject creatureImage, Vector3 node)
     {
-        // this.GetComponent<ScaleViewport>().contentScaler.transform.DetachChildren();
         GameObject bkg = Instantiate(spriteBackground, canvas.transform);
         bkg.transform.SetParent(treeArea.transform);
         bkg.GetComponent<RectTransform>().transform.position = node;
@@ -78,16 +77,15 @@ public class LevelController : MonoBehaviour
         creature.SetActive(true);
 
         numberOfNodesUsed += 1;
-        // treeArea.transform.SetParent(this.GetComponent<ScaleViewport>().contentScaler.transform);
-
     }
 
     public void GetContents(List<GameObject> ruleImages, GameObject prevNode, float prevNodeY)
     {
-        Vector2 treePos = treeArea.GetComponent<RectTransform>().anchoredPosition;
-        Vector2 viewPortPos = this.GetComponent<ScaleViewport>().contentScaler.GetComponent<RectTransform>().anchoredPosition;
+        bool heightChanged = false;
+        Vector2 treePos = treeArea.GetComponent<RectTransform>().localPosition;
+        Vector2 heightTreePos = new Vector2 (treeArea.GetComponent<RectTransform>().localPosition.x,treeArea.GetComponent<RectTransform>().localPosition.y + (170f/4));
         this.GetComponent<ScaleViewport>().contentScaler.transform.DetachChildren();
-
+        
         int imageCount = ruleImages.Count;
         List<GameObject> ruleObjects = new List<GameObject>();
 
@@ -173,17 +171,20 @@ public class LevelController : MonoBehaviour
 
                 if (startWidth < 0 || (startWidth + newWidth) >= maxWidth)
                 {
-                    this.GetComponent<ScaleViewport>().ScaleTreeSizeWidth(maxWidth + (Mathf.Abs(startWidth)*2) + 100f, treeSpaceHeight, 0);
-                    maxWidth = maxWidth + (Mathf.Abs(startWidth)*2) + 100f;
+                    float extension = newWidth;
+                    this.GetComponent<ScaleViewport>().ScaleTreeSizeWidth(maxWidth + extension, treeSpaceHeight, 0);
+                    maxWidth = maxWidth + extension;
                 }
 
             }
 
-            if (height <= 5 )
+            if (height <= minHeight )
             {             
-                this.GetComponent<ScaleViewport>().ScaleTreeSizeHeight(maxHeight, maxHeight + 170f);
+                float currentHeight = this.GetComponent<ScaleViewport>().contentScaler.GetComponent<RectTransform>().rect.height;
+                this.GetComponent<ScaleViewport>().ScaleTreeSizeHeight(currentHeight, currentHeight + 170f);
                 Debug.Log(height);
-                maxHeight = maxHeight + 170f;
+                minHeight -= (170f/2);
+                heightChanged = true;
             }
         }
 
@@ -212,9 +213,15 @@ public class LevelController : MonoBehaviour
             startWidth += splitWidth;
         }
 
+        
         treeArea.transform.SetParent(this.GetComponent<ScaleViewport>().contentScaler.transform);
-        this.GetComponent<ScaleViewport>().contentScaler.GetComponent<RectTransform>().anchoredPosition = viewPortPos;
-        treeArea.GetComponent<RectTransform>().anchoredPosition = treePos;
+        if (heightChanged)
+            treeArea.GetComponent<RectTransform>().localPosition = heightTreePos;
+        else
+            treeArea.GetComponent<RectTransform>().localPosition = treePos;
+        
+        // this.GetComponent<ScaleViewport>().contentScaler.GetComponent<RectTransform>().anchoredPosition = viewPortPos;
+        
          
         List<GameObject> endWord = cam.GetComponent<EndWord>().UpdateEndWord(ruleObjects, prevNode);
         tree.Add(ruleObjects);
