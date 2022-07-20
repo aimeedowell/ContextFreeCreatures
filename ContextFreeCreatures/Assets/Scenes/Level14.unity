@@ -8858,6 +8858,7 @@ GameObject:
   - component: {fileID: 560030411}
   - component: {fileID: 560030413}
   - component: {fileID: 560030414}
+  - component: {fileID: 560030415}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -9116,6 +9117,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   contentScaler: {fileID: 1465355012}
+--- !u!114 &560030415
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 560030400}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 754d795dd146c46a79d733aa4a29ed97, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  badge: {fileID: 485193562}
+  background: {fileID: 2137811926}
+  title: {fileID: 1028045560}
+  image: {fileID: 403766541}
+  content: {fileID: 1915146051}
 --- !u!1 &571966074
 GameObject:
   m_ObjectHideFlags: 0
@@ -30356,7 +30374,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.43529412, g: 0.34354743, b: 0.14509806, a: 1}
+  m_Color: {r: 0.14509806, g: 0.19981833, b: 0.43529412, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1

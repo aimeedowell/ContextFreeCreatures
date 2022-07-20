@@ -45,5 +45,6 @@ public static class StaticVariables
     public static string PlayerSkillLevel { get; set; }
     public static int ProfilePicIndex { get; set; }
 
+    public static int HasGameCompleted { get; set; }
 
 }

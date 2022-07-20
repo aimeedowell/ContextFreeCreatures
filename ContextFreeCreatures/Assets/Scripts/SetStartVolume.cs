@@ -7,8 +7,15 @@ public class SetStartVolume : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        StaticVariables.VolumeLevel = 1.0f;
-        StaticVariables.MusicVolumeLevel = 1.0f;
+        if (PlayerPrefs.HasKey("VolumeLevel"))
+            StaticVariables.VolumeLevel = PlayerPrefs.GetFloat("VolumeLevel");
+        else
+            StaticVariables.VolumeLevel = 1f;
+        if (PlayerPrefs.HasKey("MusicVolumeLevel"))
+            StaticVariables.MusicVolumeLevel = PlayerPrefs.GetFloat("MusicVolumeLevel");
+        else
+            StaticVariables.MusicVolumeLevel = 1f;
         StaticVariables.MaxReachedLevel = PlayerPrefs.GetInt("MaxReachedLevel");
+        StaticVariables.HasGameCompleted = PlayerPrefs.GetInt("HasGameCompleted");
     }
 }

@@ -37,6 +37,7 @@ public class MusicControl : MonoBehaviour
             soundEffectSlider.interactable = false;
             soundEffectMixer.SetFloat("SliderLevel", (Mathf.Log10(0.0001f) * 20)); // So static variable does not change
             StaticVariables.IsMuted = 1;
+            PlayerPrefs.SetFloat("VolumeLevel", 0.0001f);
         }
         else
         {
@@ -54,10 +55,12 @@ public class MusicControl : MonoBehaviour
 
     public void SetSoundEffectVolume(float sliderVal)
     {
-        StaticVariables.VolumeLevel = sliderVal;
+        float dbLevel = Mathf.Log10(sliderVal) * 20;
+        StaticVariables.VolumeLevel = dbLevel;
         if (StaticVariables.IsMuted == 0)
         {
-            soundEffectMixer.SetFloat("SliderLevel", (Mathf.Log10(sliderVal) * 20));
+            soundEffectMixer.SetFloat("SliderLevel", dbLevel);
+            PlayerPrefs.SetFloat("VolumeLevel", dbLevel);
         }
     }
 
@@ -68,6 +71,7 @@ public class MusicControl : MonoBehaviour
         {
             musicSlider.interactable = false;
             musicMixer.SetFloat("MusicVolume", (Mathf.Log10(0.0001f) * 20)); // So static variable does not change
+            PlayerPrefs.SetFloat("MusicVolumeLevel", 0.0001f);
             StaticVariables.IsMusicMuted = 1;
         }
         else
@@ -86,10 +90,12 @@ public class MusicControl : MonoBehaviour
 
     public void SetMusicVolume(float sliderVal)
     {
-        StaticVariables.MusicVolumeLevel = sliderVal;
+        float dbLevel = Mathf.Log10(sliderVal) * 20;
+        StaticVariables.MusicVolumeLevel = dbLevel;
         if (StaticVariables.IsMusicMuted == 0)
         {
-            musicMixer.SetFloat("MusicVolume", (Mathf.Log10(sliderVal) * 20));
+            musicMixer.SetFloat("MusicVolume", dbLevel);
+            PlayerPrefs.SetFloat("MusicVolumeLevel", dbLevel);
         }
     }
 }
