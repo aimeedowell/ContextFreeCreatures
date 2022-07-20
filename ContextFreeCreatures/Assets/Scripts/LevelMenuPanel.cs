@@ -182,6 +182,16 @@ public class LevelMenuPanel : MonoBehaviour
                 return StaticVariables.Level9Stars;
             case 10:
                 return StaticVariables.Level10Stars;
+            case 11:
+                return StaticVariables.Level11Stars;
+            case 12:
+                return StaticVariables.Level12Stars;
+            case 13:
+                return StaticVariables.Level13Stars;
+            case 14:
+                return StaticVariables.Level14Stars;
+            case 15:
+                return StaticVariables.Level15Stars;
         }
         return 0;
     }
