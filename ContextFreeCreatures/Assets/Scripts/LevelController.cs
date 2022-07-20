@@ -169,11 +169,14 @@ public class LevelController : MonoBehaviour
                     StartCoroutine(LevelCompletePopUp(false));
                 }
 
-                if (startWidth < 0 || (startWidth + newWidth) >= maxWidth)
+                // float currentWidth = this.GetComponent<ScaleViewport>().contentScaler.GetComponent<RectTransform>().rect.width;
+                if (startWidth < 0 || (startWidth + newWidth) >= this.GetComponent<ScaleViewport>().contentScaler.GetComponent<RectTransform>().rect.width)
                 {
-                    float extension = newWidth;
-                    this.GetComponent<ScaleViewport>().ScaleTreeSizeWidth(maxWidth + extension, treeSpaceHeight, 0);
-                    maxWidth = maxWidth + extension;
+                    // currentWidth = this.GetComponent<ScaleViewport>().contentScaler.GetComponent<RectTransform>().rect.width;
+                    // float extension = newWidth * 1.5f;
+                    // this.GetComponent<ScaleViewport>().ScaleTreeSizeWidth(currentWidth + extension, treeSpaceHeight, 0);
+                    this.GetComponent<ScaleViewport>().ScaleTreeSizeWidth(maxWidth + (Mathf.Abs(startWidth)*2) + 100f, treeSpaceHeight, 0);
+                    maxWidth = maxWidth + (Mathf.Abs(startWidth)*2) + 100f;
                 }
 
             }
