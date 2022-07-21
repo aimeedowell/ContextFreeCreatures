@@ -285,7 +285,7 @@ public class LevelController : MonoBehaviour
             DataToCSV.EndOfLevelLine(StaticVariables.CurrentLevel.ToString(), "Failed", numberOfNodesUsed.ToString(), timeElapsed.ToString(), 0.ToString());
         }
 
-        SaveProgress();
+        SaveProgress(success);
     }
 
     void CloneRuleContent(GameObject prevNode, GameObject image, float width, float height)
@@ -330,11 +330,11 @@ public class LevelController : MonoBehaviour
         noOfLives.GetComponent<Text>().text = StaticVariables.NoOfLives.ToString();
     }
 
-    void SaveProgress()
+    void SaveProgress(bool success)
     {
         PlayerPrefs.SetInt("Coins", StaticVariables.CoinCount);
         PlayerPrefs.SetInt("Lives", StaticVariables.NoOfLives);
-        if (StaticVariables.CurrentLevel >= StaticVariables.MaxReachedLevel)
+        if (StaticVariables.CurrentLevel >= StaticVariables.MaxReachedLevel && success)
         {
             StaticVariables.MaxReachedLevel = StaticVariables.CurrentLevel;
             PlayerPrefs.SetInt("MaxReachedLevel", StaticVariables.MaxReachedLevel);
