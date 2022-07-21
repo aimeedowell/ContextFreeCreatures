@@ -494,6 +494,6 @@ public class SceneLoad : MonoBehaviour
     public void ClearPlayerPrefs()
     {
         PlayerPrefs.DeleteAll();
-        SceneManager.LoadScene("StartPage");
+        Application.Quit();
     }
 } 

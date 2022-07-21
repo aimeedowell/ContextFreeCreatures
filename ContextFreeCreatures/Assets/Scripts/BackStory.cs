@@ -9,9 +9,13 @@ public class BackStory : MonoBehaviour
     void Start()
     {
         if (PlayerPrefs.GetInt("TutorialComplete") == 1)
-            SceneManager.LoadScene("LevelSelection");
+            SceneManager.LoadScene("StartPage");
         else
         {
+            StaticVariables.VolumeLevel = 1f;
+            PlayerPrefs.SetFloat("VolumeLevel", 1f);
+            StaticVariables.MusicVolumeLevel = 1f;
+            PlayerPrefs.SetFloat("MusicVolumeLevel", 1f);
             StartCoroutine(MoveScenes());
         }   
     }

@@ -56,7 +56,7 @@ public class MusicControl : MonoBehaviour
     public void SetSoundEffectVolume(float sliderVal)
     {
         float dbLevel = Mathf.Log10(sliderVal) * 20;
-        StaticVariables.VolumeLevel = dbLevel;
+        StaticVariables.VolumeLevel = sliderVal;
         if (StaticVariables.IsMuted == 0)
         {
             soundEffectMixer.SetFloat("SliderLevel", dbLevel);
@@ -91,7 +91,7 @@ public class MusicControl : MonoBehaviour
     public void SetMusicVolume(float sliderVal)
     {
         float dbLevel = Mathf.Log10(sliderVal) * 20;
-        StaticVariables.MusicVolumeLevel = dbLevel;
+        StaticVariables.MusicVolumeLevel = sliderVal;
         if (StaticVariables.IsMusicMuted == 0)
         {
             musicMixer.SetFloat("MusicVolume", dbLevel);

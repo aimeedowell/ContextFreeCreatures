@@ -66,7 +66,7 @@ public class BadgeUnlock : MonoBehaviour
         }
         else if (StaticVariables.CurrentLevel == 14)
         {
-            if (PlayerPrefs.GetInt("BadgeColourNodes") == 0)
+            if (PlayerPrefs.GetInt("BadgeMulticolour") == 0)
             {
                 SetBadgeUI();
                 StaticVariables.BadgeMulticolour = 1;

@@ -70,7 +70,7 @@ public class LevelSolutions : MonoBehaviour
 
    // Level 13
     private List<string> level13Sol = new List<string> {"Blue", "Orange", "Green", "Orange", "Blue", "Blue", "Blue", "Orange"};
-    private int bestNumOfNodesLev13 = 8;
+    private int bestNumOfNodesLev13 = 9;
     private float averageTimeLev13 = 70f;
 
    // Level 14

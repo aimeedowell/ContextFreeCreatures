@@ -40,6 +40,7 @@ public class LevelSelectionPage : MonoBehaviour
 
     public GameObject areYouSure;
     public GameObject lostLivesPopUp;
+    public GameObject gameComplete;
 
     public int maxLevel = 0;
 
@@ -103,6 +104,17 @@ public class LevelSelectionPage : MonoBehaviour
         SetPinStates();
         this.gameObject.GetComponent<PlayerProfile>().SetStarValue();
         this.gameObject.GetComponent<PlayerProfile>().SetPlayerSkillLevel(maxLevel);
+
+        if (StaticVariables.Level15Stars != 0 && StaticVariables.HasGameCompleted == 0)
+        {
+            StaticVariables.HasGameCompleted = 1;
+            PlayerPrefs.SetInt("HasGameCompleted", 1);
+            gameComplete.gameObject.SetActive(true);
+        }
+        else
+        {
+            gameComplete.gameObject.SetActive(false);
+        }
     }
 
     void SetPinStates()
