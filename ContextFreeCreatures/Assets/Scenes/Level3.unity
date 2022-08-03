@@ -637,7 +637,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ruleImages:
-  - {fileID: 1078397124}
+  - {fileID: 171447833}
   - {fileID: 1229114788}
   creatureImage: {fileID: 2133588589}
 --- !u!225 &34006199
@@ -3270,9 +3270,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ruleImages:
-  - {fileID: 171447833}
+  - {fileID: 1078397124}
   - {fileID: 1229114788}
-  - {fileID: 171447833}
+  - {fileID: 1078397124}
   creatureImage: {fileID: 220902239}
 --- !u!225 &243368601
 CanvasGroup:
@@ -4573,7 +4573,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ruleImages:
-  - {fileID: 1078397124}
+  - {fileID: 171447833}
   - {fileID: 1229114788}
   creatureImage: {fileID: 2133588589}
 --- !u!114 &330120810
@@ -4660,9 +4660,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ruleImages:
-  - {fileID: 171447833}
+  - {fileID: 1078397124}
   - {fileID: 1229114788}
-  - {fileID: 171447833}
+  - {fileID: 1078397124}
   creatureImage: {fileID: 1433693936}
 --- !u!225 &334559433
 CanvasGroup:
@@ -5370,7 +5370,7 @@ GameObject:
   - component: {fileID: 386932210}
   - component: {fileID: 386932209}
   m_Layer: 5
-  m_Name: Blue
+  m_Name: Red
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5415,7 +5415,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: fb4e142a1cbcb458896c587a924af8cc, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 73486a80bd7674f4bad2775848a2584d, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -6775,9 +6775,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ruleImages:
-  - {fileID: 171447833}
+  - {fileID: 1078397124}
   - {fileID: 1229114788}
-  - {fileID: 171447833}
+  - {fileID: 1078397124}
   creatureImage: {fileID: 525854707}
 --- !u!114 &504108885
 MonoBehaviour:
@@ -7479,7 +7479,7 @@ GameObject:
   - component: {fileID: 565874588}
   - component: {fileID: 565874587}
   m_Layer: 5
-  m_Name: Blue
+  m_Name: Red
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7524,7 +7524,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: fb4e142a1cbcb458896c587a924af8cc, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 73486a80bd7674f4bad2775848a2584d, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -13593,7 +13593,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: fb4e142a1cbcb458896c587a924af8cc, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 73486a80bd7674f4bad2775848a2584d, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -14580,7 +14580,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ruleImages:
-  - {fileID: 1078397124}
+  - {fileID: 171447833}
   - {fileID: 1229114788}
   creatureImage: {fileID: 2133588589}
 --- !u!225 &1226642119
@@ -15055,7 +15055,7 @@ GameObject:
   - component: {fileID: 1271278832}
   - component: {fileID: 1271278831}
   m_Layer: 5
-  m_Name: Blue
+  m_Name: Red
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -15100,7 +15100,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: fb4e142a1cbcb458896c587a924af8cc, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 73486a80bd7674f4bad2775848a2584d, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -16824,7 +16824,7 @@ GameObject:
   - component: {fileID: 1393829440}
   - component: {fileID: 1393829439}
   m_Layer: 5
-  m_Name: Blue
+  m_Name: Red
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -16869,7 +16869,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: fb4e142a1cbcb458896c587a924af8cc, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 73486a80bd7674f4bad2775848a2584d, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -19160,7 +19160,7 @@ GameObject:
   - component: {fileID: 1689313247}
   - component: {fileID: 1689313246}
   m_Layer: 5
-  m_Name: Blue
+  m_Name: Red
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -19205,7 +19205,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: fb4e142a1cbcb458896c587a924af8cc, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 73486a80bd7674f4bad2775848a2584d, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1

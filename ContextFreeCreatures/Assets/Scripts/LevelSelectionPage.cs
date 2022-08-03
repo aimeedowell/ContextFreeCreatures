@@ -442,7 +442,7 @@ public class LevelSelectionPage : MonoBehaviour
 
     void AllLivesLost()
     {
-        if (StaticVariables.MaxReachedLevel == StaticVariables.CurrentLevel)
+        if (StaticVariables.MaxReachedLevel == (StaticVariables.CurrentLevel - 1))
         {
             if (StaticVariables.CurrentLevel <= 3)
             {
@@ -452,6 +452,7 @@ public class LevelSelectionPage : MonoBehaviour
                 PlayerPrefs.SetInt("Level2Stars", StaticVariables.Level2Stars);
                 StaticVariables.Level3Stars = 0;
                 PlayerPrefs.SetInt("Level3Stars", StaticVariables.Level3Stars);
+                StaticVariables.MaxReachedLevel = 0;
 
             }
             else if (StaticVariables.CurrentLevel <= 6)
@@ -462,6 +463,7 @@ public class LevelSelectionPage : MonoBehaviour
                 PlayerPrefs.SetInt("Level5Stars", StaticVariables.Level5Stars);
                 StaticVariables.Level6Stars = 0;
                 PlayerPrefs.SetInt("Level6Stars", StaticVariables.Level6Stars);
+                StaticVariables.MaxReachedLevel = 3;
             }
             else if (StaticVariables.CurrentLevel <= 10)
             {
@@ -473,6 +475,7 @@ public class LevelSelectionPage : MonoBehaviour
                 PlayerPrefs.SetInt("Level9Stars", StaticVariables.Level9Stars);
                 StaticVariables.Level10Stars = 0;
                 PlayerPrefs.SetInt("Level10Stars", StaticVariables.Level10Stars);
+                StaticVariables.MaxReachedLevel = 6;
             }
             else if (StaticVariables.CurrentLevel <= 15)
             {
@@ -486,6 +489,7 @@ public class LevelSelectionPage : MonoBehaviour
                 PlayerPrefs.SetInt("Level14Stars", StaticVariables.Level14Stars);
                 StaticVariables.Level15Stars = 0;
                 PlayerPrefs.SetInt("Level15Stars", StaticVariables.Level15Stars);
+                StaticVariables.MaxReachedLevel = 10;
             }
             StaticVariables.NoOfLives = 5;
             PlayerPrefs.SetInt("Lives", StaticVariables.NoOfLives);
