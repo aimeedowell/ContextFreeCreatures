@@ -51,7 +51,6 @@ public class DropToNode : MonoBehaviour, IDropHandler
             this.gameObject.SetActive(false);
             cam.GetComponent<LevelController>().ReplaceNode(data.pointerDrag.GetComponent<RuleContents>().GetCreatureImage(), GetComponent<RectTransform>().transform.position);
 
-
             float height = GetComponent<RectTransform>().transform.localPosition.y;
             float width = GetComponent<RectTransform>().transform.localPosition.x;
 

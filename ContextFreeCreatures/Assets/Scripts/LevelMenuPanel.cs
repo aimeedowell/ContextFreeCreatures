@@ -65,10 +65,6 @@ public class LevelMenuPanel : MonoBehaviour
 
     void PlayStartAnimation()
     {
-        // GameObject blurPanel = GameObject.FindGameObjectWithTag("Blur");
-        // blurPanel.GetComponent<Krivodeling.UI.Effects.UIBlur>().BeginBlur(2);
-
-
         startAnime.SetActive(true);
         var transform = startAnime.transform;
         foreach (Transform child in transform)
@@ -142,7 +138,6 @@ public class LevelMenuPanel : MonoBehaviour
         }
     }
 
-
     public void OnShopExitClick()
     {
         shopMenu.SetActive(false);
@@ -157,7 +152,6 @@ public class LevelMenuPanel : MonoBehaviour
         infoPopUp.SetActive(false);
         shopMenu.SetActive(false);
     }
-
     int GetNumberOfStars()
     {
         switch(StaticVariables.CurrentLevel) 
@@ -195,6 +189,4 @@ public class LevelMenuPanel : MonoBehaviour
         }
         return 0;
     }
-
-
 }

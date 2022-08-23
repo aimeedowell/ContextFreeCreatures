@@ -9,14 +9,11 @@ public class Shop : MonoBehaviour
     public GameObject shopMenu;
     public GameObject firstRule;
     public GameObject startNode;
-
     public GameObject coin100Button;
     public GameObject coin150Button;
     public GameObject coin200Button;
     public GameObject coin500Button;
-
     public List<GameObject> listOfUnNeededRules = new List<GameObject>();
-
     bool removedRules = false;
 
     void Update() 
@@ -64,7 +61,6 @@ public class Shop : MonoBehaviour
             if (removedRules)
                 coin500Button.GetComponent<Button>().interactable = false;
         }
-        
     }
 
     public void RestartBonBon()

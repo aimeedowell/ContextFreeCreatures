@@ -6,17 +6,13 @@ using UnityEngine.UI;
 public class Flood : MonoBehaviour
 {
     public GameObject startNode;
-
     public GameObject maskContainer;
     public GameObject mask;
     public Text timerText;
     GameObject cam;
     GameObject treeArea;
-
     bool timerStarted = false;
-
     float amountOfTime = 50f;
-
     float timeRemaining = 50f;
 
     // Start is called before the first frame update
@@ -32,6 +28,10 @@ public class Flood : MonoBehaviour
         }
     }
 
+// Countdown timer code adapted from French (2020).
+// French, J., 2020. How to make a countdown timer in Unity (in minutes + seconds) [Online].
+// Available from: https://gamedevbeginner.com/how-to-make-countdown-timer-in-unity-minutes-seconds/#:~:text=Making%20a%20countdown%20timer%20in,need%20to%20be%20calculated%20individually. 
+// [Accessed 1 June 2022].
     void Update()
     {
         if (timerStarted && !cam.GetComponent<LevelController>().isLevelEnd)
@@ -49,7 +49,6 @@ public class Flood : MonoBehaviour
             }
             DisplayTime(timeRemaining);
         }
-
     }
 
     public void OnStartClicked()
@@ -64,14 +63,14 @@ public class Flood : MonoBehaviour
         float startX = startNode.transform.localPosition.x;
         Vector2 startAnch = new Vector2(startX, startY);
         Vector2 endAnch = new Vector2(startX, startY - (lengthOfMask/2));
-        // Vector3 endSize = 650;
+
         mask.GetComponent<RectTransform>().anchoredPosition = startAnch;
         mask.SetActive(true);
-        // maskContain.GetComponent<Animator>().Play("MaskingLine");
 
         StartCoroutine(MoveMask(mask, endSize, endAnch, amountOfTime));
-
     }
+
+
 
     void DisplayTime(float timeToDisplay)
     {

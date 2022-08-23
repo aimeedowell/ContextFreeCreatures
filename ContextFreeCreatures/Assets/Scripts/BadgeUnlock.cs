@@ -114,11 +114,11 @@ public class BadgeUnlock : MonoBehaviour
         badge.SetActive(true);
         StartCoroutine(FadeImageAlphaIn(background, 0f, 1f, 1f));
         StartCoroutine(FadeImageAlphaIn(image, 0f, 1f, 1f));
-        title.GetComponent<Text>().CrossFadeAlpha(1.0f, 0f, false); //fade in
-        title.GetComponent<Text>().CrossFadeAlpha(0.0f, 2.5f, false); //fade out
+        title.GetComponent<Text>().CrossFadeAlpha(1.0f, 0f, false); 
+        title.GetComponent<Text>().CrossFadeAlpha(0.0f, 2.5f, false); 
 
-        content.GetComponent<Text>().CrossFadeAlpha(1.0f, 0f, false); //fade in
-        content.GetComponent<Text>().CrossFadeAlpha(0.0f, 2.5f, false); //fade out
+        content.GetComponent<Text>().CrossFadeAlpha(1.0f, 0f, false);
+        content.GetComponent<Text>().CrossFadeAlpha(0.0f, 2.5f, false); 
     }
 
     IEnumerator FadeImageAlphaIn(GameObject obj, float startAlpha, float endAlpha, float duration) 
@@ -130,14 +130,14 @@ public class BadgeUnlock : MonoBehaviour
         tempColor.a = 1f;
         var end = tempColor;
 
+        // Following for loop adapted from https://forum.unity.com/threads/how-do-i-fade-a-object-in-out-over-time.361492/
         for (float t = 0f; t < duration; t += Time.deltaTime) 
         {
             float normalizedTime = t/duration;
-            //right here, you can now use normalizedTime as the third parameter in any Lerp from start to end
             obj.GetComponent<Image>().color = Color.Lerp(start, end, normalizedTime);
             yield return null;
         }
-        obj.GetComponent<Image>().color = end; //without this, the value will end at something like 0.9992367
+        obj.GetComponent<Image>().color = end;
 
         StartCoroutine(FadeImageAlphaOut(obj, endAlpha, startAlpha, 1f));
     }
@@ -153,14 +153,15 @@ public class BadgeUnlock : MonoBehaviour
         tempColor.a = 0f;
         var end = tempColor;
 
+        // Following for loop adapted from https://forum.unity.com/threads/how-do-i-fade-a-object-in-out-over-time.361492/
         for (float t = 0f; t < duration; t += Time.deltaTime) 
         {
+           
             float normalizedTime = t/duration;
-            //right here, you can now use normalizedTime as the third parameter in any Lerp from start to end
             obj.GetComponent<Image>().color = Color.Lerp(start, end, normalizedTime);
             yield return null;
         }
-        obj.GetComponent<Image>().color = end; //without this, the value will end at something like 0.9992367
+        obj.GetComponent<Image>().color = end;
     }
 
 }

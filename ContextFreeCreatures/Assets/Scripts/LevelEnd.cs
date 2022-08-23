@@ -14,14 +14,12 @@ public class LevelEnd : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        // anim = gameObject.GetComponent<Animation>();
         popUp.SetActive(false);
         sucessPopUp.SetActive(false);
         failPopUp.SetActive(false);
     }
     public void LevelSuccess(int noOfStars)
     {
-        
         popUp.SetActive(true);
         sucessPopUp.SetActive(true);
         starL.SetActive(true);
@@ -31,7 +29,6 @@ public class LevelEnd : MonoBehaviour
         {
             StartCoroutine(PlaySuccessorStar(noOfStars));
         }
-
     }
 
     public void LevelFailed()

@@ -8,30 +8,20 @@ public class LevelController : MonoBehaviour
 {
     GameObject cam;
     public GameObject spriteBackground;
-
     public GameObject startNode;
-
     public Canvas canvas;
-
     private GameObject treeArea;
     private GameObject treeOutline;
     private RectTransform rectTransform;
-
     float treeSpaceWidth;
     float treeSpaceHeight;
     private float maxRows = 6;
-
     private List<List<GameObject>> tree = new List<List<GameObject>>();
-
     private float timeElapsed = 0f;
     private int numberOfNodesUsed = 0;
-
     public bool isLevelEnd = false;
-
     public Text noOfLives;
-
     int noOfFails;
-
     float maxWidth;
     float minHeight;
 
@@ -55,7 +45,6 @@ public class LevelController : MonoBehaviour
             cam.GetComponent<MusicControl>().SetSliderValue(StaticVariables.VolumeLevel);
             cam.GetComponent<MusicControl>().SetMusicSliderValue(StaticVariables.MusicVolumeLevel);
         }
-        
 
         treeArea.GetComponent<RectTransform>().anchoredPosition = new Vector2(0,-29.0f);
     }
@@ -149,8 +138,6 @@ public class LevelController : MonoBehaviour
                         }
                     }
                 }
-                
-
 
                 float nodeX = RemapRange(prevNodeX, -treeSpaceWidth/2, treeSpaceWidth/2, 0, treeSpaceWidth);
                 float newWidth = Mathf.Abs(nodeNeighX - nodeX) - 100;
@@ -169,12 +156,8 @@ public class LevelController : MonoBehaviour
                     StartCoroutine(LevelCompletePopUp(false));
                 }
 
-                // float currentWidth = this.GetComponent<ScaleViewport>().contentScaler.GetComponent<RectTransform>().rect.width;
                 if (startWidth < 0 || (startWidth + newWidth) >= this.GetComponent<ScaleViewport>().contentScaler.GetComponent<RectTransform>().rect.width)
                 {
-                    // currentWidth = this.GetComponent<ScaleViewport>().contentScaler.GetComponent<RectTransform>().rect.width;
-                    // float extension = newWidth * 1.5f;
-                    // this.GetComponent<ScaleViewport>().ScaleTreeSizeWidth(currentWidth + extension, treeSpaceHeight, 0);
                     this.GetComponent<ScaleViewport>().ScaleTreeSizeWidth(maxWidth + (Mathf.Abs(startWidth)*2) + 100f, treeSpaceHeight, 0);
                     maxWidth = maxWidth + (Mathf.Abs(startWidth)*2) + 100f;
                 }
@@ -222,9 +205,6 @@ public class LevelController : MonoBehaviour
             treeArea.GetComponent<RectTransform>().localPosition = heightTreePos;
         else
             treeArea.GetComponent<RectTransform>().localPosition = treePos;
-        
-        // this.GetComponent<ScaleViewport>().contentScaler.GetComponent<RectTransform>().anchoredPosition = viewPortPos;
-        
          
         List<GameObject> endWord = cam.GetComponent<EndWord>().UpdateEndWord(ruleObjects, prevNode);
         tree.Add(ruleObjects);
@@ -250,14 +230,14 @@ public class LevelController : MonoBehaviour
         tempColor.a = 1f;
         var end = tempColor;
 
+        // Following for loop adapted from https://forum.unity.com/threads/how-do-i-fade-a-object-in-out-over-time.361492/
         for (float t = 0f; t<duration; t+=Time.deltaTime) 
         {
             float normalizedTime = t/duration;
-            //right here, you can now use normalizedTime as the third parameter in any Lerp from start to end
             gem.GetComponent<Image>().color = Color.Lerp(start, end, normalizedTime);
             yield return null;
         }
-        gem.GetComponent<Image>().color = end; //without this, the value will end at something like 0.9992367
+        gem.GetComponent<Image>().color = end;
     }
 
     private IEnumerator LevelCompletePopUp(bool success)
@@ -298,7 +278,6 @@ public class LevelController : MonoBehaviour
         cam.GetComponent<AnimateDigging>().DrawLine(prevNode, gemClone);
     }
 
-
     float RemapRange(float x, float oldMin, float oldMax, float newMin, float newMax)
     {
         return (((x - oldMin) * (newMax - newMin)) / (oldMax - oldMin)) + newMin;
@@ -321,7 +300,6 @@ public class LevelController : MonoBehaviour
             PlayerPrefs.SetInt("Lives", StaticVariables.NoOfLives);
             Debug.Log("No more lives");
         }
-
     }
 
     public void AddLife()
@@ -406,7 +384,6 @@ public class LevelController : MonoBehaviour
         PlayerPrefs.Save();
         Debug.Log("Game data saved!");
     }
-    
 }
 
 

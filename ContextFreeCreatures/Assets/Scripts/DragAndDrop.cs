@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
+// Drag and Drop code adapted from 
+// https://www.youtube.com/watch?v=BGr-7GZJNXg&ab_channel=CodeMonkey
+
 public class DragAndDrop : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler
 {
     [SerializeField] private Canvas canvas;
@@ -11,7 +14,6 @@ public class DragAndDrop : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndD
     private CanvasGroup canvasGroup;
     public bool hasDropped = false;
     public GameObject duplicate;
-
     public AudioSource onCLick;
     public AudioSource offClick;
 
@@ -40,8 +42,5 @@ public class DragAndDrop : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndD
         if (!hasDropped) 
             canvasGroup.alpha = 1.0f;
             rectTransform.anchoredPosition = startPosition;
-            
     }
-
-
 }

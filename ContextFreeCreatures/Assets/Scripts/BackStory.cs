@@ -5,7 +5,6 @@ using UnityEngine.SceneManagement;
 
 public class BackStory : MonoBehaviour
 {
-    // Start is called before the first frame update
     void Start()
     {
         if (PlayerPrefs.GetInt("TutorialComplete") == 1)

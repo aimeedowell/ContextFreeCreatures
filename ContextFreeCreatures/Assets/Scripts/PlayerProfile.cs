@@ -12,13 +12,10 @@ public class PlayerProfile : MonoBehaviour
     public Slider slider;
     public Text noOfStars;
     public Text noOfBadges;
-
     public Text skillLevel;
     public Sprite silverCup;
     public Sprite goldCup;
-
     public List<Sprite> profilePics = new List<Sprite>();
-
     int maxLevel = 0;
     int maxStars = 0;
 
@@ -47,7 +44,7 @@ public class PlayerProfile : MonoBehaviour
 
     void SetLevelSliderValue()
     {
-        //  Find max level... 
+        //  Find max level 
         int val = this.gameObject.GetComponent<LevelSelectionPage>().maxLevel;
         slider.value = val;
         maxLevel = val;
@@ -154,5 +151,4 @@ public class PlayerProfile : MonoBehaviour
         PlayerPrefs.SetInt("ProfilePicIndex", StaticVariables.ProfilePicIndex);
         DataToCSV.ProfilePictureChanged();
     }  
-
 }

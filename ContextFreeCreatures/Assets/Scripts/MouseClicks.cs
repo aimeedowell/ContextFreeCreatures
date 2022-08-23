@@ -5,7 +5,6 @@ using UnityEngine.EventSystems;
 
 public class MouseClicks : MonoBehaviour, IPointerDownHandler, IPointerUpHandler, IPointerEnterHandler
 {
-
     public void OnPointerDown(PointerEventData data)
     {
         MouseClickSoundManager.PlayOnClick();
@@ -20,5 +19,4 @@ public class MouseClicks : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
     {
         MouseClickSoundManager.PlayHoverClick();
     }
-
 }

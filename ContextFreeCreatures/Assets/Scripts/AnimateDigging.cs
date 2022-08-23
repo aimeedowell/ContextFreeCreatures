@@ -23,7 +23,6 @@ public class AnimateDigging : MonoBehaviour
         maskContain.transform.SetParent(maskContainer.transform);
         lineContain.SetActive(true);
         lineContain.GetComponent<RectTransform>().anchoredPosition = new Vector2(0, 0);
-        
 
         GetAngle(lineContain);
         lineContain.transform.GetChild(0).GetComponent<RectTransform>().sizeDelta = new Vector2(lineContain.transform.GetChild(0).GetComponent<RectTransform>().sizeDelta.x, GetHeightDistance());
@@ -38,10 +37,9 @@ public class AnimateDigging : MonoBehaviour
         float startX = start.transform.localPosition.x;
         Vector2 startAnch = new Vector2(startX, startY);
         Vector2 endAnch = new Vector2(startX, startY - (lengthOfMask/2));
-        // Vector3 endSize = 650;
+
         maskContain.GetComponent<RectTransform>().anchoredPosition = startAnch;
         maskContain.SetActive(true);
-        // maskContain.GetComponent<Animator>().Play("MaskingLine");
 
         StartCoroutine(MoveMask(lineContain, maskContain, endSize, endAnch, 3f));
     }

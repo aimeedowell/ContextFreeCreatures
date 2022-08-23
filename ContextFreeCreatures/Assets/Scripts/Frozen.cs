@@ -6,11 +6,8 @@ using UnityEngine.UI;
 public class Frozen : MonoBehaviour
 {
     public GameObject frozenGem;
-
     List<GameObject> frozenItems = new List<GameObject>();
-
     List<GameObject> frozenImages = new List<GameObject>();
-
     float freezeTime = 6f;    
 
     public void AddFrozenGem(GameObject orginalGem, GameObject treeArea, Canvas canvas, Vector3 node)
@@ -36,12 +33,12 @@ public class Frozen : MonoBehaviour
         tempColor.a = 1f;
         var end = tempColor;
 
+        // Following for loop adapted from https://forum.unity.com/threads/how-do-i-fade-a-object-in-out-over-time.361492/
         for (float t = 0f; t<duration; t+=Time.deltaTime) 
         {
             if (!this.gameObject.GetComponent<LevelController>().isLevelEnd)
             {
                 float normalizedTime = t/duration;
-                //right here, you can now use normalizedTime as the third parameter in any Lerp from start to end
                 gem.GetComponent<Image>().color = Color.Lerp(start, end, normalizedTime);
                 yield return null;
             }
@@ -62,6 +59,7 @@ public class Frozen : MonoBehaviour
         tempColor.a = 0f;
         var end = tempColor;
 
+        // Following for loop adapted from https://forum.unity.com/threads/how-do-i-fade-a-object-in-out-over-time.361492/
         for (float t = 0f; t<duration; t+=Time.deltaTime) 
         {
             if (!this.gameObject.GetComponent<LevelController>().isLevelEnd)

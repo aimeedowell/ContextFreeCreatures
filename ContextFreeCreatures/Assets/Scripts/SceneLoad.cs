@@ -23,7 +23,6 @@ public class SceneLoad : MonoBehaviour
         }
     }
 
-
     public void ToLevelSelector()
     {
         if (isBadge)

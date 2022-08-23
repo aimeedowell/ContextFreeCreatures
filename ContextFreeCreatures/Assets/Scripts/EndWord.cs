@@ -5,22 +5,16 @@ using UnityEngine.UI;
 
 public class EndWord : MonoBehaviour
 {
-
     public Canvas canvas;
     GameObject startNode;
-
     public Text coinScore;
-
     public GameObject coinAnimation;
-
     GameObject coinContainer;
-
     private List<GameObject> endWord = new List<GameObject>();
-
     public List<GameObject> targetWord;
-
     int startCoinScore;
 
+    // Start is called before the first frame update
     private void Start() 
     {
         startNode = GameObject.Find("StartNode");
@@ -30,7 +24,6 @@ public class EndWord : MonoBehaviour
         startCoinScore = PlayerPrefs.GetInt("Coins");
         StaticVariables.CoinCount = PlayerPrefs.GetInt("Coins");
     }
-
 
     public List<GameObject> UpdateEndWord(List<GameObject> elements, GameObject prevNode)
     {
@@ -67,7 +60,6 @@ public class EndWord : MonoBehaviour
                 return false;
             }
         }
-
         return true;
     }
 
@@ -153,5 +145,4 @@ public class EndWord : MonoBehaviour
         int newScore = StaticVariables.CoinCount - loss;
         coinScore.GetComponent<Text>().text = newScore.ToString();
     }
-    
 }

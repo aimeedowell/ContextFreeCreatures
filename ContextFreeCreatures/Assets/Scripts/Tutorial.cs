@@ -8,15 +8,11 @@ public class Tutorial : MonoBehaviour
     public GameObject TargetBubble1;
     public GameObject TargetBubble2;
     public GameObject CreatureIntro;
-
     public GameObject DragIntro;
     public GameObject DragOne;
     public GameObject DragTwo;
-
     public GameObject StartNode;
-     
     public GameObject LevelComplete;
-
     bool levelComplete = false;
 
     // Start is called before the first frame update

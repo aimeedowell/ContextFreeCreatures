@@ -37,11 +37,9 @@ public class LevelSelectionPage : MonoBehaviour
     public GameObject level13Pin;
     public GameObject level14Pin;
     public GameObject level15Pin;
-
     public GameObject areYouSure;
     public GameObject lostLivesPopUp;
     public GameObject gameComplete;
-
     public int maxLevel = 0;
 
     // Start is called before the first frame update
@@ -437,7 +435,6 @@ public class LevelSelectionPage : MonoBehaviour
             else if (i == 2)
                 stars.transform.Find("Star3").gameObject.SetActive(true);
         }
-        // Add the same for each level
     }
 
     void AllLivesLost()
@@ -500,6 +497,5 @@ public class LevelSelectionPage : MonoBehaviour
     public void CloseLostLivesPopUp()
     {
         lostLivesPopUp.SetActive(false);
-    }
-            
+    }   
 }

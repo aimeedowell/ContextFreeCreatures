@@ -8,7 +8,6 @@ public class MusicControl : MonoBehaviour
 {
     public AudioMixer soundEffectMixer;
     public Slider soundEffectSlider;
-
     public AudioMixer musicMixer;
     public Slider musicSlider;
 
