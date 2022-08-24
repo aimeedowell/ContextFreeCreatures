@@ -21,7 +21,7 @@ Double click the game file (.exe or .app)
 
 ## Usage
 
-Context Free Creatures is made for Mac (arm or intel) and Windows x64 to be used as a standalone Desktop application.  
+Context Free Creatures is made for Mac (arm or intel) and Windows (x64) to be used as a standalone Desktop application.  
 
 
 
