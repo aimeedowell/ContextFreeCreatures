@@ -10,16 +10,7 @@ Download Unity version 2020.3.30f1.
 Download Context Free Creatures as a zip and place it in a suitable location. 
 Open this folder through Unity Hub and double click to run. 
 
-To play the game executable:
-
-Download Context Free Creatures as a zip and place it in a suitable location.
-Navigate to the Builds folder 
-Open either Mac or Windows folders depending on your computers operating system.
-Double click the game file (.exe or .app) 
-
-
 ## Usage
-
 Context Free Creatures is made for Mac (arm or intel) and Windows (x64) to be used as a standalone Desktop application only.  
 
 
